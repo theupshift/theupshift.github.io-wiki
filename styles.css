@@ -41,6 +41,6 @@ img.profile {display: block; margin: 0 auto;}
 
 span.tagline {font-style: italic}
 
-.table {border-collapse: collapse; border-spacing: 0 width: 100%; position: relative; margin: 0 0 5px; border-collapse: separate; border: none font-size: 1em; line-height: 1.5em; vertical-align: bottom}
+.table {border-collapse: collapse; border-spacing: 0; width: 100%; position: relative; margin: 0 0 5px; border-collapse: separate; border: none font-size: 1em; line-height: 1.5em; vertical-align: bottom}
 .table tbody tr td {padding: 9px 0}
 .table tbody tr td:first-of-type {color: #DD6E42}
