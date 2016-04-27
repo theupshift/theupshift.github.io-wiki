@@ -1,5 +1,7 @@
 /* Stylesheet */
 
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
 /* reset & disable selection */
 
 * {margin: 0; padding: 0; -moz-user-select: none; -ms-user-select: none; -o-user-select: none; -webkit-user-select: none; user-select: none}
