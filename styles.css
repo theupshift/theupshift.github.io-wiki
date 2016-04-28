@@ -28,12 +28,10 @@ ul, ol {padding-left: 3em}
 
 p span {color: #DD6E42}
 
-/* Headings */
-
 h1 {font-size: 2em; line-height: 1.5em; margin-top: 1.5em}
 h6 {font-size: 1.1667em; line-height: 1.2857em; margin: 2.5714em 0 1.2857em}
 
-h1, h2, h3, h4, h5, h6 {font-weight: normal}
+h1, h6 {font-weight: normal}
 
 /* Elements */
 
