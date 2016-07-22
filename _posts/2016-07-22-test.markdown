@@ -1,9 +1,0 @@
----
-published: true
-title: Test
-layout: post
-tags: [tag]
-categories: [category]
-permalink: link
----
-This is a test.
