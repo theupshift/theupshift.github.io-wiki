@@ -5,10 +5,10 @@ layout: feed
 <feed xmlns="http://www.w3.org/2005/Atom">
 
  <title>jkvnr's memoirs</title>
- <link href="https://jkvnr.github.io/blog/atom.xml" rel="self"/>
- <link href="https://jkvnr.github.io/blog"/>
+ <link href="https://jkvnr.github.io/memoirs/atom.xml" rel="self"/>
+ <link href="https://jkvnr.github.io/memoirs"/>
  <updated>{{ site.time | date_to_xmlschema }}</updated>
- <id>https://jkvnr.github.io/blog</id>
+ <id>https://jkvnr.github.io/memoirs</id>
  <author>
    <name>jkvnr</name>
  </author>
