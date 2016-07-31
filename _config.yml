@@ -1,0 +1,3 @@
+name: jkvnr
+markdown: kramdown
+permalink: /blog/:title
