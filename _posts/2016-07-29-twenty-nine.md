@@ -1,7 +1,9 @@
 ---
 layout: post
-title: "Twenty-Nine"
+title: "Test"
 date: 2016-07-29
 ---
 
-This is a post.
+This is a test post.
+
+Nothing more.
