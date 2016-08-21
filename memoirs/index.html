@@ -8,7 +8,7 @@ title: memoirs
     {% for post in site.posts %}
     <li>
       <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a><br>
-      <span>{{ post.date | date_to_string }}</span>
+      <span class="red mono">{{ post.date | date_to_string }}</span>
     </li>
     {% endfor %}
   </ul>
