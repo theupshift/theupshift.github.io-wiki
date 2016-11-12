@@ -1,2 +1,2 @@
-### jkvnr.github.io
-just a landing page
+### Hello.
+This is just a landing page.
