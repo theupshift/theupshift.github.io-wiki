@@ -1,32 +1,26 @@
-<!DOCTYPE html>
-<html><head><meta charset="UTF-8">
+<!doctype html>
+<html><head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{{ page.title }}</title>
 <meta name="author" content="jkvnr">
 <meta name="description" content="personal page">
-<link rel="stylesheet" href="../css/main.css">
-</head><body class="cntr">
-<nav class="mono">
-<ul>
-<li><a href="/" title="home">&#9650;</a></li>
-<li><a href="/about" title="about">&#11096;</a></li>
-<li><a href="/memoirs" title="memoirs">&#128220;</a></li>
-<li><a href="/projects" title="projects">&#11042;</a></li>
-</ul>
-</nav>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300">
+<link rel="stylesheet" href="../css/macian.css">
+<style type="text/css">
+  body {font-family:"Roboto", sans-serif;background-color:#fafafa}
+</style>
+</head><body>
 <div class="container">
-{{ content }}
+  {{ content }}
 </div>
-<footer>
-<p>&copy; 2016 jkvnr
+<footer class="pos b0 pa5 ac f6 mono smc">
+<p><small>&copy; 2017 JKVNR</small></p>
 </footer>
-<script>
+<script type="text/javascript">
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-ga('create', 'UA-79171090-1', 'auto');
-ga('send', 'pageview');
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga'); ga('create', 'UA-79171090-1', 'auto');   ga('send', 'pageview');
 </script>
 </body></html>
