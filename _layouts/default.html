@@ -13,6 +13,12 @@
 <p class="psr psa-s b0 l0 p4 f6 lhc mono upc"><small>&copy; 2017 <a class="link" href="https://twitter.com/joshavanier/" target="_blank" title="@joshavanier">Josh Avanier</a></small></p>
 <p class="psr psa-s b0 r0 p4 f6 lhc mono"><small id="date">{Date}</small></p>
 
+<script src="https://joshavanier.github.io/monocal/js/monocal.js"></script>
+<script>
+  var m = MONOCAL.convert()
+  document.getElementById("date").innerHTML = MONOCAL.dis.shorter(m)
+  console.log("Hello, human.")
+</script>
 <script>
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
