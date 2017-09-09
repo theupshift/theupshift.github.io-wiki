@@ -54,6 +54,8 @@ title: Josh Avanier
   {% for post in site.posts %}
     <li>
       <a href="{{ post.url }}">{{ post.title }}</a>
+      <p>{{ post.date }}
+      <p>{{ post.categories }}
     </li>
   {% endfor %}
 </ul>
