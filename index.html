@@ -2,60 +2,13 @@
 layout: default
 title: Josh Avanier
 ---
-<!-- <ul class="lsn r">
+<ul class="lsn r">
 
-  <li class="c3 c6-s c3-l pv3 pr3">
-    <p class="mb2 f6 mon upc"><a href="https://joshavanier.github.io/macian/" target="_blank" title="">Macian</a></p>
-    <p class="f6 lhc">A CSS framework</p>
-  </li>
-
-  <li class="c3 c6-s c3-l pv3 pr3">
-    <p class="mb2 f6 mon upc"><a href="https://github.com/joshavanier/seashells/" target="_blank" title="">Seashells</a></p>
-    <p class="f6 lhc">A collection of shell scripts</p>
-  </li>
-
-  <li class="c3 c6-s c3-l pv3 pr3">
-    <p class="mb2 f6 mon upc"><a href="https://joshavanier.github.io/aequirys/" target="_blank" title="">Aequirys</a></p>
-    <p class="f6 lhc">Mithvaer's calendrical system</p>
-  </li>
-
-  <li class="c3 c6-s c3-l pv3 pr3">
-    <p class="mb2 f6 mon upc"><a href="" target="_blank" title="https://github.com/joshavanier/raphael/">Raphael</a></p>
-    <p class="f6 lhc">Dynamic CSS colour styles</p>
-  </li>
-
-  <li class="c3 c6-s c3-l pv3 pr3">
-    <p class="mb2 f6 mon upc"><a href="https://joshavanier.github.io/monocal/" target="_blank" title="">MONOCAL</a></p>
-    <p class="f6 lhc">Calendrical system</p>
-  </li>
-
-  <li class="c3 c6-s c3-l pv3 pr3">
-    <p class="mb2 f6 mon upc"><a href="https://github.com/joshavanier/genesis/" target="_blank" title="">Genesis</a></p>
-    <p class="f6 lhc">Random generators</p>
-  </li>
-
-  <li class="c3 c6-s c3-l pv3 pr3">
-    <p class="mb2 f6 mon upc"><a href="https://codepen.io/joshavanier/full/YVLbyv/" target="_blank" title="">Noctanite</a></p>
-    <p class="f6 lhc">Time-based theme setting</p>
-  </li>
-
-  <li class="c3 c6-s c3-l pv3 pr3">
-    <p class="mb2 f6 mon upc"><a href="https://joshavanier.github.io/numbers/" target="_blank" title="">Numbers</a></p>
-    <p class="f6 lhc">Random number facts!</p>
-  </li>
-
-  <li class="c3 c6-s c3-l pv3 pr3">
-    <p class="mb2 f6 mon upc"><a href="https://github.com/joshavanier/lamp/" target="_blank" title="">Lamp</a></p>
-    <p class="f6 lhc">Thomson's lamp paradox in Java</p>
-  </li>
-</ul> -->
-
-<ul>
   {% for post in site.posts %}
-    <li>
-      <a href="{{ post.url }}">{{ post.title }}</a>
-      <p>{{ post.date }}
-      <p>{{ post.categories }}
+    <li class="c3 c6-s c3-l pv3 pr3">
+      <p class="mb2 f6 mon upc"><a href="{{ post.repository }}" target="_blank" title="">{{ post.title }}</a></p>
+      <p class="f6 lhc">{{ post.description }}</p>
     </li>
   {% endfor %}
+
 </ul>
