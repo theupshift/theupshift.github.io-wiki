@@ -9,15 +9,15 @@ layout: default
 {% endif %}
 
 {% if page.categories %}
-  <ul class="mb4 lsn">
+  <ul class="mb4 lsn f6">
     {% for category in page.categories %}
-      <li class="di mr2 f6 bg-noir blanc p2 mon">{{ category }}</li>
+      <li class="di mr2 f6 bg-noir blanc p2 mon upc">{{ category }}</li>
     {% endfor %}
   </ul>
 {% endif %}
 
 {% if page.screenshot %}
-  <img class="mb4" src="{{ site.url }}/img/{{ page.screenshot }}">
+  <a class="bn" href="{{ page.repository }}" title="{{ page.title }}"><img class="ba mb4" src="{{ site.url }}/img/{{ page.screenshot }}"></a>
 {% endif %}
 
 {{ page.content }}

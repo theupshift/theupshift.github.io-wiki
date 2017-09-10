@@ -12,7 +12,8 @@
 	<link rel="stylesheet" href="https://joshavanier.github.io/macian/css/macian.css">
   <style>
     a {color: #d34141}
-    header a:hover {border: none}
+    a img {border-color: #202020}
+    a.bn, a.bn:hover {border: none !important}
   </style>
   <script async src="https://joshavanier.github.io/aequirys/aequirys.js"></script>
 </head>
@@ -20,7 +21,7 @@
 <body class="bg-noir blanc p4 p5-m p5-l">
 
 	<header class="ac al-l psr psf-l t0 l0 p5-l">
-    <a href="/" title="Welcome to The Subterraneum">
+    <a href="/" title="Welcome, friend">
     <svg viewBox="850 950 2000 2000" width="60">
       <path d="M 1286.155 2295.976 L 1286.111 1627.386 L 1863.595 1294.591 L 2441.515 1627.545 L 2441.558 2295.438 L 1863.551 2628.509 L 1286.155 2295.976 Z" style="stroke: #f8f8f8; stroke-width: 3.81em; fill: #202020;" bx:origin="0.5 0.5"/>
       <ellipse style="stroke: #f8f8f8; stroke-width: 3.81em; fill: #202020;" cx="1856.872" cy="2075.716" rx="400" ry="400" bx:origin="-1.7983496189117432 -2.0522215366363525"/>
@@ -31,11 +32,12 @@
 	</header>
 
 	<div class="container bg-blanc noir mv5 mv5-m mv0-l cn p4 p5-m p5-l w7-l">
+    <p class="mb4 f6 mon upc"><a href="/">Home</a>{{ page.url }}</p>
 		{{ content }}
 	</div>
 
 	<p class="ac psr psf-l b0 r0 p5-l mon"><small id="date">{Date}</small></p>
-	<p class="ac psr psf-l b0 l0 p5-l mon upc"><small>&copy; 2017 <a class="link" href="https://twitter.com/joshavanier/" target="_blank" title="@joshavanier">JA</a></small></p>
+	<p class="ac psr psf-l b0 l0 p5-l mon upc"><small>&copy; 2017 <a class="link" href="https://twitter.com/joshavanier/" target="_blank" title="Josh Avanier">JA</a></small></p>
 
 	<script>
 		var m = Aequirys.convert()
