@@ -1,0 +1,24 @@
+{
+
+  "personal": {
+
+    "personTalkedTo": "Julianne",
+    "movieWatched": null,
+    "bookRead": null
+
+  },
+
+  "health": {
+
+    "slept": null,
+    "eaten": null
+
+  },
+
+  "work": {
+
+    "projectWorkedOn": "Haiaku"
+
+  }
+
+}
