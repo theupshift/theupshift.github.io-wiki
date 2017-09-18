@@ -1,3 +1,5 @@
 name: Josh Avanier
 markdown: kramdown
 permalink: /sub/:title
+plugins:
+  - octopress-minify-html
