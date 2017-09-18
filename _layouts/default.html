@@ -12,9 +12,9 @@
 	<link rel="stylesheet" href="https://joshavanier.github.io/macian/css/macian.css">
 </head>
 
-<body class="noselect p4 p5-m p5-l">
+<body class="noselect p3 p5-m p5-l">
 
-  <header class="ac al-l psr psf-l t0 l0 p5-l">
+  <header class="ac al-l psr psf-l t0 l0 p4 p5-l">
 		<a class="hvn" href="/" title="Hello">
     <svg viewBox="850 950 2000 2000" width="42">
       <path d="M 1286.155 2295.976 L 1286.111 1627.386 L 1863.595 1294.591 L 2441.515 1627.545 L 2441.558 2295.438 L 1863.551 2628.509 L 1286.155 2295.976 Z" style="stroke: #202020; stroke-width: 3.81em; fill: #f8f8f8;" bx:origin="0.5 0.5"/>
@@ -25,7 +25,7 @@
     </a>
 	</header>
 
-  <div class="container mv5 mv5-m mv0-l cn ph4 ph5-m ph5-l w7-l">
+  <div class="mb5 mv5-m mv0-l cn ph3 ph5-m ph5-l w7-l">
 		{% capture url_parts %} {{ page.url | remove: "/index.html" | replace:'/'," " }}{% endcapture %}
     {% capture num_parts %}{{ url_parts | number_of_words | minus: 1 }}{% endcapture %}
     <!-- {% assign previous="" %} -->
@@ -43,9 +43,8 @@
 		{{ content }}
 	</div>
 
-  <p class="ac psr psf-l b0 r0 p5-l mon"><small id="date" title="Aequirys">{Date}</small></p>
-
-  <p class="ac psr psf-l b0 l0 p5-l mon upc"><small>&copy; 2017 <a class="link" href="https://twitter.com/joshavanier/" target="_blank" title="Josh Avanier">JA</a></small></p>
+  <p class="ac psr psf-l b0 r0 pb3 p5-l mon"><small id="date" title="Aequirys">{Date}</small></p>
+  <p class="ac psr psf-l b0 l0 pb5 p5-l mon upc"><small>&copy; 2017 <a class="link" href="https://twitter.com/joshavanier/" target="_blank" title="Josh Avanier">JA</a></small></p>
 
   {% if page.scr %}
 	<script src="{{ page.scr }}"></script>{% endif %}
