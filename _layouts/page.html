@@ -2,22 +2,22 @@
 layout: default
 ---
 
-<h2 class="mb2 f4 fwn">{{ page.title }}</h2>
-
-{% if page.description %}
-  <p class="mb4 f6">{{ page.description }}</p>
+<h2 class="mb2 f5 upc tk">{{ page.title }}</h2>
+<div class="db mb4 pb4 f6">
+  {% if page.desc %}
+    <span class="lf">{{ page.desc }}</span>
+  {% endif %}
+  {% if page.repo %}
+    <span class="rf"><a href="https://github.com/joshavanier/{{ page.repo }}" target="_blank" title="{{ page.title }} Repository">Repository</a></span>
+  {% endif %}
+</div>
+{% if page.scrn %}
+  {% if page.live %}
+    <a class="bn" href="{{ page.live }}" target="_blank" title="{{ page.title }}"><img class="ba mb4" src="{{ site.url }}/img/{{ page.scrn }}"></a>
+  {% elsif page.repo %}
+    <a class="bn" href="https://github.com/joshavanier/{{ page.repo }}" target="_blank" title="{{ page.title }}"><img class="ba mb4" src="{{ site.url }}/img/{{ page.scrn }}"></a>
+  {% else %}
+    <img class="ba mb4" src="{{ site.url }}/img/{{ page.scrn }}">
+  {% endif %}
 {% endif %}
-
-{% if page.categories %}
-  <ul class="mb4 lsn f6">
-    {% for category in page.categories %}
-      <li class="di mr2 f6 bg-noir blanc p2 mon upc">{{ category }}</li>
-    {% endfor %}
-  </ul>
-{% endif %}
-
-{% if page.screenshot %}
-  <a class="bn" href="{{ page.repository }}" title="{{ page.title }}"><img class="ba mb4" src="{{ site.url }}/img/{{ page.screenshot }}"></a>
-{% endif %}
-
 {{ page.content }}
