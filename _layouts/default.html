@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="en">
-
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -11,9 +10,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono" rel="stylesheet">
 	<link rel="stylesheet" href="https://joshavanier.github.io/macian/css/macian.css">
 </head>
-
 <body class="noselect p3 p5-m p5-l">
-
   <header class="ac al-l psr psf-l t0 l0 p4 p5-l">
 		<a class="hvn" href="/" title="Hello">
     <svg viewBox="850 950 2000 2000" width="42">
@@ -24,33 +21,24 @@
     </svg>
     </a>
 	</header>
-
   <div class="mb5 mv5-m mv0-l cn ph3 ph5-m ph5-l w7-l">
-		{% capture url_parts %} {{ page.url | remove: "/index.html" | replace:'/'," " }}{% endcapture %}
-    {% capture num_parts %}{{ url_parts | number_of_words | minus: 1 }}{% endcapture %}
-    <!-- {% assign previous="" %} -->
     <p class="mb4 f6 mon upc tk">
       {% assign crumbs = page.url | remove:'/index.html' | split: '/' %}
       <a href="/">~</a>
       {% for crumb in crumbs offset: 1 %}
         {% if forloop.last %}
-          / {{ crumb | replace:'-',' ' | remove:'.html' | capitalize }}
+          · {{ crumb | replace:'-',' ' | remove:'.html' | capitalize }}
         {% else %}
-          / <a href="{% assign crumb_limit = forloop.index | plus: 1 %}{% for crumb in crumbs limit: crumb_limit %}{{ crumb | append: '/' }}{% endfor %}">{{ crumb | replace:'-',' ' | remove:'.html' | capitalize }}</a>
+          · <a href="{% assign crumb_limit = forloop.index | plus: 1 %}{% for crumb in crumbs limit: crumb_limit %}{{ crumb | append: '/' }}{% endfor %}">{{ crumb | replace:'-',' ' | remove:'.html' | capitalize }}</a>
         {% endif %}
       {% endfor %}
     </p>
 		{{ content }}
 	</div>
-
-  <p class="ac psr psf-l b0 r0 pb3 p5-l mon"><small id="date" title="Aequirys">{Date}</small></p>
-  <p class="ac psr psf-l b0 l0 pb5 p5-l mon upc"><small>&copy; 2017 <a class="link" href="https://twitter.com/joshavanier/" target="_blank" title="Josh Avanier">JA</a></small></p>
-
-  {% if page.scr %}
-	<script src="{{ page.scr }}"></script>{% endif %}
-
+  <p class="ac psr psf-l b0 r0 pb3 p5-l mon"><a href="/wiki/aequirys"><small id="date" title="Aequirys">{Date}</small></a></p>
+  <p class="ac psr psf-l b0 l0 pb5 p5-l mon upc"><small>&copy; 2017 <a class="link" href="/wiki/josh" title="Josh Avanier">JA</a></small></p>
+  {% if page.scr %}<script src="{{ page.scr }}"></script>{% endif %}
   <script src="https://joshavanier.github.io/aequirys/aequirys.js"></script>
-
   <script>
 		var m = Aequirys.convert()
 		document.getElementById("date").innerHTML = Aequirys.shorter(m)
@@ -63,5 +51,4 @@
     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga'); ga('create', 'UA-79171090-1', 'auto'); ga('send', 'pageview');
   </script> -->
 </body>
-
 </html>
