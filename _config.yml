@@ -1,5 +1,18 @@
 name: Josh Avanier
 markdown: kramdown
-permalink: /sub/:title
-plugins:
-  - octopress-minify-html
+permalink: /wiki/:title
+# plugins:
+#   - octopress-minify-html
+# env: production
+
+collections:
+  wiki:
+    output: true
+    permalink: /wiki/:path/
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: page
