@@ -22,11 +22,12 @@
   web:  xxiivv.com
   twi:  neauoire
 
-- name: eelfroth
-  desc: Developer
-  img:  598279431904460800/UGb52DBF_400x400.jpg
-  web:  eelfroth.com
-  twi:  eelfroth
+# Awaiting Permission
+# - name: eelfroth
+#   desc: Developer
+#   img:  598279431904460800/UGb52DBF_400x400.jpg
+#   web:  eelfroth.com
+#   twi:  eelfroth
 
 - name: 𝔉
   desc: Description
@@ -46,11 +47,12 @@
   web:  styblova.com
   twi:  styblova
 
-- name: Jeremy Sachs
-  desc: Coder, artist
-  img:  660326023603445760/kmaW7kCt_400x400.jpg
-  web:  rezmason.net
-  twi:  rezmason
+# Awaiting Permission
+# - name: Jeremy Sachs
+#   desc: Coder, artist
+#   img:  660326023603445760/kmaW7kCt_400x400.jpg
+#   web:  rezmason.net
+#   twi:  rezmason
 
 - name: Josh van Asten
   desc: Botanist of a conceptual greenhouse
@@ -58,11 +60,12 @@
   web:  voidjumper.glass
   twi:  voidjumper
 
-- name: Lisa Rey
-  desc: YouTuber
-  img:  861536726069780480/bPtrbik2_400x400.jpg
-  web:  youtube.com/c/LisaRey
-  twi:  _lisarey_
+# Awaiting Permission
+# - name: Lisa Rey
+#   desc: YouTuber
+#   img:  861536726069780480/bPtrbik2_400x400.jpg
+#   web:  youtube.com/c/LisaRey
+#   twi:  _lisarey_
 
 - name: Lisa Schaeffer
   desc: She's awesome
