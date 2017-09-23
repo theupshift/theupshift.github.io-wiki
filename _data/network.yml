@@ -1,103 +1,101 @@
-# - name: Name
-#   desc: Description
-#   web: Website
-#   github: GitHub
-#   twitter: Twitter
-
-- name: Devine Lu Linvega
-  desc: Nomad developer and designer
-  web: xxiivv.com
-  github: neauoire
-  twitter: neauoire
-
-- name: Rekka Bellum
-  desc: Illustrator, writer
-  web: kokorobot.ca
-  twitter: RekkaBell
-
 - name: Alexander Cobleigh
   desc: Freelance VR developer
-  web: cblgh.org
-  github: GitHub
-  twitter: cblgh
-
-- name: Jana Stýblová
-  desc: Conceptual artist
-  web: styblova.com
-  twitter: styblova
-
-- name: Brennan Letkeman
-  desc: Designer
-  web: brennanletkeman.com
-  twitter: letkma
-
-- name: Lisa Rey
-  desc: YouTuber
-  web: Website
-  twitter: _lisarey_
-
-- name: 𝔉
-  desc: Description
-  web: Website
-  github: GitHub
-  twitter: anxlacc
-
-- name: Osa Uveine
-  desc: Polymath
-  github: deuveir
-  twitter: deuveir
-
-- name: Ian Battaglia
-  desc: Writer
-  web: monochromatic.co
-  twitter: IanJBattaglia
-
-- name: Victor Ivanov
-  desc: Multidisciplinary designer and developer
-  web: v-os.ca
-  github: v-exec
-  twitter: v_exec
+  img:  721074654128009216/oh27YVcI_400x400.jpg
+  web:  cblgh.org
+  twi:  cblgh
 
 - name: Andreas Werchmeister
   desc: Concept designer
-  web: andreaswerchmeister.com
-  twitter: A_Werchmeister
+  img:  880416987540840448/eYK_SA81_400x400.jpg
+  web:  andreaswerchmeister.com
+  twi:  A_Werchmeister
 
-- name: Rutherford Craze
-  desc: Type design student
-  web: craze.co.uk
-  github: rutherfordcraze
-  twitter: rutherfordcraze
+- name: Brennan Letkeman
+  desc: Designer
+  img:  761998841117683712/janWwuyI_400x400.jpg
+  web:  brennanletkeman.com
+  twi:  letkma
 
-- name: Michael Christophersson
-  desc: Artist, designer, developer
-  web: Website
-  twitter: madebyflame
-
-- name: Lisa Schaeffer
-  desc: She's awesome
-  web: silversober.tumblr.com
-  twitter: SilverSober
-
-- name: Jeremy Sachs
-  desc: Coder, artist
-  web: Website
-  github: GitHub
-  twitter: Twitter
-
-- name: Josh van Asten
-  desc: Botanist of a conceptual greenhouse
-  web: voidjumper.glass
-  twitter: voidjumper
+- name: Devine Lu Linvega
+  desc: Nomad developer and designer
+  img:  875910591960858625/0VFz2h3N_400x400.jpg
+  web:  xxiivv.com
+  twi:  neauoire
 
 - name: eelfroth
   desc: Developer
-  web: eelfroth.com
-  github: eelfroth
-  twitter: eelfroth
+  img:  598279431904460800/UGb52DBF_400x400.jpg
+  web:  eelfroth.com
+  twi:  eelfroth
 
-- name: Name
+- name: 𝔉
   desc: Description
-  web: Website
-  github: GitHub
-  twitter: Twitter
+  img:  902898223102046208/TaCdBmDW_400x400.jpg
+  web:  anxl.faith
+  twi:  anxlacc
+
+- name: Ian Battaglia
+  desc: Writer
+  img:  882408799176404993/xr_8KVXy_400x400.jpg
+  web:  monochromatic.co
+  twi:  IanJBattaglia
+
+- name: Jana Stýblová
+  desc: Conceptual artist
+  img:  851890625838329856/biCk6OXe_400x400.jpg
+  web:  styblova.com
+  twi:  styblova
+
+- name: Jeremy Sachs
+  desc: Coder, artist
+  img:  660326023603445760/kmaW7kCt_400x400.jpg
+  web:  rezmason.net
+  twi:  rezmason
+
+- name: Josh van Asten
+  desc: Botanist of a conceptual greenhouse
+  img:  905248262768222208/1sCptvaS_400x400.jpg
+  web:  voidjumper.glass
+  twi:  voidjumper
+
+- name: Lisa Rey
+  desc: YouTuber
+  img:  861536726069780480/bPtrbik2_400x400.jpg
+  web:  youtube.com/c/LisaRey
+  twi:  _lisarey_
+
+- name: Lisa Schaeffer
+  desc: She's awesome
+  img:  907472503228039168/p2DU-INF_400x400.jpg
+  web:  silversober.tumblr.com
+  twi:  SilverSober
+
+- name: Michael Christophersson
+  desc: Artist, designer, developer
+  img:  909842218113994752/1kDqQ-Sd_400x400.jpg
+  web:  madebyflame.com
+  twi:  madebyflame
+
+- name: Osa Uveine
+  desc: Polymath
+  img:  860731313979932672/d9vgGhjG_400x400.jpg
+  web:  xla.wiki
+  twi:  deuveir
+
+- name: Rekka Bellum
+  desc: Illustrator, writer
+  img:  669518497681117184/RkLnwDKs_400x400.png
+  web:  kokorobot.ca
+  twi:  RekkaBell
+
+- name: Rutherford Craze
+  desc: Type design student
+  img:  832038901401403392/FrdP8MYG_400x400.jpg
+  web:  craze.co.uk
+  twi:  rutherfordcraze
+
+- name: Victor Ivanov
+  desc: Multidisciplinary designer and developer
+  img:  906243573678579717/c7RsvFLb_400x400.jpg
+  web:  v-os.ca
+  twi:  v_exec
