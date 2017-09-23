@@ -1,0 +1,53 @@
+---
+title: Josh Avanier
+desc: A polyhistoric wanderer
+scr: /scripts/facts.js
+scrn: josh.png
+categories: Personal
+---
+<p class="mb4"><b>Josh Avanier</b> is a polyhistoric wanderer on an expedition around the world of {{ site.data.menu.Mithvaer }}. In the <span title="But, really, what is real?">reality</span>, he is a university student studying for a BBA degree with an emphasis in CIS. He likes to, in his free time, engage in hobbies and work on personal projects.</p>
+
+<h3 class="mb3 f6 upc tk bb pb3">Fun Fact</h3>
+<p class="mb3">Here's a random fun fact about him. Fun is subjective:</p>
+<p class="mb4 p4 bg-noir blanc" id="randomFact">_</p>
+
+<h3 class="mb3 f6 upc tk bb pb3">Log</h3>
+<p class="mb4">He keeps a Log of daily creative outputs.</p>
+
+<h2 class="mb3 f6 upc tk bb pb3">Age</h2>
+<p class="mb3">I am 20 years old. To put it into perspective:</p>
+<section class="mb4 bg-noir blanc p4 f6 mon">
+  <p class="mb3 upc tk"><a class="red" href="/wiki/mors">Horarium</a></p>
+  <ul class="lsn r">
+    <li class="c3"><span>CEN</span>: 7'493</li>
+    <li class="c3"><span>YER</span>: 7'493</li>
+    <li class="c3"><span>MON</span>: 7'493</li>
+    <li class="c3"><span>WEK</span>: 7'493</li>
+    <li class="c3"><span>DAY</span>: 7'493</li>
+    <li class="c3"><span>HRS</span>: 7'493</li>
+    <li class="c3"><span>MIN</span>: 7'493</li>
+    <li class="c3"><span>SEC</span>: 7'493</li>
+  </ul>
+</section>
+
+<h2 class="mb3 f6 upc tk bb pb3">Mortem</h2>
+<p class="mb3">Completely disregarding daily risks and factors that may accelerate what is inevitable and assuming a life expectancy of ~70 &oplus; years, here is an estimate of how much <b>Time</b> I have left in this realm.</p>
+
+<progress class="mb3 wf noir" min="0" max="23850" value="7492"></progress>
+<section class="mb4 bg-noir blanc p4 f6 mon">
+  <p class="mb3 upc tk"><a class="red" href="/wiki/mors">Mors</a></p>
+  <ul class="lsn r">
+    <li class="c4"><span title="Progress">PRO</span>: 31.41%</li>
+    <li class="c4"><span title="Estimated Time Remaining">ETR</span>: 16'358</li>
+    <li class="c4"><span title="Estimated Date of Death">EDD</span>: July 3, 2062</li>
+  </ul>
+</section>
+
+<h3 class="mb3 f6 upc tk bb pb3">Hobbies</h3>
+<ul class="mb4 lsn r">{% for hobby in site.data.hobbies %}<li class="c3 c6-s c6-m">{{ hobby }}</li>{% endfor %}</ul>
+
+<h3 class="mb3 f6 upc tk bb pb3">Interests</h3>
+<ul class="mb4 lsn r">{% for interest in site.data.interests %}<li class="c3 c6-s c6-m">{{ interest }}</li>{% endfor %}</ul>
+
+<h3 class="mb3 f6 upc tk bb pb3">Web</h3>
+<ul class="lsn r">{% for web in site.data.web %}<li class="c3 c6-s c6-m"><a class="fwb" href="{{ web.url }}" target="_blank">{{ web.name }}</a></li>{% endfor %}</ul>

@@ -1,0 +1,16 @@
+---
+title: Bateau
+desc: The secondary vessel
+categories: Equipment
+scrn: porte.png
+intro: A humble dinghy floats beside the Navire.
+---
+<p class="mb3"><b title="Translates to 'boat' in French">Bateau</b> is the secondary vessel of exploration in my {{ site.data.menu.Journey }}. It is an old laptop which, just like {{ site.data.menu.Navire }}, is not a powerful machine, but it at least allows me to create things, which is all that matters. Bateau serves as a portable workstation whenever I'm not in the comfort of home.</p>
+
+<p class="mb4">Files are synced between Bateau and Navire via Dropbox. With the exception of OS files, nothing else is stored on their hard drives. Everything is on the cloud.</p>
+
+<h3 class="mb3 f6 upc tk bb pb3">Specs</h3>
+<ul class="mb4">{% for spec in site.data.equipment.bateau.specs %}<li>{{ spec }}</li>{% endfor %}</ul>
+
+<h3 class="mb3 f6 upc tk bb pb3">Software</h3>
+<ul class="mb4 lsn r">{% for app in site.data.equipment.bateau.apps %}<li class="c3 c6-s c6-m">{{ app }}</li>{% endfor %}</ul>
