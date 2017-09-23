@@ -1,0 +1,30 @@
+- name: Mass
+  val: 1.2 ⊕
+- name: Radius
+  val: 1.06 ⊕
+- name: Density
+  val: 1 ⊕
+- name: Average Planetary Temperature
+  val: 287.98 K
+- name: Greenhouse Fudge Factor
+  val: '1.1'
+- name: Sunlight Intensity
+  val: '1'
+- name: Escape Velocity
+  val: 11'870.50 m/s
+- name: Distance to Horizon
+  val: 4'867.50 m
+- name: Axial Tilt
+  val: 20°
+- name: Polar Circles
+  val: 69°N/S
+- name: Tropics
+  val: 21°N/S
+- name: Distance from Sol
+  val: 1.07 AU
+- name: Gravity
+  val: 1.16g
+- name: Planetary Year
+  val: 1.10 ⊕ y
+- name: Planetary Day
+  val: 26.39 ⊕ h
