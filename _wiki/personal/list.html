@@ -1,0 +1,9 @@
+---
+title: List
+desc: To do
+scrn: list.png
+categories: Personal
+---
+<p class="mb4">A list of things I want to make.</p>
+<h3 class="mb3 f6 upc tk bb pb3">The List</h3>
+<ul class="mb4 lsn r">{% for thing in site.data.projects %}<li class="c6 c6-m c4">{{ thing }}</li>{% endfor %}</ul>

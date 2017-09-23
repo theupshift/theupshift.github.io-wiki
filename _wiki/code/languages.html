@@ -1,0 +1,19 @@
+---
+layout: sector
+title: Languages
+desc: Creations
+categories: Code
+published: false
+---
+<p class="mb4">The <b>Horarium</b> contains a set of instructions to measure <b>Time</b></p>
+
+{% assign pages = site.wiki | where: "categories", "JavaScript" %}
+
+{% for post in pages %}
+  <div class="mb4">
+    {% if post.scrn %}
+    <a class="bn" href="{{ post.url }}" title="{{ post.title }}"><img class="ba mb2" src="{{ site.url }}/img/{{ post.scrn }}"></a>
+    {% endif %}
+    <p class="pb3 f6 bb"><a class="fwb upc tk" href="{{ post.url }}">{{ post.title }}</a> · {{ post.desc }}</p>
+  </div>
+{% endfor %}

@@ -1,38 +1,20 @@
 ---
 layout: default
-title: Sub
+title: Wiki
 desc: The Directory
 ---
-
-{% assign pageCounter = 0 %}
-{% for page in site.pages %}
-  {% assign pageCounter = pageCounter | plus: 1 %}
-{% endfor %}
-
-{% assign projectCounter = 0 %}
-{% for post in site.wiki %}
-  {% assign projectCounter = projectCounter | plus: 1 %}
-{% endfor %}
-
 <h2 class="mb3 f6 upc tk bb pb3">Directory</h2>
-<p class="mb4 lhd">Herein is the Subterraneum's directory:</p>
-
-<h2 class="mb3 f6 upc tk bb pb3">Pages ({{ pageCounter }})</h2>
+{% assign sectors = site.wiki | where: "categories", "Sector" %}
+{% assign sectorCounter = 0 %}
+{% for post in sectors %}{% assign sectorCounter = sectorCounter | plus: 1 %}{% endfor %}
+<h2 class="mb3 f6 upc tk bb pb3" id="all">Sectors ({{ sectorCounter }})</h2>
 <ul class="mb4 lsn r">
-  {% for post in site.pages %}
-  <li class="c3 c6-s c3-l pv3 pr3 f6">
-	  <p class="mb2 mon upc fwb"><a href="{{ post.url }}" title="">{{ post.title }}</a></p>
-	  <p class="lhc">{{ post.desc }}</p>
-  </li>
-  {% endfor %}
+  {% for post in sectors %}<li class="c4 c6-s c4-l pv3 pr3 f6"><p class="mb2 mon upc fwb tk"><a href="{{ post.url }}" title="">{{ post.title }}</a></p><p class="lhc">{{ post.desc }}</p></li>{% endfor %}
 </ul>
-
-<h2 class="mb3 f6 upc tk bb pb3">Wiki ({{ projectCounter }})</h2>
+{% assign projects = site.wiki | where: "categories", "Project" %}
+{% assign projectCounter = 0 %}
+{% for post in projects %}{% assign projectCounter = projectCounter | plus: 1 %}{% endfor %}
+<h2 class="mb3 f6 upc tk bb pb3" id="all">Projects ({{ projectCounter }})</h2>
 <ul class="lsn r">
-  {% for post in site.wiki %}
-  <li class="c3 c6-s c3-l pv3 pr3 f6">
-	  <p class="mb2 mon upc fwb"><a href="{{ post.url }}" title="">{{ post.title }}</a></p>
-	  <p class="lhc">{{ post.desc }}</p>
-  </li>
-  {% endfor %}
+  {% for post in projects %}<li class="c4 c6-s c4-l pv3 pr3 f6"><p class="mb2 mon upc fwb tk"><a href="{{ post.url }}" title="">{{ post.title }}</a></p><p class="lhc">{{ post.desc }}</p></li>{% endfor %}
 </ul>
