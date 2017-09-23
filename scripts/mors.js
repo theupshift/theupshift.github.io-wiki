@@ -1,0 +1,2 @@
+var Mors={hle:70,led:25567.5,etr:function(a){return this.led-this.daysLived(a)},edd:function(a){Date.prototype.addDays=function(a){var b=new Date(this.valueOf());b.setDate(b.getDate()+a);return b};return a.addDays(25567.5)},pro:function(a){return this.daysLived(a)/this.led*100},daysLived:function(a){var c=new Date;return Math.round(Math.abs((a.getTime()-c.getTime())/864E5))}},d=new Date(1997,2,17);document.getElementById("PRO").innerHTML=Mors.pro(d).toFixed(2) + "%";document.getElementById("ETR").innerHTML=Mors.etr(d);
+document.getElementById("EDD").innerHTML=Mors.edd(d);
