@@ -22,12 +22,11 @@
   web:  xxiivv.com
   twi:  neauoire
 
-# Awaiting Permission
-# - name: eelfroth
-#   desc: Developer
-#   img:  598279431904460800/UGb52DBF_400x400.jpg
-#   web:  eelfroth.com
-#   twi:  eelfroth
+- name: eelfroth
+  desc: Developer
+  img:  598279431904460800/UGb52DBF_400x400.jpg
+  web:  eelfroth.com
+  twi:  eelfroth
 
 - name: 𝔉
   desc: Description
