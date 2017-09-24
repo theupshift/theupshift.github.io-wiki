@@ -2,16 +2,10 @@
 layout: default
 title: Home
 desc: Where the heart is
+scr: /scripts/activity.js
 ---
 <img class="ba mb3" src="{{ site.url }}/img/memex.png">
 <p class="mb4">Welcome to the {{ site.data.menu.Memex }}, a place wherein a collection of various creations, artifacts, and accumulated knowledge is stored and curated by {{ site.data.menu.Josh }}. Josh is a <span title="'Be who you wish to seem.' - Socrates">self-proclaimed artist</span> on a {{ site.data.menu.Journey }} to explore the world of {{ site.data.menu.Mithvaer }}. He also wrote this paragraph.</p>
 <h2 class="mb2 f6 upc tk bb pb3">Navigation</h2>
-<ul class="lsn r">{% for post in site.pages %}<li class="c4 c6-s c4-l pv3 pr3 f6"><p class="mb2 mon upc fwb tk"><a href="{{ post.url }}" title="">{{ post.title }}</a></p><p class="lhc">{{ post.desc }}</p></li>{% endfor %}</ul>
-
-<!-- <h2 class="mb3 f6 upc tk bb pb3">Latest Activity</h2> -->
-<!-- <section class="bg-noir blanc f6 p4">
-  <p class="mb3 mon red upc fwb tk">Latest Activity</p>
-  <ul class="lsn">
-  {% for post in site.data.updates %}<li><p class="mb2">{{ post }}</li>{% endfor %}
-  </ul>
-</section> -->
+<ul class="mb4 lsn r">{% for post in site.pages %}<li class="c4 c6-s c4-l pv3 pr3 f6"><p class="mb2 mon upc fwb tk"><a href="{{ post.url }}" title="">{{ post.title }}</a></p><p class="lhc">{{ post.desc }}</p></li>{% endfor %}</ul>
+<h2 class="mb3 f6 upc tk bb pb3">Latest Activity</h2><div class="bg-noir blanc p4" id="feed"><p class="mb4 red mon f6 upc fwb tk">Rotonde:</p></div>
