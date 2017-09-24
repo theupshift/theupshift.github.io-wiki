@@ -7,13 +7,4 @@ scrn: mors.png
 categories: Horology Project JavaScript
 intro: An hourglass is tucked in a corner. Glowing red glyphs dance around it like embers as black sand trickles down in an irreversible descent.
 ---
-<p class="mb4"><b>Mors</b> is a script written in JavaScript that calculates estimated statistical information regarding death.</p>
-
-<h2 class="mb3 f6 upc tk bb pb3">Statistics</h2>
-<ul class="mb3 lsn">
-  <li><b>NLD</b>: Number of days lived</li>
-  <li><b>PRO</b>: % progress till EDD<sup>*</sup></li>
-  <li><b>ETR</b>: Estimated time remaining<sup>*</sup></li>
-  <li><b>EDD</b>: Estimated date of death<sup>*</sup></li>
-</ul>
-<p class="f6">* Assuming life expectancy of 70 Earth years</p>
+<p class="mb4"><b>Mors</b> is a script written in JavaScript that calculates estimated statistical information regarding death. Mors assumes a life expectancy of 70 Earth years.</p><h2 class="mb3 f6 upc tk bb pb3">Statistics</h2><ul class="lsn r">{% for item in site.data.dictionary.mors %}<li class="c6"><b>{{ item.w }}</b>: {{ item.d }}</li>{% endfor %}</ul>
