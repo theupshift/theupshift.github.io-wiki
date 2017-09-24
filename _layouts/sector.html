@@ -1,17 +1,4 @@
 ---
 layout: default
 ---
-<h2 class="mb2 f5 upc tk">{{ page.title }}</h2>
-<div class="db mb4 pb4 f6">
-  {% if page.desc %}<span class="lf">{{ page.desc }}</span>{% endif %}
-{% if page.repo %}<span class="rf mon"><a href="https://github.com/joshavanier/{{ page.repo }}" target="_blank" title="{{ page.title }} Repository">Repo<span class="dn di-m di-l">sitory</span></a></span>{% endif %}</div>
-{% if page.scrn %}{% if page.live %}<a class="bn" href="{{ page.live }}" target="_blank" title="{{ page.title }}"><img class="ba mb4" src="{{ site.url }}/img/{{ page.scrn }}"></a>{% elsif page.repo %}<a class="bn" href="https://github.com/joshavanier/{{ page.repo }}" target="_blank" title="{{ page.title }}"><img class="ba mb4" src="{{ site.url }}/img/{{ page.scrn }}"></a>{% else %}<img class="ba mb4" src="{{ site.url }}/img/{{ page.scrn }}">{% endif %}{% endif %}{% if page.intro %}<p class="mb4 fi">{{ page.intro }}</p>{% endif %}{{ page.content }}
-{% assign pages = site.wiki | where: "categories", page.title %}
-<div class="mt4">
-  {% for post in pages %}
-    <div class="mb4">
-      {% if post.scrn %}<a href="{{ post.url }}" title="{{ post.title }}"><img class="ba mb2" src="{{ site.url }}/img/{{ post.scrn }}"></a>{% endif %}
-      <p class="f6"><a class="fwb upc tk" href="{{ post.url }}">{{ post.title }}</a> · {{ post.desc }}</p>
-    </div>
-  {% endfor %}
-</div>
+<h2 class="mb2 f5 upc tk">{{ page.title }}</h2><div class="db mb4 pb4 f6">{% if page.desc %}<span class="lf">{{ page.desc }}</span>{% endif %}{% if page.repo %}<span class="rf mon"><a href="https://github.com/joshavanier/{{ page.repo }}" target="_blank" title="{{ page.title }} Repository">Repo<span class="dn di-m di-l">sitory</span></a></span>{% endif %}</div>{% if page.scrn %}{% if page.live %}<a class="bn" href="{{ page.live }}" target="_blank" title="{{ page.title }}"><img class="ba mb4" src="{{ site.url }}/img/{{ page.scrn }}"></a>{% elsif page.repo %}<a class="bn" href="https://github.com/joshavanier/{{ page.repo }}" target="_blank" title="{{ page.title }}"><img class="ba mb4" src="{{ site.url }}/img/{{ page.scrn }}"></a>{% else %}<img class="ba mb4" src="{{ site.url }}/img/{{ page.scrn }}">{% endif %}{% endif %}{% if page.intro %}<p class="mb4 fi">{{ page.intro }}</p>{% endif %}{{ page.content }}{% assign pages = site.wiki | where: "categories", page.title %}<div class="mt4">{% for post in pages %}<div class="mb4">{% if post.scrn %}<a href="{{ post.url }}" title="{{ post.title }}"><img class="ba mb2" src="{{ site.url }}/img/{{ post.scrn }}"></a>{% endif %}<p class="f6"><a class="fwb upc tk" href="{{ post.url }}">{{ post.title }}</a> · {{ post.desc }}</p></div>{% endfor %}</div>
