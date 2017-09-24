@@ -1,0 +1,11 @@
+# The dictionary is an index of the often-indecipherable acronyms and abbreviations I use in my projects.
+
+mors:
+  - w: NLD
+    d: Number of Days Lived
+  - w: PRO
+    d: Mortem Progression
+  - w: ETR
+    d: Estimated Time Remaining
+  - w: EDD
+    d: Estiamted Date of Death
