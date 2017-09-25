@@ -49,9 +49,9 @@
 # Awaiting Permission
 # - name: Jeremy Sachs
 #   desc: Coder, artist
-#   img:  660326023603445760/kmaW7kCt_400x400.jpg
-#   web:  rezmason.net
-#   twi:  rezmason
+#   img: 660326023603445760/kmaW7kCt_400x400.jpg
+#   web: rezmason.net
+#   twi: rezmason
 
 - name: Josh van Asten
   desc: Botanist of a conceptual greenhouse
@@ -62,9 +62,9 @@
 # Awaiting Permission
 # - name: Lisa Rey
 #   desc: YouTuber
-#   img:  861536726069780480/bPtrbik2_400x400.jpg
-#   web:  youtube.com/c/LisaRey
-#   twi:  _lisarey_
+#   img: 861536726069780480/bPtrbik2_400x400.jpg
+#   web: youtube.com/c/LisaRey
+#   twi: _lisarey_
 
 - name: Lisa Schaeffer
   desc: She's awesome
@@ -95,6 +95,12 @@
   img:  832038901401403392/FrdP8MYG_400x400.jpg
   web:  craze.co.uk
   twi:  rutherfordcraze
+
+- name: Vaporstack
+  desc: 
+  img:  769236069690777602/VWo5H_HO_400x400.jpg
+  web:  vaporstack.org
+  twi:  vaporstack
 
 - name: Victor Ivanov
   desc: Multidisciplinary designer and developer
