@@ -3,11 +3,4 @@ layout: default
 title: 404
 desc: The Void
 ---
-
-<h1 class="f3 fwn" id="attempt"></h1>
-
-<script>
-
-document.getElementById("attempt").innerHTML = "This '" + window.location.pathname.substr(1) + "' you seek does not exist."
-
-</script>
+<a class="bn" href="/" title="Return to the Memex"><img class="ba mb4" src="{{ site.url }}/img/memex.png"></a><p id="error"></p><script>document.getElementById("error").innerHTML = "This '" + window.location.pathname.substr(1).replace("%20"," ").replace("+"," ") + "' you seek does not exist. Click on the Cube to return home."</script>
