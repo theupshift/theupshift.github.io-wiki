@@ -2,6 +2,7 @@
 layout: default
 title: Network
 desc: Of kindred spirits
+categories: Page
 ---
 <h2 class="mb3 f6 upc tk bb pb3">Network</h2>
 <p class="mb4">Over time, I have had the opportunity to meet and interact with interesting people &mdash; artists, creators, writers, inventors. Many of them have become good friends of mine. I highly suggest you check out their work; they are bound to inspire you in some way.</p><ul class="lsn r">{% for member in site.data.network %}<li class="c6 c6-m mb4 f6 r"><a href="https://{{ member.web }}" target="_blank" title="{{ member.name }}"><img class="c4" src="https://pbs.twimg.com/profile_images/{{ member.img }}"></a><div class="c8 pv3 pv0-l ph3-l lhc"><p class="mon upc fwb tk">{{ member.name }}</p><p><a href="http://{{ member.web }}" target="_blank" title="> {{ member.name }}'s Website">{{ member.web }}</a></p><p><a href="https://twitter.com/{{ member.twi }}" target="_blank" title="> Follow {{ member.name }} on Twitter">@{{ member.twi }}</a></p></div></li>{% endfor %}</ul>
