@@ -1,6 +1,14 @@
 ---
-layout: default
-title: 404
+layout: page
+title: 404 Not Found
 desc: The Void
+scrn: memex.png
 ---
-<a class="bn" href="/" title="Return to the Memex"><img class="ba mb4" src="{{ site.url }}/img/memex.png"></a><p id="error"></p><script>document.getElementById("error").innerHTML = "This '" + window.location.pathname.substr(1).replace("%20"," ").replace("+"," ") + "' you seek does not exist. Click on the Cube to return home."</script>
+<!-- <div class="mb4 bsa">
+  <a class="bn" href="/" title="Return to the Memex"><div class="banner cover bg-c bg-noir" style="background-image: url({{ site.url }}/img/memex.png)"></div></a>
+
+</div> -->
+
+<p class="ac" id="error"></p>
+
+<script>document.getElementById("error").innerHTML = "This '" + window.location.pathname.substr(1).replace("%20"," ").replace("+"," ") + "' you seek does not exist."</script>

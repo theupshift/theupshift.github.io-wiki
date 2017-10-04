@@ -1,4 +1,20 @@
 ---
 layout: default
 ---
-<h2 class="mb1 f5 upc tk">{{ page.title }}</h2><div class="db mb4 pb4 f6">{% if page.desc %}<span class="lf">{{ page.desc }}</span>{% endif %}{% if page.repo %}<span class="rf mon"><a href="https://github.com/joshavanier/{{ page.repo }}" target="_blank" title="{{ page.title }} Repository">Repo<span class="dn di-m di-l">sitory</span></a></span>{% endif %}</div>{% if page.scrn %}{% if page.live %}<a class="bn" href="{{ page.live }}" target="_blank" title="{{ page.title }}"><img class="ba mb4" src="{{ site.url }}/img/{{ page.scrn }}"></a>{% elsif page.repo %}<a class="bn" href="https://github.com/joshavanier/{{ page.repo }}" target="_blank" title="{{ page.title }}"><img class="ba mb4" src="{{ site.url }}/img/{{ page.scrn }}"></a>{% else %}<img class="ba mb4" src="{{ site.url }}/img/{{ page.scrn }}">{% endif %}{% endif %}{% if page.intro %}<p class="mb4 fi">{{ page.intro }}</p>{% endif %}{{ page.content }}
+<h2 class="mb3 pb2 f2 ac al-l">{{ page.title }}</h2>
+<section class="mb4 bg-fff bsa">
+  {% if page.scrn %}
+  <div class="banner cover bg-c bg-noir" style="background-image: url({{ site.url }}/img/{{ page.scrn }})"></div>
+  {% endif %}
+  <div class="p4 p5-m p5-l">
+    {{ page.content }}
+
+    {% if page.lang %}
+    <div class="mt5 pt4 pb4 pb0-m pb0-l bt f6 mon">
+      <span class="db dib-l mb3"><b>{{ page.prim }}</b> {{ page.lang }}</span>
+      <span class="db dib-l rf-l"><a class="p1 box" href="https://github.com/joshavanier/{{ page.repo }}/" target="_blank" title="Source">Repository</a></span>
+    </div>
+    {% endif %}
+
+  </div>
+</section>
