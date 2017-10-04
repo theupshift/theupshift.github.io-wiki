@@ -1,36 +1,23 @@
 <!doctype html>
 <html lang="en">
-
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, minimum-scale = 1.0, initial-scale = 1.0, maximum-scale = 5.0, user-scalable=yes">
 	<title>&#11041; · {{ page.title }}</title>
 	<meta name="author" content="Josh Avanier">
-	<meta name="description" content="Welcome to the Subterraneum">
-	<link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono" rel="stylesheet">
+	<meta name="description" content="The Memex is a wiki about Josh Avanier and his works.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@joshavanier">
+  <meta name="twitter:title" content="The Memex">
+  <meta name="twitter:description" content="The Memex is a wiki about Josh Avanier and his works.">
+  <meta name="twitter:image" content="https://joshavanier.github.io/img/memex.png">
 	<link href="https://joshavanier.github.io/macian/css/macian.css" rel="stylesheet">
 	<style>
-		.bg-fff {
-			background-color: #fff
-		}
-
-		main {
-			max-width: 900px
-		}
-
-		a {
-			color: #202020
-		}
-
-    .banner {
-      height: 343.7694px; max-width: 900px;
-    }
-
-    .box {
-      
-    }
-
+		.bg-fff {background-color: #fff}
+		main {max-width: 900px}
+		a {color: #202020}
+    .banner {height: 343.7694px; max-width: 900px}
     .box:hover {
       background-color: #202020;
       color: #f8f8f8;
@@ -38,52 +25,44 @@
     }
 	</style>
 </head>
-
 <body class="noselect p2 p3-m pt4-m p5-l">
 	<header class="ac al-l psr psf-l t0 l0 p4 p5-l">
     <a class="hvn" href="/" title="Hello">
       <svg viewBox="850 950 2000 2000" width="42"><path d="M 1286.155 2295.976 L 1286.111 1627.386 L 1863.595 1294.591 L 2441.515 1627.545 L 2441.558 2295.438 L 1863.551 2628.509 L 1286.155 2295.976 Z" style="stroke: #202020; stroke-width: 3.81em; fill: #f8f8f8;" bx:origin="0.5 0.5"/><ellipse style="stroke: #202020; stroke-width: 3.81em; fill: #f8f8f8;" cx="1856.872" cy="2075.716" rx="400" ry="400" bx:origin="-1.7983496189117432 -2.0522215366363525"/><path d="M 1429.667 2182.006 L 1429.667 2153.976 L 1853.121 1909.122 L 2080.832 1892.675 L 2303.446 2021.703 L 2303.446 2121.313 L 1429.667 2182.006 Z" style="stroke: #202020; stroke-width: 3.81em; fill: #f8f8f8;" transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, -3.057604610919725, -1.5288023054599762)" bx:origin="0.5 0.5"/><path d="M 1426.779 2376.867 L 1426.9 2152.673 L 1978.272 1833.825 L 2300.74 2020.112 L 2301.103 2376.264 L 2441.633 2295.254 L 2441.511 1627.377 L 1863.579 1294.404 L 1286.008 1627.377 L 1286.249 2296.099 L 1426.779 2376.867 Z" style="stroke: #202020; stroke-width: 3.81em; fill: #f8f8f8;" bx:origin="0.5 0.5"/></svg>
     </a>
   </header>
-	<div
-	 class="dn db-l psr psf-l t0 r0 p4 p5-l"><a class="hvn" href="{{ site.url }}/wiki/horology/mors"><small id="mortem" title="Mortem Progression"></small></a></div>
-
-
-
-		<main class="mb5 mv5-m mv0-l cn ph0 ph4-m ph5-l w7-l">
-      <div class="mb5 f6 fwb mon upc tk ac al-l">{% assign crumbs = page.url | remove:'/index.html' | split: '/' %}<a class="hvn" href="/" title="There's no place like&hellip;">~</a>{% for crumb in crumbs offset: 1 %}{% if forloop.last %} · {{ crumb | replace:'-',' ' | remove:'.html' | capitalize
-        }}{% else %} · <a class="hvn" href="{% assign crumb_limit = forloop.index | plus: 1 %}{% for crumb in crumbs limit: crumb_limit %}{{ crumb | append: '/' }}{% endfor %}">{{ crumb | replace:'-',' ' | remove:'.html' | capitalize }}</a>{% endif %}{% endfor
-        %}
-      </div>
-			<div>{{ content }}</div>
-    </main>
-		<p class="ac psr psf-l b0 r0 pb3 p5-l mon"><a class="hvn fwn" href="/wiki/aequirys"><small id="date" title="Aequirys">{Date}</small></a></p>
-		<p class="ac psr psf-l b0 l0 pb5 p5-l mon upc"><small>&copy; 2017 <a href="/wiki/personal/josh" title="Josh Avanier">JA</a></small></p>{% if page.scr %}{% for script in page.scr %}
-		<script src="{{ script }}"></script>{% endfor %}{% endif %}
-		<script src="https://joshavanier.github.io/aequirys/aequirys.js"></script>
-		<script src="https://joshavanier.github.io/mors/mors.min.js"></script>
-		<script>
-			var m = Aequirys.convert();
-			document.getElementById("date").innerHTML = Aequirys.shorter(m);
-			console.log("Hello, human.");
-			document.getElementById("mortem").innerHTML = Mors.pro(new Date(1997, 2, 17)).toFixed(2) + "%"
-		</script>
-		<script>
-			(function(a, e, f, g, b, c, d) {
-				a.GoogleAnalyticsObject = b;
-				a[b] = a[b] || function() {
-					(a[b].q = a[b].q || []).push(arguments)
-				};
-				a[b].l = 1 * new Date;
-				c = e.createElement(f);
-				d = e.getElementsByTagName(f)[0];
-				c.async = 1;
-				c.src = g;
-				d.parentNode.insertBefore(c, d)
-			})(window, document, "script", "https://www.google-analytics.com/analytics.js", "ga");
-			ga("create", "UA-79171090-1", "auto");
-			ga("send", "pageview");
-		</script>
+	<div class="dn db-l psr psf-l t0 r0 p4 p5-l"><a class="hvn" href="{{ site.url }}/wiki/horology/mors"><small id="mortem" title="Mortem Progression"></small></a></div>
+	<main class="mb5 mv5-m mv0-l cn ph0 ph4-m ph5-l w7-l">
+    <div class="mb5 f6 fwb mon upc tk ac al-l">{% assign crumbs = page.url | remove:'/index.html' | split: '/' %}<a class="hvn" href="/" title="There's no place like&hellip;">~</a>{% for crumb in crumbs offset: 1 %}{% if forloop.last %} · {{ crumb | replace:'-',' ' | remove:'.html' | capitalize
+      }}{% else %} · <a class="hvn" href="{% assign crumb_limit = forloop.index | plus: 1 %}{% for crumb in crumbs limit: crumb_limit %}{{ crumb | append: '/' }}{% endfor %}">{{ crumb | replace:'-',' ' | remove:'.html' | capitalize }}</a>{% endif %}{% endfor
+      %}
+    </div>
+		<div>{{ content }}</div>
+  </main>
+	<p class="ac psr psf-l b0 r0 pb3 p5-l mon"><a class="hvn fwn" href="/wiki/aequirys"><small id="date" title="Aequirys">{Date}</small></a></p>
+	<p class="ac psr psf-l b0 l0 pb5 p5-l mon upc"><small>&copy; 2017 <a href="/wiki/personal/josh" title="Josh Avanier">JA</a></small></p>
+  {% if page.scr %}{% for script in page.scr %}<script src="{{ script }}"></script>{% endfor %}{% endif %}
+	<script src="https://joshavanier.github.io/aequirys/aequirys.js"></script>
+	<script src="https://joshavanier.github.io/mors/mors.min.js"></script>
+	<script>
+		var m = Aequirys.convert();
+		document.getElementById("date").innerHTML = Aequirys.shorter(m);
+		console.log("Hello, human.");
+		document.getElementById("mortem").innerHTML = Mors.pro(new Date(1997, 2, 17)).toFixed(2) + "%"
+	</script>
+	<script>
+		(function(a, e, f, g, b, c, d) {
+			a.GoogleAnalyticsObject = b;
+			a[b] = a[b] || function() {(a[b].q = a[b].q || []).push(arguments)};
+			a[b].l = 1 * new Date;
+			c = e.createElement(f);
+			d = e.getElementsByTagName(f)[0];
+			c.async = 1;
+			c.src = g;
+			d.parentNode.insertBefore(c, d)
+		})(window, document, "script", "https://www.google-analytics.com/analytics.js", "ga");
+		ga("create", "UA-79171090-1", "auto");
+		ga("send", "pageview");
+	</script>
 </body>
-
 </html>
