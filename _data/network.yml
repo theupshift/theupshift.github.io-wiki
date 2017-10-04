@@ -46,13 +46,6 @@
   web:  styblova.com
   twi:  styblova
 
-# Awaiting Permission
-# - name: Jeremy Sachs
-#   desc: Coder, artist
-#   img: 660326023603445760/kmaW7kCt_400x400.jpg
-#   web: rezmason.net
-#   twi: rezmason
-
 - name: Josh van Asten
   desc: Botanist of a conceptual greenhouse
   img:  905248262768222208/1sCptvaS_400x400.jpg
@@ -60,21 +53,15 @@
   twi:  voidjumper
 
 # Awaiting Permission
-# - name: Lisa Rey
-#   desc: YouTuber
-#   img: 861536726069780480/bPtrbik2_400x400.jpg
-#   web: youtube.com/c/LisaRey
-#   twi: _lisarey_
-
-- name: Lisa Schaeffer
-  desc: She's awesome
-  img:  907472503228039168/p2DU-INF_400x400.jpg
-  web:  silversober.tumblr.com
-  twi:  SilverSober
+# - name: Lisa Schaeffer
+#   desc: She's awesome
+#   img:  907472503228039168/p2DU-INF_400x400.jpg
+#   web:  silversober.tumblr.com
+#   twi:  SilverSober
 
 - name: Michael Christophersson
   desc: Artist, designer, developer
-  img:  909842218113994752/1kDqQ-Sd_400x400.jpg
+  img:  914512631221891072/M1DEGbL0_400x400.jpg
   web:  madebyflame.com
   twi:  madebyflame
 
@@ -97,7 +84,7 @@
   twi:  rutherfordcraze
 
 - name: Vaporstack
-  desc: 
+  desc:
   img:  769236069690777602/VWo5H_HO_400x400.jpg
   web:  vaporstack.org
   twi:  vaporstack

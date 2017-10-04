@@ -9,8 +9,9 @@ equipment:
   navire:     <a class="fwb" href="/wiki/equipment/navire">Navire</a>
 horology:
   sect:       <a class="fwb" href="/wiki/horology">Horology</a>
-  horarium:   <a class="fwb" href="/wiki/horarium">Horarium</a>
-  mors:       <a class="fwb" href="/wiki/mors">Mors</a>
+  horarium:   <a class="fwb" href="/wiki/horology/horarium">Horarium</a>
+  log:        <a class="fwb" href="/wiki/horology/log">Log</a>
+  mors:       <a class="fwb" href="/wiki/horology/mors">Mors</a>
 kamera:
   sect:       <a class="fwb" href="/wiki/kamera">Kamera</a>
 mathematica:
@@ -20,7 +21,6 @@ personal:
   josh:       <a class="fwb" href="/wiki/personal/josh">Josh Avanier</a>
   journey:    <a class="fwb" href="/wiki/personal/journey">Journey</a>
   list:       <a class="fwb" href="/wiki/personal/list">List</a>
-  log:        <a class="fwb" href="/wiki/personal/log">Log</a>
 vide:
   sect:       <a class="fwb" href="/wiki/vide">Vide</a>
   mithvaer:   <a class="fwb" href="/wiki/vide/mithvaer">Mithvaer</a>

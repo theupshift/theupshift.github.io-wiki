@@ -4,18 +4,20 @@ title: Wiki
 desc: The Directory
 categories: Page
 ---
-<h2 class="mb3 f6 upc tk bb pb3">Directory</h2>
-{% assign sectors = site.wiki | where: "categories", "Sector" %}
-{% assign sectorCounter = 0 %}
-{% for post in sectors %}{% assign sectorCounter = sectorCounter | plus: 1 %}{% endfor %}
-<h2 class="mb3 f6 upc tk bb pb3" id="all">Sectors ({{ sectorCounter }})</h2>
-<ul class="mb4 lsn r">
-  {% for post in sectors %}<li class="c4 c6-s c4-l pv3 pr3 f6"><p class="mb2 mon upc fwb tk"><a href="{{ post.url }}" title="">{{ post.title }}</a></p><p class="lhc">{{ post.desc }}</p></li>{% endfor %}
-</ul>
-{% assign projects = site.wiki | where: "categories", "Project" %}
-{% assign projectCounter = 0 %}
-{% for post in projects %}{% assign projectCounter = projectCounter | plus: 1 %}{% endfor %}
-<h2 class="mb3 f6 upc tk bb pb3" id="all">Projects ({{ projectCounter }})</h2>
-<ul class="lsn r">
-  {% for post in projects %}<li class="c4 c6-s c4-l pv3 pr3 f6"><p class="mb2 mon upc fwb tk"><a href="{{ post.url }}" title="">{{ post.title }}</a></p><p class="lhc">{{ post.desc }}</p></li>{% endfor %}
-</ul>
+<h2 class="mb3 pb2 f2 ac al-l">Directory</h2>
+<div class="mb4 p4 p5-m p5-l bg-fff bsa">
+  {% assign sectors = site.wiki | where: "categories", "Sector" %}
+  {% assign sectorCounter = 0 %}
+  {% for post in sectors %}{% assign sectorCounter = sectorCounter | plus: 1 %}{% endfor %}
+  <h2 class="mb3 f6 upc tk bb pb3" id="all">Sectors ({{ sectorCounter }})</h2>
+  <ul class="mb4 lsn r">
+    {% for post in sectors %}<li class="c4 c6-s c4-l pv3 pr3 f6"><p class="mon upc fwb tk"><a href="{{ post.url }}" title="">{{ post.title }}</a></p><p class="lhc">{{ post.desc }}</p></li>{% endfor %}
+  </ul>
+  {% assign projects = site.wiki | where: "categories", "Project" %}
+  {% assign projectCounter = 0 %}
+  {% for post in projects %}{% assign projectCounter = projectCounter | plus: 1 %}{% endfor %}
+  <h2 class="mb3 f6 upc tk bb pb3" id="all">Projects ({{ projectCounter }})</h2>
+  <ul class="lsn r">
+    {% for post in projects %}<li class="c4 c6-s c4-l pv3 pr3 f6"><p class="mon upc fwb tk"><a href="{{ post.url }}" title="">{{ post.title }}</a></p><p class="lhc">{{ post.desc }}</p></li>{% endfor %}
+  </ul>
+</div>

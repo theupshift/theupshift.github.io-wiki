@@ -1,19 +1,10 @@
 ---
-layout: sector
 title: Languages
 desc: Creations
 categories: Code
-published: false
 ---
-<p class="mb4">The <b>Horarium</b> contains a set of instructions to measure <b>Time</b></p>
+<p class="mb5">A list of projects categorised by their respective primary languages.</p>
 
-{% assign pages = site.wiki | where: "categories", "JavaScript" %}
+<h3 class="mb3 f3">JavaScript</h3>
 
-{% for post in pages %}
-  <div class="mb4">
-    {% if post.scrn %}
-    <a class="bn" href="{{ post.url }}" title="{{ post.title }}"><img class="ba mb2" src="{{ site.url }}/img/{{ post.scrn }}"></a>
-    {% endif %}
-    <p class="pb3 f6 bb"><a class="fwb upc tk" href="{{ post.url }}">{{ post.title }}</a> · {{ post.desc }}</p>
-  </div>
-{% endfor %}
+{% assign projects = site.wiki | where: "categories", "JavaScript" %}<ul class="lsn r">{% for post in projects %}<li class="c4 c6-s c4-l pv3 pr3 f6"><p class="mb2 mon upc fwb tk"><a href="{{ post.url }}" title="">{{ post.title }}</a></p><p class="lhc">{{ post.desc }}</p></li>{% endfor %}</ul>
