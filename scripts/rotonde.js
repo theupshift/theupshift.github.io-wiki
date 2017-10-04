@@ -8,7 +8,7 @@ function load(rotonde) {
   			e = document.createElement('span')
 
 		con.appendChild(d)
-    d.appendChild(time)
+    d.appendChild(t)
 		t.className = "db mb2 f6 mon"
 		t.innerHTML = convertTime(feed[i].time)
 
