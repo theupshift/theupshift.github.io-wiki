@@ -1,20 +1,4 @@
 ---
 layout: default
 ---
-<h2 class="mb3 pb2 f2 ac al-l">{{ page.title }}</h2>
-<div class="mb4 bg-fff bsa">
-  {% if page.scrn %}
-  <div class="banner cover bg-c bg-noir" style="background-image: url({{ site.url }}/img/{{ page.scrn }})"></div>
-  {% endif %}
-  <div class="p4 p5-m p5-l">
-    {{ page.content }}
-
-    {% if page.lang %}
-    <div class="mt5 pt4 pb4 pb0-m pb0-l bt f6 mon">
-      <span class="db dib-l mb3"><b>{{ page.prim }}</b> {{ page.lang }}</span>
-      <span class="db dib-l rf-l"><a class="p1 box" href="https://github.com/joshavanier/{{ page.repo }}/" target="_blank" title="Source">Repository</a></span>
-    </div>
-    {% endif %}
-
-  </div>
-</div>
+<h2 class="mb3 pb2 f2 ac al-l">{{ page.title }}</h2><div class="mb4 bg-fff bsa">{% if page.scrn %}<div class="banner cover bg-c bg-noir" style="background-image: url({{ site.url }}/img/{{ page.scrn }})"></div>{% endif %}<div class="p4 p5-m p5-l">{{ page.content }}{% if page.lang %}<div class="mt5 pt4 pb4 pb0-m pb0-l bt f6 mon"><span class="db dib-l mb3"><b>{{ page.prim }}</b> {{ page.lang }}</span><span class="db dib-l rf-l"><a class="p1 box" href="https://github.com/joshavanier/{{ page.repo }}/" target="_blank" title="Source">Repository</a></span></div>{% endif %}</div></div>
