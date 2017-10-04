@@ -10,7 +10,7 @@
   <meta name="twitter:title" content="The Memex">
   <meta name="twitter:description" content="The Memex is a wiki about Josh Avanier and his works.">
   <meta name="twitter:image" content="https://joshavanier.github.io/img/memex.png">
-	<link href="https://joshavanier.github.io/macian/css/macian.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://joshavanier.github.io/macian/css/macian.css">
 	<style>
 		.bg-fff {background-color: #fff}
 		main {max-width: 900px}
@@ -22,6 +22,9 @@
       text-decoration: none;
     }
 	</style>
+  <script defer src="https://joshavanier.github.io/aequirys/aequirys.js"></script>
+	<script defer src="https://joshavanier.github.io/mors/mors.min.js"></script>
+  <script defer src="{{ site.url }}/scripts/home.js"></script>
 </head><body class="noselect p2 p3-m pt4-m p5-l">
 	<header class="ac al-l psr psf-l t0 l0 p4 p5-l">
     <a class="hvn" href="/" title="Hello">
@@ -39,26 +42,4 @@
 	<p class="ac psr psf-l b0 r0 pb3 p5-l mon"><a class="hvn fwn" href="/wiki/aequirys"><small id="date" title="Aequirys">{Date}</small></a></p>
 	<p class="ac psr psf-l b0 l0 pb5 p5-l mon upc"><small>&copy; 2017 <a href="/wiki/personal/josh" title="Josh Avanier">JA</a></small></p>
   {% if page.scr %}{% for script in page.scr %}<script src="{{ site.url }}/scripts/{{ script }}.js"></script>{% endfor %}{% endif %}
-	<script src="https://joshavanier.github.io/aequirys/aequirys.js"></script>
-	<script src="https://joshavanier.github.io/mors/mors.min.js"></script>
-	<script>
-		var m = Aequirys.convert();
-		document.getElementById("date").innerHTML = Aequirys.shorter(m);
-		console.log("Hello, human.");
-		document.getElementById("mortem").innerHTML = Mors.pro(new Date(1997, 2, 17)).toFixed(2) + "%"
-	</script>
-	<script>
-		(function(a, e, f, g, b, c, d) {
-			a.GoogleAnalyticsObject = b;
-			a[b] = a[b] || function() {(a[b].q = a[b].q || []).push(arguments)};
-			a[b].l = 1 * new Date;
-			c = e.createElement(f);
-			d = e.getElementsByTagName(f)[0];
-			c.async = 1;
-			c.src = g;
-			d.parentNode.insertBefore(c, d)
-		})(window, document, "script", "https://www.google-analytics.com/analytics.js", "ga");
-		ga("create", "UA-79171090-1", "auto");
-		ga("send", "pageview");
-	</script>
 </body></html>
