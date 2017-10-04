@@ -41,7 +41,7 @@
   </main>
 	<p class="ac psr psf-l b0 r0 pb3 p5-l mon"><a class="hvn fwn" href="/wiki/aequirys"><small id="date" title="Aequirys">{Date}</small></a></p>
 	<p class="ac psr psf-l b0 l0 pb5 p5-l mon upc"><small>&copy; 2017 <a href="/wiki/personal/josh" title="Josh Avanier">JA</a></small></p>
-  {% if page.scr %}{% for script in page.scr %}<script src="{{ script }}"></script>{% endfor %}{% endif %}
+  {% if page.scr %}{% for script in page.scr %}<script src="{{ site.url }}/scripts/{{ script }}.js"></script>{% endfor %}{% endif %}
 	<script src="https://joshavanier.github.io/aequirys/aequirys.js"></script>
 	<script src="https://joshavanier.github.io/mors/mors.min.js"></script>
 	<script>
