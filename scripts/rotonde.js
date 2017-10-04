@@ -12,7 +12,7 @@ function load(rotonde) {
 		t.className = "db mb2 f6 mon"
 		t.innerHTML = convertTime(feed[i].time)
 
-		d.appendChild(entry)
+		d.appendChild(e)
 		e.className = "db mb4"
 		e.innerHTML = feed[i].text
 	}
