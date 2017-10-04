@@ -1,7 +1,7 @@
 languages:
-  - JavaScript
-  - HTML
   - CSS
+  - HTML
+  - JavaScript
   - Python
   - Ruby
   - Shell
