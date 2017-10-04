@@ -3,33 +3,28 @@ function load(rotonde) {
 		con = document.getElementById("feed")
 
 	for (let i = feed.length - 1; i >= 0; i--) {
-		let div = document.createElement('div'),
-			time = document.createElement('span'),
-			entry = document.createElement('span')
+		let d = document.createElement('div'),
+  			t = document.createElement('span'),
+  			e = document.createElement('span')
 
-		con.appendChild(div)
+		con.appendChild(d)
+    d.appendChild(time)
+		t.className = "db mb2 f6 mon"
+		t.innerHTML = convertTime(feed[i].time)
 
-		div.appendChild(time)
-		time.classList.add("db")
-		time.classList.add("mb2")
-		time.classList.add("f6")
-		time.classList.add("mon")
-		time.innerHTML = convertTime(feed[i].time)
-
-		div.appendChild(entry)
-		entry.classList.add("db")
-		entry.classList.add("mb4")
-		entry.innerHTML = feed[i].text
+		d.appendChild(entry)
+		e.className = "db mb4"
+		e.innerHTML = feed[i].text
 	}
 }
 
 function convertTime(t) {
-	let date = new Date(t * 1000),
-	    hours = date.getHours(),
-		  minutes = "0" + date.getMinutes(),
-		  seconds = "0" + date.getSeconds()
+	let d = new Date(t * 1000),
+	    h = d.getHours(),
+		  m = "0" + d.getMinutes(),
+		  s = "0" + d.getSeconds()
 
-	return pad(hours) + ':' + minutes.substr(-2) + ':' + seconds.substr(-2)
+	return pad(h) + ':' + m.substr(-2) + ':' + s.substr(-2)
 }
 
 function pad(n) {
