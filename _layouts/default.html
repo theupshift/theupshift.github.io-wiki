@@ -4,12 +4,12 @@
 	<meta name="viewport" content="width=device-width, minimum-scale = 1.0, initial-scale = 1.0, maximum-scale = 5.0, user-scalable=yes">
 	<title>&#11041; · {{ page.title }}</title>
 	<meta name="author" content="Josh Avanier">
-	<meta name="description" content="The Memex is a wiki about Josh Avanier and his works.">
+	<meta name="description" content="The Memex is a wiki about Josh Avanier and his oeuvre.">
   <meta name="keywords" content="Portfolio, Art, Design, Code, Worldbuilding">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:creator" content="@joshavanier">
   <meta name="twitter:title" content="The Memex">
-  <meta name="twitter:description" content="The Memex is a wiki about Josh Avanier and his works.">
+  <meta name="twitter:description" content="The Memex is a wiki about Josh Avanier and his oeuvre.">
   <meta name="twitter:image" content="https://joshavanier.github.io/img/memex.png">
 	<link rel="stylesheet" href="https://joshavanier.github.io/macian/macian.min.css">
 	<style>
@@ -41,6 +41,8 @@
 		<div>{{ content }}</div>
   </main>
 	<p class="ac psr psf-l b0 r0 pb3 p5-l mon"><a class="hvn fwn" href="/wiki/aequirys"><small id="date" title="Aequirys">{Date}</small></a></p>
-	<p class="ac psr psf-l b0 l0 pb5 p5-l mon upc"><small>&copy; 2017 <a href="/wiki/personal/josh" title="Josh Avanier">JA</a></small></p>
+	<p class="ac psr psf-l b0 l0 pb5 p5-l mon upc tk"><small>&copy; MMXVII <a href="/wiki/personal/josh" title="Josh Avanier">JA</a></small></p>
   {% if page.scr %}{% for script in page.scr %}<script src="{{ site.url }}/scripts/{{ script }}.js"></script>{% endfor %}{% endif %}
+
+  <script src="">{{ site.url }}/scripts/log.js</script>
 </body></html>
