@@ -1,4 +1,18 @@
 ---
 layout: default
 ---
-<h2 class="mb3 pb2 f2 ac al-l">{{ page.title }}</h2><div class="mb4 bg-fff bsa cover bg-c hf">{% if page.scrn %}<div class="banner cover bg-c bg-noir" style="background-image: url({{ site.url }}/img/{{ page.scrn }})"></div>{% endif %}<div class="p4 p5-m p5-l">{{ page.content }}{% assign pages = site.wiki | where: "categories", page.title %}<ul class="mt4 pt3 bt lsn r">{% for post in pages %}<li class="c4 c6-s c4-l pv3 pr3 f6"><p class="mb2 mon upc fwb tk"><a href="{{ post.url }}" title="">{{ post.title }}</a></p><p class="lhc">{{ post.desc }}</p></li>{% endfor %}</ul></div></div>
+<h2 class="mb3 pb2 f2 lht ac al-l">{{ page.title }}</h2>
+
+{% if page.scrn %}
+<img class="bsa" src="{{ site.url }}/img/{{ page.scrn }}">
+{% endif %}
+
+<div class="pt4">{{ page.content }}{% assign pages = site.wiki | where: "categories", page.title %}<ul class="mt3 lsn r">{% for post in pages %}
+  <li class="c4 c6-s c4-l p3 pl0 pb0">
+    <a href="{{ post.url }}" class="hvn">
+      <div class="bg-eee box p3">
+        <p class="fwb">{{ post.title }}</p>
+        <p class="f6">{{ post.desc }}</p>
+      </div>
+    </a>
+  </li>{% endfor %}</ul></div>

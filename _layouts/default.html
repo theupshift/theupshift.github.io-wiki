@@ -13,7 +13,6 @@
   <meta name="twitter:image" content="https://joshavanier.github.io/img/memex.png">
 	<link rel="stylesheet" href="https://joshavanier.github.io/macian/macian.min.css">
 	<style>
-		.bg-fff {background-color: #fff}
 		main {max-width: 900px}
 		a {color: #202020}
     .banner {height: 343.7694px; max-width: 900px}
@@ -22,6 +21,12 @@
       color: #f8f8f8;
       text-decoration: none;
     }
+    .bg-aaa {background-color: #aaa}
+    .bg-bbb {background-color: #bbb}
+    .bg-ccc {background-color: #ccc}
+    .bg-ddd {background-color: #ddd}
+    .bg-eee {background-color: #eee}
+    .bg-fff {background-color: #fff}
 	</style>
   <script defer src="https://joshavanier.github.io/aequirys/aequirys.js"></script>
 	<script defer src="https://joshavanier.github.io/mors/mors.min.js"></script>
@@ -32,16 +37,16 @@
       <svg viewBox="850 950 2000 2000" width="42"><path d="M 1286.155 2295.976 L 1286.111 1627.386 L 1863.595 1294.591 L 2441.515 1627.545 L 2441.558 2295.438 L 1863.551 2628.509 L 1286.155 2295.976 Z" style="stroke: #202020; stroke-width: 3.81em; fill: #f8f8f8;" bx:origin="0.5 0.5"/><ellipse style="stroke: #202020; stroke-width: 3.81em; fill: #f8f8f8;" cx="1856.872" cy="2075.716" rx="400" ry="400" bx:origin="-1.7983496189117432 -2.0522215366363525"/><path d="M 1429.667 2182.006 L 1429.667 2153.976 L 1853.121 1909.122 L 2080.832 1892.675 L 2303.446 2021.703 L 2303.446 2121.313 L 1429.667 2182.006 Z" style="stroke: #202020; stroke-width: 3.81em; fill: #f8f8f8;" transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, -3.057604610919725, -1.5288023054599762)" bx:origin="0.5 0.5"/><path d="M 1426.779 2376.867 L 1426.9 2152.673 L 1978.272 1833.825 L 2300.74 2020.112 L 2301.103 2376.264 L 2441.633 2295.254 L 2441.511 1627.377 L 1863.579 1294.404 L 1286.008 1627.377 L 1286.249 2296.099 L 1426.779 2376.867 Z" style="stroke: #202020; stroke-width: 3.81em; fill: #f8f8f8;" bx:origin="0.5 0.5"/></svg>
     </a>
   </header>
-	<div class="dn db-l psr psf-l t0 r0 p4 p5-l"><a class="hvn" href="{{ site.url }}/wiki/horology/mors"><small id="mortem" title="Mortem Progression"></small></a></div>
-	<main class="mb5 mv5-m mv0-l cn ph0 ph4-m ph5-l w7-l">
-    <div class="mb5 f6 fwb mon upc tk ac al-l">{% assign crumbs = page.url | remove:'/index.html' | split: '/' %}<a class="hvn" href="/" title="There's no place like&hellip;">~</a>{% for crumb in crumbs offset: 1 %}{% if forloop.last %} · {{ crumb | replace:'-',' ' | remove:'.html' | capitalize
+	<div class="dn db-l psr psf-l t0 r0 p4 p5-l"><a class="hvn c-5" href="{{ site.url }}/wiki/horology/mors"><small id="mortem" title="Mortem Progression"></small></a></div>
+	<main class="mb5 mv5-m mv0-l cn ph0 ph4-m ph5-l w6-l">
+    <div class="mb5 f6 lhc mon upc tk ac al-l">{% assign crumbs = page.url | remove:'/index.html' | split: '/' %}<a class="hvn" href="/" title="There's no place like&hellip;">~</a>{% for crumb in crumbs offset: 1 %}{% if forloop.last %} · {{ crumb | replace:'-',' ' | remove:'.html' | capitalize
       }}{% else %} · <a class="hvn" href="{% assign crumb_limit = forloop.index | plus: 1 %}{% for crumb in crumbs limit: crumb_limit %}{{ crumb | append: '/' }}{% endfor %}">{{ crumb | replace:'-',' ' | remove:'.html' | capitalize }}</a>{% endif %}{% endfor
       %}
     </div>
 		<div>{{ content }}</div>
   </main>
-	<p class="ac psr psf-l b0 r0 pb3 p5-l mon"><a class="hvn fwn" href="/wiki/aequirys"><small id="date" title="Aequirys">{Date}</small></a></p>
-	<p class="ac psr psf-l b0 l0 pb5 p5-l mon upc tk"><small>&copy; MMXVII <a href="/wiki/personal/josh" title="Josh Avanier">JA</a></small></p>
+	<p class="ac psr psf-l b0 r0 pb3 p5-l mon"><a class="hvn c-5" href="/wiki/aequirys"><small id="date" title="Aequirys">X&#183;00&#183;00</small></a></p>
+	<p class="ac psr psf-l b0 l0 pb5 p5-l mon c-5"><small>&copy; 2017 <a class="c-5" href="/wiki/personal/josh" title="Josh Avanier">JA</a></small></p>
   {% if page.scr %}{% for script in page.scr %}<script src="{{ site.url }}/scripts/{{ script }}.js"></script>{% endfor %}{% endif %}
 
   <script src="">{{ site.url }}/scripts/log.js</script>
