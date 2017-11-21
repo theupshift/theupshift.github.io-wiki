@@ -1,25 +1,6 @@
-academia:
-  sect:       <a class="fwb" href="/wiki/academia">Academia</a>
-code:
-  sect:       <a class="fwb" href="/wiki/code">Code</a>
-equipment:
-  sect:       <a class="fwb" href="/wiki/equipment">Equipment</a>
-  andromeda:  <a class="fwb" href="/wiki/equipment/andromeda">Andromeda</a>
-  bateau:     <a class="fwb" href="/wiki/equipment/bateau">Bateau</a>
-  navire:     <a class="fwb" href="/wiki/equipment/navire">Navire</a>
-horology:
-  sect:       <a class="fwb" href="/wiki/horology">Horology</a>
-  horarium:   <a class="fwb" href="/wiki/horology/horarium">Horarium</a>
-  log:        <a class="fwb" href="/wiki/horology/log">Log</a>
-  mors:       <a class="fwb" href="/wiki/horology/mors">Mors</a>
-kamera:
-  sect:       <a class="fwb" href="/wiki/kamera">Kamera</a>
-mathematica:
-  sect:       <a class="fwb" href="/wiki/mathematica">Mathematica</a>
 personal:
   sect:       <a class="fwb" href="/wiki/personal">Personal</a>
   josh:       <a class="fwb" href="/wiki/personal/josh">Josh Avanier</a>
-  journey:    <a class="fwb" href="/wiki/personal/journey">Journey</a>
   list:       <a class="fwb" href="/wiki/personal/list">List</a>
 vide:
   sect:       <a class="fwb" href="/wiki/vide">Vide</a>
@@ -31,13 +12,14 @@ cargo:        <a class="fwb" href="/wiki/cargo">Cargo</a>
 eau:          <a class="fwb" href="/wiki/eau">Eau</a>
 haiaku:       <a class="fwb" href="/wiki/haiaku">Haiaku</a>
 heather:      <a class="fwb" href="/wiki/heather">Heather</a>
+log:          <a class="fwb" href="/wiki/log">Log</a>
 macian:       <a class="fwb" href="/wiki/macian">Macian</a>
 memex:        <a class="fwb" href="/wiki/memex">Memex</a>
 monocal:      <a class="fwb" href="/wiki/monocal">MONOCAL</a>
+mors:         <a class="fwb" href="/wiki/mors">Mors</a>
 noctanite:    <a class="fwb" href="/wiki/noctanite">Noctanite</a>
 numbers:      <a class="fwb" href="/wiki/numbers">Numbers</a>
 porte:        <a class="fwb" href="/wiki/porte">Porte</a>
 rovarspraket: <a class="fwb" href="/wiki/rovarspraket">Rovarspraket</a>
 texte:        <a class="fwb" href="/wiki/texte">Texte</a>
-vivian:       <a class="fwb" href="/wiki/vivian">Vivian</a>
 wardrobe:     <a class="fwb" href="/wiki/wardrobe">Wardrobe</a>
