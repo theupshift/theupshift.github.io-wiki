@@ -38,12 +38,10 @@
     </a>
   </header>
 	<div class="dn db-l psr psf-l t0 r0 p4 p5-l"><a class="hvn c-5" href="{{ site.url }}/wiki/horology/mors"><small id="mortem" title="Mortem Progression"></small></a></div>
-	<main class="mb5 mv5-m mv0-l cn ph0 ph4-m ph5-l w6-l">
-    <div class="mb5 f6 lhc mon upc tk ac al-l">{% assign crumbs = page.url | remove:'/index.html' | split: '/' %}<a class="hvn" href="/" title="There's no place like&hellip;">~</a>{% for crumb in crumbs offset: 1 %}{% if forloop.last %} · {{ crumb | replace:'-',' ' | remove:'.html' | capitalize
-      }}{% else %} · <a class="hvn" href="{% assign crumb_limit = forloop.index | plus: 1 %}{% for crumb in crumbs limit: crumb_limit %}{{ crumb | append: '/' }}{% endfor %}">{{ crumb | replace:'-',' ' | remove:'.html' | capitalize }}</a>{% endif %}{% endfor
-      %}
-    </div>
-		<div>{{ content }}</div>
+	<main class="mb5 mv5-m mv0-l cn ph3 ph4-m ph5-l w6-l">
+    <div class="mb4 f6 lhc mon upc tk ac al-l">{% assign crumbs = page.url | remove:'/index.html' | split: '/' %}<a href="/" title="There's no place like&hellip;">~</a>{% for crumb in crumbs offset: 1 %}{% if forloop.last %} · {{ crumb | replace:'-',' ' | remove:'.html' | capitalize
+    }}{% else %} · <a href="{% assign crumb_limit = forloop.index | plus: 1 %}{% for crumb in crumbs limit: crumb_limit %}{{ crumb | append: '/' }}{% endfor %}">{{ crumb | replace:'-',' ' | remove:'.html' | capitalize }}</a>{% endif %}{% endfor %}</div>
+		{{ content }}
   </main>
 	<p class="ac psr psf-l b0 r0 pb3 p5-l mon"><a class="hvn c-5" href="/wiki/aequirys"><small id="date" title="Aequirys">X&#183;00&#183;00</small></a></p>
 	<p class="ac psr psf-l b0 l0 pb5 p5-l mon c-5"><small>&copy; 2017 <a class="c-5" href="/wiki/personal/josh" title="Josh Avanier">JA</a></small></p>

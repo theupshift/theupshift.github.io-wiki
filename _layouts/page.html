@@ -1,14 +1,14 @@
 ---
 layout: default
 ---
-<h2 class="mb2 pb2 f2 lht">{{ page.title }}</h2><div class="mb4">
-
-{% if page.scrn %}
-<img class="bsa" src="{{ site.url }}/img/{{ page.scrn }}">
-{% endif %}
-
-<div class="ph4 pt5">{{ page.content }}</div>
-
-{% if page.lang %}<div class="mt5 pt4 bt f6 mon"><span class="db dib-l mb3"><b>{{ page.prim }}</b> {{ page.lang }}</span><span class="db dib-l rf-l"><a class="p2 bg-e box" href="https://github.com/joshavanier/{{ page.repo }}/" target="_blank" title="Source">Repository</a></span></div>{% endif %}
-
+<h2 class="mb2 pt2 f2 ac al-l">{{ page.title }}</h2>
+<div class="f6">
+  {% if page.desc %}<span class="db dib-l mb3 f4 c-3">{{ page.desc }}</span>{% endif %}
+  <span class="db dib-l rf-l">
+    {% if page.download %}<a class="ml2 p2 bg-e box" href="{{ page.download }}" target="_blank" title="Download {{ page.title }}">Download</a>{% endif %}
+    {% if page.live %}<a class="ml2 p2 bg-e box" href="{{ page.live }}" target="_blank" title="View">View</a>{% endif %}
+    {% if page.repo %}<a class="ml2 p2 bg-e box" href="https://github.com/joshavanier/{{ page.repo }}/" target="_blank" title="Source">Repository</a>{% endif %}
+  </span>
 </div>
+{% if page.scrn %}<img class="mb4" src="{{ site.url }}/img/{{ page.scrn }}">{% endif %}
+{{ page.content }}
