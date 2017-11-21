@@ -1,7 +1,0 @@
----
-layout: sector
-title: Projects
-desc: Creations
-categories: Code
----
-<p class="mb4">Here is a list of <b>Projects</b> I worked on, have been working on, and am working on.</p>{% assign projects = site.wiki | where: "categories", "Project" %}<ul class="lsn r">{% for post in projects %}<li class="c4 c6-s c4-l pv3 pr3 f6"><p class="mb2 mon upc fwb tk"><a href="{{ post.url }}" title="">{{ post.title }}</a></p><p class="lhc">{{ post.desc }}</p></li>{% endfor %}</ul>
