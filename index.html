@@ -3,13 +3,18 @@ layout: default
 title: Home
 scr: activity
 ---
-<div class="bg-fff mb4 bsa">
-  <div class="banner cover bg-c bg-noir" style="background-image: url({{ site.url }}/img/memex.png)"></div>
-  <div class="p4 pb5 p5-m p5-l">
-    <p class="mb5">Welcome to the {{ site.data.dir.memex }}, a place wherein a collection of various creations, artifacts, and accumulated knowledge is stored and curated by {{ site.data.dir.personal.josh }}. Josh is a <span title="'Be who you wish to seem.' - Socrates">self-proclaimed artist</span> on a {{ site.data.dir.personal.journey }} to explore the world of {{ site.data.dir.vide.mithvaer }}. He also wrote this paragraph.</p>
-    <h3 class="mb2 f3">Navigation</h3>
-    <ul class="mb5 lsn r">{% assign page = site.pages | where: "categories", "Page" %}{% for post in page %}<li class="c4 c6-s c4-l pv3 pr3 f6"><p class="mb2 mon upc fwb tk"><a href="{{ post.url }}" title="">{{ post.title }}</a></p><p class="lhc">{{ post.desc }}</p></li>{% endfor %}</ul>
-    <h3 class="mb3 f3">Activity</h3>
-    <div class="bg-noir blanc br1 bsia p4" id="feed"><a class="db mb4 red mon f6 upc fwb tk" href="/rotonde/feed">Rotonde</a></div>
-  </div>
-</div>
+<h2 class="mb3 pt2 pb1 f2 ac al-l">Welcome</h2>
+
+<img class="bsa" src="{{ site.url }}/img/memex.png">
+
+{% assign page = site.pages | where: "categories", "Page" %}
+<ul class="lsn r">
+  {% for post in page %}<li class="c4 c6-s c4-l p3 pl0-l pb0-l">
+    <a href="{{ post.url }}" class="hvn">
+      <div class="bg-eee box p3">
+        <p class="fwb lhc">{{ post.title }}</p>
+        <p class="c-5 f6">{{ post.desc }}</p>
+      </div>
+    </a>
+  </li>{% endfor %}
+</ul>

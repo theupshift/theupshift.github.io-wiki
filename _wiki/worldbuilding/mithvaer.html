@@ -1,0 +1,16 @@
+---
+title: Mithvaer
+desc: A new world
+categories: Worldbuilding
+live: https://mithvaer.github.io/
+scrn: mithvaer.png
+---
+<p class="mb5"><b>Mithvaer</b> is a planet. As of yet, not much is known about it. There are many questions to ask, many answers to seek, many riddles to solve, and many mysteries to unveil. To know more, I am embarking on a {{ site.data.dir.personal.journey }}.</p>
+
+<h2 class="mb3 f4">Planetary Information</h2>
+<p class="mb3">A work-in-progress, all values are approximate:</p>
+<ul class="lsn r f6">
+  {% for item in site.data.mithvaer %}
+  <li class="c6"><b>{{ item.name }}</b>: {{ item.val }}</li>
+  {% endfor %}
+</ul>

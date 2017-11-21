@@ -1,0 +1,11 @@
+---
+title: Mors
+desc: Death counter
+repo: mors
+live: https://joshavanier.github.io/mors/
+scrn: mors.png
+categories: Horology Project
+---
+<p class="mb3"><b>Mors</b> calculates estimated statistical information regarding death, assuming an average life expectancy of 70 &oplus; years.</p>
+
+<ul class="lsn r">{% for item in site.data.dictionary.mors %}<li class="c6"><b>{{ item.w }}</b>: {{ item.d }}</li>{% endfor %}</ul>
