@@ -1,9 +1,0 @@
-mors:
-  - w: NLD
-    d: Number of Days Lived
-  - w: PRO
-    d: Mortem Progression
-  - w: ETR
-    d: Estimated Time Remaining
-  - w: EDD
-    d: Estimated Date of Death
