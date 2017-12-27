@@ -2,16 +2,12 @@
 layout: default
 ---
 <h2 class="mb3 pt2 pb1 f2 ac al-l">{{ page.title }}</h2>
-
-{% if page.scrn %}
-<img class="mb4" src="{{ site.url }}/img/{{ page.scrn }}">
-{% endif %}
-
+{% if page.scrn %}<img class="mb4" src="{{ site.url }}/img/{{ page.scrn }}">{% endif %}
 {{ page.content }}
 {% assign pages = site.wiki | where: "categories", page.title %}<ul class="lsn r">{% for post in pages %}
   <li class="c4 c6-s c4-l p3 pl0 pb0">
     <a href="{{ post.url }}" class="hvn">
-      <div class="bg-eee box p3">
+      <div class="bg-e box p3">
         <p class="fwb">{{ post.title }}</p>
         <p class="f6">{{ post.desc }}</p>
       </div>

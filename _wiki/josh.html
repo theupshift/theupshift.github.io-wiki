@@ -1,0 +1,30 @@
+---
+layout: page
+title: Josh Avanier
+desc: A polyhistoric wanderer
+scr: [mors, mors.progress]
+scrn: josh.png
+---
+<p class="mb4"><b>Josh</b> is an explorer wandering the world of {{ site.data.dir.vide.mithvaer }}.</p>
+
+<h3 class="mb3 f4">Hobbies</h3>
+<ul class="mb4 lsn r">{% for hobby in site.data.hobbies %}<li class="c4 c6-s c6-m">{{ hobby }}</li>{% endfor %}</ul>
+
+<h3 class="mb3 f4">Interests</h3>
+<ul class="mb4 lsn r">{% for interest in site.data.interests %}<li class="c4 c6-s c6-m">{{ interest }}</li>{% endfor %}</ul>
+
+<h3 class="mb3 f4">Mortem</h3>
+<p class="mb4">Completely disregarding daily risks and factors that may accelerate what is inevitable and assuming a life expectancy of ~70 &oplus; years, here is an estimate of how much time I have left in this realm.</p>
+
+<div class="mb4 p4 f6 mon bg-noir blanc">
+  <p class="mb3 upc tk"><a class="red hvn fwb" href="/wiki/horology/mors">Mors</a></p>
+  <progress id="mortprog" class="sh2 mb3 wf bg-noir red" min="0" max="25567.5"></progress>
+  <ul class="lsn r">
+    <li class="c4"><span class="tk" title="Progress">PRO</span>: <span id="PRO"></span></li>
+    <li class="c4"><span class="tk" title="Estimated Time Remaining">ETR</span>: <span id="ETR"></span></li>
+    <li class="c4"><span class="tk" title="Estimated Year of Death">EYD</span>: <span id="EYD"></span></li>
+  </ul>
+</div>
+
+<h3 class="mb3 f4">Web</h3>
+<ul class="lsn r">{% for web in site.data.web %}<li class="c3 c6-s c6-m"><a class="fwb" href="{{ web.url }}" target="_blank">{{ web.name }}</a></li>{% endfor %}</ul>

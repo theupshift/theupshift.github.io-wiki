@@ -1,10 +1,3 @@
-personal:
-  sect:       <a class="fwb" href="/wiki/personal">Personal</a>
-  josh:       <a class="fwb" href="/wiki/personal/josh">Josh Avanier</a>
-  list:       <a class="fwb" href="/wiki/personal/list">List</a>
-vide:
-  sect:       <a class="fwb" href="/wiki/vide">Vide</a>
-  mithvaer:   <a class="fwb" href="/wiki/vide/mithvaer">Mithvaer</a>
 aequirys:     <a class="fwb" href="/wiki/aequirys">Aequirys</a>
 arachne:      <a class="fwb" href="/wiki/arachne">Arachne</a>
 bainari:      <a class="fwb" href="/wiki/bainari">Bainari</a>
@@ -12,9 +5,11 @@ cargo:        <a class="fwb" href="/wiki/cargo">Cargo</a>
 eau:          <a class="fwb" href="/wiki/eau">Eau</a>
 haiaku:       <a class="fwb" href="/wiki/haiaku">Haiaku</a>
 heather:      <a class="fwb" href="/wiki/heather">Heather</a>
+josh:       <a class="fwb" href="/wiki/josh">Josh Avanier</a>
 log:          <a class="fwb" href="/wiki/log">Log</a>
 macian:       <a class="fwb" href="/wiki/macian">Macian</a>
 memex:        <a class="fwb" href="/wiki/memex">Memex</a>
+mithvaer:   <a class="fwb" href="/wiki/mithvaer">Mithvaer</a>
 monocal:      <a class="fwb" href="/wiki/monocal">MONOCAL</a>
 mors:         <a class="fwb" href="/wiki/mors">Mors</a>
 noctanite:    <a class="fwb" href="/wiki/noctanite">Noctanite</a>
@@ -22,4 +17,5 @@ numbers:      <a class="fwb" href="/wiki/numbers">Numbers</a>
 porte:        <a class="fwb" href="/wiki/porte">Porte</a>
 rovarspraket: <a class="fwb" href="/wiki/rovarspraket">Rovarspraket</a>
 texte:        <a class="fwb" href="/wiki/texte">Texte</a>
-wardrobe:     <a class="fwb" href="/wiki/wardrobe">Wardrobe</a>
+risu:     <a class="fwb" href="/wiki/risu">Risu</a>
+qyllium:     <a class="fwb" href="/wiki/qyllium">Qyllium</a>

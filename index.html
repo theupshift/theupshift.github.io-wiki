@@ -1,20 +1,19 @@
 ---
 layout: default
 title: Home
-scr: activity
 ---
-<h2 class="mb3 pt2 pb1 f2 ac al-l">Welcome</h2>
+<h2 class="mb3 pt2 pb1 f3 ac al-l">Welcome</h2>
 
-<img class="bsa" src="{{ site.url }}/img/memex.png">
+<img src="{{ site.url }}/img/memex.png" alt="The Memex">
 
-{% assign page = site.pages | where: "categories", "Page" %}
-<ul class="lsn r">
-  {% for post in page %}<li class="c4 c6-s c4-l p3 pl0-l pb0-l">
-    <a href="{{ post.url }}" class="hvn">
-      <div class="bg-eee box p3">
-        <p class="fwb lhc">{{ post.title }}</p>
-        <p class="c-5 f6">{{ post.desc }}</p>
-      </div>
-    </a>
-  </li>{% endfor %}
-</ul>
+<div class="r">
+
+  <div class="mt3 c8 pr4-l">
+    <p class="m">The Memex is a library of information.</p>
+  </div>
+
+  <div class="mt2 c4">
+    <a href="/wiki" class="rf hvn bg-e box pv2 ph3">Access the Memex</a>
+  </div>
+
+</div>

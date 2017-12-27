@@ -1,13 +1,13 @@
 ---
 layout: default
 ---
-<h2 class="mb2 pt2 f2 ac al-l">{{ page.title }}</h2>
-<div class="f6">
-  {% if page.desc %}<span class="db dib-l mb3 f4 c-3">{{ page.desc }}</span>{% endif %}
-  <span class="db dib-l rf-l">
-    {% if page.download %}<a class="ml2 p2 bg-e box" href="{{ page.download }}" target="_blank" title="Download {{ page.title }}">Download</a>{% endif %}
-    {% if page.live %}<a class="ml2 p2 bg-e box" href="{{ page.live }}" target="_blank" title="View">View</a>{% endif %}
-    {% if page.repo %}<a class="ml2 p2 bg-e box" href="https://github.com/joshavanier/{{ page.repo }}/" target="_blank" title="Source">Repository</a>{% endif %}
+<h2 class="mb2 pt2 f3 ac al-l">{{ page.title }}</h2>
+<div class="f6 mb4 mb1-l">
+  {% if page.desc %}<span class="db dib-l mb3 f4 c-5 ac al-l">{{ page.desc }}</span>{% endif %}
+  <span class="db dib-l rf-l ac al-l">
+    {% if page.download %}<a class="ml2 pv2 ph3 bg-e box br1" href="{{ page.download }}" target="_blank" title="Download {{ page.title }}">Download</a>{% endif %}
+    {% if page.live %}<a class="ml2 pv2 ph3 bg-e box br1" href="{{ page.live }}" target="_blank" title="View">View</a>{% endif %}
+    {% if page.repo %}<a class="ml2 pv2 ph3 bg-e box br1" href="https://github.com/joshavanier/{{ page.repo }}/" target="_blank" title="Source">Repository</a>{% endif %}
   </span>
 </div>
 {% if page.scrn %}<img class="mb4" src="{{ site.url }}/img/{{ page.scrn }}">{% endif %}

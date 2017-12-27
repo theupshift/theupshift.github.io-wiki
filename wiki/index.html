@@ -1,33 +1,18 @@
 ---
 layout: default
 title: Wiki
-desc: The Directory
+desc: Directory
 categories: Page
 ---
-<h2 class="mb3 pt2 pb1 f2 ac al-l">Directory</h2>
-
-{% assign sectors = site.wiki | where: "categories", "Sector" %}
-<h2 class="mb2 f4">Sectors</h2>
-<ul class="mb5 lsn r">
-  {% for post in sectors %}
-    <li class="c4 c6-s c4-l p3 pl0 pb0">
-      <a href="{{ post.url }}" class="hvn">
-        <div class="bg-eee box p3">
-          <p class="fwb lhc">{{ post.title }}</p>
-          <p class="c-5 f6">{{ post.desc }}</p>
-        </div>
-      </a>
-    </li>
-  {% endfor %}
-</ul>
+<h2 class="mb3 pt2 pb1 f3 ac al-l">Directory</h2>
 {% assign projects = site.wiki | where: "categories", "Project" %}
 <h2 class="mb2 f4">Projects</h2>
 <ul class="lsn r">
-  {% for post in projects %}<li class="c4 c6-s c4-l p3 pl0 pb0">
+  {% for post in projects %}<li class="c4 c6-s c4-l p3 pl0 pr0 pr3-m pr3-l pb0">
     <a href="{{ post.url }}" class="hvn">
-      <div class="bg-eee box p3">
-        <p class="fwb lhc">{{ post.title }}</p>
-        <p class="c-5 f6">{{ post.desc }}</p>
+      <div class="bg-e box p3">
+        <p class="fwb mb1">{{ post.title }}</p>
+        <p class="o7 f6 lhc">{{ post.desc }}</p>
       </div>
     </a>
     </li>{% endfor %}
