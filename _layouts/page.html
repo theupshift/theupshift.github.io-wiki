@@ -1,14 +1,53 @@
 ---
 layout: default
 ---
-<h2 class="mb2 pt2 f3 ac al-l">{{ page.title }}</h2>
-<div class="f6 mb4 mb1-l">
-  {% if page.desc %}<span class="db dib-l mb3 f4 c-5 ac al-l">{{ page.desc }}</span>{% endif %}
-  <span class="db dib-l rf-l ac al-l">
-    {% if page.download %}<a class="ml2 pv2 ph3 bg-e box br1" href="{{ page.download }}" target="_blank" title="Download {{ page.title }}">Download</a>{% endif %}
-    {% if page.live %}<a class="ml2 pv2 ph3 bg-e box br1" href="{{ page.live }}" target="_blank" title="View">View</a>{% endif %}
-    {% if page.repo %}<a class="ml2 pv2 ph3 bg-e box br1" href="https://github.com/joshavanier/{{ page.repo }}/" target="_blank" title="Source">Repository</a>{% endif %}
-  </span>
-</div>
+
 {% if page.scrn %}<img class="mb4" src="{{ site.url }}/img/{{ page.scrn }}">{% endif %}
-{{ page.content }}
+
+<!-- <h2 class="f2 lht ac al-l">{{ page.title }}</h2>
+{% if page.desc %}<span class="db dib-l mb4 f4 c-5 ac al-l">{{ page.desc }}</span>{% endif %} -->
+
+<div class="r">
+
+  <div class="rf-m rf-l mb4 c4 c4-m p3 f6 lhc bg-e">
+    <table class="bn wf">
+      <tbody>
+        {% if page.type %}
+        <tr><td class="fwb">Type</td><td>{{ page.type }}</td></tr>
+        {% endif %}
+
+        {% if page.status %}
+        <tr><td class="fwb">Status</td><td>{{ page.status }}</td></tr>
+        {% endif %}
+
+        {% if page.release %}
+        <tr><td class="fwb">Released</td><td>{{ page.release }}</td></tr>
+        {% endif %}
+
+        {% if page.platforms %}
+        <tr><td class="fwb">Platforms</td><td>{{ page.platforms }}</td></tr>
+        {% endif %}
+
+        {% if page.repo %}
+        <tr><td class="fwb">Repository</td><td><a href="https://github.com/joshavanier/{{ page.repo }}" title="View on GitHub">/{{ page.repo }}<span class="red">&deg;</span></a></td></tr>
+        {% endif %}
+
+        {% if page.license %}
+        <tr><td class="fwb">License</td><td>{{ page.license }}</td></tr>
+        {% endif %}
+
+        {% if page.lang %}
+        <tr><td class="fwb">Languages</td><td>{{ page.lang }}</td></tr>
+        {% endif %}
+      </tbody>
+    </table>
+
+  </div>
+
+  <div class="c8 c8-m pr4-m pr4-l">
+    <section class="m">
+      {{ page.content }}
+    </section>
+  </div>
+
+</div>
