@@ -1,19 +1,21 @@
 ---
 layout: default
+<!-- permalink: /wiki -->
 title: Home
 ---
-<h2 class="mb3 pt2 pb1 f3 ac al-l">Welcome</h2>
+<!-- <h2 class="mb3 pt2 pb1 f1 ac al-l">The Memex</h2> -->
 
-<img src="{{ site.url }}/img/memex.png" alt="The Memex">
+<img class="mb3" src="{{ site.url }}/img/memex.png" alt="The Memex">
 
-<div class="r">
-
-  <div class="mt3 c8 pr4-l">
-    <p class="m">The Memex is a library of information.</p>
-  </div>
-
-  <div class="mt2 c4">
-    <a href="/wiki" class="rf hvn bg-e box pv2 ph3">Access the Memex</a>
-  </div>
-
-</div>
+{% assign projects = site.wiki | where: "categories", "Project" %}
+<!-- <h2 class="mb2 f4">Projects</h2> -->
+<ul class="lsn r">
+  {% for post in projects %}<li class="c3 c4-m c3-l pv2">
+    <a href="{{ post.url }}" class="hvn">
+      <div class="">
+        <p class="fwb">{{ post.title }}</p>
+        <p class="o7 f6 lhc">{{ post.desc }}</p>
+      </div>
+    </a>
+    </li>{% endfor %}
+</ul>
