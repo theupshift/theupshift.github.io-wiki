@@ -14,7 +14,7 @@
   <link rel="shortcut icon" type="image/png" href="/favicon.png"/>
 	<link rel="stylesheet" href="https://joshavanier.github.io/macian/macian.min.css">
 	<style>
-		main {max-width: 900px}
+		body {max-width: 2000px}
 		a {color: #202020}
     .box:hover {
       background-color: #202020;
@@ -22,16 +22,12 @@
       text-decoration: none;
     }
 	</style>
-  <script defer src="https://joshavanier.github.io/aequirys/aequirys.js"></script>
-	<script defer src="https://joshavanier.github.io/mors/mors.min.js"></script>
-  <script defer src="{{ site.url }}/scripts/home.js"></script>
-</head><body class="noselect">
-  <header class="wf pt5 pb4 ph4 ph5-m ph0-l">
+  <script src="{{ site.url }}/bundle.js" async></script>
+</head><body class="noselect cn">
+  <header class="wf pt4 pt5-m pt5-l pb4 ph4 ph5-m ph0-l">
     <div class="w6-l cn">
-      <h1 class="dib f5 mr3"><a class="noir hvn" href="/">Memex</a> <span class="mh3">&middot;</span> {{ page.title }}</h1>
-      <div class="rf f6">
-        <a id="date" class="hvn c-5" href="/wiki/aequirys" title="Aequirys">X&#183;00&#183;00</a>
-      </div>
+      <h1 class="dib f5 mr3"><a class="noir hvn" href="/">Memex</a></h1>
+      <a id="date" class="hvn c-5 rf" href="/wiki/aequirys" title="Aequirys">X&#183;00&#183;00</a>
     </div>
   </header>
 
@@ -40,8 +36,8 @@
   </main>
 
   <footer class="wf pt4 pb5 ph5-m ph0-l">
-    <div class="w6-l cn ac al-m al-l">
-      <span class="f6">&copy; 2017&ndash;2018 <a class="c-5" href="/wiki/josh" title="Josh Avanier">Josh Avanier</a></span>
+    <div class="w6-l cn ac al-m al-l f6 lhc">
+      &copy; 2017&ndash;2018 <a class="c-5" href="/wiki/josh" title="Josh Avanier">Josh Avanier</a></span>
     </div>
   </footer>
 
