@@ -30,16 +30,11 @@
       <a id="date" class="hvn c-5 rf" href="/wiki/aequirys" title="Aequirys">X&#183;00&#183;00</a>
     </div>
   </header>
-
-	<main class="cn mb4 w6-l ph4 ph5-m ph0-l">
-		{{ content }}
-  </main>
-
+	<main class="cn mb4 w6-l ph4 ph5-m ph0-l">{{ content }}</main>
   <footer class="wf pt4 pb5 ph5-m ph0-l">
     <div class="w6-l cn ac al-m al-l f6 lhc">
       &copy; 2017&ndash;2018 <a class="c-5" href="/wiki/josh" title="Josh Avanier">Josh Avanier</a></span>
     </div>
   </footer>
-
   {% if page.scr %}{% for script in page.scr %}<script src="{{ site.url }}/scripts/{{ script }}.js"></script>{% endfor %}{% endif %}
 </body></html>
