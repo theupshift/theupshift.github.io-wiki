@@ -6,20 +6,17 @@ scr: [mors, mors.progress]
 scrn: josh.png
 ---
 <div class="r">
-
   <div class="c8 pr4-l">
     <section class="m">
       <p class="mb4"><b>Josh Avanier</b> is a wanderer exploring the world of {{ site.data.dir.mithvaer }} through the creation of various projects.</p>
 
-      <h3 class="mb3 f5">Mortem</h3>
+      <h3 class="mb2 f5">Mortem</h3>
       <p class="mb2">Assuming an optimistic life expectancy of ~70 &oplus; years:</p>
 
       <progress id="mortprog" class="sh2 mb1 wf bg-noir red" min="0" max="25567.5"></progress>
       <p class="mb4 f6"><span>Life</span><span class="rf">Death</span></p>
 
-      <!-- <h3 class="mb3 f5">Rotonde</h3> -->
-
-      <h3 class="mb3 f5">Web</h3>
+      <h3 class="mb2 f5">Web</h3>
       <ul class="lsn r">{% for web in site.data.web %}<li class="c4 c6-s c6-m"><a class="fwb" href="{{ web.url }}" target="_blank">{{ web.name }}</a></li>{% endfor %}</ul>
     </section>
   </div>
@@ -32,7 +29,5 @@ scrn: josh.png
         <tr><td class="fwb">Location</td><td>Terra</td></tr>
       </tbody>
     </table>
-
   </div>
-
 </div>
