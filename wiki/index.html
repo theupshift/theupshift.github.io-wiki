@@ -4,16 +4,4 @@ title: Wiki
 desc: Directory
 categories: Page
 ---
-<h2 class="mb3 pt2 pb1 f4 ac al-l">Directory</h2>
-<!-- {% assign projects = site.wiki | where: "categories", "Project" %} -->
-<!-- <h2 class="mb2 f4">Projects</h2> -->
-<ul class="lsn r">
-  {% for post in site.wiki %}<li class="c3 c4-m c3-l pv2">
-    <a href="{{ post.url }}" class="hvn">
-      <div class="">
-        <p class="fwb">{{ post.title }}</p>
-        <p class="o7 f6 lhc">{{ post.desc }}</p>
-      </div>
-    </a>
-    </li>{% endfor %}
-</ul>
+<h2 class="mb3 pt2 pb1 f4 ac al-l">Directory</h2><ul class="lsn r"> {% for post in site.wiki %}<li class="c3 c4-m c3-l pv2"> <a href="{{ post.url }}" class="hvn"><p class="fwb">{{ post.title }}</p><p class="o7 f6 lhc">{{ post.desc }}</p> </a></li>{% endfor %}</ul>
