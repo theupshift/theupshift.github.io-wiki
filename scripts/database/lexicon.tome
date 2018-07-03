@@ -1,0 +1,315 @@
+DATABASE.lexicon = `
+HOME
+  SCRN : memex.png
+  BREF : Under construction
+  TYPE : Home
+
+JOSH
+  UNDE : Home
+  SCRN : josh.png
+  TYPE : Portal
+  BREF : {{Josh Avanier | Josh}} is a hobbyist.
+
+GOALS
+  UNDE : Josh
+  SCRN : memex.png
+  BREF : A list of things to achieve and accomplish
+  LONG
+    & Achieve 100% self-sufficiency and live a zero-waste lifestyle
+    & Create my own versions of things
+    & Reduce the need for sleep to as close to zero as possible
+    & Reduce personal possessions to only absolute necessities
+    & Constantly improve workflows and day-to-day routines through the Kaizen approach
+    & Graduate and then forget every useless thing I learned in school
+    & Acquire (or build) a boat and sail to the Bermuda Triangle
+    & Start a company that goes against business principles
+    & Contribute to any form of technological progress that will eventually make non-necessities like educational institutions and accountants obsolete
+    & Finish 10,000 projects before death
+
+TODO
+  UNDE : Josh
+  scrn : memex.png
+  BREF : A list of things to create
+  LONG
+    * Software
+    = Animation studio
+    = Calendar
+    = Conlang tool
+    = Ebook reader
+    = File manager
+    = Journal
+    = Kanji learning tool
+    = Music composer
+    = Music player
+    = Notes app ({{Qyllium}})
+    = Pixel art editor
+    = Presentation tool
+    = Roguelike creator
+    = Text editor/IDE
+    = Weather app
+    = Worldbuilding tool
+    * Things
+    = Custom phone
+    = Monocle device
+    = Pocket computer console ({{Holly}})
+    = Tricopter drone
+    = Wrist-mounted computer
+
+PROJECTS
+  UNDE : Josh
+  TYPE : Portal
+  BREF : Mostly unfinished symphonies
+
+UTILITIES
+  UNDE : Projects
+  SCRN : log.png
+  TYPE : Index
+  BREF : A collection of utilities created to help enhance my day-to-day life
+
+CARGO
+  UNDE : Utilities
+  BREF : {{Cargo}} is an upcoming personal inventory management tool.
+
+EAU
+  UNDE : Utilities
+  SCRN : eau.png
+  BREF : {{Eau}} was a hydration log.
+  LONG
+    & It was created to help me keep track of how much water I drink. Every time I rehydrate, I log the quantity in milliliters. The project was eventually discontinued, though I will revisit it again soon.
+  LINK
+    Github : https://github.com/joshavanier/eau
+
+LOG
+  UNDE : Utilities
+  SCRN : log.png
+  BREF : {{Log}} is a log and time-tracker.
+  LONG
+    & It is inspired by similar systems by Neauoire and vi. It is designed for single-tasking: start a log, focus on your task, and then end it when you're done.
+    & Commands are entered via a console. The app has a built-in Guide that contains a list of commands and their usage.
+    & Log is available as an Electron app on Linux, macOS, and Windows and can be downloaded on itch.io.
+    * Future
+    & A CLI variant and a mobile app is being planned. The CLI variant is more likely to be created soon. Mobile app development is not a possibility with my current resources.
+  LINK
+    Itch.io : https://joshavanier.itch.io/log
+    Github : https://github.com/joshavanier/log
+
+QYLLIUM
+  UNDE : Utilities
+  SCRN : qyllium.png
+  BREF : {{Qyllium}} is an upcoming notes app.
+  LONG
+    & It is inspired by the bullet journal concept which is designed for rapid logging of tasks, notes, and events.
+  LINK
+    Itch.io : https://joshavanier.itch.io/qyllium
+    Github : https://github.com/joshavanier/qyllium
+
+RISU
+  UNDE : Utilities
+  SCRN : risu.png
+  BREF : {{Risu}} is an upcoming personal finance management tool.
+  LONG
+    & Risu is available as an Electron app.
+  LINK
+    Itch.io : https://joshavanier.itch.io/risu
+    Github : https://github.com/joshavanier/risu
+
+SOMNUS
+  UNDE : Utilities
+  SCRN : somnus.png
+  BREF : {{Somnus}} was a sleep log.
+  LONG
+    & It was created to eventually provide me with insight on how much I sleep. The process is admittedly tedious yet simple. I just record the approximate time I go to bed and the exact time I wake up. The moment I wake up, I immediately check the time.
+  LINK
+    Github : https://github.com/joshavanier/somnus
+
+WORLDBUILDING
+  UNDE : Projects
+  TYPE : Index
+  SCRN : mithvaer.png
+  BREF : Of realms and universes
+
+MITHVAER
+  UNDE : Worldbuilding
+  SCRN : mithvaer.png
+  BREF : {{Mithvaer}} is a planet yet to be explored.
+  LONG
+    & More information soon.
+
+VIDE
+  UNDE : Worldbuilding
+  BREF : {{Vide}} is an upcoming worldbuilding tool.
+  LONG
+    * Planned Features
+    & I want to create a tool that lets users create worlds with high in-depth details like planetary orbits, atmospheric compositions, gravity, etc.
+
+WEB
+  UNDE : Projects
+  TYPE : Index
+  BREF : A collection of random things built on the web
+
+CLAVIER
+  UNDE : Web
+  SCRN : clavier.png
+  BREF : {{Clavier}} is a keycode mapping utility.
+  LINK
+    Live : https://joshavanier.github.io/clavier
+    GitHub : https://github.com/joshavanier/clavier
+
+HAIAKU
+  UNDE : Web
+  SCRN : haiaku.png
+  BREF : {{Haiaku}} is a text converter.
+  LONG
+    & A friend wanted a tool that rewrites text in a top-down, right-to-left fullwidth format.
+  LINK
+    Live : https://joshavanier.github.io/haiaku
+    GitHub : https://github.com/joshavanier/haiaku
+
+KUMO
+  UNDE : Web
+  SCRN : kumo.png
+  BREF : {{Kumo}} is a Hacker News client.
+  LONG
+    & It's very simple and only shows the top 20 stories.
+  LINK
+    Live : https://joshavanier.github.io/kumo
+    Github : https://github.com/joshavanier/kumo
+
+MACIAN
+  UNDE : Web
+  SCRN : macian.png
+  BREF : {{Macian}} is a functional CSS framework
+  LONG
+    & Inspired by and based on Tachyons, Macian features a set of customisable utility classes.
+  LINK
+    Codex : https://joshavanier.github.io/macian
+    Github : https://github.com/joshavanier/macian
+
+NUMBERS
+  UNDE : Web
+  SCRN : numbers.png
+  BREF : {{Numbers}} is a random number facts generator lol.
+  LINK
+    Live : https://joshavanier.github.io/numbers
+    Github : https://github.com/joshavanier/numbers
+
+ROVARSPRAKET
+  UNDE : Web
+  SCRN : rovarspraket.png
+  BREF : {{Rövarspråket|Rovarspraket}} is a translator for the Swedish language game.
+  LONG
+    & Rövarspråket (The Robber Language) is a language game where consonants are doubled and an *o* is inserted in between while vowels remain as they are.
+    # Hello world - Hohelollolo wowororloldod
+  LINK
+    Live : https://joshavanier.github.io/rovarspraket
+    Github : https://github.com/joshavanier/rovarspraket
+    Wikipedia : https://en.wikipedia.org/wiki/R%C3%B6varspr%C3%A5ket
+
+GAMES
+  UNDE : Projects
+  TYPE : Index
+  SCRN : grymstorge.png
+  BREF : Mediums to facilitate play
+
+GRYMSTORGE
+  UNDE : Games
+  SCRN : grymstorge.png
+  BREF : {{Grymstorge}} is an unfinished exploration game built with {{Bitsy|https://ledoux.itch.io/bitsy}}.
+
+PORTE
+  UNDE : Games
+  SCRN : porte.png
+  BREF : {{Porte}} was a simple game about logic gates.
+  LONG
+    & It was made as a small experiment using the Bitsy game creator.
+  LINK
+    Live : https://joshavanier.github.io/porte
+    Github : https://github.com/joshavanier/porte
+
+QUOIN
+  UNDE : Games
+  SCRN : quoin.png
+  BREF : {{Quoin}} was an unfinished sales management game.
+  LONG
+    & I was taking a boring course called Sales and Selling. In order to motivate myself to study, I turned it into a game.
+    & You play as a budding shopkeeper in a place called Selletown. The point of the game was to make use of sales management and sales strategies to expand your business.
+    & Final exams flew by faster than I anticipated but I ended up passing the class and Quoin was left in the archives.
+  LINK
+    Github : https://github.com/joshavanier/quoin
+
+STRAVAGE
+  UNDE : Games
+  BREF : {{Stravage}} was an abandoned 2D platformer game.
+  LONG
+    & Its source code was lost in the ether due to an unfortunate drive malfunction.
+
+TEXTE
+  UNDE : Games
+  SCRN : texte.png
+  BREF : {{Texte}} is an unfinished tool for writing text-based games.
+  LONG
+    & It's a fork of {{vi|https://twitter.com/v_exec}}'s {{Visor|https://github.com/v-exec/Visor}}, a minimalist presentation tool. Games are written on .txt files following a simple syntax.
+    # $room - Set a room
+    # til - Title attribute
+    # con - Room contents
+    # bg - Background colour
+    # col - Text colour
+    # + - New line
+    # #[Action>Link] - Action button
+    * Example
+    # $Room1
+    # til: Room 1
+    # con:
+    # + This is the first room
+    # + #[Go forth>Room2]
+    # $Room2
+    # bg: #202020
+    # col: #f8f8f8
+    # til: Room 2
+    # con:
+    # + This is the second room. It's dark in here.
+    # + #[Go back>Room1]
+  LINK
+    GitHub : https://github.com/joshavanier/texte
+
+OBJECTS
+  UNDE : Projects
+  TYPE : Index
+  BREF : Physical items
+
+HOLLY
+  UNDE : Objects
+  BREF : {{Holly}} is a computer console.
+  LONG
+    & It's built with a {{Raspberry Pi Zero W|https://www.raspberrypi.org/products/raspberry-pi-zero-w}}, features a {{2.7-inch monochrome OLED display|https://www.adafruit.com/product/2674}}, and is powered by a 2700mAh lithium ion battery.
+    & The project's goal is to build a portable Linux console that can be used for simple tasks like writing notes and lightweight coding.
+
+VISUALS
+  UNDE : Projects
+  TYPE : Index
+  BREF : Visuals
+
+OWL CITY
+  UNDE : Visuals
+  BREF : The {{Owl City}} posters are my first attempts in design.
+  LONG
+    & The idea is simple: turn an Owl City song into a poster. I used GIMP and some free fonts. It was once a daily thing until it was discontinued when I entered university.
+  LINK
+    Tumblr : https://joshavanier.tumblr.com
+
+PIXELATTIRE
+  UNDE : Visuals
+  SCRN : pixelattire.png
+  BREF : {{Pixelattire}} is a pixel art log of daily outfits throughout 2018.
+  LONG
+    & The custom lightweight Tumblr theme used is available in the GitHub repository. Feel free to use and modify.
+  LINK
+    Tumblr : https://pixelattire.tumblr.com
+    Theme : https://github.com/joshavanier/pixelattire
+
+RESEARCH
+  UNDE : Home
+  TYPE : Portal
+  ICON : M60,240 a30,-30 0 0,1 30,-30 l150,0 M90,195 a30,-30 0 0,1 30,-30 l90,0 M120,150 a30,-30 0 0,1 30,-30 l30,0 M195,120 l45,0 M225,165 l15,0 M150,105 a30,-30 0 0,1 30,-30 l60,0
+  BREF : The {{Research}} hosts philosophy and linguistics projects.
+`

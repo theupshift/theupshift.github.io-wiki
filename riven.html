@@ -2,55 +2,55 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-  <title>Oscean</title>
-  <meta name="author" content="Josh Avanier">
-  <meta name="description" content="The Memex is Josh Avanier's wiki">
-  <meta name="keywords" content="Portfolio, Art, Design, Code, Worldbuilding">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:creator" content="@joshavanier">
-  <meta name="twitter:title" content="The Memex">
-  <meta name="twitter:description" content="The Memex is Josh Avanier's wiki">
-  <meta name="twitter:image" content="https://joshavanier.github.io/img/memex.png">
-  <link rel="shortcut icon" type="image/png" href="favicon.png" />
-
   <script src="scripts/lib/riven.js"></script>
+  <script src="scripts/lib/riven.graph.js"></script>
   <script src="scripts/lib/indental.js"></script>
+  <script src="scripts/lib/tablatal.js"></script>
   <script src="scripts/lib/runic.js"></script>
+  <script src="scripts/lib/desamber.js"></script>
+  <script src="scripts/lib/clock.js"></script>
   <script src="scripts/graph.js"></script>
 
   <script src="scripts/nodes/query.js"></script>
   <script src="scripts/nodes/router.js"></script>
   <script src="scripts/nodes/database.js"></script>
   <script src="scripts/nodes/indental.js"></script>
+  <script src="scripts/nodes/tablatal.js"></script>
   <script src="scripts/nodes/template.js"></script>
   <script src="scripts/nodes/dom.js"></script>
   <script src="scripts/nodes/dom.input.js"></script>
   <script src="scripts/nodes/dom.photo.js"></script>
   <script src="scripts/nodes/document.js"></script>
   <script src="scripts/nodes/operation.js"></script>
+  <script src="scripts/nodes/lietal.js"></script>
+  <script src="scripts/nodes/clock.js"></script>
+  <script src="scripts/nodes/desamber.js"></script>
+  <script src="scripts/nodes/path.js"></script>
 
   <script src="scripts/types/term.js"></script>
+  <script src="scripts/types/log.js"></script>
 
   <script type="text/javascript" src="scripts/database/lexicon.tome"></script>
+  <script type="text/javascript" src="scripts/database/horaire.tome"></script>
 
   <script src="scripts/template/page.js"></script>
   <script src="scripts/template/page.missing.js"></script>
   <script src="scripts/template/home.js"></script>
+  <script src="scripts/template/diary.js"></script>
   <script src="scripts/template/portal.js"></script>
   <script src="scripts/template/index.js"></script>
   <script src="scripts/template/docs.js"></script>
 
-  <link rel="stylesheet" href="css/fonts/inter-ui.css">
-  <link rel="stylesheet" href="css/macian.css">
-  <link rel="stylesheet" href="s.css">
+  <!-- <link rel="stylesheet" type="text/css" href="links/reset.css"/>
+  <link rel="stylesheet" type="text/css" href="links/riven.fonts.css"/> -->
+  <link rel="stylesheet" type="text/css" href="links/riven.main.css"/>
+  <title>Riven</title>
 </head>
-
 <body>
   <script>
-    const RIVEN = new Riven();
-    graph();
+    var RIVEN = new Riven_Graph();
+    graph()
+    RIVEN.graph();
   </script>
 </body>
-
 </html>
