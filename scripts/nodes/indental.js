@@ -1,10 +1,8 @@
-function IndentalNode(id, rect, type) {
-  Node.call(this, id, rect);
-
+function IndentalNode (id, type) {
+  Node.call(this, id);
   this.type = type;
-  this.glyph = NODE_GLYPHS.database;
 
-  this.answer = q => {
+  this.answer = (q) => {
     if (!DATABASE[this.id]) {
       console.warn(`Missing /database/${this.id}.js`);
       return null;
@@ -19,4 +17,4 @@ function IndentalNode(id, rect, type) {
   }
 }
 
-var DATABASE = {};
+const DATABASE = {};

@@ -1,51 +1,44 @@
-function PortalTemplate(id, rect, ...params) {
-  TemplateNode.call(this, id, rect);
-
-  this.glyph = NODE_GLYPHS.template;
+function PortalTemplate(id, ...params) {
+  TemplateNode.call(this, id);
 
   this.answer = q => {
-    const term = q.result;
-    const children = this.find_children(q.name, q.tables.lexicon);
+    const {result, name, tables: {lexicon}} = q;
+    const term = result;
+    const {unde} = result;
+    const children = this.findChildren(name, lexicon);
 
     return {
       title: q.name.capitalize(),
       view: {
         header: {
-          photo: q.result.scrn() || 'memex.png',
-          search: q.name,
+          unde: `<p><a onclick="Ø('query').bang('${unde}')">${unde}</a></p>`,
+          search: name,
         },
         core: {
           sidebar: {
-            bref: make_bref(term, q.tables.lexicon),
+            bref: `${makeLinks(term.links)}`,
           },
-          content: `<p>${q.result.bref()}</p>${q.result.long()}${make_portal(term.name, children, q.tables.horaire)}`
+          content: `${result.long}${makePortal(term.name, children)}`
         }
       }
     }
   }
 
-  const make_portal = (name, children, logs) => {
-    let html = '';
+  function makePortal (name, children, logs) {
+    let html = '<dl>';
 
-    for (let id in children) {
-      const child = children[id];
-      const img = child.scrn() === '' ? '' : `<a onclick='Ø("query").bang("${child.name}")'><img src="img/${child.scrn()}"/></a>`;
-      const title = `<h2><a onclick="Ø('query').bang('${child.name.to_url()}')">${child.name.capitalize()}</a></h2>`;
+    for (let i = 0; i < children.length; i++) {
+      const child = children[i];
+      const {name} = child;
+      const title = `<dt><a onclick="Ø('query').bang('${name.toURL()}')">${name.capitalize()}</a></dt>`;
 
-      html += `${img}${title}<hs>${child.bref().to_markup()}</hs>${!stop ? make_index(child.name,lexicon,logs,true) : ''}`;
+      html += `${title}<dd>${child.bref.toMarkup()}</dd>${!stop ? make_index(name, lexicon, logs, true) : ''}`;
     }
 
-    return html;
+    return `${html}</dl>`;
   }
 
-  const make_bref = (term, lexicon) => {
-    return `<p><a onclick="Ø('query').bang('${term.unde()}')">${term.unde()}</a></p>
-    ${make_links(term.links)}
-    ${this.make_navi(term, (term.unde() || ''), lexicon)}
-    `;
-  }
-
-  const make_links = links => {
+  function makeLinks (links) {
     let html = '';
     for (let id in links) {
       html += `<a href="${links[id]}" target="_blank">${id}</a>`;

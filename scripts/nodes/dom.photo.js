@@ -1,11 +1,10 @@
-function DomPhotoNode(id, rect, ...params) {
-  DomNode.call(this, id, rect);
+function DomPhotoNode(id, ...params) {
+  DomNode.call(this, id);
 
   this.media = document.createElement('media');
-  this.glyph = NODE_GLYPHS.photo;
 
-  this.install = elements => {
-    this.is_installed = true;
+  this.install = (elements) => {
+    this.isInstalled = true;
     this.el.appendChild(this.media);
 
     for (let id in elements) {
@@ -13,10 +12,9 @@ function DomPhotoNode(id, rect, ...params) {
     }
   }
 
-  this.update = content => {
+  this.update = (content) => {
     if (content !== '') {
       this.media.style.backgroundImage = `url(img/${content})`;
-      this.el.className = '';
     } else {
       this.el.className = 'empty';
       this.update_header();

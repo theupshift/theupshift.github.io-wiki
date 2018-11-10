@@ -1,27 +1,27 @@
 'use strict';
-function Indental(data) {
+
+function Indental (data) {
   this.data = data;
 
-  this.parse = type => {
+  this.parse = (type) => {
     const lines = this.data.split('\n').map(liner);
 
     // Assoc lines
     let stack = {};
     let target = lines[0];
-    for (let id in lines) {
-      const line = lines[id];
+
+    for (let i = 0; i < lines.length; i++) {
+      const line = lines[i];
       if (line.skip) continue;
       target = stack[line.indent - 2];
-      if (target) {
-        target.children[target.children.length] = line;
-      }
+      if (target) target.children[target.children.length] = line;
       stack[line.indent] = line;
     }
 
     // Format
     let h = {};
-    for (let id in lines) {
-      const line = lines[id];
+    for (let i = 0; i < lines.length; i++) {
+      const line = lines[i];
       if (line.skip || line.indent > 0) continue;
       const key = line.content.toUpperCase();
       h[key] = type ? new type(key, format(line)) : format(line);
@@ -30,26 +30,27 @@ function Indental(data) {
     return h;
   }
 
-  const format = line => {
+  function format(line) {
     let a = [];
     let h = {};
 
-    for (let id in line.children) {
-      const child = line.children[id];
+    for (let i = 0; i < line.children.length; i++) {
+      const child = line.children[i];
+      const {key, children, value, content} = child;
 
-      if (child.key) {
-        h[child.key.toUpperCase()] = child.value;
-      } else if (child.children.length === 0 && child.content) {
-        a[a.length] = child.content;
+      if (key) {
+        h[key.toUpperCase()] = value;
+      } else if (children.length === 0 && content) {
+        a[a.length] = content;
       } else {
-        h[child.content.toUpperCase()] = format(child);
+        h[content.toUpperCase()] = format(child);
       }
     }
 
     return a.length > 0 ? a : h;
   }
 
-  const liner = line => {
+  function liner (line) {
     return {
       indent: line.search(/\S|$/),
       content: line.trim(),

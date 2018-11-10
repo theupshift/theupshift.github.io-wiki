@@ -1,7 +1,5 @@
-function QueryNode(id, rect) {
-  Node.call(this, id, rect);
-
-  this.glyph = NODE_GLYPHS.entry;
+function QueryNode (id) {
+  Node.call(this, id);
   this.label = 'query';
 
   this.bang = (target = window.location.hash.substring(1).replace(/[^0-9a-z]/gi, ' ').trim().toLowerCase()) => {
@@ -21,21 +19,22 @@ function QueryNode(id, rect) {
     if (noHash) {
       window.history.replaceState(undefined, undefined, '#' + target);
     } else {
-      window.location.hash = target.to_url();
+      window.location.hash = target.toURL();
     }
   }
 }
 
-const detectBackOrForward = (onBack, onForward) => {
-  let hashHistory = [window.location.hash];
-  let historyLength = window.history.length;
+function detectBackOrForward (onBack, onForward) {
+  const {location, history} = window;
+  let hashHistory = [location.hash];
+  let historyLength = history.length;
 
   return function() {
-    const hash = window.location.hash;
-    const length = window.history.length;
+    const hash = location.hash;
+    const length = history.length;
 
-    if (hashHistory.length && historyLength == length) {
-      if (hashHistory[hashHistory.length - 2] == hash) {
+    if (hashHistory.length && historyLength === length) {
+      if (hashHistory[hashHistory.length - 2] === hash) {
         hashHistory = hashHistory.slice(0, -1);
         onBack();
       } else {
@@ -50,12 +49,12 @@ const detectBackOrForward = (onBack, onForward) => {
 }
 
 window.addEventListener('hashchange', detectBackOrForward(
-  function() {
-    console.log('back');
+  function () {
+    console.log('<<');
     Ø('query').bang()
   },
-  function() {
-    console.log('forward');
+  function () {
+    console.log('>>');
     Ø('query').bang()
   }
 ));

@@ -1,26 +1,24 @@
-function RouterNode(id, rect) {
-  Node.call(this, id, rect);
+function RouterNode (id) {
+  Node.call(this, id);
 
-  this.glyph = NODE_GLYPHS.parser;
-
-  this.receive = q => {
-    q = q.toUpperCase();
+  this.receive = (q) => {
+    const name = q.toUpperCase();
     const db = this.request('database').database;
-    const type = find(q, db);
+    const type = find(name, db);
 
-    this.label = `router:${type}/${q}`;
+    this.label = `router:${type}/${name}`;
     this.send({
-      name: q,
+      name,
       type: type,
-      result: db[type] ? db[type][q] : null,
+      result: db[type] ? db[type][name] : null,
       tables: db,
     });
-  }
 
-  const find = (key, db) => {
-    for (let id in db) {
-      if (db[id][key]) return id;
+    function find (key, db) {
+      for (let id in db) {
+        if (db[id][key]) return id;
+      }
+      return null;
     }
-    return null;
   }
 }

@@ -1,48 +1,50 @@
 function DocsTemplate(id, rect, ...params) {
   TemplateNode.call(this, id, rect);
 
-  this.glyph = NODE_GLYPHS.template;
   this.archives = [];
-  this.term = null
+  this.term = null;
 
-  this.answer = q => {
-    const filename = q.result.name.to_url();
+  this.answer = (q) => {
+    const {result, name, tables} = q;
+    const {bref, long} = result;
+    const filename = result.name.to_url();
     this.invoke(filename);
 
     return {
-      title: q.name.capitalize(),
+      title: name.capitalize(),
       view: {
         header: {
-          photo: q.result.scrn() || 'memex.png',
-          search: q.name,
+          search: name,
         },
         core: {
           sidebar: {
-            bref: make_bref(q.result, q.tables.lexicon)
+            bref: makeBref(result, tables.lexicon)
           },
-          content: `<p>${q.result.bref()}</p>${q.result.long()}${this.load(filename)}`,
+          content: `${long}${this.load(filename)}`,
         }
       }
     }
   }
 
-  this.invoke = filename => {
+  this.invoke = (filename) => {
     if (this.archives[filename]) {
       this.load(filename);
       return;
     }
 
-    let s = document.createElement('script');
-    s.src = `docs/${filename}.tome`;
-    document.getElementsByTagName('head')[0].appendChild(s);
+    document.getElementsByTagName('head')[0].appendChild(
+      Object.assign(document.createElement('script'), {
+        src: `docs/${filename}.tome`
+      })
+    );
   }
 
   this.seal = (name, payload = null) => {
     this.archives[name] = payload;
-    Ø('content').update(this.term && this.term ? this.term.long() + this.load(name) : this.load(name));
+    Ø('content').update(this.term && this.term ? this.term.long + this.load(name) : this.load(name));
   }
 
-  this.load = key => {
+  this.load = (key) => {
     if (!this.archives[key]) return `<p>Loading ${key}..</p>`;
 
     const data = new Indental(this.archives[key]).parse();
@@ -55,9 +57,9 @@ function DocsTemplate(id, rect, ...params) {
     return html;
   }
 
-  const make_bref = (term, lexicon) => {
-    return `<p><a onclick="Ø('query').bang('${term.unde()}')">${term.unde()}</a></p>
-    ${this.make_navi(term, (term.unde() || ''), lexicon)}
+  function makeBref(term, lexicon) {
+    return `<p><a onclick="Ø('query').bang('${term.unde}')">${term.unde}</a></p>
+    ${this.make_navi(term, (term.unde || ''), lexicon)}
     `;
   }
 }

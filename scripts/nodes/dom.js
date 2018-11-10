@@ -1,38 +1,35 @@
-function DomNode(id, rect, ...params) {
-  Node.call(this, id, rect);
+function DomNode (id, ...params) {
+  Node.call(this, id);
 
-  this.type = params[0] ? params[0] : 'yu';
-  this.glyph = NODE_GLYPHS.dom;
+  this.type = params[0] ? params[0] : 'div';
   this.label = `${this.id}:${this.type}`;
   this.el = document.createElement(this.type);
   this.el.id = this.id;
-  this.is_installed = false;
+  this.isInstalled = false;
 
   if (params[1]) this.el.innerHTML = params[1];
 
-  this.receive = content => {
+  this.receive = (content) => {
     if (content && content[this.id] !== null) {
       this.update(content[this.id]);
       this.send(content[this.id]);
     }
   }
 
-  this.answer = _ => {
-    if (!this.is_installed) this.install(this.request());
+  this.answer = () => {
+    if (!this.isInstalled) this.install(this.request());
     return this.el;
   }
 
-  this.install = elements => {
-    this.is_installed = true;
-    for (let id in elements) {
-      this.el.appendChild(elements[id]);
-    }
+  this.install = (elements) => {
+    for (let id in elements) this.el.append(elements[id]);
+    this.isInstalled = true;
   }
 
-  this.update = content => {
-    if (typeof content === 'string') {
-      this.el.innerHTML = content;
-      this.el.className = !content ? 'empty' : '';
-    }
+  this.update = (content) => {
+    if (typeof content !== 'string') return;
+    Object.assign(this.el, {
+      innerHTML: content, className: !content ? 'empty' : ''
+    });
   }
 }
