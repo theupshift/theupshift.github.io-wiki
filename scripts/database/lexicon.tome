@@ -1,36 +1,54 @@
 DATABASE.lexicon = `
 HOME
-  SCRN : memex.png
-  BREF : Under construction
   TYPE : Home
+  LONG
+    & Welcome to {*The Athenaeum*}. Housed herein are various documents and records of the various projects within my {{Oeuvre}} as well as some memoirs and notes on certain topics of interest. Use the title of this page to search for something in particular.
+    & {*Note:*} This site is under construction. Beware of goblins!
+    & If you are a new visitor to this site, here are some pages that may be of relevance to your interests:
 
 JOSH
   UNDE : Home
-  SCRN : josh.png
   TYPE : Portal
-  BREF : {{Josh Avanier | Josh}} is a hobbyist.
+  BREF : Who am I?
+  LONG
+    & My name is Josh and I guess you can call me a hobbyist. I'm currently studying information technology in Thailand. After that, I hope to focus my time and energy traveling the world and working on various projects.
+    & To learn random bits of information about me and what I do, feel free to explore the following links:
+
+ABOUT
+  UNDE : Home
+  BREF : What is this site about?
+  LONG
+    & This site serves as a personal chronicle of my oeuvre as it grows over time. It also serves as a wiki for people to read through and learn more about my projects.
+    * Structure
+    & This site's engine is a fork of Devine Lu Linvega's Oscean engine. Every page herein is generated from a flat-file database written in the Indental format.
+    * Design
+    & Most websites these days are saturated with unnecessary ornamentation and clutter. I'm constantly striving to move away from that by simplifying the overall design, stripping it down until what remains is a pure reading experience.
+    * Future
+    & I hope to someday move this site from GitHub and host it in a similar manner as Low Tech Magazine's solar-powered website. I'm also planning on making some of my log data (productivity logs, sleep logs, noctuaries, etc.) public and published on this site for experimental purposes.
+    * License
+    & Feel free to fork and modify this site's back-end engine code, which is made available under the MIT license. However the content (text, photos, data) is available under the BY-NC-SA 4.0 license.
 
 GOALS
   UNDE : Josh
-  SCRN : memex.png
   BREF : A list of things to achieve and accomplish
   LONG
-    & Achieve 100% self-sufficiency and live a zero-waste lifestyle
-    & Create my own versions of things
-    & Reduce the need for sleep to as close to zero as possible
-    & Reduce personal possessions to only absolute necessities
-    & Constantly improve workflows and day-to-day routines through the Kaizen approach
-    & Graduate and then forget every useless thing I learned in school
-    & Acquire (or build) a boat and sail to the Bermuda Triangle
-    & Start a company that goes against business principles
-    & Contribute to any form of technological progress that will eventually make non-necessities like educational institutions and accountants obsolete
-    & Finish 10,000 projects before death
+    & Here is an ever-changing list of things I would love to achieve or accomplish, preferably before my inevitable death. Only after I'm able to check off every item below will I be able to say that my life has been well-lived.
+    = Achieve 100% self-sufficiency and live a zero-waste lifestyle
+    = Create my own versions of things
+    = Reduce the need for sleep to as close to zero as possible
+    = Reduce personal possessions to only absolute necessities
+    = Constantly improve workflows and day-to-day routines
+    = Graduate and forget everything I learned in school
+    = Acquire (or build) a boat and sail
+    = Start a company that goes against business principles
+    = Contribute to any form of technological progress that will eventually make non-necessities like educational institutions and accountants obsolete
+    = Finish 10,000 projects before death
 
 TODO
   UNDE : Josh
-  scrn : memex.png
   BREF : A list of things to create
   LONG
+    & A list of things to make
     * Software
     = Animation studio
     = Calendar
@@ -55,14 +73,13 @@ TODO
     = Tricopter drone
     = Wrist-mounted computer
 
-PROJECTS
-  UNDE : Josh
+OEUVRE
+  UNDE : Home
   TYPE : Portal
   BREF : Mostly unfinished symphonies
 
 UTILITIES
-  UNDE : Projects
-  SCRN : log.png
+  UNDE : Oeuvre
   TYPE : Index
   BREF : A collection of utilities created to help enhance my day-to-day life
 
@@ -72,21 +89,19 @@ CARGO
 
 EAU
   UNDE : Utilities
-  SCRN : eau.png
-  BREF : {{Eau}} was a hydration log.
   LONG
-    & It was created to help me keep track of how much water I drink. Every time I rehydrate, I log the quantity in milliliters. The project was eventually discontinued, though I will revisit it again soon.
+    & Eau was a hydration log. It was created to help me keep track of how much water I drink. Every time I rehydrate, I log the quantity in milliliters. The project was eventually discontinued, though I will revisit it again soon.
   LINK
     Github : https://github.com/joshavanier/eau
 
 LOG
   UNDE : Utilities
-  SCRN : log.png
   BREF : {{Log}} is a log and time-tracker.
   LONG
-    & It is inspired by similar systems by Neauoire and vi. It is designed for single-tasking: start a log, focus on your task, and then end it when you're done.
+    & Log is a time-tracker inspired by similar systems by Neauoire and vi. It is designed for single-tasking: start a log, focus on your task, and then end it when you're done. Log is a time-tracker inspired by similar systems by Neauoire and vi. It is designed for single-tasking: start a log, focus on your task, and then end it when you're done.
+    % log.png
     & Commands are entered via a console. The app has a built-in Guide that contains a list of commands and their usage.
-    & Log is available as an Electron app on Linux, macOS, and Windows and can be downloaded on itch.io.
+    & Log is available as an Electron app for Linux and macOS and can be downloaded on itch.io.
     * Future
     & A CLI variant and a mobile app is being planned. The CLI variant is more likely to be created soon. Mobile app development is not a possibility with my current resources.
   LINK
@@ -95,221 +110,246 @@ LOG
 
 QYLLIUM
   UNDE : Utilities
-  SCRN : qyllium.png
   BREF : {{Qyllium}} is an upcoming notes app.
   LONG
-    & It is inspired by the bullet journal concept which is designed for rapid logging of tasks, notes, and events.
+    & Qyllium is an upcoming notes app. It is inspired by the bullet journal which is designed for rapid logging of tasks, notes, and events.
+    % qyllium.png
   LINK
     Itch.io : https://joshavanier.itch.io/qyllium
     Github : https://github.com/joshavanier/qyllium
 
 RISU
   UNDE : Utilities
-  SCRN : risu.png
   BREF : {{Risu}} is an upcoming personal finance management tool.
   LONG
-    & Risu is available as an Electron app.
+    & Risu is an upcoming personal finance management tool. Ironically, as soon as I started working on this project, I simply stopped spending and eventually didn't see the need for financial management. I still plan on finishing this though.
+    % risu.png
   LINK
     Itch.io : https://joshavanier.itch.io/risu
     Github : https://github.com/joshavanier/risu
 
 SOMNUS
   UNDE : Utilities
-  SCRN : somnus.png
   BREF : {{Somnus}} was a sleep log.
   LONG
     & It was created to eventually provide me with insight on how much I sleep. The process is admittedly tedious yet simple. I just record the approximate time I go to bed and the exact time I wake up. The moment I wake up, I immediately check the time.
+    % somnus.png
   LINK
     Github : https://github.com/joshavanier/somnus
 
-WORLDBUILDING
-  UNDE : Projects
+OBSERVATORY
+  UNDE : Oeuvre
   TYPE : Index
-  SCRN : mithvaer.png
   BREF : Of realms and universes
+  LONG
+    & The Observatory is where I ponder upon the existence of a parallel universe
 
 MITHVAER
-  UNDE : Worldbuilding
-  SCRN : mithvaer.png
+  UNDE : Observatory
   BREF : {{Mithvaer}} is a planet yet to be explored.
   LONG
     & More information soon.
+    % mithvaer.png
 
 VIDE
-  UNDE : Worldbuilding
+  UNDE : Observatory
   BREF : {{Vide}} is an upcoming worldbuilding tool.
   LONG
+    & Vide is a worldbuilding tool that aids in the creation of somewhat scientifically-plausible stars, planets, moons, and planetary systems.
     * Planned Features
     & I want to create a tool that lets users create worlds with high in-depth details like planetary orbits, atmospheric compositions, gravity, etc.
+    % vide.png
 
-WEB
-  UNDE : Projects
+ATTIC
+  UNDE : Oeuvre
   TYPE : Index
   BREF : A collection of random things built on the web
+  LONG
+    & Among thousands of intertwined strands is a scattered collection of miscellanea built within and for the vast expanse of the Internet. Here are some web-related tools and toys built in browsers for browsers.
 
 CLAVIER
-  UNDE : Web
-  SCRN : clavier.png
+  UNDE : Attic
   BREF : {{Clavier}} is a keycode mapping utility.
+  LONG
+    & Clavier is a simple JS keycode mapping utility. All it does is tell you the corresponding keycode to whatever key you press on your keyboard.
+    % clavier.png
   LINK
     Live : https://joshavanier.github.io/clavier
     GitHub : https://github.com/joshavanier/clavier
 
 HAIAKU
-  UNDE : Web
-  SCRN : haiaku.png
+  UNDE : Attic
   BREF : {{Haiaku}} is a text converter.
   LONG
-    & A friend wanted a tool that rewrites text in a top-down, right-to-left fullwidth format.
+    & Haiaku (俳悪) is a simple text converter that rewrites input into top-down, right-to-left fullwidth format reminiscent of haikus. It was built upon the request of a friend who had that specific request.
+    # 水蛙古<br>
+    # の飛池<br>
+    # 音びや<br>
+    # 　込　<br>
+    # 　む　<br>
+    # <br>
+    # -芭蕉
   LINK
     Live : https://joshavanier.github.io/haiaku
     GitHub : https://github.com/joshavanier/haiaku
 
 KUMO
-  UNDE : Web
-  SCRN : kumo.png
+  UNDE : Attic
   BREF : {{Kumo}} is a Hacker News client.
   LONG
-    & It's very simple and only shows the top 20 stories.
+    & Kumo (クモ) is a basic Hacker News client. It's very simple and only shows the top 20 stories. I made it because all I wanted from Hacker News was links to stories. Nothing else.
+    % kumo.png
   LINK
     Live : https://joshavanier.github.io/kumo
     Github : https://github.com/joshavanier/kumo
 
 MACIAN
-  UNDE : Web
-  SCRN : macian.png
+  UNDE : Attic
   BREF : {{Macian}} is a functional CSS framework
   LONG
-    & Inspired by and based on Tachyons, Macian features a set of customisable utility classes.
+    & Macian is a functional CSS framework inspired by and based on Tachyons. It features a set of customisable utility classes.
+    % macian.png
   LINK
     Codex : https://joshavanier.github.io/macian
     Github : https://github.com/joshavanier/macian
 
 NUMBERS
-  UNDE : Web
+  UNDE : Attic
   SCRN : numbers.png
   BREF : {{Numbers}} is a random number facts generator lol.
+  LONG
+    & Numbers is a random number facts generator
   LINK
     Live : https://joshavanier.github.io/numbers
     Github : https://github.com/joshavanier/numbers
 
 ROVARSPRAKET
-  UNDE : Web
+  UNDE : Attic
   SCRN : rovarspraket.png
   BREF : {{Rövarspråket|Rovarspraket}} is a translator for the Swedish language game.
   LONG
-    & Rövarspråket (The Robber Language) is a language game where consonants are doubled and an *o* is inserted in between while vowels remain as they are.
+    & Rövarspråket is a translator for {{Rövarspråket|https://en.wikipedia.org/wiki/R%C3%B6varspr%C3%A5ket}} (The Robber Language), a Swedish language game where consonants are doubled and an {*o*} is inserted in between while vowels remain as they are.
     # Hello world - Hohelollolo wowororloldod
   LINK
     Live : https://joshavanier.github.io/rovarspraket
     Github : https://github.com/joshavanier/rovarspraket
-    Wikipedia : https://en.wikipedia.org/wiki/R%C3%B6varspr%C3%A5ket
 
-GAMES
-  UNDE : Projects
+SANDBOX
+  UNDE : Oeuvre
   TYPE : Index
   SCRN : grymstorge.png
   BREF : Mediums to facilitate play
+  LONG
+    & The Sandbox houses my mostly-unfinished games, toys, and any medium that facilitates play.
+
+AUDELA
+  UNDE : Sandbox
+  LONG
+    & Audela is an upcoming text-based space exploration game where you can freely explore a procedurally-generated galaxy. Explore and colonise planets, upgrade your ship or buy a whole fleet; the galaxy is your oyster.
+    % grymstorge.png
 
 GRYMSTORGE
-  UNDE : Games
-  SCRN : grymstorge.png
-  BREF : {{Grymstorge}} is an unfinished exploration game built with {{Bitsy|https://ledoux.itch.io/bitsy}}.
+  UNDE : Sandbox
+  LONG
+    & Grymstorge is an unfinished exploration game built with {{Bitsy|https://ledoux.itch.io/bitsy}} where you explore the abandoned ruins of the subterranean fortress of the great kingdom of Glachiem.
+    % grymstorge.png
 
 PORTE
-  UNDE : Games
+  UNDE : Sandbox
   SCRN : porte.png
   BREF : {{Porte}} was a simple game about logic gates.
   LONG
-    & It was made as a small experiment using the Bitsy game creator.
+    & Porte was a simple game about logic gates. It was made as a small experiment using the Bitsy game creator.
+    % porte.png
   LINK
     Live : https://joshavanier.github.io/porte
     Github : https://github.com/joshavanier/porte
 
 QUOIN
-  UNDE : Games
+  UNDE : Sandbox
   SCRN : quoin.png
   BREF : {{Quoin}} was an unfinished sales management game.
   LONG
-    & I was taking a boring course called Sales and Selling. In order to motivate myself to study, I turned it into a game.
-    & You play as a budding shopkeeper in a place called Selletown. The point of the game was to make use of sales management and sales strategies to expand your business.
+    & Quoin was an unfinished sales management game where you played as an aspiring shopkeeper hoping to strike gold in the town of Selletown.
+    & I was taking a boring course called Sales and Selling. In order to motivate myself to study, I turned it into a game. The point of the game was to make use of sales management and sales strategies to expand your business.
     & Final exams flew by faster than I anticipated but I ended up passing the class and Quoin was left in the archives.
+    % quoin.png
   LINK
     Github : https://github.com/joshavanier/quoin
 
 STRAVAGE
-  UNDE : Games
+  UNDE : Sandbox
   BREF : {{Stravage}} was an abandoned 2D platformer game.
   LONG
-    & Its source code was lost in the ether due to an unfortunate drive malfunction.
+    & Stravage was an abandoned 2D platformer game. Its source code was lost in the ether due to an unfortunate drive malfunction.
 
 TEXTE
-  UNDE : Games
+  UNDE : Sandbox
   SCRN : texte.png
   BREF : {{Texte}} is an unfinished tool for writing text-based games.
   LONG
-    & It's a fork of {{vi|https://twitter.com/v_exec}}'s {{Visor|https://github.com/v-exec/Visor}}, a minimalist presentation tool. Games are written on .txt files following a simple syntax.
-    # $room - Set a room
-    # til - Title attribute
-    # con - Room contents
-    # bg - Background colour
-    # col - Text colour
-    # + - New line
-    # #[Action>Link] - Action button
-    * Example
-    # $Room1
-    # til: Room 1
-    # con:
-    # + This is the first room
-    # + #[Go forth>Room2]
-    # $Room2
-    # bg: #202020
-    # col: #f8f8f8
-    # til: Room 2
-    # con:
-    # + This is the second room. It's dark in here.
+    & Texte is a tool for generating text-based adventure games. It's a fork of {{vi|https://twitter.com/v_exec}}'s {{Visor|https://github.com/v-exec/Visor}}, a minimalist presentation tool. Games are written on .txt files following a simple syntax.
+    # $Room1<br>
+    # til: Room 1<br>
+    # con:<br>
+    # + This is the first room<br>
+    # + #[Go forth>Room2]<br>
+    # $Room2<br>
+    # bg: #202020<br>
+    # col: #f8f8f8<br>
+    # til: Room 2<br>
+    # con:<br>
+    # + This is the second room. It's dark in here.<br>
     # + #[Go back>Room1]
+    & Attributes
+    # $room - Set a room<br>
+    # til - Title attribute<br>
+    # con - Room contents<br>
+    # bg - Background colour<br>
+    # col - Text colour<br>
+    # + - New line<br>
+    # #[Action>Link] - Action button
   LINK
     GitHub : https://github.com/joshavanier/texte
 
-OBJECTS
-  UNDE : Projects
+LABORATORY
+  UNDE : Oeuvre
   TYPE : Index
   BREF : Physical items
+  LONG
+    & A greatly under-used section of the Oeuvre, the Laboratory houses projects involving the creation of things of tangible nature.
 
 HOLLY
-  UNDE : Objects
-  BREF : {{Holly}} is a computer console.
+  UNDE : Laboratory
+  BREF : A Raspberry Pi computer console
   LONG
-    & It's built with a {{Raspberry Pi Zero W|https://www.raspberrypi.org/products/raspberry-pi-zero-w}}, features a {{2.7-inch monochrome OLED display|https://www.adafruit.com/product/2674}}, and is powered by a 2700mAh lithium ion battery.
-    & The project's goal is to build a portable Linux console that can be used for simple tasks like writing notes and lightweight coding.
+    & Holly is a computer console built with a {{Raspberry Pi Zero W|https://www.raspberrypi.org/products/raspberry-pi-zero-w}}, features a {{2.7-inch monochrome OLED display|https://www.adafruit.com/product/2674}}, and is powered by a 2700mAh lithium ion battery. The project's goal is to build a portable Linux console that can be used for simple tasks like writing notes and lightweight coding on the go.
+    * Current Status
+    & The project is put on temporary stasis as I messed up the soldering of the battery circuit.
 
-VISUALS
-  UNDE : Projects
+ATELIER
+  UNDE : Oeuvre
   TYPE : Index
   BREF : Visuals
+  LONG
+    & The Atelier houses my attempts at various mediums of visual arts.
 
 OWL CITY
-  UNDE : Visuals
+  UNDE : Atelier
   BREF : The {{Owl City}} posters are my first attempts in design.
   LONG
-    & The idea is simple: turn an Owl City song into a poster. I used GIMP and some free fonts. It was once a daily thing until it was discontinued when I entered university.
+    & The Owl City posters were my first attempts at design. The idea was simple: turn an Owl City song into a poster. I used GIMP and some free fonts. It was once a daily thing until it was discontinued when I entered university.
   LINK
     Tumblr : https://joshavanier.tumblr.com
 
 PIXELATTIRE
-  UNDE : Visuals
-  SCRN : pixelattire.png
+  UNDE : Atelier
   BREF : {{Pixelattire}} is a pixel art log of daily outfits throughout 2018.
   LONG
-    & The custom lightweight Tumblr theme used is available in the GitHub repository. Feel free to use and modify.
-  LINK
-    Tumblr : https://pixelattire.tumblr.com
-    Theme : https://github.com/joshavanier/pixelattire
+    & Pixelattire is a daily pixel art project where I document what I wear every day throughout 2018. All art is created using GIMP and is posted on a {{Tumblr page|https://pixelattire.tumblr.com}}. The custom lightweight Tumblr theme used is available {{here|https://github.com/joshavanier/pixelattire}}.
+    * Future
+    & I plan on continuing this project next year, although I plan on having a system that generates pixel art from text logs rather than spend ~10 minutes per day manually creating these.
+    % pixelattire.png
 
-RESEARCH
-  UNDE : Home
-  TYPE : Portal
-  ICON : M60,240 a30,-30 0 0,1 30,-30 l150,0 M90,195 a30,-30 0 0,1 30,-30 l90,0 M120,150 a30,-30 0 0,1 30,-30 l30,0 M195,120 l45,0 M225,165 l15,0 M150,105 a30,-30 0 0,1 30,-30 l60,0
-  BREF : The {{Research}} hosts philosophy and linguistics projects.
+
 `
