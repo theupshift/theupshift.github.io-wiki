@@ -1,10 +1,8 @@
 function PortalTemplate(id, ...params) {
   TemplateNode.call(this, id);
 
-  this.answer = q => {
-    const {result, name, tables: {lexicon}} = q;
-    const term = result;
-    const {unde} = result;
+  this.answer = (q) => {
+    const {result: {long, links, unde}, name, tables: {lexicon}} = q;
     const children = this.findChildren(name, lexicon);
 
     return {
@@ -14,12 +12,7 @@ function PortalTemplate(id, ...params) {
           unde: `<p><a onclick="Ø('query').bang('${unde}')">${unde}</a></p>`,
           search: name,
         },
-        core: {
-          sidebar: {
-            bref: `${makeLinks(term.links)}`,
-          },
-          content: `${result.long}${makePortal(term.name, children)}`
-        }
+        core: `${long}${makePortal(name, children)}`
       }
     }
   }
@@ -28,11 +21,10 @@ function PortalTemplate(id, ...params) {
     let html = '<dl>';
 
     for (let i = 0; i < children.length; i++) {
-      const child = children[i];
-      const {name} = child;
+      const {name, bref} = children[i];
       const title = `<dt><a onclick="Ø('query').bang('${name.toURL()}')">${name.capitalize()}</a></dt>`;
 
-      html += `${title}<dd>${child.bref.toMarkup()}</dd>${!stop ? make_index(name, lexicon, logs, true) : ''}`;
+      html += `${title}<dd>${bref.toMarkup()}</dd>${!stop ? make_index(name, lexicon, logs, true) : ''}`;
     }
 
     return `${html}</dl>`;

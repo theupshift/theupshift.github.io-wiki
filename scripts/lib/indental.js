@@ -51,13 +51,22 @@ function Indental (data) {
   }
 
   function liner (line) {
+    let key = null;
+    let value = null;
+
+    if (line.indexOf(' : ') > -1) {
+      const split = line.split(' : ');
+      value = split[1].trim();
+      key = split[0].trim();
+    }
+
     return {
+      skip: line === '' || line.substr(0, 1) === '~',
       indent: line.search(/\S|$/),
       content: line.trim(),
-      skip: line === '' || line.substr(0, 1) === '~',
-      key: line.indexOf(' : ') > -1 ? line.split(' : ')[0].trim() : null,
-      value: line.indexOf(' : ') > -1 ? line.split(' : ')[1].trim() : null,
-      children: []
+      children: [],
+      value,
+      key,
     }
   }
 }

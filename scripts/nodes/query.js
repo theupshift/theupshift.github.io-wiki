@@ -1,19 +1,13 @@
 function QueryNode (id) {
   Node.call(this, id);
-  this.label = 'query';
 
   this.bang = (target = window.location.hash.substring(1).replace(/[^0-9a-z]/gi, ' ').trim().toLowerCase()) => {
-    Ø('view').el.className = 'loading';
-
-    let noHash = (target === '');
+    let noHash = target === '';
 
     target = target ?
       target.replace(/[^0-9a-z]/gi, ' ').trim().toLowerCase() : 'home';
 
-    this.label = `query:${target}`;
-
-    setTimeout(() => {window.scrollTo(0, 0);}, 250);
-
+    window.scrollTo(0, 0);
     this.send(target);
 
     if (noHash) {
@@ -50,11 +44,11 @@ function detectBackOrForward (onBack, onForward) {
 
 window.addEventListener('hashchange', detectBackOrForward(
   function () {
-    console.log('<<');
+    // console.log('<<');
     Ø('query').bang()
   },
   function () {
-    console.log('>>');
+    // console.log('>>');
     Ø('query').bang()
   }
 ));

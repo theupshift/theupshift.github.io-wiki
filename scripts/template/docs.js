@@ -1,5 +1,5 @@
-function DocsTemplate(id, rect, ...params) {
-  TemplateNode.call(this, id, rect);
+function DocsTemplate(id, ...params) {
+  TemplateNode.call(this, id);
 
   this.archives = [];
   this.term = null;
@@ -16,12 +16,7 @@ function DocsTemplate(id, rect, ...params) {
         header: {
           search: name,
         },
-        core: {
-          sidebar: {
-            bref: makeBref(result, tables.lexicon)
-          },
-          content: `${long}${this.load(filename)}`,
-        }
+        core: `${long}${this.load(filename)}`
       }
     }
   }

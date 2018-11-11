@@ -30,7 +30,7 @@
 
   <script src="scripts/types/term.js"></script>
 
-  <script type="text/javascript" src="scripts/database/lexicon.tome"></script>
+  <script src="scripts/database/lexicon.tome"></script>
 
   <script src="scripts/template/page.js"></script>
   <script src="scripts/template/page.missing.js"></script>
@@ -39,60 +39,15 @@
   <script src="scripts/template/index.js"></script>
   <script src="scripts/template/docs.js"></script>
 
+  <script src="scripts/bang.js"></script>
+
   <link rel="stylesheet" href="css/fonts/inter-ui.css">
   <link rel="stylesheet" href="css/s.css">
 </head>
 <body>
   <script>
     const RIVEN = new Riven();
-
-    Ø('query').create(QueryNode);
-    Ø('router').create(RouterNode);
-    Ø('database').create(DatabaseNode);
-    Ø('lexicon').create(IndentalNode, Term);
-
-    Ø('template').create(TemplateNode);
-    Ø('home').create(HomeTemplate);
-    Ø('page').create(PageTemplate);
-    Ø('missing').create(MissingTemplate);
-    Ø('portal').create(PortalTemplate);
-    Ø('index').create(IndexTemplate);
-    Ø('docs').create(DocsTemplate);
-
-    Ø('document').create(DocumentNode);
-    Ø('view').create(DomNode);
-
-    Ø('header').create(DomNode, 'header');
-    Ø('menu').create(DomNode);
-    Ø('search').create(InputNode);
-
-    Ø('core').create(DomNode, 'main');
-    Ø('content').create(DomNode);
-    Ø('sidebar').create(DomNode);
-    Ø('bref').create(DomNode);
-    Ø('unde').create(DomNode);
-
-    Ø('footer').create(DomNode, 'footer',`
-      <a href="http://webring.xxiivv.com/#random"><img src="img/rotonde.svg"></a><p><a onclick="Ø('query').bang('josh')">Josh Avanier</a> © Éternité</p>`);
-
-    // Model
-    Ø('router').syphon('database');
-    Ø('database').syphon(['lexicon']);
-
-    // Assoc
-    Ø('template').syphon(['page','portal','index','docs','home']);
-    Ø('page').syphon(['missing']);
-
-    Ø('template').connect(['view','document']);
-    Ø('header').bind(['unde', 'search']);
-    Ø('view').bind(['header','core','footer']);
-    Ø('core').bind(['content','sidebar','navi']);
-    Ø('sidebar').bind(['bref']);
-
-    Ø('query').connect('router');
-    Ø('router').connect('template');
-
-    Ø('query').bang();
+    bang();
   </script>
 </body>
 </html>

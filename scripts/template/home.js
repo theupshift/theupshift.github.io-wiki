@@ -12,26 +12,20 @@ function HomeTemplate(id, ...params) {
           unde: '<p>&mdash;</p>',
           search: name,
         },
-        core: {
-          // sidebar: {
-          //   bref: `<p>${bref}</p>`
-          // },
-          content: `${q.result.long}${makePortal(q.result.name, children)}`
-        }
+        core: `${q.result.long}${makePortal(children)}`
       }
     }
   }
 
-  function makePortal (name, children, logs) {
+  function makePortal (children) {
     let html = '<dl>';
 
     for (let i = 1; i < children.length; i++) {
-      const child = children[i];
-      const {name} = child;
-      console.log(child)
-      const title = `<dt><a onclick="Ø('query').bang('${name.toURL()}')">${name.capitalize()}</a></dt>`;
-
-      html += `${title}<dd>${child.bref.toMarkup()}</dd>${!stop ? make_index(name, lexicon, logs, true) : ''}`;
+      const {name, bref} = children[i];
+      const url = name.toURL();
+      const term = name.capitalize();
+      const title = `<a onclick="Ø('query').bang('${url}')">${term}</a>`;
+      html += `<dt>${title}</dt><dd>${bref.toMarkup()}</dd>`;
     }
 
     return `${html}</dl>`;

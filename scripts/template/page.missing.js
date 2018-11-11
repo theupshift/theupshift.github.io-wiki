@@ -1,21 +1,21 @@
-function MissingTemplate (id, rect, ...params) {
-  Node.call(this, id, rect);
+function MissingTemplate (id, ...params) {
+  Node.call(this, id);
 
   this.answer = (q) => {
     const {name, tables: {lexicon}} = q;
     const similar = find_similar(name, lexicon);
     const w1 = similar[0].word;
     const w2 = similar[1].word;
+    const title = name.capitalize();
 
     return {
-      title: name.capitalize(),
+      title,
       view: {
         header: {
+          unde: `<p><a onclick="Ø('query').bang('Home')">Home</a></p>`,
           search: name,
         },
-        core: {
-          content: `<p>The page "${name.capitalize()}" does not exist within the Memex. Were you perhaps looking for <a onclick="Ø('query').bang('${w1}')">${w1.capitalize()}</a> or <a onclick="Ø('query').bang('${w2}')">${w2.capitalize()}</a>?</p>`
-        }
+        core: `<p>The page "${title}" does not exist within the Athenaeum. Were you looking for <a onclick="Ø('query').bang('${w1}')">${w1.capitalize()}</a> or <a onclick="Ø('query').bang('${w2}')">${w2.capitalize()}</a>?</p>`
       }
     }
   }

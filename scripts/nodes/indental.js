@@ -10,7 +10,6 @@ function IndentalNode (id, type) {
 
     if (this.cache) return this.cache;
 
-    this.label = this.type ? `${this.id}=${this.type.name}` : `${this.id}`;
     this.cache = new Indental(DATABASE[this.id]).parse(this.type);
     console.log(this.cache);
     return this.cache;

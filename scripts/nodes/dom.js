@@ -2,7 +2,6 @@ function DomNode (id, ...params) {
   Node.call(this, id);
 
   this.type = params[0] ? params[0] : 'div';
-  this.label = `${this.id}:${this.type}`;
   this.el = document.createElement(this.type);
   this.el.id = this.id;
   this.isInstalled = false;

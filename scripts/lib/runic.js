@@ -11,21 +11,11 @@ function Runic (raw) {
 
   this.runes = {
     '&': new Rune({glyph: '&', tag: 'p'}),
-    '~': new Rune({glyph: '~', tag: 'ul', sub: 'li', klass: 'parent', stash: true}),
-    '-': new Rune({
-      glyph: '-',
-      tag: 'ol',
-      sub: 'li',
-      // klass: '',
-      stash: true
+    '~': new Rune({
+      glyph: '~', tag: 'ul', sub: 'li', klass: 'parent', stash: true
     }),
-    '=': new Rune({
-      glyph: '=',
-      tag: 'list',
-      sub: 'li',
-      // klass: 'mini',
-      stash: true
-    }),
+    '-': new Rune({glyph: '-', tag: 'ol', sub: 'li', stash: true}),
+    '=': new Rune({glyph: '=', tag: 'list', sub: 'li', stash: true}),
     '!': new Rune({
       glyph: '!',
       tag: 'table',
@@ -42,40 +32,15 @@ function Runic (raw) {
       klass: 'outline',
       stash: true
     }),
-    '#': new Rune({
-      glyph: '#',
-      tag: 'code',
-      sub: 'ln',
-      stash: true
-    }),
-    '%': new Rune({
-      glyph: '%'
-    }),
-    '?': new Rune({
-      glyph: '?',
-      tag: 'note'
-    }),
-    ':': new Rune({
-      glyph: ':',
-      tag: 'info'
-    }),
-    '*': new Rune({
-      glyph: '*',
-      tag: 'h2'
-    }),
-    '+': new Rune({
-      glyph: '+'
-    }),
-    '>': new Rune({
-      glyph: '>'
-    }),
-    '$': new Rune({
-      glyph: '>'
-    }),
-    '@': new Rune({
-      glyph: '@',
-      tag: 'blockquote'
-    })
+    '#': new Rune({glyph: '#', tag: 'code', sub: 'ln', stash: true}),
+    '%': new Rune({glyph: '%'}),
+    '?': new Rune({glyph: '?', tag: 'note'}),
+    ':': new Rune({glyph: ':', tag: 'info'}),
+    '*': new Rune({glyph: '*', tag: 'h2'}),
+    '+': new Rune({glyph: '+'}),
+    '>': new Rune({glyph: '>'}),
+    '$': new Rune({glyph: '>'}),
+    '@': new Rune({glyph: '@', tag: 'blockquote'})
   }
 
   this.stash = {
@@ -93,7 +58,7 @@ function Runic (raw) {
       return copy;
     },
 
-    is_pop (rune) {
+    isPop (rune) {
       return this.all.length > 0 && rune.tag !== this.rune.tag;
     },
 
@@ -149,7 +114,7 @@ function Runic (raw) {
         continue;
       }
 
-      if (this.stash.is_pop(rune)) html += this.render_stash();
+      if (this.stash.isPop(rune)) html += this.render_stash();
 
       if (rune.stash === true) {
         this.stash.add(rune, line);
@@ -165,10 +130,7 @@ function Runic (raw) {
   }
 
   this.render_stash = () => {
-    let {
-      klass,
-      tag
-    } = this.stash.rune;
+    let {klass, tag} = this.stash.rune;
     let stash = this.stash.pop();
     let html = '';
 
@@ -194,19 +156,16 @@ function Runic (raw) {
   }
 
   this.table = (content) => {
-    return `<td>${content.trim().replace(/ \| /g, '</td><td>')}</td>`
+    return `<td>${content.trim().replace(/ \| /g, '</td><td>')}</td>`;
   }
 
   this.media = (val) => `<img src="img/${val}"/>`;
 
   this.quote = (content) => {
-    const parts = content.split(' | ');
-    const text = parts[0];
-    const author = parts[1];
-    const source = parts[2];
-    const link = parts[3];
+    const [text, author, source, link] = content.split(' | ');
+    const attrib = link ? `${author}, <a href="${link}">${source}</a>` : author;
 
-    return `<blockquote><p class='text'>${text}</p>${author ? `<p class='attrib'>${link ? `${author}, <a href='${link}'>${source}</a>` : `${author}`}</p>` : ''}</blockquote>`
+    return `<blockquote><p class="text">${text}</p>${author ? `<p class="attrib">${attrib}</p>` : ''}</blockquote>`
   }
 
   this.html = () => this.parse(raw);
@@ -229,7 +188,7 @@ String.prototype.toMarkup = function () {
   html = this;
   html = html.replace(/{_/g, '<i>').replace(/_}/g, '</i>');
   html = html.replace(/{\*/g, '<b>').replace(/\*}/g, '</b>');
-  html = html.replace(/{\#/g, '<code class="inline">').replace(/\#}/g, '</code>');
+  html = html.replace(/{\#/g, '<code>').replace(/\#}/g, '</code>');
 
   const parts = html.split('{{');
 
@@ -242,13 +201,18 @@ String.prototype.toMarkup = function () {
       continue;
     }
 
-    const target = content.indexOf('|') > -1 ? content.split('|')[1] : content;
-    const name = content.indexOf('|') > -1 ? content.split('|')[0] : content;
+    let target, name;
+    if (content.indexOf('|') > -1) {
+      const bar = content.split('|');
+      target = bar[1];
+      name = bar[0];
+    } else {
+      target = name = content;
+    }
 
     const isHTTPS = target.indexOf('https:') > -1;
     const isHTTP = target.indexOf('http:') > -1;
     const isDAT = target.indexOf('dat:') > -1
-
     const external = isHTTPS || isHTTP || isDAT;
 
     html = html.replace(`{{${content}}}`, external ? `<a href='${target}' class='external' target='_blank'>${name}</a>` : `<a class='local' title='${target}' onclick="Ø('query').bang('${target}')">${name}</a>`)

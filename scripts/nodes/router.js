@@ -2,16 +2,14 @@ function RouterNode (id) {
   Node.call(this, id);
 
   this.receive = (q) => {
-    const name = q.toUpperCase();
     const db = this.request('database').database;
+    const name = q.toUpperCase();
     const type = find(name, db);
 
-    this.label = `router:${type}/${name}`;
     this.send({
-      name,
-      type: type,
-      result: db[type] ? db[type][name] : null,
+      name, type,
       tables: db,
+      result: db[type] ? db[type][name] : null,
     });
 
     function find (key, db) {

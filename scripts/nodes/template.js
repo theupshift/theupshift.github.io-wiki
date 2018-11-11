@@ -4,7 +4,8 @@ function TemplateNode (id) {
 
   this.receive = (q) => {
     const {result} = q;
-    const type = result && result.type ? result.type.toLowerCase() : 'page';
+    const type = result && result.type
+      ? result.type.toLowerCase() : 'page';
     let assoc = this.signal(type);
 
     if (!assoc) {
@@ -13,10 +14,6 @@ function TemplateNode (id) {
     }
 
     this.send(assoc.answer(q));
-    this.label = `template:${assoc.id}`;
-
-    setTimeout(() => {Ø('view').el.className = 'ready'}, 100);
-
     document.body.append(this.signal('view').answer());
   }
 
@@ -42,12 +39,11 @@ function TemplateNode (id) {
   }
 
   this.makeTable = (term, lexicon, parent, depth = 3, selection = null) => {
+    return '';
     if (depth <= 0) return '';
     let children = this.findChildren(term.name, lexicon);
     const cl = children.length;
     if (cl === 0) return '';
-
-    // console.log(term, parent)
 
     let html = '';
 
@@ -117,13 +113,14 @@ function TemplateNode (id) {
 
     let portal = null;
     const parent = lexicon[term.unde.toUpperCase()];
+    const punde = parent.unde.toUpperCase();
 
     if (term.type && term.type.toLowerCase() === 'portal') {
       portal = term;
     } else if (parent.isPortal) {
       portal = parent;
     } else {
-      const pp = lexicon[parent.unde.toUpperCase()];
+      const pp = lexicon[punde];
       if (pp.isPortal) portal = pp;
       else {
         const ppp = lexicon[pp.unde.toUpperCase()];

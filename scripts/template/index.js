@@ -1,5 +1,5 @@
-function IndexTemplate(id, rect, ...params) {
-  TemplateNode.call(this, id, rect);
+function IndexTemplate(id, ...params) {
+  TemplateNode.call(this, id);
 
   this.answer = (q) => {
     const {name, result, tables} = q;
@@ -11,12 +11,7 @@ function IndexTemplate(id, rect, ...params) {
           unde: `<p><a onclick="Ø('query').bang('${unde}')">${unde}</a></p>`,
           search: name,
         },
-        core: {
-          // sidebar: {
-          //   bref: makeBref(result, tables.lexicon),
-          // },
-          content: `${result.long}${makeIndex(name,tables.lexicon,tables.horaire)}`
-        }
+        core: `${result.long}${makeIndex(name,tables.lexicon,tables.horaire)}`
       }
     }
   }

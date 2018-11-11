@@ -11,9 +11,6 @@ function Term (name, dict) {
 
   this.isPortal = this.type && (this.type.toLowerCase() === 'portal');
 
-  // this.scrn = () => this.dict.SCRN || '';
-  // this.stat = () => this.dict.STAT || '';
-
   this.bref = dict && dict.BREF ? dict.BREF.toMarkup() : '';
   this.long = new Runic(dict.LONG).html();
   this.unde = dict.UNDE ? dict.UNDE : 'Home';

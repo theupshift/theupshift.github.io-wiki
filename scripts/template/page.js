@@ -1,26 +1,18 @@
-function PageTemplate(id, rect, ...params) {
-  TemplateNode.call(this, id, rect);
+function PageTemplate(id, ...params) {
+  TemplateNode.call(this, id);
 
-  this.answer =  q => {
+  this.answer = (q) => {
     if (!q.result) return this.signal('missing').answer(q);
-    const {bref, links, long, unde} = q.result;
+    const {name, result: {bref, links, long, unde}} = q;
 
     return {
-      title: q.name.capitalize(),
+      title: name.capitalize(),
       view: {
         header: {
           unde: `<p><a onclick="Ø('query').bang('${unde}')">${unde}</a></p>`,
-          search: q.name,
+          search: name,
         },
-        core: {
-          sidebar: {
-            bref: `${makeLinks(links)} ${this.makeNavi(q.result, (unde || ''), q.tables.lexicon)}`
-          },
-          content: this.signal(q.name) ?
-            this.signal(q.name).answer(q) :
-            long,
-        },
-        style: this.signal(q.name) ? this.signal(q.name).style(q) : ''
+        core: this.signal(name) ? this.signal(name).answer(q) : long
       }
     }
   }
