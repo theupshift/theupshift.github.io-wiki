@@ -1,21 +1,17 @@
 DATABASE.lexicon = `
-HOME
-  TYPE : Home
+@ HOME
   LONG
     & Welcome to {*The Athenaeum*}. Housed herein are various documents and records of the various projects within my {{Oeuvre}} as well as some memoirs and notes on certain topics of interest. Use the title of this page to search for something in particular.
     & {*Note:*} This site is under construction. Beware of goblins!
     & If you are a new visitor to this site, here are some pages that may be of relevance to your interests:
 
-JOSH
-  UNDE : Home
-  TYPE : Portal
+@ JOSH
   BREF : Who am I?
   LONG
     & My name is Josh and I guess you can call me a hobbyist. I'm currently studying information technology in Thailand. After that, I hope to focus my time and energy traveling the world and working on various projects.
     & To learn random bits of information about me and what I do, feel free to explore the following links:
 
 ABOUT
-  UNDE : Home
   BREF : What is this site about?
   LONG
     & This site serves as a personal chronicle of my oeuvre as it grows over time. It also serves as a wiki for people to read through and learn more about my projects.
@@ -28,8 +24,7 @@ ABOUT
     * License
     & Feel free to fork and modify this site's back-end engine code, which is made available under the MIT license. However the content (text, photos, data) is available under the BY-NC-SA 4.0 license.
 
-CONTACT
-  UNDE : Josh
+JOSH.CONTACT
   BREF : Send a raven
   LONG
     & If you have any comments, suggestions, questions, or if you simply just want to chat, here are some of the ways you can get ahold of me:
@@ -37,8 +32,7 @@ CONTACT
     = Send a raven* to 14.674417°N 101.176869°E
     & * No spam pigeons, please
 
-GOALS
-  UNDE : Josh
+JOSH.GOALS
   BREF : A list of things to achieve and accomplish
   LONG
     & Here is an ever-changing list of things I would love to achieve or accomplish, preferably before my inevitable death. Only after I'm able to check off every item below will I be able to say that my life has been well-lived.
@@ -53,8 +47,7 @@ GOALS
     = Contribute to any form of technological progress that will eventually make non-necessities like educational institutions and accountants obsolete
     = Finish 10,000 projects before {{Death}}
 
-TODO
-  UNDE : Josh
+JOSH.TODO
   BREF : A list of things to create
   LONG
     & A list of things to make
@@ -82,15 +75,12 @@ TODO
     = Tricopter drone
     = Wrist-mounted computer
 
-INVENTORY
-  UNDE : Josh
-  TYPE : Portal
+@ JOSH.INVENTORY
   BREF : Personal effects
   LONG
     & These are some of the tools that help facilitate daily work.
 
-NAVIRE
-  UNDE : Inventory
+INVENTORY.NAVIRE
   BREF : My primary workstation
   LONG
     & Most of my projects are built on Navire, an ancient Victorian-era laptop with barely 2GB of RAM and a 1.10 GHz processor. I run Linux on it in order to keep resource usage as lightweight and minimal as possible.
@@ -106,8 +96,7 @@ NAVIRE
     = {*Image editor*} - GIMP
     = {*Music composition*} - Marabu
 
-ORION
-  UNDE : Inventory
+INVENTORY.ORION
   BREF : My mobile workstation
   LONG
     & Whenever I'm out and away from my laptop, I have the option of working from my mobile phone. Orion is an Android phone that has Termux running on it. This lets me work with git and other Linux tools on the go.
@@ -121,36 +110,26 @@ ORION
     - {*Browser*} - Brave
     - {*Dimmer*} - Twilight
 
-DEATH
-  UNDE : Josh
+JOSH.DEATH
   BREF : Inevitability
   LONG
     @ You only live once, but if you do it right, once is enough. | Mae West
 
-OEUVRE
-  UNDE : Home
-  TYPE : Portal
+@ OEUVRE
   BREF : Mostly unfinished symphonies
 
-UTILITIES
-  UNDE : Oeuvre
-  TYPE : Index
++ OEUVRE.UTILITIES
   BREF : A collection of utilities created to help enhance my day-to-day life
 
-CARGO
-  UNDE : Utilities
   BREF : {{Cargo}} is an upcoming personal inventory management tool.
+UTILITIES.CARGO
 
-EAU
-  UNDE : Utilities
+UTILITIES.EAU
   LONG
     & Eau was a hydration log. It was created to help me keep track of how much water I drink. Every time I rehydrate, I log the quantity in milliliters. The project was eventually discontinued, though I will revisit it again soon.
-  LINK
-    Github : https://github.com/joshavanier/eau
 
-LOG
-  UNDE : Utilities
   BREF : {{Log}} is a log and time-tracker.
+UTILITIES.LOG
   LONG
     & Log is a time-tracker inspired by similar systems by Neauoire and vi. It is designed for single-tasking: start a log, focus on your task, and then end it when you're done. Log is a time-tracker inspired by similar systems by Neauoire and vi. It is designed for single-tasking: start a log, focus on your task, and then end it when you're done.
     % log.png
@@ -158,55 +137,37 @@ LOG
     & Log is available as an Electron app for Linux and macOS and can be downloaded on itch.io.
     * Future
     & A CLI variant and a mobile app is being planned. The CLI variant is more likely to be created soon. Mobile app development is not a possibility with my current resources.
-  LINK
-    Itch.io : https://joshavanier.itch.io/log
-    Github : https://github.com/joshavanier/log
 
-QYLLIUM
-  UNDE : Utilities
   BREF : {{Qyllium}} is an upcoming notes app.
+UTILITIES.QYLLIUM
   LONG
     & Qyllium is an upcoming notes app. It is inspired by the bullet journal which is designed for rapid logging of tasks, notes, and events.
     % qyllium.png
-  LINK
-    Itch.io : https://joshavanier.itch.io/qyllium
-    Github : https://github.com/joshavanier/qyllium
 
-RISU
-  UNDE : Utilities
   BREF : {{Risu}} is an upcoming personal finance management tool.
+UTILITIES.RISU
   LONG
     & Risu is an upcoming personal finance management tool. Ironically, as soon as I started working on this project, I simply stopped spending and eventually didn't see the need for financial management. I still plan on finishing this though.
     % risu.png
-  LINK
-    Itch.io : https://joshavanier.itch.io/risu
-    Github : https://github.com/joshavanier/risu
 
-SOMNUS
-  UNDE : Utilities
   BREF : {{Somnus}} was a sleep log.
+UTILITIES.SOMNUS
   LONG
     & It was created to eventually provide me with insight on how much I sleep. The process is admittedly tedious yet simple. I just record the approximate time I go to bed and the exact time I wake up. The moment I wake up, I immediately check the time.
     % somnus.png
-  LINK
-    Github : https://github.com/joshavanier/somnus
 
-OBSERVATORY
-  UNDE : Oeuvre
-  TYPE : Index
++ OEUVRE.OBSERVATORY
   BREF : Of realms and universes
   LONG
     & The Observatory is where I ponder upon the existence of a parallel universe
 
-MITHVAER
-  UNDE : Observatory
+OBSERVATORY.MITHVAER
   BREF : {{Mithvaer}} is a planet yet to be explored.
   LONG
     & More information soon.
     % mithvaer.png
 
-VIDE
-  UNDE : Observatory
+OBSERVATORY.VIDE
   BREF : {{Vide}} is an upcoming worldbuilding tool.
   LONG
     & Vide is a worldbuilding tool that aids in the creation of somewhat scientifically-plausible stars, planets, moons, and planetary systems.
@@ -214,25 +175,18 @@ VIDE
     & I want to create a tool that lets users create worlds with high in-depth details like planetary orbits, atmospheric compositions, gravity, etc.
     % vide.png
 
-ATTIC
-  UNDE : Oeuvre
-  TYPE : Index
++ OEUVRE.ATTIC
   BREF : A collection of random things built on the web
   LONG
     & Among thousands of intertwined strands is a scattered collection of miscellanea built within and for the vast expanse of the Internet. Here are some web-related tools and toys built in browsers for browsers.
 
-CLAVIER
-  UNDE : Attic
+ATTIC.CLAVIER
   BREF : {{Clavier}} is a keycode mapping utility.
   LONG
     & Clavier is a simple JS keycode mapping utility. All it does is tell you the corresponding keycode to whatever key you press on your keyboard.
     % clavier.png
-  LINK
-    Live : https://joshavanier.github.io/clavier
-    GitHub : https://github.com/joshavanier/clavier
 
-HAIAKU
-  UNDE : Attic
+ATTIC.HAIAKU
   BREF : {{Haiaku}} is a text converter.
   LONG
     & Haiaku (俳悪) is a simple text converter that rewrites input into top-down, right-to-left fullwidth format reminiscent of haikus. It was built upon the request of a friend who had that specific request.
@@ -243,103 +197,66 @@ HAIAKU
     # 　む　<br>
     # <br>
     # -芭蕉
-  LINK
-    Live : https://joshavanier.github.io/haiaku
-    GitHub : https://github.com/joshavanier/haiaku
 
-KUMO
-  UNDE : Attic
+ATTIC.KUMO
   BREF : {{Kumo}} is a Hacker News client.
   LONG
     & Kumo (クモ) is a basic Hacker News client. It's very simple and only shows the top 20 stories. I made it because all I wanted from Hacker News was links to stories. Nothing else.
     % kumo.png
-  LINK
-    Live : https://joshavanier.github.io/kumo
-    Github : https://github.com/joshavanier/kumo
 
-MACIAN
-  UNDE : Attic
+ATTIC.MACIAN
   BREF : {{Macian}} is a functional CSS framework
   LONG
     & Macian is a functional CSS framework inspired by and based on Tachyons. It features a set of customisable utility classes.
     % macian.png
-  LINK
-    Codex : https://joshavanier.github.io/macian
-    Github : https://github.com/joshavanier/macian
 
-NUMBERS
-  UNDE : Attic
-  SCRN : numbers.png
+ATTIC.NUMBERS
   BREF : {{Numbers}} is a random number facts generator lol.
   LONG
     & Numbers is a random number facts generator
-  LINK
-    Live : https://joshavanier.github.io/numbers
-    Github : https://github.com/joshavanier/numbers
 
-ROVARSPRAKET
-  UNDE : Attic
-  SCRN : rovarspraket.png
+ATTIC.ROVARSPRAKET
   BREF : {{Rövarspråket|Rovarspraket}} is a translator for the Swedish language game.
   LONG
     & Rövarspråket is a translator for {{Rövarspråket|https://en.wikipedia.org/wiki/R%C3%B6varspr%C3%A5ket}} (The Robber Language), a Swedish language game where consonants are doubled and an {*o*} is inserted in between while vowels remain as they are.
     # Hello world - Hohelollolo wowororloldod
-  LINK
-    Live : https://joshavanier.github.io/rovarspraket
-    Github : https://github.com/joshavanier/rovarspraket
 
-SANDBOX
-  UNDE : Oeuvre
-  TYPE : Index
-  SCRN : grymstorge.png
++ OEUVRE.SANDBOX
   BREF : Mediums to facilitate play
   LONG
     & The Sandbox houses my mostly-unfinished games, toys, and any medium that facilitates play.
 
-AUDELA
-  UNDE : Sandbox
+SANDBOX.AUDELA
   LONG
     & Audela is an upcoming text-based space exploration game where you can freely explore a procedurally-generated galaxy. Explore and colonise planets, upgrade your ship or buy a whole fleet; the galaxy is your oyster.
     % grymstorge.png
 
-GRYMSTORGE
-  UNDE : Sandbox
+SANDBOX.GRYMSTORGE
   LONG
     & Grymstorge is an unfinished exploration game built with {{Bitsy|https://ledoux.itch.io/bitsy}} where you explore the abandoned ruins of the subterranean fortress of the great kingdom of Glachiem.
     % grymstorge.png
 
-PORTE
-  UNDE : Sandbox
+SANDBOX.PORTE
   SCRN : porte.png
   BREF : {{Porte}} was a simple game about logic gates.
   LONG
     & Porte was a simple game about logic gates. It was made as a small experiment using the Bitsy game creator.
     % porte.png
-  LINK
-    Live : https://joshavanier.github.io/porte
-    Github : https://github.com/joshavanier/porte
 
-QUOIN
-  UNDE : Sandbox
-  SCRN : quoin.png
+SANDBOX.QUOIN
   BREF : {{Quoin}} was an unfinished sales management game.
   LONG
     & Quoin was an unfinished sales management game where you played as an aspiring shopkeeper hoping to strike gold in the town of Selletown.
     & I was taking a boring course called Sales and Selling. In order to motivate myself to study, I turned it into a game. The point of the game was to make use of sales management and sales strategies to expand your business.
     & Final exams flew by faster than I anticipated but I ended up passing the class and Quoin was left in the archives.
     % quoin.png
-  LINK
-    Github : https://github.com/joshavanier/quoin
 
-STRAVAGE
-  UNDE : Sandbox
+SANDBOX.STRAVAGE
   BREF : {{Stravage}} was an abandoned 2D platformer game.
   LONG
     & Stravage was an abandoned 2D platformer game. Its source code was lost in the ether due to an unfortunate drive malfunction.
 
-TEXTE
-  UNDE : Sandbox
-  SCRN : texte.png
+SANDBOX.TEXTE
   BREF : {{Texte}} is an unfinished tool for writing text-based games.
   LONG
     & Texte is a tool for generating text-based adventure games. It's a fork of {{vi|https://twitter.com/v_exec}}'s {{Visor|https://github.com/v-exec/Visor}}, a minimalist presentation tool. Games are written on .txt files following a simple syntax.
@@ -363,17 +280,13 @@ TEXTE
     # col - Text colour<br>
     # + - New line<br>
     # #[Action>Link] - Action button
-  LINK
-    GitHub : https://github.com/joshavanier/texte
 
-LABORATORY
-  UNDE : Oeuvre
-  TYPE : Index
++ OEUVRE.LABORATORY
   BREF : Physical items
   LONG
     & A greatly under-used section of the Oeuvre, the Laboratory houses projects involving the creation of things of tangible nature.
 
-HOLLY
+LABORATORY.HOLLY
   UNDE : Laboratory
   BREF : A Raspberry Pi computer console
   LONG
@@ -381,23 +294,17 @@ HOLLY
     * Current Status
     & The project is put on temporary stasis as I messed up the soldering of the battery circuit.
 
-ATELIER
-  UNDE : Oeuvre
-  TYPE : Index
++ OEUVRE.ATELIER
   BREF : Visuals
   LONG
     & The Atelier houses my attempts at various mediums of visual arts.
 
-OWL CITY
-  UNDE : Atelier
+ATELIER.OWL CITY
   BREF : The {{Owl City}} posters are my first attempts in design.
   LONG
     & The Owl City posters were my first attempts at design. The idea was simple: turn an Owl City song into a poster. I used GIMP and some free fonts. It was once a daily thing until it was discontinued when I entered university.
-  LINK
-    Tumblr : https://joshavanier.tumblr.com
 
-PIXELATTIRE
-  UNDE : Atelier
+ATELIER.PIXELATTIRE
   BREF : {{Pixelattire}} is a pixel art log of daily outfits throughout 2018.
   LONG
     & Pixelattire is a daily pixel art project where I document what I wear every day throughout 2018. All art is created using GIMP and is posted on a {{Tumblr page|https://pixelattire.tumblr.com}}. The custom lightweight Tumblr theme used is available {{here|https://github.com/joshavanier/pixelattire}}.
@@ -405,21 +312,16 @@ PIXELATTIRE
     & I plan on continuing this project next year, although I plan on having a system that generates pixel art from text logs rather than spend ~10 minutes per day manually creating these.
     % pixelattire.png
 
-COMMONPLACE
-  UNDE : Home
-  TYPE : Portal
+@ COMMONPLACE
   BREF : Notes
   LONG
     & The Commonplace contains an assorted medley of notes on various topics. These are mostly serve as reminders and notes to self.
     @ You may want to keep a commonplace book which is a notebook where you can copy parts of books you think are in code, or take notes on a series of events you may have observed that are suspicious, unfortunate, or very dull. | Lemony Snicket: The Unauthorized Autobiography | Lemony Snicket
 
-HEALTH
-  UNDE : Commonplace
-  TYPE : Portal
+@ COMMONPLACE.HEALTH
   BREF : Notes on health and well-being
 
-NUTRITION
-  UNDE : Health
+HEALTH.NUTRITION
   BREF : Notes on nutrition
   LONG
     @ People eat meat and think they will become as strong as an ox, forgetting that the ox eats grass. | Pino Caruso
@@ -431,8 +333,7 @@ NUTRITION
     = Consume food in a form that is as close as possible to its natural form (unprocessed, raw).
     = Avoid sugar and artificial ingredients.
 
-FITNESS
-  UNDE : Health
+HEALTH.FITNESS
   BREF : Notes on fitness
   LONG
     * Guidelines
@@ -440,8 +341,7 @@ FITNESS
     = Walk 10,000+ steps per day.
     = Exercise at least twice a week.
 
-SLEEP
-  UNDE : Health
+HEALTH.SLEEP
   BREF : Notes on sleep
   LONG
     & To be honest, I am not a fan of sleep. I consider it a waste of time and a flaw of efficiency in Mother Nature's design. At the time of this writing, I'm still experimenting with ways to minimise sleep without sacrificing anything else.
@@ -460,29 +360,24 @@ SLEEP
     * Lucid Dreaming
     & Lucid dreaming might be a solution to stay productive all day. Imagine being able to plan your projects while your body rests. Unfortunately, lucid dreaming is one of the many skills I have yet to master.
 
-LIFE
-  UNDE : Commonplace
+COMMONPLACE.LIFE
   BREF : Notes on living
   LONG
     * 侘寂
     @ Nothing lasts, nothing is finished, and nothing is perfect. | Richard Powell | Wabi Sabi Simple
     & Wabi-sabi is a Japanese philosophy focused on the acceptance of transcience and imperfection in our lives. It teaches us to be content with how things are.
 
-ENVIRONMENT
-  UNDE : Commonplace
-  TYPE : Portal
+@ COMMONPLACE.ENVIRONMENT
   BREF : Notes on environmentalism
   LONG
     & We as a species are killing the planet, the only home we have. I believe its of the utmost importance that we radically shift our mindset on how we live on spaceship Earth.
 
-SOLARPUNK
-  UNDE : Environment
+ENVIRONMENT.SOLARPUNK
   BREF : Because the only other options are denial or despair
   LONG
     @ Solarpunk is a rebellion against the structural pessimism in our late visions of how the future will be. | Connor Owens | What is Solarpunk? | https://solarpunkanarchists.com/2016/05/27/what-is-solarpunk/
 
-ZERO WASTE
-  UNDE : Environment
+ENVIRONMENT.ZERO WASTE
   BREF : Notes on the zero-waste lifestyle
   LONG
     = {*Refuse*} what you don't need

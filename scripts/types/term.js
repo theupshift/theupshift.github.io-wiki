@@ -1,11 +1,10 @@
-function Term (name, dict) {
+function Term (name, dict, unde = 'Home', type = 'none') {
   this.name = name;
   this.dict = dict;
-  this.type = dict.TYPE ? dict.TYPE.toLowerCase() : 'none';
-  this.links = dict.LINK ? dict.LINK : [];
-  this.flag = dict.FLAG ? dict.FLAG : [];
+  this.type = type;
+  // this.links = dict.LINK ? dict.LINK : [];
+  // this.flag = dict.FLAG ? dict.FLAG : [];
 
-  // Filled with Ø('map')
   this.parent = null;
   this.children = [];
 
@@ -13,5 +12,5 @@ function Term (name, dict) {
 
   this.bref = dict && dict.BREF ? dict.BREF.toMarkup() : '';
   this.long = new Runic(dict.LONG).html();
-  this.unde = dict.UNDE ? dict.UNDE : 'Home';
+  this.unde = unde;
 }

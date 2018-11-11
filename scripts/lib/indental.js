@@ -20,11 +20,29 @@ function Indental (data) {
 
     // Format
     let h = {};
+
     for (let i = 0; i < lines.length; i++) {
       const line = lines[i];
       if (line.skip || line.indent > 0) continue;
-      const key = line.content.toUpperCase();
-      h[key] = type ? new type(key, format(line)) : format(line);
+      let key = line.content.toUpperCase();
+      let unde = 'Home';
+      let typ = 'none';
+
+      if (key.indexOf('@') > -1) {
+        key = key.split('@')[1].trim();
+        typ = key === 'HOME' ? 'home' : 'portal';
+      } else if (key.indexOf('+') > -1) {
+        key = key.split('+')[1].trim();
+        typ = key === 'HOME' ? 'home' : 'index';
+      }
+
+      if (key.indexOf('.') > -1) {
+        const split = key.split('.');
+        key = split[1];
+        unde = split[0];
+      }
+
+      h[key] = type ? new type(key, format(line), unde.capitalize(), typ) : format(line);
     }
 
     return h;
