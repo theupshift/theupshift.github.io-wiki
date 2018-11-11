@@ -413,5 +413,52 @@ COMMONPLACE
     & The Commonplace contains an assorted medley of notes on various topics. These are mostly serve as reminders and notes to self.
     @ You may want to keep a commonplace book which is a notebook where you can copy parts of books you think are in code, or take notes on a series of events you may have observed that are suspicious, unfortunate, or very dull. | Lemony Snicket: The Unauthorized Autobiography | Lemony Snicket
 
+HEALTH
+  UNDE : Commonplace
+  TYPE : Portal
+  BREF : Notes on health and well-being
+
+NUTRITION
+  UNDE : Health
+  BREF : Notes on nutrition
+  LONG
+    @ People eat meat and think they will become as strong as an ox, forgetting that the ox eats grass. | Pino Caruso
+    * Japanese Diet
+    & The traditional Japanese diet consists of mostly unprocessed foods with very minimal seasoning.
+    * Guidelines
+    = Adhere to a plant-based diet.
+    = Avoid foods with more than 10 ingredients.
+    = Consume food in a form that is as close as possible to its natural form (unprocessed, raw).
+    = Avoid sugar and artificial ingredients.
+
+FITNESS
+  UNDE : Health
+  BREF : Notes on fitness
+  LONG
+    * Guidelines
+    = Avoid sitting down for too long.
+    = Walk 10,000+ steps per day.
+    = Exercise at least twice a week.
+
+SLEEP
+  UNDE : Health
+  BREF : Notes on sleep
+  LONG
+    & To be honest, I am not a fan of sleep. I consider it a waste of time and a flaw of efficiency in Mother Nature's design. At the time of this writing, I'm still experimenting with ways to minimise sleep without sacrificing anything else.
+    & What's most important is the quality of sleep, not quantity.
+    * Guidelines
+    = Go to bed at the same time every day if possible.
+    = Turn off devices 1-2 hours before sleep. Avoid blue light.
+    = Write in a journal before bed to offload your thoughts.
+    = Avoid caffeine 4-6 hours before bed.
+    * Effects of Sleep Deficiency
+    = Reduced reliability of memory
+    = Slower thinking
+    = Reduced decision making abilities
+    = Poorer insight and focus
+    = Exhaustion
+    * Lucid Dreaming
+    & Lucid dreaming might be a solution to stay productive all day. Imagine being able to plan your projects while your body rests. Unfortunately, lucid dreaming is one of the many skills I have yet to master.
+
 
 `
