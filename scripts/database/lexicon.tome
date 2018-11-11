@@ -405,5 +405,13 @@ PIXELATTIRE
     & I plan on continuing this project next year, although I plan on having a system that generates pixel art from text logs rather than spend ~10 minutes per day manually creating these.
     % pixelattire.png
 
+COMMONPLACE
+  UNDE : Home
+  TYPE : Portal
+  BREF : Notes
+  LONG
+    & The Commonplace contains an assorted medley of notes on various topics. These are mostly serve as reminders and notes to self.
+    @ You may want to keep a commonplace book which is a notebook where you can copy parts of books you think are in code, or take notes on a series of events you may have observed that are suspicious, unfortunate, or very dull. | Lemony Snicket: The Unauthorized Autobiography | Lemony Snicket
+
 
 `
