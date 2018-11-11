@@ -11,17 +11,26 @@ function InputNode (id, ...params) {
 
   this.el.addEventListener('focus', () => {
     this.txt = this.el.value;
-    this.el.value = '';
+    Object.assign(this.el, {
+      value: '',
+      placeholder: 'Search',
+      title: 'Search for a page or topic'
+    });
   });
 
   this.el.addEventListener('blur', () => {
-    this.el.value = this.txt ?
-      this.txt : window.location.hash.replace('#', '').trim();
+    this.el.value = this.txt.capitalize();
   });
 
-  this.validate = (value) => Ø('query').bang(value);
+  this.validate = (value) => {
+    this.txt = value;
+    Ø('query').bang(value);
+  }
 
   this.update = (content) => {
-    if (typeof content === 'string') this.el.value = content.capitalize();
+    this.txt = content;
+    if (typeof content === 'string') {
+      this.el.value = content.capitalize();
+    }
   }
 }
