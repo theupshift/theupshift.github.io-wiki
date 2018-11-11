@@ -1,7 +1,5 @@
-The **Memex** is a personal wiki.
+The **Athenaeum** is a personal wiki.
 
 ---
 
-Josh Avanier
-
-**[Twitter](https://twitter.com/joshavanier)** &middot; **[Memex](https://joshavanier.github.io)**
+**[Josh Avanier](https://joshavanier.github.io)**
