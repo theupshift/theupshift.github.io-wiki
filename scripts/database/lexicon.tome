@@ -82,6 +82,45 @@ TODO
     = Tricopter drone
     = Wrist-mounted computer
 
+INVENTORY
+  UNDE : Josh
+  TYPE : Portal
+  BREF : Personal effects
+  LONG
+    & These are some of the tools that help facilitate daily work.
+
+NAVIRE
+  UNDE : Inventory
+  BREF : My primary workstation
+  LONG
+    & Most of my projects are built on Navire, an ancient Victorian-era laptop with barely 2GB of RAM and a 1.10 GHz processor. I run Linux on it in order to keep resource usage as lightweight and minimal as possible.
+    * Dotfiles
+    & My dotfiles are available on GitHub. Feel free to use and modify according to your preferences.
+    * Essentials
+    = {*WM*} - i3wm
+    = {*Terminal*} - st
+    = {*Browser*} - Firefox, Chromium, surf
+    = {*Text editor*} - vim
+    = {*Music*} - cmus
+    = {*Files*} - nnn, pcmanfm
+    = {*Image editor*} - GIMP
+    = {*Music composition*} - Marabu
+
+ORION
+  UNDE : Inventory
+  BREF : My mobile workstation
+  LONG
+    & Whenever I'm out and away from my laptop, I have the option of working from my mobile phone. Orion is an Android phone that has Termux running on it. This lets me work with git and other Linux tools on the go.
+    * Essential Apps
+    - {*Terminal*} - Termux
+    - {*Email*} - ProtonMail
+    - {*Reading*} - Pocket
+    - {*Notes*} - iA Writer
+    - {*Social*} - Mastalab
+    - {*Photography*} - VSCO
+    - {*Browser*} - Brave
+    - {*Dimmer*} - Twilight
+
 OEUVRE
   UNDE : Home
   TYPE : Portal
