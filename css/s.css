@@ -53,16 +53,11 @@ main {
   max-width: 30em;
 }
 
-#content p:first-child:first-letter {
-  color: #0c0c0c;
+main p:first-child:first-letter {
   float: left;
-  font-family: Georgia;
-  font-size: 55px;
+  font: 55px/40px Georgia;
   font-weight: bold;
-  line-height: 40px;
-  padding-top: 4px;
-  padding-right: 8px;
-  padding-left: 3px;
+  padding: 4px 8px 0 3px;
 }
 
 p {
