@@ -121,8 +121,14 @@ JOSH.DEATH
 + OEUVRE.UTILITIES
   BREF : A collection of utilities created to help enhance my day-to-day life
 
-  BREF : {{Cargo}} is an upcoming personal inventory management tool.
 UTILITIES.CARGO
+  BREF : A personal inventory management tool
+  LONG
+    & Cargo is an upcoming personal inventory management tool.
+    # Utility: how often used is an item<br>
+    # Functionality: how useful is an item<br>
+    # Rarity: how rare is an item<br>
+    # Worth: how much an item is worth
 
 UTILITIES.EAU
   LONG
