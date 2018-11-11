@@ -131,11 +131,12 @@ UTILITIES.CARGO
     # Worth: how much an item is worth
 
 UTILITIES.EAU
+  BREF : A hydration log
   LONG
     & Eau was a hydration log. It was created to help me keep track of how much water I drink. Every time I rehydrate, I log the quantity in milliliters. The project was eventually discontinued, though I will revisit it again soon.
 
-  BREF : {{Log}} is a log and time-tracker.
 UTILITIES.LOG
+  BREF : A productivity log and time-tracker.
   LONG
     & Log is a time-tracker inspired by similar systems by Neauoire and vi. It is designed for single-tasking: start a log, focus on your task, and then end it when you're done. Log is a time-tracker inspired by similar systems by Neauoire and vi. It is designed for single-tasking: start a log, focus on your task, and then end it when you're done.
     % log.png
@@ -144,20 +145,20 @@ UTILITIES.LOG
     * Future
     & A CLI variant and a mobile app is being planned. The CLI variant is more likely to be created soon. Mobile app development is not a possibility with my current resources.
 
-  BREF : {{Qyllium}} is an upcoming notes app.
 UTILITIES.QYLLIUM
+  BREF : A notes app
   LONG
     & Qyllium is an upcoming notes app. It is inspired by the bullet journal which is designed for rapid logging of tasks, notes, and events.
     % qyllium.png
 
-  BREF : {{Risu}} is an upcoming personal finance management tool.
 UTILITIES.RISU
+  BREF : A personal finance management tool
   LONG
     & Risu is an upcoming personal finance management tool. Ironically, as soon as I started working on this project, I simply stopped spending and eventually didn't see the need for financial management. I still plan on finishing this though.
     % risu.png
 
-  BREF : {{Somnus}} was a sleep log.
 UTILITIES.SOMNUS
+  BREF : A sleep log
   LONG
     & It was created to eventually provide me with insight on how much I sleep. The process is admittedly tedious yet simple. I just record the approximate time I go to bed and the exact time I wake up. The moment I wake up, I immediately check the time.
     % somnus.png
