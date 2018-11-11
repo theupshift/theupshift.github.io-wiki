@@ -468,5 +468,28 @@ LIFE
     @ Nothing lasts, nothing is finished, and nothing is perfect. | Richard Powell | Wabi Sabi Simple
     & Wabi-sabi is a Japanese philosophy focused on the acceptance of transcience and imperfection in our lives. It teaches us to be content with how things are.
 
+ENVIRONMENT
+  UNDE : Commonplace
+  TYPE : Portal
+  BREF : Notes on environmentalism
+  LONG
+    & We as a species are killing the planet, the only home we have. I believe its of the utmost importance that we radically shift our mindset on how we live on spaceship Earth.
+
+SOLARPUNK
+  UNDE : Environment
+  BREF : Because the only other options are denial or despair
+  LONG
+    @ Solarpunk is a rebellion against the structural pessimism in our late visions of how the future will be. | Connor Owens | What is Solarpunk? | https://solarpunkanarchists.com/2016/05/27/what-is-solarpunk/
+
+ZERO WASTE
+  UNDE : Environment
+  BREF : Notes on the zero-waste lifestyle
+  LONG
+    = {*Refuse*} what you don't need
+    = {*Reduce*} what you do need
+    = {*Reuse*} what you consume
+    = {*Recycle*} what you can't refuse, reduce, or reuse
+    = {*Rot*} the rest
+
 
 `
