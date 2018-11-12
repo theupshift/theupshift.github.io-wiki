@@ -12,7 +12,7 @@ input {display: block; margin: 1.618em auto; text-align: center; background-colo
 #core p, h2, ul, ol, dl, code, blockquote, img, video {margin: 1.272em 0 0 0}
 a {color: #202020; text-decoration: none; cursor: pointer; font-weight: bold}
 a:hover {color: #eb4e32}
-h2 {font: 1.618em/1.272em 'Georgia', serif}
+h2 {font: bold 1.618em/1.272em 'Georgia', serif}
 blockquote {padding: 1.618em 1.272em}
 .quote:before {content: '\00201C'}
 .quote {margin-bottom: 0; font: italic 1.618em/1.272em 'Georgia', serif}
