@@ -28,8 +28,9 @@ function IndexTemplate(id, ...params) {
 
     for (let id in children) {
       const child = children[id];
+      const link = `<a onclick="Ø('query').bang('${child.name}')">${child.name.capitalize()}</a>`
 
-      html += `<dt>${child.name.capitalize()}</dt><dd>${child.bref.toMarkup()}</dd></hs>
+      html += `<dt>${link}</dt><dd>${child.bref.toMarkup()}</dd></hs>
       ${!stop ? makeIndex(child.name,lexicon,logs,true) : ''}`;
     }
 

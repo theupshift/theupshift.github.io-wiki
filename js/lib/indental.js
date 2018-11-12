@@ -1,5 +1,7 @@
 'use strict';
 
+const DB = {};
+
 function Indental (data) {
   this.data = data;
 

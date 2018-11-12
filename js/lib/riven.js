@@ -74,8 +74,7 @@ function Node (id) {
     const {routes} = this.ports.output;
     for (let i = 0; i < routes.length; i++) {
       const route = routes[i];
-      if (!route) continue;
-      route.host.receive(payload);
+      if (route) route.host.receive(payload);
     }
   }
 
