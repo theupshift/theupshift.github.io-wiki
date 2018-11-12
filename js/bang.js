@@ -16,7 +16,7 @@ function bang () {
   Ø('view').create(DomNode);
 
   Ø('header').create(DomNode, 'header');
-  Ø('unde').create(DomNode);
+  Ø('unde').create(DomNode, 'p');
   Ø('search').create(InputNode);
   Ø('core').create(DomNode, 'main');
   Ø('footer').create(DomNode, 'footer',`

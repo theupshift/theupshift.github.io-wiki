@@ -9,7 +9,7 @@ function HomeTemplate(id, ...params) {
       title: name.capitalize(),
       view: {
         header: {
-          unde: '<p>&mdash;</p>',
+          unde: '&mdash;',
           search: name,
         },
         core: `${q.result.long}${makePortal(children)}`

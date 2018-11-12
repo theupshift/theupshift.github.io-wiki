@@ -12,8 +12,8 @@ function MissingTemplate (id, ...params) {
       title,
       view: {
         header: {
-          unde: `<p><a onclick="Ø('query').bang('Home')">Home</a></p>`,
           search: name,
+          unde: `<a onclick="Ø('query').bang('Home')">Home</a>`,
         },
         core: `<p>The page "${title}" does not exist within the Athenaeum. Were you looking for <a onclick="Ø('query').bang('${w1}')">${w1.capitalize()}</a> or <a onclick="Ø('query').bang('${w2}')">${w2.capitalize()}</a>?</p>`
       }
