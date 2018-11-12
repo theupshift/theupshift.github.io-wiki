@@ -20,7 +20,7 @@ function bang () {
   Ø('search').create(InputNode);
   Ø('core').create(DomNode, 'main');
   Ø('footer').create(DomNode, 'footer',`
-    <a href="http://webring.xxiivv.com/#random"><img src="img/rotonde.svg"></a><p><a onclick="Ø('query').bang('josh')">Josh Avanier</a> © Éternité</p>`);
+    <a href="http://webring.xxiivv.com/#random"><img id="webring" src="img/rotonde.svg"></a><p><a onclick="Ø('query').bang('josh')">Josh Avanier</a> © Éternité</p>`);
 
   Ø('router').syphon('database');
   Ø('database').syphon(['lexicon']);
