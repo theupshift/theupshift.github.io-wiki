@@ -6,43 +6,42 @@ function Rune (opts) {
   this.stash = opts.stash;
 }
 
+const RUNES = {
+  '&': new Rune({glyph: '&', tag: 'p'}),
+  '~': new Rune({
+    glyph: '~', tag: 'ul', sub: 'li', klass: 'parent', stash: true
+  }),
+  '-': new Rune({glyph: '-', tag: 'ol', sub: 'li', stash: true}),
+  '=': new Rune({glyph: '=', tag: 'list', sub: 'li', stash: true}),
+  '!': new Rune({
+    glyph: '!',
+    tag: 'table',
+    sub: 'tr',
+    wrap: 'th',
+    klass: 'outline',
+    stash: true
+  }),
+  '|': new Rune({
+    glyph: '|',
+    tag: 'table',
+    sub: 'tr',
+    wrap: 'td',
+    klass: 'outline',
+    stash: true
+  }),
+  '#': new Rune({glyph: '#', tag: 'code', sub: 'ln', stash: true}),
+  '%': new Rune({glyph: '%'}),
+  '?': new Rune({glyph: '?', tag: 'note'}),
+  ':': new Rune({glyph: ':', tag: 'info'}),
+  '*': new Rune({glyph: '*', tag: 'h2'}),
+  '+': new Rune({glyph: '+'}),
+  '>': new Rune({glyph: '>'}),
+  '$': new Rune({glyph: '>'}),
+  '@': new Rune({glyph: '@', tag: 'blockquote'})
+}
+
 function Runic (raw) {
   this.raw = raw;
-
-  this.runes = {
-    '&': new Rune({glyph: '&', tag: 'p'}),
-    '~': new Rune({
-      glyph: '~', tag: 'ul', sub: 'li', klass: 'parent', stash: true
-    }),
-    '-': new Rune({glyph: '-', tag: 'ol', sub: 'li', stash: true}),
-    '=': new Rune({glyph: '=', tag: 'list', sub: 'li', stash: true}),
-    '!': new Rune({
-      glyph: '!',
-      tag: 'table',
-      sub: 'tr',
-      wrap: 'th',
-      klass: 'outline',
-      stash: true
-    }),
-    '|': new Rune({
-      glyph: '|',
-      tag: 'table',
-      sub: 'tr',
-      wrap: 'td',
-      klass: 'outline',
-      stash: true
-    }),
-    '#': new Rune({glyph: '#', tag: 'code', sub: 'ln', stash: true}),
-    '%': new Rune({glyph: '%'}),
-    '?': new Rune({glyph: '?', tag: 'note'}),
-    ':': new Rune({glyph: ':', tag: 'info'}),
-    '*': new Rune({glyph: '*', tag: 'h2'}),
-    '+': new Rune({glyph: '+'}),
-    '>': new Rune({glyph: '>'}),
-    '$': new Rune({glyph: '>'}),
-    '@': new Rune({glyph: '@', tag: 'blockquote'})
-  }
-
   this.stash = {
     rune: '',
     all: [],
@@ -80,7 +79,7 @@ function Runic (raw) {
     for (let i = 0; i < lines.length; i++) {
       let line = lines[i];
       const char = line.substr(0, 1).trim().toString();
-      const rune = this.runes[char];
+      const rune = RUNES[char];
       const trail = line.substr(1, 1);
 
       switch (char) {
