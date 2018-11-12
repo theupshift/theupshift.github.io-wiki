@@ -1,7 +1,7 @@
 * {margin: 0; padding: 0; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box}
 html {height: 100%; width: 100%}
 body {background-color: #e4e4e4; color: #202020; font: 16px/1.618em 'Inter UI', sans-serif; padding: 4em 1.618em 0}
-#view {width: 30rem; margin: .5em auto 0; text-align: center}
+#view {margin: .5em auto 0; text-align: center}
 #unde {font-family: 'Georgia', serif}
 #unde a {font-weight: normal}
 input, img, video {width: 100%}
@@ -25,6 +25,7 @@ dd {margin-bottom: 1.272em; padding-left: 1.618em; font-style: italic}
 code {display: block; padding: 1.272em; background-color: #202020; color: #f8f8f8}
 #footer {padding: 2.6179em 0}
 #webring {margin-bottom: .7862em; width: 2.0581em}
+@media screen and (min-width: 30em) {#view {width: 30rem}}
 @media screen and (min-width: 60em) {
   input {font-size: 2.6179em}
   blockquote {padding: 1.618em}
