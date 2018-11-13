@@ -8,11 +8,9 @@ function PortalTemplate(id, ...params) {
     return {
       title: q.name.capitalize(),
       view: {
-        header: {
-          unde: `<p><a onclick="Ø('query').bang('${unde}')">${unde}</a></p>`,
-          search: name,
-        },
         core: `${long}${makePortal(name, children)}`
+        unde: `<p><a onclick="Ø('query').bang('${unde}')">${unde}</a></p>`,
+        search: name,
       }
     }
   }

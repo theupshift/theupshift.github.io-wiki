@@ -7,11 +7,9 @@ function IndexTemplate(id, ...params) {
     return {
       title: name.capitalize(),
       view: {
-        header: {
-          unde: `<a onclick="Ø('query').bang('${unde}')">${unde}</a>`,
-          search: name,
-        },
         core: `${result.long}${makeIndex(name,tables.lexicon,tables.horaire)}`
+        unde: `<a onclick="Ø('query').bang('${unde}')">${unde}</a>`,
+        search: name,
       }
     }
   }

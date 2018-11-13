@@ -15,7 +15,6 @@ function bang () {
   Ø('document').create(DocumentNode);
   Ø('view').create(DomNode);
 
-  Ø('header').create(DomNode, 'header');
   Ø('unde').create(DomNode, 'p');
   Ø('search').create(InputNode);
   Ø('core').create(DomNode, 'main');
@@ -24,13 +23,11 @@ function bang () {
 
   Ø('router').syphon('database');
   Ø('database').syphon(['lexicon']);
-
   Ø('template').syphon(['page','portal','index','docs','home']);
   Ø('page').syphon(['missing']);
 
   Ø('template').connect(['view','document']);
-  Ø('header').bind(['unde', 'search']);
-  Ø('view').bind(['header','core','footer']);
+  Ø('view').bind(['unde','search','core','footer']);
 
   Ø('query').connect('router');
   Ø('router').connect('template');

@@ -13,9 +13,7 @@ function DocsTemplate(id, ...params) {
     return {
       title: name.capitalize(),
       view: {
-        header: {
-          search: name,
-        },
+        search: name,
         core: `${long}${this.load(filename)}`
       }
     }

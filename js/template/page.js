@@ -8,10 +8,8 @@ function PageTemplate(id, ...params) {
     return {
       title: name.capitalize(),
       view: {
-        header: {
-          unde: `<a onclick="Ø('query').bang('${unde}')">${unde}</a>`,
-          search: name,
-        },
+        unde: `<a onclick="Ø('query').bang('${unde}')">${unde}</a>`,
+        search: name,
         core: this.signal(name) ? this.signal(name).answer(q) : long
       }
     }
