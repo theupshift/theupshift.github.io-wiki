@@ -1,14 +1,13 @@
 * {margin: 0; padding: 0; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box}
 body, body * {color: #f8f8f8}
 body {background-color: #0c0c0c; font: 16px/1.618em sans-serif; padding: 5.38em 1.618em 4.236em}
-#view {margin: .5em auto 0; text-align: center}
-#unde {font-family: serif}
-#unde a {font-weight: normal}
-#search, img {width: 100%}
-#search {display: block; margin: 1.272em auto 1.618em; text-align: center; background-color: transparent; border: none; outline: none; font: 2.0581em/1.272em serif}
-#core {margin: 0 0 4.24em 0; text-align: left}
-#core p:first-child:first-letter {float: left; padding: 5px 6px 0 2px; font: bold 55px/40px serif}
-#core p:not(:first-child), h2, ul, ol, dl, code, blockquote, img {margin: 1.272em 0 0 0}
+#v {margin: .5em auto 0; text-align: center}
+#u a {font-weight: normal;font-family: serif}
+#s, img {width: 100%}
+#s {margin: 1.272em auto 1.618em; text-align: center; background-color: transparent; border: none; outline: none; font: 2.0581em/1.272em serif}
+#c {margin: 0 0 4.24em 0; text-align: left}
+#c p:first-child:first-letter {float: left; padding: 5px 6px 0 2px; font: bold 55px/40px serif}
+#c p:not(:first-child), h2, ul, ol, dl, code, blockquote, img {margin: 1.272em 0 0 0}
 a {text-decoration: none; cursor: pointer; font-weight: bold}
 a:hover {color: #eb4e32}
 h2 {font: bold 1.618em/1.272em serif}
@@ -21,8 +20,8 @@ blockquote {padding: 1.618em 1.272em}
 ul, ol {list-style-position: inside; padding-left: .7862em}
 dd {margin: 0 0 1.272em; padding-left: 1.272em; font-style: italic}
 code {display: block; padding: 1.272em; border: 1px solid}
-#webring {margin: 0 0 .7862em; width: 2.0581em}
-@media screen and (min-width: 30em) {#view {width: 30rem}}
+#w {margin: 0 0 .7862em; width: 2.0581em}
+@media screen and (min-width: 30em) {#v {width: 30rem}}
 @media screen and (min-width: 60em) {
-  #search {font-size: 2.6179em} blockquote {padding: 1.618em}
+  #s {font-size: 2.6179em} blockquote {padding: 1.618em}
 }

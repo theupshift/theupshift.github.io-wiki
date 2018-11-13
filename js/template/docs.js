@@ -10,9 +10,9 @@ function DocsTemplate(id, ...params) {
 
     return {
       title: capitalise(name),
-      view: {
-        search: name,
-        core: `${long}${this.load(filename)}`
+      v: {
+        s: name,
+        c: `${long}${this.load(filename)}`
       }
     }
   }

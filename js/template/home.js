@@ -7,10 +7,10 @@ function HomeTemplate(id, ...params) {
 
     return {
       title: capitalise(name),
-      view: {
-        unde: '&mdash;',
-        search: name,
-        core: `${q.result.long}${makePortal(children)}`
+      v: {
+        u: '&mdash;',
+        s: name,
+        c: `${q.result.long}${makePortal(children)}`
       }
     }
   }

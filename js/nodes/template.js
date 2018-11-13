@@ -13,7 +13,7 @@ function TemplateNode (id) {
     }
 
     this.send(assoc.answer(q));
-    document.body.append(this.signal('view').answer());
+    document.body.append(this.signal('v').answer());
   }
 
   this.findSiblings = (parent, lexicon) => {

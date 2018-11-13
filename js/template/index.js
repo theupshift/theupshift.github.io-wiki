@@ -6,10 +6,10 @@ function IndexTemplate(id, ...params) {
 
     return {
       title: capitalise(name),
-      view: {
-        unde: `<a onclick="Ø('query').bang('${unde}')">${unde}</a>`,
-        search: name,
-        core: `${long}${this.makeIndex(name, lexicon, horaire)}`
+      v: {
+        u: `<a onclick="Ø('query').bang('${unde}')">${unde}</a>`,
+        s: name,
+        c: `${long}${this.makeIndex(name, lexicon, horaire)}`
       }
     }
   }

@@ -7,10 +7,10 @@ function PageTemplate(id, ...params) {
 
     return {
       title: capitalise(name),
-      view: {
-        unde: `<a onclick="Ø('query').bang('${unde}')">${unde}</a>`,
-        search: name,
-        core: this.signal(name) ? this.signal(name).answer(q) : long
+      v: {
+        u: `<a onclick="Ø('query').bang('${unde}')">${unde}</a>`,
+        s: name,
+        c: this.signal(name) ? this.signal(name).answer(q) : long
       }
     }
   }

@@ -13,21 +13,21 @@ function bang () {
   Ø('docs').create(DocsTemplate);
 
   Ø('document').create(DocumentNode);
-  Ø('view').create(DomNode);
+  Ø('v').create(DomNode);
 
-  Ø('unde').create(DomNode, 'p');
-  Ø('search').create(InputNode);
-  Ø('core').create(DomNode, 'main');
-  Ø('footer').create(DomNode, 'footer',`
-    <a href="http://webring.xxiivv.com/#random"><img id="webring" src="img/rotonde.svg"></a><p><a onclick="Ø('query').bang('josh')">Josh Avanier</a> © Éternité</p>`);
+  Ø('u').create(DomNode, 'p');
+  Ø('s').create(InputNode);
+  Ø('c').create(DomNode, 'main');
+  Ø('f').create(DomNode, 'footer',`
+    <a href="http://webring.xxiivv.com/#random"><img id="w" src="img/rotonde.svg"></a><p><a onclick="Ø('query').bang('josh')">Josh Avanier</a> © Éternité</p>`);
 
   Ø('router').syphon('database');
   Ø('database').syphon(['lexicon']);
   Ø('template').syphon(['page','portal','index','docs','home']);
   Ø('page').syphon(['missing']);
 
-  Ø('template').connect(['view','document']);
-  Ø('view').bind(['unde','search','core','footer']);
+  Ø('template').connect(['v','document']);
+  Ø('v').bind(['u','s','c','f']);
 
   Ø('query').connect('router');
   Ø('router').connect('template');
