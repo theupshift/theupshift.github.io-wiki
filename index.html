@@ -38,7 +38,11 @@
 <body>
   <script>
     const RIVEN = new Riven();
-    bang();
+    if (!!~navigator.userAgent.indexOf('MSIE')) {
+      alert('Nope');
+    } else {
+      bang();
+    }
   </script>
 </body>
 </html>
