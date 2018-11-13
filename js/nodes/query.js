@@ -8,7 +8,7 @@ function QueryNode (id) {
     t = t ? t.replace(/[^0-9a-z]/gi, ' ').trim().toLowerCase() : 'home';
 
     window.scrollTo(0, 0);
-    this.send(target);
+    this.send(t);
 
     if (noHash) window.history.replaceState(undefined, undefined, `#${t}`);
     else window.location.hash = toURL(target);
