@@ -1,11 +1,10 @@
 * {margin: 0; padding: 0; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box}
-html {height: 100%; width: 100%}
 body, body * {color: #f8f8f8}
 body {background-color: #0c0c0c; font: 16px/1.618em sans-serif; padding: 5.38em 1.618em 4.236em}
 #view {margin: .5em auto 0; text-align: center}
 #unde {font-family: serif}
 #unde a {font-weight: normal}
-#search, img, video {width: 100%}
+#search, img {width: 100%}
 #search {display: block; margin: 1.272em auto 1.618em; text-align: center; background-color: transparent; border: none; outline: none; font: 2.0581em/1.272em serif}
 #core {margin: 0 0 4.24em 0; text-align: left}
 #core p:first-child:first-letter {float: left; padding: 5px 6px 0 2px; font: bold 55px/40px serif}
