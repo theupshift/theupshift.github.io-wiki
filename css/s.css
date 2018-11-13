@@ -1,6 +1,6 @@
 * {margin: 0; padding: 0; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box}
 html {height: 100%; width: 100%}
-body {background-color: #e4e4e4; color: #202020; font: 16px/1.618em 'Inter UI', sans-serif; padding: 4em 1.618em 0}
+body {background-color: #0c0c0c; color: #f8f8f8; font: 16px/1.618em sans-serif; padding: 4em 1.618em 0}
 #view {margin: .5em auto 0; text-align: center}
 #unde {font-family: 'Georgia', serif}
 #unde a {font-weight: normal}
