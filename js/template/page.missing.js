@@ -3,28 +3,26 @@ function MissingTemplate (id, ...params) {
 
   this.answer = (q) => {
     const {name, tables: {lexicon}} = q;
-    const similar = find_similar(name, lexicon);
-    const w1 = similar[0].word;
-    const w2 = similar[1].word;
-    const title = name.capitalize();
+    const sim = this.findSimilar(name, lexicon);
+    const w1 = sim[0].word;
+    const w2 = sim[1].word;
 
     return {
-      title,
+      title: '404',
       view: {
-        core: `<p>The page "${title}" does not exist within the Athenaeum. Were you looking for <a onclick="Ø('query').bang('${w1}')">${w1.capitalize()}</a> or <a onclick="Ø('query').bang('${w2}')">${w2.capitalize()}</a>?</p>`
         unde: `<a onclick="Ø('query').bang('Home')">Home</a>`,
         search: name,
+        core: `<p>The page "${capitalise(name)}" does not exist within the Athenaeum. Were you looking for <a onclick="Ø('query').bang('${w1}')">${capitalise(w1)}</a> or <a onclick="Ø('query').bang('${w2}')">${capitalise(w2)}</a>?</p>`
       }
     }
   }
 
-  function find_similar (target, list) {
+  this.findSimilar = (target, list) => {
     let similar = [];
-
     for (let key in list) {
       const word = list[key].name;
       similar[similar.length] = {
-        word, value: similarity(target, word)
+        word, value: this.similarity(target, word)
       }
     }
 
@@ -33,28 +31,14 @@ function MissingTemplate (id, ...params) {
     }).reverse();
   }
 
-  function similarity (a, b) {
-    let val = 0;
-
-    for (let i = 0; i < a.length; ++i) {
-      val += +(b.indexOf(a.substr(i)) > -1);
-    }
-
-    for (let i = 0; i < b.length; ++i) {
-      val += +(a.indexOf(b.substr(i)) > -1);
-    }
-
+  this.similarity = (a, b) => {
+    let v = 0;
+    for (let i = 0; i < a.length; i++) v += +(b.indexOf(a.substr(i)) > -1);
+    for (let i = 0; i < b.length; i++) v += +(a.indexOf(b.substr(i)) > -1);
     const c = a.split('').sort().join('');
     const d = b.split('').sort().join('');
-
-    for (let i = 0; i < c.length; ++i) {
-      val += +(d.indexOf(c.substr(i)) > -1);
-    }
-
-    for (let i = 0; i < d.length; ++i) {
-      val += +(c.indexOf(d.substr(i)) > -1);
-    }
-
-    return val;
+    for (let i = 0; i < c.length; i++) v += +(d.indexOf(c.substr(i)) > -1);
+    for (let i = 0; i < d.length; i++) v += +(c.indexOf(d.substr(i)) > -1);
+    return v;
   }
 }

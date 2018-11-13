@@ -6,33 +6,23 @@ function PortalTemplate(id, ...params) {
     const children = this.findChildren(name, lexicon);
 
     return {
-      title: q.name.capitalize(),
+      title: capitalise(q.name),
       view: {
-        core: `${long}${makePortal(name, children)}`
         unde: `<p><a onclick="Ø('query').bang('${unde}')">${unde}</a></p>`,
         search: name,
+        core: `${long}${this.makePortal(name, children)}`
       }
     }
   }
 
-  function makePortal (name, children, logs) {
+  this.makePortal = (name, children, logs) => {
     let html = '<dl>';
-
     for (let i = 0; i < children.length; i++) {
       const {name, bref} = children[i];
-      const title = `<dt><a onclick="Ø('query').bang('${name.toURL()}')">${name.capitalize()}</a></dt>`;
-
-      html += `${title}<dd>${bref.toMarkup()}</dd>${!stop ? make_index(name, lexicon, logs, true) : ''}`;
+      const query = `Ø('query').bang('${name.toUpperCase()}')`;
+      const title = `<dt><a onclick="${query}">${capitalise(name)}</a></dt>`;
+      html += `${title}<dd>${toMarkup(bref)}</dd>`;
     }
-
     return `${html}</dl>`;
-  }
-
-  function makeLinks (links) {
-    let html = '';
-    for (let id in links) {
-      html += `<a href="${links[id]}" target="_blank">${id}</a>`;
-    }
-    return `<div class="links">${html}</div>`;
   }
 }

@@ -2,19 +2,16 @@ function QueryNode (id) {
   Node.call(this, id);
 
   this.bang = (target = window.location.hash.substring(1).replace(/[^0-9a-z]/gi, ' ').trim().toLowerCase()) => {
-    let noHash = target === '';
+    let t = target;
+    let noHash = t === '';
 
-    target = target ?
-      target.replace(/[^0-9a-z]/gi, ' ').trim().toLowerCase() : 'home';
+    t = t ? t.replace(/[^0-9a-z]/gi, ' ').trim().toLowerCase() : 'home';
 
     window.scrollTo(0, 0);
     this.send(target);
 
-    if (noHash) {
-      window.history.replaceState(undefined, undefined, '#' + target);
-    } else {
-      window.location.hash = target.toURL();
-    }
+    if (noHash) window.history.replaceState(undefined, undefined, `#${t}`);
+    else window.location.hash = toURL(target);
   }
 }
 
@@ -43,12 +40,6 @@ function detectBackOrForward (onBack, onForward) {
 }
 
 window.addEventListener('hashchange', detectBackOrForward(
-  function () {
-    // console.log('<<');
-    Ø('query').bang()
-  },
-  function () {
-    // console.log('>>');
-    Ø('query').bang()
-  }
+  function () {Ø('query').bang()}, // <<
+  function () {Ø('query').bang()} // >>
 ));

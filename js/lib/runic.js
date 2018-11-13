@@ -1,9 +1,11 @@
 function Rune (opts) {
-  this.glyph = opts.glyph;
-  this.tag = opts.tag;
-  this.klass = opts.klass || '';
-  this.sub = opts.sub;
-  this.stash = opts.stash;
+  Object.assign(this, {
+    glyph: opts.glyph,
+    tag: opts.tag,
+    klass: opts.klass || '',
+    sub: opts.sub,
+    stash: opts.stash
+  });
 }
 
 const RUNES = {
@@ -12,22 +14,12 @@ const RUNES = {
     glyph: '~', tag: 'ul', sub: 'li', klass: 'parent', stash: true
   }),
   '-': new Rune({glyph: '-', tag: 'ol', sub: 'li', stash: true}),
-  '=': new Rune({glyph: '=', tag: 'list', sub: 'li', stash: true}),
+  '=': new Rune({glyph: '=', tag: 'ul', sub: 'li', stash: true}),
   '!': new Rune({
-    glyph: '!',
-    tag: 'table',
-    sub: 'tr',
-    wrap: 'th',
-    klass: 'outline',
-    stash: true
+    glyph: '!', tag: 'table', sub: 'tr', wrap: 'th', klass: 'outline', stash: true
   }),
   '|': new Rune({
-    glyph: '|',
-    tag: 'table',
-    sub: 'tr',
-    wrap: 'td',
-    klass: 'outline',
-    stash: true
+    glyph: '|', tag: 'table', sub: 'tr', wrap: 'td', klass: 'outline', stash: true
   }),
   '#': new Rune({glyph: '#', tag: 'code', sub: 'ln', stash: true}),
   '%': new Rune({glyph: '%'}),
@@ -36,7 +28,7 @@ const RUNES = {
   '*': new Rune({glyph: '*', tag: 'h2'}),
   '+': new Rune({glyph: '+'}),
   '>': new Rune({glyph: '>'}),
-  '$': new Rune({glyph: '>'}),
+  // '$': new Rune({glyph: '>'}),
   '@': new Rune({glyph: '@', tag: 'blockquote'})
 }
 
@@ -78,42 +70,33 @@ function Runic (raw) {
 
     for (let i = 0; i < lines.length; i++) {
       let line = lines[i];
-      const char = line.substr(0, 1).trim().toString();
+      const char = line.substr(0, 1).trim();
       const rune = RUNES[char];
       const trail = line.substr(1, 1);
+      const content = line.substr(2);
 
       switch (char) {
         case '$':
-          html += `<p>${Ø('operation').request(line.substr(2)).toMarkup()}</p>`;
+          html += `<p>${Ø('operation').request(content).toMarkup()}</p>`;
           continue;
-          break;
-        case '%':
-          html += this.media(line.substr(2));
-          continue;
-          break;
-        case '|':
-          html += this.table(line.substr(2));
-          continue;
-          break;
-        case '@':
-          html += this.quote(line.substr(2));
-          continue;
-          break;
+        case '%': html += this.media(content); continue;
+        case '|': html += this.table(content); continue;
+        case '@': html += this.quote(content); continue;
         default:
           break;
       }
 
-      line = line.substr(2).toMarkup();
+      line = toMarkup(line.substr(2));
       if (!line || line.trim() === '') continue;
 
-      if (!rune) console.log(`Unknown rune:${char} : ${line}`);
+      if (!rune) console.warn(`Unknown rune:${char} : ${line}`);
 
       if (trail !== ' ') {
         console.warn('Runic', `Non-rune[${trail}] at: ${id} (${line})`);
         continue;
       }
 
-      if (this.stash.isPop(rune)) html += this.render_stash();
+      if (this.stash.isPop(rune)) html += this.renderStash();
 
       if (rune.stash === true) {
         this.stash.add(rune, line);
@@ -123,12 +106,12 @@ function Runic (raw) {
       html += this.render(line, rune);
     }
 
-    if (this.stash.length() > 0) html += this.render_stash();
+    if (this.stash.length() > 0) html += this.renderStash();
 
     return html;
   }
 
-  this.render_stash = () => {
+  this.renderStash = () => {
     let {klass, tag} = this.stash.rune;
     let stash = this.stash.pop();
     let html = '';
@@ -147,11 +130,9 @@ function Runic (raw) {
 
   this.render = (line = '', rune = null) => {
     if (rune && rune.tag === 'img') return `<img src="img/${line}"/>`;
-
-    return rune ?
-      (rune.tag ?
-        `<${rune.tag} class='${rune.klass}'>${line}</${rune.tag}>` : line
-      ) : '';
+    return rune ? (rune.tag ?
+      `<${rune.tag} class='${rune.klass}'>${line}</${rune.tag}>` : line
+    ) : '';
   }
 
   this.table = (content) => {
@@ -164,58 +145,9 @@ function Runic (raw) {
     const [text, author, source, link] = content.split(' | ');
     const attrib = link ? `${author}, <a href="${link}">${source}</a>` : author;
 
-    return `<blockquote><p class="text">${text}</p>${author ? `<p class="attrib">${attrib}</p>` : ''}</blockquote>`
+    return `<blockquote><p class="quote">${text}</p>${author ? `<p class="attrib">${attrib}</p>` : ''}</blockquote>`
   }
 
   this.html = () => this.parse(raw);
   this.toString = () => this.html();
-}
-
-String.prototype.capitalize = function () {
-  return this.charAt(0).toUpperCase() + this.slice(1).toLowerCase();
-}
-
-String.prototype.toURL = function () {
-  return this.toLowerCase().replace(/ /g, '+').replace(/[^0-9a-z\+]/gi, '').trim();
-}
-
-String.prototype.toPath = function () {
-  return this.toLowerCase().replace(/ /g, '.').replace(/[^0-9a-z\.]/gi, '').trim();
-}
-
-String.prototype.toMarkup = function () {
-  html = this;
-  html = html.replace(/{_/g, '<i>').replace(/_}/g, '</i>');
-  html = html.replace(/{\*/g, '<b>').replace(/\*}/g, '</b>');
-  html = html.replace(/{\#/g, '<code>').replace(/\#}/g, '</code>');
-
-  const parts = html.split('{{');
-
-  for (let i = 0; i < parts.length; i++) {
-    const part = parts[i];
-    if (part.indexOf('}}') < 0) continue;
-    const content = part.split('}}')[0];
-    if (content.substr(0, 1) === '$') {
-      html = html.replace(`{{${content}}}`, Ø('operation').request(content.replace('$', '')));
-      continue;
-    }
-
-    let target, name;
-    if (content.indexOf('|') > -1) {
-      const bar = content.split('|');
-      target = bar[1];
-      name = bar[0];
-    } else {
-      target = name = content;
-    }
-
-    const isHTTPS = target.indexOf('https:') > -1;
-    const isHTTP = target.indexOf('http:') > -1;
-    const isDAT = target.indexOf('dat:') > -1
-    const external = isHTTPS || isHTTP || isDAT;
-
-    html = html.replace(`{{${content}}}`, external ? `<a href='${target}' class='external' target='_blank'>${name}</a>` : `<a class='local' title='${target}' onclick="Ø('query').bang('${target}')">${name}</a>`)
-  }
-
-  return html;
 }

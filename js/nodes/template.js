@@ -4,8 +4,7 @@ function TemplateNode (id) {
 
   this.receive = (q) => {
     const {result} = q;
-    const type = result && result.type
-      ? result.type.toLowerCase() : 'page';
+    const type = result && result.type ? result.type.toLowerCase() : 'page';
     let assoc = this.signal(type);
 
     if (!assoc) {
@@ -36,73 +35,6 @@ function TemplateNode (id) {
       a[a.length] = term;
     }
     return a;
-  }
-
-  this.makeTable = (term, lexicon, parent, depth = 3, selection = null) => {
-    return '';
-    if (depth <= 0) return '';
-    let children = this.findChildren(term.name, lexicon);
-    const cl = children.length;
-    if (cl === 0) return '';
-
-    let html = '';
-
-    if (depth === 2) {
-      for (let i = 0; i < children.length; i++) {
-        const child = children[i];
-        const cap = child.name.capitalize();
-        const table = this.makeTable(child, lexicon, parent, depth-1, selection);
-
-        html += `
-          <h2 ${selection && child.name === selection.name ?
-          'open' : ''} class="depth2"></h2>
-            <dd class='${selection && child.name === selection.name ? 'selected' : ''}'>{{${cap}}}
-          <dl>${table}</dl></dd>
-          `.toMarkup();
-      }
-
-      return html;
-    }
-
-    if (depth === 1) {
-      for (let i = 0; i < children.length; i++) {
-        const child = children[i];
-        const cap = child.name.capitalize();
-
-        html += `<h2 ${selection && child.name === selection.name ?
-          'open' : ''} class="depth2"></h2><dd class='${selection && child.name === selection.name ?
-          'selected' : ''}'>{{${cap}}}</dd>`.toMarkup();
-      }
-
-      return html;
-    }
-
-    html += '<dl>';
-    for (let i = 0; i < children.length; i++) {
-      const child = children[i];
-      const cap = child.name.capitalize();
-      const table = this.makeTable(child, lexicon, parent, depth-1, selection);
-
-      html += `<dt ${(selection && child.name === selection.name) || (selection && cap === parent) ?
-        'open' : ''}><dt class='${selection && ((child.name === selection.name) || (parent === child.name.capitalize())) ?
-        'selected' : ''}'>{{${cap}}}MEOW</dt><dd>${table}</dd></dt>`.toMarkup();
-    }
-    html += '</dl>';
-
-    html = ''
-
-    return html;
-  }
-
-  this.makeNavi = (term, parent, lexicon) => {
-    const portal = this.findPortal(term, lexicon);
-
-    if (!portal) {
-      console.log('No portal found');
-      return '';
-    }
-
-    return this.makeTable(portal, lexicon, parent, 3, term);
   }
 
   this.findPortal = (term, lexicon) => {

@@ -3,23 +3,24 @@ function InputNode (id, ...params) {
 
   this.isInstalled = false;
   this.el = document.createElement('input');
-  Object.assign(this.el, {id: this.id, spellcheck: false});
 
-  this.el.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') this.validate(this.el.value.trim());
-  });
-
-  this.el.addEventListener('focus', () => {
-    this.txt = this.el.value;
-    Object.assign(this.el, {
-      value: '',
-      placeholder: 'Search',
-      title: 'Search for a page or topic'
-    });
-  });
-
-  this.el.addEventListener('blur', () => {
-    this.el.value = this.txt.capitalize();
+  Object.assign(this.el, {
+    id,
+    spellcheck: false,
+    onkeydown: (e) => {
+      if (e.key === 'Enter') this.validate(this.el.value.trim());
+    },
+    onblur: () => {
+      this.el.value = capitalise(this.txt);
+    },
+    onfocus: () => {
+      this.txt = this.el.value;
+      Object.assign(this.el, {
+        title: 'Search for a page or topic',
+        placeholder: 'Search',
+        value: ''
+      });
+    }
   });
 
   this.validate = (value) => {
@@ -30,7 +31,7 @@ function InputNode (id, ...params) {
   this.update = (content) => {
     this.txt = content;
     if (typeof content === 'string') {
-      this.el.value = content.capitalize();
+      this.el.value = capitalise(content);
     }
   }
 }

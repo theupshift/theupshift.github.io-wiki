@@ -3,7 +3,7 @@ function Riven() {
 }
 
 // QUERY
-function Ø (s, network = RIVEN.network) {
+function Ø (s, {network} = RIVEN) {
   const id = s.toLowerCase();
   if (id.indexOf(' ') > -1) {
     const [nodeID, portID] = id.split(' ');
@@ -15,10 +15,9 @@ function Ø (s, network = RIVEN.network) {
 }
 
 function Node (id) {
-  this.id = id;
-  this.ports = {};
-  this.parent = null;
-  this.children = [];
+  Object.assign(this, {
+    id, ports: {}, parent: null, children: []
+  });
 
   this.setup = () => {
     Object.assign(this.ports, {
@@ -42,10 +41,9 @@ function Node (id) {
         this.connect(q[i], type);
       }
     } else {
-      this.ports[
-        type === 'request' ? 'request' : 'output'
-      ].connect(
-        `${q} ${type === 'request' ? 'answer' : 'input'}`, type
+      const isRequest = type === 'request';
+      this.ports[isRequest ? 'request' : 'output'].connect(
+        `${q} ${isRequest ? 'answer' : 'input'}`, type
       );
     }
   }
@@ -107,11 +105,7 @@ function Node (id) {
 }
 
 function Port (host, id, type = 'default') {
-  this.host = host;
-  this.id = id;
-  this.type = type;
-  this.routes = [];
-
+  Object.assign(this, {host, id, type, routes: []});
   this.connect = (b, type = 'transit') => {
     this.routes[this.routes.length] = Ø(b);
   }

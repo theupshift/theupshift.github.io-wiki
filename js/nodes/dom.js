@@ -1,9 +1,7 @@
 function DomNode (id, ...params) {
   Node.call(this, id);
-
   this.type = params[0] ? params[0] : 'div';
-  this.el = document.createElement(this.type);
-  this.el.id = this.id;
+  this.el = Object.assign(document.createElement(this.type), {id});
   this.isInstalled = false;
 
   if (params[1]) this.el.innerHTML = params[1];

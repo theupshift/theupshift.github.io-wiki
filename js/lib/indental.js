@@ -40,11 +40,11 @@ function Indental (data) {
 
       if (key.indexOf('.') > -1) {
         const split = key.split('.');
-        key = split[1];
         unde = split[0];
+        key = split[1];
       }
 
-      h[key] = type ? new type(key, format(line), unde.capitalize(), typ) : format(line);
+      h[key] = type ? new type(key, format(line), capitalise(unde), typ) : format(line);
     }
 
     return h;
@@ -54,7 +54,9 @@ function Indental (data) {
     let a = [];
     let h = {};
 
-    for (let i = 0; i < line.children.length; i++) {
+    const {children} = line;
+
+    for (let i = 0; i < children.length; i++) {
       const child = line.children[i];
       const {key, children, value, content} = child;
 

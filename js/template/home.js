@@ -6,7 +6,7 @@ function HomeTemplate(id, ...params) {
     const children = this.findChildren(name, q.tables.lexicon);
 
     return {
-      title: name.capitalize(),
+      title: capitalise(name),
       view: {
         unde: '&mdash;',
         search: name,
@@ -20,10 +20,10 @@ function HomeTemplate(id, ...params) {
 
     for (let i = 1; i < children.length; i++) {
       const {name, bref} = children[i];
-      const url = name.toURL();
-      const term = name.capitalize();
+      const url = toURL(name);
+      const term = capitalise(name);
       const title = `<a onclick="Ø('query').bang('${url}')">${term}</a>`;
-      html += `<dt>${title}</dt><dd>${bref.toMarkup()}</dd>`;
+      html += `<dt>${title}</dt><dd>${toMarkup(bref)}</dd>`;
     }
 
     return `${html}</dl>`;

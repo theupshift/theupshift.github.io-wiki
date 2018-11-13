@@ -1,8 +1,6 @@
 function DocsTemplate(id, ...params) {
   TemplateNode.call(this, id);
-
-  this.archives = [];
-  this.term = null;
+  Object.assign(this, {archives: [], term: null});
 
   this.answer = (q) => {
     const {result, name, tables} = q;
@@ -11,7 +9,7 @@ function DocsTemplate(id, ...params) {
     this.invoke(filename);
 
     return {
-      title: name.capitalize(),
+      title: capitalise(name),
       view: {
         search: name,
         core: `${long}${this.load(filename)}`
@@ -44,15 +42,9 @@ function DocsTemplate(id, ...params) {
     let html = '';
 
     for (let id in data) {
-      html += `<h3>${id.capitalize()}</h3>${new Runic(data[id])}`;
+      html += `<h3>${capitalise(id)}</h3>${new Runic(data[id])}`;
     }
 
     return html;
-  }
-
-  function makeBref(term, lexicon) {
-    return `<p><a onclick="Ø('query').bang('${term.unde}')">${term.unde}</a></p>
-    ${this.make_navi(term, (term.unde || ''), lexicon)}
-    `;
   }
 }

@@ -3,12 +3,12 @@ function IndentalNode (id, type) {
   this.type = type;
 
   this.answer = (q) => {
+    if (this.cache) return this.cache;
+
     if (!DB[this.id]) {
-      console.warn(`Missing /database/${this.id}.js`);
+      console.warn(`Missing database/${this.id}.tome`);
       return null;
     }
-
-    if (this.cache) return this.cache;
 
     this.cache = new Indental(DB[this.id]).parse(this.type);
     return this.cache;
