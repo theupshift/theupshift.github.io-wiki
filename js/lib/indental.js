@@ -31,10 +31,10 @@ function Indental (data) {
       let typ = 'none';
 
       if (key.indexOf('@') > -1) {
-        key = key.split('@')[1].trim();
+        key = key.slice(2);
         typ = key === 'HOME' ? 'home' : 'portal';
       } else if (key.indexOf('+') > -1) {
-        key = key.split('+')[1].trim();
+        key = key.slice(2);
         typ = key === 'HOME' ? 'home' : 'index';
       }
 
