@@ -8,7 +8,7 @@ function PortalTemplate(id, ...params) {
     return {
       title: capitalise(q.name),
       v: {
-        u: `<p><a onclick="Ø('query').bang('${unde}')">${unde}</a></p>`,
+        u: `<a onclick="Ø('query').bang('${unde}')">${unde}</a>`,
         s: name,
         c: `${long}${this.makePortal(name, children)}`
       }
