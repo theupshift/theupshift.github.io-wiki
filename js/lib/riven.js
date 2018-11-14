@@ -3,15 +3,14 @@ function Riven() {
 }
 
 // QUERY
-function Ø (s, {network} = RIVEN) {
-  const id = s.toLowerCase();
+function Ø (id, {network} = RIVEN) {
   if (id.indexOf(' ') > -1) {
-    const [nodeID, portID] = id.split(' ');
-    return network[nodeID] && network[nodeID].ports[portID] ?
-      network[nodeID].ports[portID] : null;
+    const [node, port] = id.split(' ');
+    return network[node] && network[node].ports[port] ?
+      network[node].ports[port] : null;
   }
-  if (network[id]) return network[id];
-  return new Node(id);
+  const n = network[id];
+  return n ? n : new Node(id);
 }
 
 function Node (id) {
@@ -56,9 +55,10 @@ function Node (id) {
   }
 
   this.signal = (target) => {
-    const tar = target.toLowerCase();
-    for (let portID in this.ports) {
-      const {routes} = this.ports[portID];
+    const tar = target;
+    const {ports} = this;
+    for (let portID in ports) {
+      const {routes} = ports[portID];
       for (let i = 0; i < routes.length; i++) {
         const route = routes[i];
         if (!route || !route.host || route.host.id !== tar) continue;

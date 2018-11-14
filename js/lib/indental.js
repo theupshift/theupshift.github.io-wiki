@@ -61,11 +61,11 @@ function Indental (data) {
       const {key, children, value, content} = child;
 
       if (key) {
-        h[key.toUpperCase()] = value;
+        h[key] = value;
       } else if (children.length === 0 && content) {
         a[a.length] = content;
       } else {
-        h[content.toUpperCase()] = format(child);
+        h[content] = format(child);
       }
     }
 

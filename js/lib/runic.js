@@ -1,6 +1,5 @@
 function Rune (opts) {
   Object.assign(this, {
-    glyph: opts.glyph,
     tag: opts.tag,
     klass: opts.klass || '',
     sub: opts.sub,
@@ -10,19 +9,14 @@ function Rune (opts) {
 }
 
 const RUNES = {
-  '&': new Rune({glyph: '&', tag: 'p'}),
-  '*': new Rune({glyph: '*', tag: 'h2'}),
-  '-': new Rune({glyph: '-', tag: 'ol', sub: 'li', stash: true}),
-  '=': new Rune({glyph: '=', tag: 'ul', sub: 'li', stash: true}),
-  '@': new Rune({glyph: '@', tag: 'blockquote'}),
-  '#': new Rune({glyph: '#', tag: 'code', sub: 'ln', stash: true}),
-  '%': new Rune({glyph: '%'}),
-  '!': new Rune({
-    glyph: '!', tag: 'table', sub: 'tr', wrap: 'th', stash: true
-  }),
-  '+': new Rune({
-    glyph: '|', tag: 'table', sub: 'tr', wrap: 'td', stash: true
-  })
+  '&': new Rune({tag: 'p'}),
+  '*': new Rune({tag: 'h2'}),
+  '-': new Rune({tag: 'ol', sub: 'li', stash: true}),
+  '=': new Rune({tag: 'ul', sub: 'li', stash: true}),
+  '@': new Rune({tag: 'blockquote'}),
+  '#': new Rune({tag: 'code', sub: 'ln', stash: true}),
+  '!': new Rune({tag: 'table', sub: 'tr', wrap: 'th', stash: true}),
+  '+': new Rune({tag: 'table', sub: 'tr', wrap: 'td', stash: true})
 }
 
 function Runic (raw) {

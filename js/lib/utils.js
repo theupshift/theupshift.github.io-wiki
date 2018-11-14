@@ -14,6 +14,13 @@ function toMarkup (s) {
 
   const parts = html.split('{{');
 
+  function isExternal (target) {
+    if (target.indexOf('https:') > -1) return true;
+    if (target.indexOf('http:') > -1) return true;
+    if (target.indexOf('dat:') > -1) return true;
+    return false;
+  }
+
   for (let i = 0; i < parts.length; i++) {
     const part = parts[i];
     if (part.indexOf('}}') < 0) continue;
@@ -23,7 +30,9 @@ function toMarkup (s) {
       continue;
     }
 
-    let target, name;
+    let target = '';
+    let name = '';
+
     if (content.indexOf('|') > -1) {
       const bar = content.split('|');
       target = bar[1];
@@ -32,12 +41,7 @@ function toMarkup (s) {
       target = name = content;
     }
 
-    const isHTTPS = target.indexOf('https:') > -1;
-    const isHTTP = target.indexOf('http:') > -1;
-    const isDAT = target.indexOf('dat:') > -1
-    const external = isHTTPS || isHTTP || isDAT;
-
-    html = html.replace(`{{${content}}}`, external ? `<a href='${target}' class='external' target='_blank'>${name}</a>` : `<a class='local' title='${target}' onclick="Ø('query').bang('${target}')">${name}</a>`)
+    html = html.replace(`{{${content}}}`, isExternal(target) ? `<a href="${target}" target="_blank">${name}</a>` : `<a title="${target}" onclick="Ø('query').bang('${target}')">${name}</a>`)
   }
 
   return html;

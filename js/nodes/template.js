@@ -4,7 +4,7 @@ function TemplateNode (id) {
 
   this.receive = (q) => {
     const {result} = q;
-    const type = result && result.type ? result.type.toLowerCase() : 'page';
+    const type = result && result.type ? result.type : 'page';
     let assoc = this.signal(type);
 
     if (!assoc) {
@@ -29,37 +29,12 @@ function TemplateNode (id) {
 
   this.findChildren = (name, lexicon) => {
     let a = [];
+    let n = capitalise(name);
     for (let id in lexicon) {
       const term = lexicon[id];
-      if (!term.unde || name !== term.unde.toUpperCase()) continue;
+      if (!term.unde || n !== term.unde) continue;
       a[a.length] = term;
     }
     return a;
-  }
-
-  this.findPortal = (term, lexicon) => {
-    if (!lexicon[term.unde.toUpperCase()]) {
-      console.warn(`Missing parent: ${term.unde}`);
-      return '';
-    }
-
-    let portal = null;
-    const parent = lexicon[term.unde.toUpperCase()];
-    const punde = parent.unde.toUpperCase();
-
-    if (term.type && term.type.toLowerCase() === 'portal') {
-      portal = term;
-    } else if (parent.isPortal) {
-      portal = parent;
-    } else {
-      const pp = lexicon[punde];
-      if (pp.isPortal) portal = pp;
-      else {
-        const ppp = lexicon[pp.unde.toUpperCase()];
-        if (ppp.isPortal) portal = ppp;
-      }
-    }
-
-    return portal;
   }
 }
