@@ -66,9 +66,7 @@ function Runic (raw) {
         case '$':
           html += `<p>${Ø('operation').request(content).toMarkup()}</p>`;
           continue;
-        case '%':
-          html += `<img src="img/${content}"/>`;
-          continue;
+        case '%': html += this.media(content); continue;
         case '|': html += this.table(content); continue;
         case '@': html += this.quote(content); continue;
         default:
@@ -122,6 +120,18 @@ function Runic (raw) {
     return rune ? (rune.tag ?
       `<${rune.tag}>${line}</${rune.tag}>` : line
     ) : '';
+  }
+
+  this.media = (content) => {
+    if (content.indexOf(',') > -1) {
+      let html = '';
+      const gallery = content.split(',');
+      for (let i = 0; i < gallery.length; i++) {
+        html += `<img src="img/${gallery[i].trim()}"/>`;
+      }
+      return html;
+    }
+    return `<img src="img/${content}"/>`
   }
 
   this.table = (content) => {
