@@ -10,7 +10,6 @@ function toMarkup (s) {
   let html = s;
   html = html.replace(/{_/g, '<i>').replace(/_}/g, '</i>');
   html = html.replace(/{\*/g, '<b>').replace(/\*}/g, '</b>');
-  html = html.replace(/{\#/g, '<code>').replace(/\#}/g, '</code>');
 
   const parts = html.split('{{');
 
