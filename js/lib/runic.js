@@ -4,32 +4,25 @@ function Rune (opts) {
     tag: opts.tag,
     klass: opts.klass || '',
     sub: opts.sub,
-    stash: opts.stash
+    stash: opts.stash,
+    wrap: opts.wrap
   });
 }
 
 const RUNES = {
   '&': new Rune({glyph: '&', tag: 'p'}),
-  '~': new Rune({
-    glyph: '~', tag: 'ul', sub: 'li', klass: 'parent', stash: true
-  }),
+  '*': new Rune({glyph: '*', tag: 'h2'}),
   '-': new Rune({glyph: '-', tag: 'ol', sub: 'li', stash: true}),
   '=': new Rune({glyph: '=', tag: 'ul', sub: 'li', stash: true}),
-  '!': new Rune({
-    glyph: '!', tag: 'table', sub: 'tr', wrap: 'th', klass: 'outline', stash: true
-  }),
-  '|': new Rune({
-    glyph: '|', tag: 'table', sub: 'tr', wrap: 'td', klass: 'outline', stash: true
-  }),
+  '@': new Rune({glyph: '@', tag: 'blockquote'}),
   '#': new Rune({glyph: '#', tag: 'code', sub: 'ln', stash: true}),
   '%': new Rune({glyph: '%'}),
-  '?': new Rune({glyph: '?', tag: 'note'}),
-  ':': new Rune({glyph: ':', tag: 'info'}),
-  '*': new Rune({glyph: '*', tag: 'h2'}),
-  '+': new Rune({glyph: '+'}),
-  '>': new Rune({glyph: '>'}),
-  // '$': new Rune({glyph: '>'}),
-  '@': new Rune({glyph: '@', tag: 'blockquote'})
+  '!': new Rune({
+    glyph: '!', tag: 'table', sub: 'tr', wrap: 'th', stash: true
+  }),
+  '+': new Rune({
+    glyph: '|', tag: 'table', sub: 'tr', wrap: 'td', stash: true
+  })
 }
 
 function Runic (raw) {
@@ -79,7 +72,9 @@ function Runic (raw) {
         case '$':
           html += `<p>${Ø('operation').request(content).toMarkup()}</p>`;
           continue;
-        case '%': html += this.media(content); continue;
+        case '%':
+          html += `<img src="img/${content}"/>`;
+          continue;
         case '|': html += this.table(content); continue;
         case '@': html += this.quote(content); continue;
         default:
@@ -125,13 +120,13 @@ function Runic (raw) {
         `<${sub}>${line}</${sub}>`;
     }
 
-    return `<${tag} class='${klass}'>${html}</${tag}>`;
+    return `<${tag}>${html}</${tag}>`;
   }
 
   this.render = (line = '', rune = null) => {
     if (rune && rune.tag === 'img') return `<img src="img/${line}"/>`;
     return rune ? (rune.tag ?
-      `<${rune.tag} class='${rune.klass}'>${line}</${rune.tag}>` : line
+      `<${rune.tag}>${line}</${rune.tag}>` : line
     ) : '';
   }
 
@@ -139,13 +134,11 @@ function Runic (raw) {
     return `<td>${content.trim().replace(/ \| /g, '</td><td>')}</td>`;
   }
 
-  this.media = (val) => `<img src="img/${val}"/>`;
-
   this.quote = (content) => {
     const [text, author, source, link] = content.split(' | ');
     const attrib = link ? `${author}, <a href="${link}">${source}</a>` : author;
 
-    return `<blockquote><p class="quote">${text}</p>${author ? `<p class="attrib">${attrib}</p>` : ''}</blockquote>`
+    return `<blockquote><p class="q">${text}</p>${author ? `<p class="a">${attrib}</p>` : ''}</blockquote>`
   }
 
   this.html = () => this.parse(raw);
