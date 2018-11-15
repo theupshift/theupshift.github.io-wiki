@@ -107,6 +107,6 @@ function Node (id) {
 function Port (host, id, type = 'default') {
   Object.assign(this, {host, id, type, routes: []});
   this.connect = (b, type = 'transit') => {
-    this.routes[this.routes.length] = Ø(b);
+    this.routes[this.routes.length] = Q(b);
   }
 }
