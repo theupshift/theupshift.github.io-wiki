@@ -1,0 +1,670 @@
+DB.lexicon = `
+@ HOME
+  $
+    & Welcome to {*The Athenaeum*}. Housed herein are various documents and records of the various projects within my {{Oeuvre}} as well as some memoirs and {{notes|Commonplace}} on certain topics of interest. Use the title of this page to search for something in particular.
+    & {*Note:*} This site is under construction. Some pages may be missing or lacking content. Also beware of goblins!
+
+@ JOSH
+  BREF : Who I am
+  $
+    & My name is Josh and I guess you can call me a hobbyist. I'm currently studying information technology in Thailand. After that, I hope to focus my time and energy traveling the world and working on various {{projects|Oeuvre}}.
+    % josh.png
+
+ABOUT
+  BREF : What this site is about
+  $
+    & Inspired by similar {{wikis}}, this site serves as a personal chronicle and knowledge base of my {{Oeuvre}} as it grows over time as well as a place for people to read through and learn more about what I do.
+    * Structure
+    & The Athenaeum is built on top of stripped down variants of {{Devine Lu Linvega|http://wiki.xxiivv.com/#devine+lu+linvega}}'s {{Oscean|http://wiki.xxiivv.com/#oscean}} wiki engine, {{Riven|http://wiki.xxiivv.com/#riven}} framework, and {{Indental|http://wiki.xxiivv.com/#indental}} flat-file database format. Visit the {{Guide}} to learn more about how it works and how to set one up for yourself.
+    * Design
+    & Most websites these days are saturated with unnecessary ornamentation and clutter. To against that, I simplified the overall design, stripping it down until what remains is a pure reading experience.
+    * Future
+    & I plan on integrating some of my log data into this platform hopefully before the dawn of 2019. I also have plans to someday move this site from GitHub and host it in a similar manner as Low Tech Magazine's {{solar-powered website|https://solar.lowtechmagazine.com}}.
+    * Issues
+    & If you have some feedback or if you found an issue, you may submit a {{bug report|https://github.com/joshavanier/joshavanier.github.io/issues/new}}.
+    * License
+    & Feel free to fork and modify this site's back-end code, which is made available under the {{MIT|https://opensource.org/licenses/MIT}} license. The content (text, photos, data) is available under the {{BY-NC-SA 4.0|https://creativecommons.org/licenses/by-nc-sa/4.0}} license.
+
+JOSH.STATS
+  BREF : Unnecessary information
+  $
+    = Height: 165cm
+    = Weight: 49kg
+    = Blood type: O-
+    & This will be expanded into a dashboard soon.
+
+JOSH.CONTACT
+  BREF : Send a raven
+  $
+    & If you have any comments, suggestions, questions, or if you simply just want to chat, here are some of the ways you can get ahold of me:
+    = Twitter: {{@joshavanier|https://twitter.com/joshavanier}}
+    = Send a raven* to 14.674417°N 101.176869°E
+    & * No spam pigeons, please
+
+JOSH.GOALS
+  BREF : A list of things to achieve and accomplish
+  $
+    & Here is an ever-changing list of things I would love to achieve or accomplish, preferably before my inevitable death. Only after I'm able to check off every item below will I be able to say that my life has been well-lived.
+    @ One should not pursue goals that are easily achieved. One must develop an instinct for what one can just barely achieve through one’s greatest efforts. | Einstein
+    = Achieve 100% self-sufficiency and live a {{zero waste}} lifestyle
+    = Create my own versions of {{things|Todo}}
+    = Reduce the need for {{sleep}} to as close to zero as possible
+    = Reduce personal possessions to only absolute necessities
+    = Graduate and forget everything I learned in school
+    = Acquire (or build) a boat and sail
+    = Start a company that goes against business principles
+    = Contribute to any form of technological progress that will eventually make non-necessities like educational institutions and accountants obsolete
+    = Finish 10,000 {{projects|Oeuvre}} before {{Death}}
+
+JOSH.TODO
+  BREF : A list of things to create
+  $
+    * Software
+    = Animation studio
+    = {{Calendar|Aeq}}
+    = Conlang tool
+    = Ebook reader
+    = File manager
+    = Journal
+    = Kanji learning tool
+    = Music composer
+    = Music player
+    = {{Notes app|Qyllium}}
+    = {{Pixel art editor|Pixelier}}
+    = Presentation tool
+    = Roguelike creator
+    = Text editor/IDE
+    = Weather app
+    = {{Worldbuilding tool|Vide}}
+    * Things
+    = Custom phone
+    = Monocle device
+    = {{Pocket computer console|Holly}}
+    = Tricopter drone
+    = Wrist-mounted computer
+    = Pocket sundial
+    = Shogi set
+    = Set of quills
+    = Crystal energy receiver
+    = Glove phone
+    = Solar backpack
+    = Smart mirror
+    = Bike computer
+
+JOSH.TO LEARN
+  BREF : A list of things to learn
+  $
+    & This is an incomplete list of things I want to learn and skills I want to master. If you share one or more of my interests with me, feel free to strike up a conversation about it. I'd love to learn from others.
+    * Topics
+    = Artificial intelligence, neural networks, machine learning
+    = Data structures, design patterns
+    = Music theory, composition
+    = Criminology, forensics
+    * Skills
+    = Calligraphy, handlettering
+    = Echolocation
+    = Braille
+    * Languages
+    = French (ongoing)
+    = Italian (ongoing)
+    = Spanish (ongoing)
+    = German
+    = Dutch (ongoing)
+    = Japanese (ongoing)
+    = Russian
+    = Esperanto
+    = Swedish (ongoing)
+    = Norwegian
+    = Gaelic
+    = Greek
+    = Hebrew
+    = Turkish
+    = Mandarin
+
+@ JOSH.INVENTORY
+  BREF : Personal effects
+  $
+    & These are some of the tools I use that help me pursue my hobbies and make the things I want to make.
+
+INVENTORY.NAVIRE
+  BREF : My primary workstation
+  $
+    & Most of my projects are built on Navire, an ancient Victorian-era laptop with barely 2GB of RAM and a 1.10 GHz processor. I run {{Linux}} on it in order to keep resource usage as lightweight and minimal as possible.
+    * Dotfiles
+    & My {{dotfiles|https://github.com/joshavanier/dots}} are available on GitHub. Feel free to use and modify according to your preferences.
+    * Essentials
+    = {*WM*} - {{i3wm|https://i3wm.org}}
+    = {*Terminal*} - {{st|https://st.suckless.org}}
+    = {*Browser*} - {{Firefox|https://www.mozilla.org/en-US/firefox/new}}, {{Chromium|https://www.chromium.org}}, {{surf|https://surf.suckless.org}}
+    = {*Text editor*} - {{vim|https://www.vim.org}}
+    = {*Music*} - {{cmus|https://cmus.github.io/}}
+    = {*Files*} - {{nnn|https://github.com/jarun/nnn}}, pcmanfm
+    = {*Image editor*} - {{GIMP|https://www.gimp.org}}
+    = {*Music composition*} - {{Marabu|https://wiki.xxiivv.com/#marabu}}
+
+INVENTORY.ORION
+  BREF : My mobile workstation
+  $
+    & Whenever I'm out and away from my laptop, I have the option of working from my mobile phone. Orion is an Android phone that has Termux running on it. This lets me work with git and other {{Linux}} tools on the go.
+    * Essentials
+    - {*Terminal*} - {{Termux|https://termux.com}}
+    - {*Email*} - {{ProtonMail|https://protonmail.com}}
+    - {*Reading*} - {{Pocket|https://getpocket.com/a/queue}}
+    - {*Notes*} - {{iA Writer|https://ia.net/writer}}
+    - {*Social*} - {{Mastalab|https://mastalab.app}}
+    - {*Photography*} - {{VSCO|https://vsco.co}}
+    - {*Browser*} - {{Brave|https://brave.com}}
+    - {*Dimmer*} - {{Twilight|https://play.google.com/store/apps/details?id=com.urbandroid.lux&hl=en_US}}
+
+INVENTORY.EDC
+  BREF : Everyday carry
+  $
+    & As a university student, I'm almost always carrying a backpack containing things for class, although I try to avoid carrying books whenever possible.
+    * Things
+    - Renaissance pen
+    - {{Phone|Orion}}
+    - Tyvek wallet
+
+JOSH.DEATH
+  BREF : Inevitability
+  $
+    @ You only live once, but if you do it right, once is enough. | Mae West
+
+@ OEUVRE
+  BREF : Collective works
+  $
+    & The Oeuvre is the collection of everything I have made, am making, and {{will be making|Todo}}, spanning within the realms of Arts and Sciences.
+
++ OEUVRE.LABORATORY
+  BREF : Software
+  $
+    & The Laboratory houses my various experiments with software.
+
+LABORATORY.EAU
+  BREF : A hydration log
+  $
+    & Eau was a hydration log. It was created to help me keep track of how much water I drink. Every time I rehydrate, I log the quantity in milliliters. The project was eventually discontinued, though I will revisit it again soon.
+
+LABORATORY.LOG
+  BREF : A productivity log and time-tracker
+  $
+    & Log is a time-tracker inspired by similar systems by {{Neauoire|https://wiki.xxiivv.com/index.html#horaire}} and {{vi|https://log.v-os.ca}}. It is designed for single-tasking: start a log, focus on your task, and then end it when you're done.
+    % log.png
+    & Commands are entered via a console. The app has a built-in Guide that contains a list of commands and their usage.
+    & Log is available as an {{Electron|https://electronjs.org}} app for Linux and macOS and can be downloaded on itch.io.
+    * Future
+    & A CLI variant and a mobile app is being planned. The CLI variant is more likely to be created soon. Mobile app development is not a possibility with my current resources.
+    * Twig
+    & {{Twig|https://joshavanier.github.io/twig}} is a tool for converting datetime to Log's hexadecimal format. It's useful for manual editing of log entries.
+    % twig.png
+    @ When performance is measured, performance improves. When performance is measured and reported, the rate of improvement accelerates. | Thomas Monson
+
+LABORATORY.SOMNUS
+  BREF : A sleep log
+  $
+    & It was created to eventually provide me with insight on how much I {{sleep}}. The process is admittedly tedious yet simple. I just record the approximate time I go to bed and the exact time I wake up. The moment I wake up, I immediately check the time.
+    % somnus.png
+
++ LABORATORY.CRYO
+  BREF : Unreleased experiments
+  $
+    & The Cryo is where all unfinished Laboratory experiments are kept.
+
+CRYO.CARGO
+  BREF : A personal inventory management tool
+  $
+    & Cargo is an upcoming personal inventory management tool.
+    # Utility: how often used is an item
+    # Functionality: how useful is an item
+    # Rarity: how rare is an item
+    # Worth: how much an item is worth
+
+CRYO.QYLLIUM
+  BREF : A notes app
+  $
+    & Qyllium is an upcoming notes app. It is inspired by the {{bullet journal|https://bulletjournal.com}} which is designed for rapid logging of tasks, notes, and events.
+    % qyllium.png
+
+CRYO.RISU
+  BREF : A personal finance management tool
+  $
+    & Risu is an upcoming personal finance management tool. Ironically, as soon as I started working on this project, I simply stopped spending and eventually didn't see the need for financial management. I still plan on finishing this though.
+    % risu.png
+
++ OEUVRE.OBSERVATORY
+  BREF : Of realms and universes
+  $
+    & The Observatory is where I ponder upon the existence of a parallel universe
+
+OBSERVATORY.MITHVAER
+  BREF : A worldbuilding project
+  $
+    & Mithvaer is a long-term worldbuilding project. I've always wanted to create a universe where all of my projects can dwell in. In other words, everything I make will be tied to this fictional(?) universe.
+    & I have a separate wiki dedicated to the lore of Mithvaer which you can find {{here|https://mithvaer.github.io/#home}}.
+    % mithvaer.png
+
+OBSERVATORY.VIDE
+  BREF : A worldbuilding tool
+  $
+    & Vide is a worldbuilding tool that aids in the creation of somewhat scientifically-plausible stars, planets, moons, and planetary systems.
+    * Planned Features
+    & I want to create a tool that lets users create worlds with high in-depth details like planetary orbits, atmospheric compositions, gravity, etc.
+    % vide.png
+
++ LABORATORY.ATTIC
+  BREF : A collection of random things built on the web
+  $
+    & Among thousands of intertwined strands is a scattered collection of miscellanea built within and for the vast expanse of the Internet. Here are some web-related tools and toys built in browsers for browsers.
+
+ATTIC.CLAVIER
+  BREF : A keycode mapping utility
+  $
+    & Clavier is a simple JS keycode mapping utility. All it does is tell you the keycode to whatever key you press on your keyboard.
+    % clavier.png, log.png, qyllium.png
+
+ATTIC.HAIAKU
+  BREF : A text converter
+  $
+    & Haiaku (俳悪) is a text converter that rewrites input into top-down, right-to-left fullwidth format reminiscent of haikus. It was built upon the request of a friend who had that specific request.
+    # 水蛙古
+    # の飛池
+    # 音びや
+    # 　込　
+    # 　む　
+    # <br>
+    # -芭蕉
+
+ATTIC.KUMO
+  BREF : A Hacker News client
+  $
+    & Kumo (クモ) is a basic {{Hacker News|https://news.ycombinator.com}} client. It's very simple and only shows the top 20 stories. I made it because all I wanted from Hacker News was links to stories. Nothing else.
+    % kumo.png
+
+ATTIC.MACIAN
+  BREF : A functional CSS framework
+  $
+    & Macian is a functional CSS framework inspired by and based on Tachyons. It features a set of customisable utility classes.
+    % macian.png
+
+ATTIC.ROVARSPRAKET
+  BREF : A Rövarspråket translator
+  $
+    & Rövarspråket is a translator for {{Rövarspråket|https://en.wikipedia.org/wiki/R%C3%B6varspr%C3%A5ket}} (The Robber Language), a Swedish language game where consonants are doubled and an {*o*} is inserted in between while vowels remain as they are.
+    # Hello world - Hohelollolo wowororloldod
+
+ATTIC.TERNARA
+  BREF : A balanced ternary library
+  $
+    & Ternära is a simple JS library for working with the balanced ternary numerical system. It supports a two-way conversion between decimal and ternary integers as well as basic arithmetic operations.
+
++ OEUVRE.SANDBOX
+  BREF : Mediums to facilitate play
+  $
+    & The Sandbox houses my mostly-unfinished games, toys, and any medium that facilitates play.
+
+SANDBOX.AUDELA
+  BREF : A text-based space exploration game
+  $
+    & Audela is an upcoming text-based space exploration game where you can freely explore a procedurally-generated galaxy. Explore and colonise planets, upgrade your ship or buy a whole fleet; the galaxy is your oyster.
+    % grymstorge.png
+
+SANDBOX.GRYMSTORGE
+  BREF : An exploration game
+  $
+    & Grymstorge is an unfinished exploration game built with {{Bitsy|https://ledoux.itch.io/bitsy}} where you explore the abandoned ruins of the subterranean fortress of the great kingdom of Glachiem.
+    % grymstorge.png
+
+SANDBOX.PORTE
+  BREF : A game about logic gates
+  $
+    & Porte was a simple game about logic gates. It was made as a small experiment using the Bitsy game creator.
+    % porte.png
+
+SANDBOX.QUOIN
+  BREF : A sales management game
+  $
+    & Quoin was an unfinished sales management game where you played as an aspiring shopkeeper hoping to strike gold in the town of Selletown.
+    & I was taking a boring course called Sales and Selling. In order to motivate myself to study, I turned it into a game. The point of the game was to make use of sales management and sales strategies to expand your business.
+    & Final exams flew by faster than I anticipated but I ended up passing the class and Quoin was left in the archives.
+    % quoin.png
+
+SANDBOX.STRAVAGE
+  BREF : A 2D platformer
+  $
+    & Stravage was an abandoned 2D platformer game. Its source code was lost in the ether due to an unfortunate drive malfunction.
+
+SANDBOX.TEXTE
+  BREF : A tool for writing text-based games
+  $
+    & Texte is a tool for generating text-based adventure games. It's a fork of {{vi|https://twitter.com/v_exec}}'s {{Visor|https://github.com/v-exec/Visor}}, a minimalist presentation tool. Games are written on .txt files following a simple syntax.
+    # $Room1
+    # til: Room 1
+    # con:
+    # + This is the first room
+    # + #[Go forth>Room2]
+    # $Room2
+    # bg: #202020
+    # col: #f8f8f8
+    # til: Room 2
+    # con:
+    # + This is the second room. It's dark in here.
+    # + #[Go back>Room1]
+    & Attributes
+    # $room - Set a room
+    # til - Title attribute
+    # con - Room contents
+    # bg - Background colour
+    # col - Text colour
+    # + - New line
+    # #[Action>Link] - Action button
+
++ OEUVRE.WORKSHOP
+  BREF : Physical items
+  $
+    & A greatly under-used section of the Oeuvre, the Workshop houses projects involving the creation of things of tangible nature.
+
+WORKSHOP.HOLLY
+  BREF : A Raspberry Pi computer console
+  $
+    & Holly is a computer console built with a {{Raspberry Pi Zero W|https://www.raspberrypi.org/products/raspberry-pi-zero-w}}, features a {{2.7-inch monochrome OLED display|https://www.adafruit.com/product/2674}}, and is powered by a 2700mAh lithium ion battery. The project's goal is to build a portable Linux console that can be used for simple tasks like writing notes and lightweight coding on the go.
+    * Current Status
+    & The project is put on temporary stasis as I messed up the soldering of the battery circuit.
+
++ OEUVRE.ATELIER
+  BREF : Visuals
+  $
+    & The Atelier houses my attempts at various mediums of visual arts.
+
+ATELIER.OWL CITY
+  BREF : First attempts at design
+  $
+    & The Owl City posters were my first attempts at design. The idea was simple: turn an Owl City song into a poster. I used GIMP and some free fonts. It was once a daily thing until it was discontinued when I entered university.
+
+ATELIER.PIXELATTIRE
+  BREF : A pixel art log of daily outfits
+  $
+    & Pixelattire is a daily pixel art project where I document what I wear every day throughout 2018. All art is created using GIMP and is posted on a {{Tumblr page|https://pixelattire.tumblr.com}}. The custom lightweight Tumblr theme used is available {{here|https://github.com/joshavanier/pixelattire}}.
+    * Future
+    & I plan on continuing this project next year, although I plan on having a system that generates pixel art from text logs rather than spend ~10 minutes per day manually creating these.
+    % pixelattire.png
+
+@ COMMONPLACE
+  BREF : Notes
+  $
+    & The Commonplace contains an assorted medley of notes on various topics. These are mostly serve as reminders and notes to self.
+    @ You may want to keep a commonplace book which is a notebook where you can copy parts of books you think are in code, or take notes on a series of events you may have observed that are suspicious, unfortunate, or very dull. | Lemony Snicket | Lemony Snicket: The Unauthorized Autobiography | https://www.goodreads.com/book/show/78408.Lemony_Snicket
+
+@ COMMONPLACE.HEALTH
+  BREF : Notes on health and well-being
+  $
+    @ Take care of your body. It's the only place you have to live. | Jim Rohn
+
+HEALTH.NUTRITION
+  BREF : Notes on nutrition
+  $
+    @ People eat meat and think they will become as strong as an ox, forgetting that the ox eats grass. | Pino Caruso
+    * Japanese Diet
+    & The traditional Japanese diet consists of mostly unprocessed foods with very minimal seasoning.
+    * Guidelines
+    = Adhere to a plant-based diet.
+    = Avoid foods with more than 10 ingredients.
+    = Consume food in a form that is as close as possible to its natural form (unprocessed, raw).
+    = Avoid sugar and artificial ingredients.
+    = Eat until you're "80% full."
+
+HEALTH.FITNESS
+  BREF : Notes on fitness
+  $
+    * Guidelines
+    = Avoid sitting down for too long.
+    = Walk 10,000+ steps per day.
+    = Exercise at least twice a week.
+
+HEALTH.SLEEP
+  BREF : Notes on sleep
+  $
+    & To be honest, I am not a fan of sleep. I consider it a waste of time and a flaw of efficiency in Mother Nature's design. At the time of this writing, I'm still experimenting with ways to minimise sleep without sacrificing anything else.
+    & What's most important is the quality of sleep, not quantity.
+    * Guidelines
+    = Go to bed at the same time every day if possible.
+    = Turn off devices 1-2 hours before sleep. Avoid blue light.
+    = Write in a journal before bed to offload your thoughts.
+    = Avoid caffeine 4-6 hours before bed.
+    = Take cold showers before sleeping.
+    * Effects of Sleep Deficiency
+    = Reduced reliability of memory
+    = Slower thinking
+    = Reduced decision making abilities
+    = Poorer insight and focus
+    = Exhaustion
+    * Lucid Dreaming
+    & Lucid dreaming might be a solution to stay productive all day. Imagine being able to plan your projects while your body rests. Unfortunately, lucid dreaming is one of the many skills I have yet to master.
+
+COMMONPLACE.LIFE
+  BREF : Notes on living
+  $
+    * 侘寂
+    @ Nothing lasts, nothing is finished, and nothing is perfect. | Richard Powell | Wabi Sabi Simple | https://www.goodreads.com/book/show/840098.Wabi_Sabi_Simple
+    & Wabi-sabi is a Japanese philosophy focused on the acceptance of transcience and imperfection in our lives. It teaches us to be content with how things are.
+
+COMMONPLACE.PRODUCTIVITY
+  BREF : Notes on getting things done
+  $
+    & As a creator, productivity is a major key point in my life. I'm always obsessing over how I can be more efficient at getting things done so I can get more done later on.
+    & The best way to get more done is to work less. Eliminate the unnecessary from your list of priorities and focus on what you really have to do.
+
+@ COMMONPLACE.ENVIRONMENT
+  BREF : Notes on environmentalism
+  $
+    & We as a species are killing the planet, the only home we have. I believe its of the utmost importance that we radically shift our mindset on how we live on spaceship Earth.
+
+ENVIRONMENT.SOLARPUNK
+  BREF : Because the only other options are denial or despair
+  $
+    @ Solarpunk is a rebellion against the structural pessimism in our late visions of how the future will be. | Connor Owens | What is Solarpunk? | https://solarpunkanarchists.com/2016/05/27/what-is-solarpunk/
+
+ENVIRONMENT.ZERO WASTE
+  BREF : Notes on the zero-waste lifestyle
+  $
+    = {*Refuse*} what you don't need
+    = {*Reduce*} what you do need
+    = {*Reuse*} what you consume
+    = {*Recycle*} what you can't refuse, reduce, or reuse
+    = {*Rot*} the rest
+
+COMMONPLACE.PRIVACY
+  BREF : Notes on privacy
+  $
+    * Basics
+    = Be mindful of {*what*} you share
+    = Be mindful of {*where*} you share it
+    = Be mindful of {*who*} you share it with
+
+@ COMMONPLACE.DESIGN
+  BREF : Notes on design
+  $
+    @ Think more, design less. | Ellen Lupton
+
+DESIGN.DIETER RAMS
+  BREF : Dieter Rams
+  $
+    & Dieter Rams is a German industrial designer known for designing Braun's products. His design principles are a huge guiding influence in my own work.
+    * Principles of Good Design
+    - Good design is innovative.
+    - Good design makes a product useful.
+    - Good design is aesthetic.
+    - Good design makes a product understandable.
+    - Good design is unobtrusive.
+    - Good design is honest.
+    - Good design is long-lasting.
+    - Good design is thorough down to the last detail.
+    - Good design is environmentally-friendly.
+    - Good design is as little design as possible.
+    & {{Source|https://www.vitsoe.com/us/about/good-design}}
+    @ A designer who wants to achieve good design must not regard himself as an artist who, according to taste and aesthetics, is merely dressing up products with a last-minute garment. The designer must be the gestaltingenieur or creative engineer. They synthesize the completed product from the various elements that make up its design. Their work is largely rational, meaning that aesthetic decisions are justified by an understanding of the product’s purpose. | Dieter Rams
+    @ ‎To use design to impress, to polish things up, to make them chic, is no design at all. This is packaging. When we concentrate on the essential elements in design, when we omit all superfluous elements, we find forms become: quiet, comfortable, understandable and, most importantly, long lasting. | Dieter Rams
+
+DESIGN.TYPOGRAPHY
+  BREF : Notes on typography
+  $
+    @ A great designer knows how to work with text not just as content, he treats text as a user interface. | Oliver Richenstein
+    * Typography Scale
+    & My go-to type scale:
+    # 2.6179em
+    # 2.0581em
+    # 1.618em
+    # 1.272em
+    # 1em
+    # 0.7862em
+    * Resources
+    = {{Butterick's Practical Typography|https://practicaltypography.com}}
+
+@ COMMONPLACE.TECHNOLOGY
+  BREF : Notes on technology
+
+@ TECHNOLOGY.PROGRAMMING
+  BREF : Notes on programming
+  $
+    * General Guidelines
+    = Keep it simple.
+    = Pick the right language for the job.
+    = Each function, class, and component should have a well-defined and specific purpose.
+    = Avoid code duplication.
+    = Eliminate dead code; don't just comment it out.
+    = Avoid excessive nesting.
+    = Write tests.
+    * Optimisation Techniques
+    = {*Branch optimisation*}: rearranging code to minimise branching logic
+    = {*Code motion*}: performing calculations outside of loops
+    = {*Dead code elimination*}: removing unused code
+    = {*Dead store elimination*}: removing stores when they're never referenced again
+    = {*Instruction scheduling*}: reordering instructions to minimise execution time
+    = {*Store motion*}: moving store instructions outside of loops
+    * SOLID
+    = Single Responsibility Principle
+    = Open-Close Principle
+    = Liskov Substitution Principle
+    = Interface Segregation Principle
+    = Dependency Inversion Principle
+
+PROGRAMMING.JAVASCRIPT
+  BREF : Notes on JavaScript
+  $
+    * Console
+    & Group logs
+    # console.group("Chest");
+    # console.log("Treasure");
+    # console.groupEnd("Chest");
+    & Counter
+    # console.count("Counter"); // 1
+    # console.count("Counter"); // 2
+    # console.countReset("Counter"); // undefined
+    # console.count("Counter"); // 1
+    & Timer
+    # console.time("Timer");
+    # console.timeEnd("Timer");
+    & Print array as table
+    # console.table([]);
+
+PROGRAMMING.PYTHON
+  BREF : Notes on Python
+  $
+    * Tricks
+    & Swapping values
+    # a, b = 1, 2
+    # a, b = b, a
+
+PROGRAMMING.R
+  BREF : Notes on R
+  $
+    * Guide
+    & Creating variables
+    # egg<-5
+    & View dataframe
+    # str(dataset)
+    & Concatenate
+    # egg<-c(1, 2) // [1] 1 2
+    & Create a table
+    # egg<-table(dataset$variable)
+    & Stem and leaf plot
+    # stem(dataset$variable)
+    & Histogram
+    # hist(dataset$variable)
+    & Bar graph
+    # egg<-table(dataset$variable)
+    # barplot(egg)
+    & Pie chart
+    # pie(egg)
+    & Scatter plot
+    # plot(dataset$var1,dataset$var2)
+    & Measures of central tendency
+    # mean(c[1,2,3]) // 2
+    # median(c[1,2,3]) // 2
+    & Correlation
+    # cor.test(dataset$var1,dataset$var2)
+    & Correlations and significance test
+    # corr.test(dataset[,x:y])
+    & Regression model
+    # lm(var1~var2,data=dataset)
+    & Chi-Square
+    # chisq.test(dataset)
+
+TECHNOLOGY.LINUX
+  BREF : Notes on Linux
+  $
+    * Commandline Time-savers
+    = {*Ctrl+R*} to search through command history
+    = {*Ctrl+W*} to kill last word
+    = {*Ctrl+U*} to kill line
+
+TECHNOLOGY.RASPBERRY PI
+  BREF : Notes on Raspberry Pi
+  $
+    * Security
+    & Create a new user
+    # sudo /usr/sbin/useradd --groups sudo -m josh
+    # sudo passwd eggnog
+    & Reset root password and disable "pi" user
+    # sudo passwd root
+    # sudo passwd --lock pi
+
+TECHNOLOGY.VERSIONING
+  BREF : Notes on semantic versioning
+  $
+    * v Major.Minor.Patch
+    = Major: changes only during major updates
+    = Minor: general maintenance and other minor changes
+    = Patch: critical patch releases
+
+COMMONPLACE.SOCIAL
+  BREF : Notes on being social, I guess
+  $
+    @ The reward for conformity is that everyone likes you but yourself. | Rita Mae Brown
+    @ Wherever there is a human being, we have an opportunity for kindness. | Seneca
+
+COMMONPLACE.WRITING
+  BREF : Notes on writing
+  $
+    * Story Structure
+    = Setup
+    = Complication
+    = Rising Action
+    = Meanwhile
+    = Climax
+    = Denouement
+    &
+    @ A sentence should contain no unnecessary words, a paragraph no unnecessary sentences, for the same reason that a drawing should have no unnecessary lines and a machine no unnecessary parts. | William Strunk Jr.
+
+@ COMMONPLACE.MISCELLANEA
+  BREF : Et cetera
+  $
+    & The Miscellanea section holds notes that do not (yet) belong to any existing category within the Commonplace. Information here may be subject to regular revisions.
+
+MISCELLANEA.WIKIS
+  BREF : Sources of inspiration
+  $
+    & The following is a list of other wikis and knowledge bases that are even greater than my own. I hope you find them as immensely inspiring as I have. If you know of other similar sites, let me know about them :)
+    = {{XXIIVV|https://wiki.xxiivv.com/#home}} by Devine Lu Linvega
+    = {{Nikita Voloboev's wiki|https://wiki.nikitavoloboev.xyz}}
+    = {{Gwern.net|http://www.gwern.net}}
+`

@@ -19,7 +19,7 @@ function bang () {
   Q('s').create(InputNode);
   Q('c').create(DomNode, 'main');
   Q('f').create(DomNode, 'footer',`
-    <a href="http://webring.xxiivv.com/#random"><img id="w" src="athenaeum.codex/img/rotonde.svg"></a><p><a onclick="Q('query').bang('josh')">Josh Avanier</a> © Éternité</p>`);
+    <a href="http://webring.xxiivv.com/#random"><img id="w" src="img/rotonde.svg"></a><p><a onclick="Q('query').bang('josh')">Josh Avanier</a> © Éternité</p>`);
 
   Q('router').syphon('database');
   Q('database').syphon(['lexicon']);
