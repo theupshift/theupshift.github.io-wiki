@@ -32,7 +32,7 @@ function DocsTemplate(id, ...params) {
 
   this.seal = (name, payload = null) => {
     this.archives[name] = payload;
-    Ø('content').update(this.term && this.term ? this.term.long + this.load(name) : this.load(name));
+    Q('content').update(this.term && this.term ? this.term.long + this.load(name) : this.load(name));
   }
 
   this.load = (key) => {

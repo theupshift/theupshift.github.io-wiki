@@ -22,7 +22,7 @@ function HomeTemplate(id, ...params) {
       const {name, bref} = children[i];
       const url = toURL(name);
       const term = capitalise(name);
-      const title = `<a onclick="Ø('query').bang('${url}')">${term}</a>`;
+      const title = `<a onclick="Q('query').bang('${url}')">${term}</a>`;
       html += `<dt>${title}</dt><dd>${toMarkup(bref)}</dd>`;
     }
 

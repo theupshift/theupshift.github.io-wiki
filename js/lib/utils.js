@@ -25,7 +25,7 @@ function toMarkup (s) {
     if (part.indexOf('}}') < 0) continue;
     const content = part.split('}}')[0];
     if (content.substr(0, 1) === '$') {
-      html = html.replace(`{{${content}}}`, Ø('operation').request(content.replace('$', '')));
+      html = html.replace(`{{${content}}}`, Q('operation').request(content.replace('$', '')));
       continue;
     }
 
@@ -40,7 +40,7 @@ function toMarkup (s) {
       target = name = content;
     }
 
-    html = html.replace(`{{${content}}}`, isExternal(target) ? `<a href="${target}" target="_blank">${name}</a>` : `<a title="${target}" onclick="Ø('query').bang('${target}')">${name}</a>`)
+    html = html.replace(`{{${content}}}`, isExternal(target) ? `<a href="${target}" target="_blank">${name}</a>` : `<a title="${target}" onclick="Q('query').bang('${target}')">${name}</a>`)
   }
 
   return html;

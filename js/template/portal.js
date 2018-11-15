@@ -8,7 +8,7 @@ function PortalTemplate(id, ...params) {
     return {
       title: capitalise(q.name),
       v: {
-        u: `<a onclick="Ø('query').bang('${unde}')">${unde}</a>`,
+        u: `<a onclick="Q('query').bang('${unde}')">${unde}</a>`,
         s: name,
         c: `${long}${this.makePortal(name, children)}`
       }
@@ -19,7 +19,7 @@ function PortalTemplate(id, ...params) {
     let html = '<dl>';
     for (let i = 0; i < children.length; i++) {
       const {name, bref} = children[i];
-      const query = `Ø('query').bang('${name.toUpperCase()}')`;
+      const query = `Q('query').bang('${name.toUpperCase()}')`;
       const title = `<dt><a onclick="${query}">${capitalise(name)}</a></dt>`;
       html += `${title}<dd>${toMarkup(bref)}</dd>`;
     }

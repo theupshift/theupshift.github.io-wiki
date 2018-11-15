@@ -10,9 +10,9 @@ function MissingTemplate (id, ...params) {
     return {
       title: '404',
       v: {
-        u: `<a onclick="Ø('query').bang('Home')">Home</a>`,
+        u: `<a onclick="Q('query').bang('Home')">Home</a>`,
         s: name,
-        c: `<p>The page "${capitalise(name)}" does not exist within the Athenaeum. Were you looking for <a onclick="Ø('query').bang('${w1}')">${capitalise(w1)}</a> or <a onclick="Ø('query').bang('${w2}')">${capitalise(w2)}</a>?</p>`
+        c: `<p>The page "${capitalise(name)}" does not exist within the Athenaeum. Were you looking for <a onclick="Q('query').bang('${w1}')">${capitalise(w1)}</a> or <a onclick="Q('query').bang('${w2}')">${capitalise(w2)}</a>?</p>`
       }
     }
   }

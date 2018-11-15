@@ -3,7 +3,7 @@ function Riven() {
 }
 
 // QUERY
-function Ø (id, {network} = RIVEN) {
+function Q (id, {network} = RIVEN) {
   if (id.indexOf(' ') > -1) {
     const [node, port] = id.split(' ');
     return network[node] && network[node].ports[port] ?

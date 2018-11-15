@@ -8,7 +8,7 @@ function PageTemplate(id, ...params) {
     return {
       title: capitalise(name),
       v: {
-        u: `<a onclick="Ø('query').bang('${unde}')">${unde}</a>`,
+        u: `<a onclick="Q('query').bang('${unde}')">${unde}</a>`,
         s: name,
         c: this.signal(name) ? this.signal(name).answer(q) : long
       }

@@ -64,7 +64,7 @@ function Runic (raw) {
 
       switch (char) {
         case '$':
-          html += `<p>${Ø('operation').request(content).toMarkup()}</p>`;
+          html += `<p>${Q('operation').request(content).toMarkup()}</p>`;
           continue;
         case '%': html += this.media(content); continue;
         case '|': html += this.table(content); continue;

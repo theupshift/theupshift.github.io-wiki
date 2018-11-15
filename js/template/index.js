@@ -7,7 +7,7 @@ function IndexTemplate(id, ...params) {
     return {
       title: capitalise(name),
       v: {
-        u: `<a onclick="Ø('query').bang('${unde}')">${unde}</a>`,
+        u: `<a onclick="Q('query').bang('${unde}')">${unde}</a>`,
         s: name,
         c: `${long}${this.makeIndex(name, lexicon, horaire)}`
       }
@@ -27,7 +27,7 @@ function IndexTemplate(id, ...params) {
     for (let id in children) {
       const child = children[id];
       const {name} = child;
-      const link = `<a onclick="Ø('query').bang('${child.name}')">${capitalise(child.name)}</a>`
+      const link = `<a onclick="Q('query').bang('${child.name}')">${capitalise(child.name)}</a>`
 
       html += `<dt>${link}</dt><dd>${toMarkup(child.bref)}</dd></hs>
       ${!stop ? this.makeIndex(child.name,lexicon,logs,true) : ''}`;

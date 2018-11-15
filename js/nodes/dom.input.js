@@ -25,7 +25,7 @@ function InputNode (id, ...params) {
 
   this.validate = (value) => {
     this.txt = value;
-    Ø('query').bang(value);
+    Q('query').bang(value);
   }
 
   this.update = (content) => {
