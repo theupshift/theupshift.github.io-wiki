@@ -116,7 +116,7 @@ function Runic (raw) {
   }
 
   this.render = (line = '', rune = null) => {
-    if (rune && rune.tag === 'img') return `<img src="athenaeum.codex/img/${line}"/>`;
+    if (rune && rune.tag === 'img') return `<img src="img/${line}"/>`;
     return rune ? (rune.tag ?
       `<${rune.tag}>${line}</${rune.tag}>` : line
     ) : '';
@@ -127,11 +127,11 @@ function Runic (raw) {
       let html = '';
       const gallery = content.split(',');
       for (let i = 0; i < gallery.length; i++) {
-        html += `<img src="athenaeum.codex/img/${gallery[i].trim()}"/>`;
+        html += `<img src="img/${gallery[i].trim()}"/>`;
       }
       return html;
     }
-    return `<img src="athenaeum.codex/img/${content}"/>`
+    return `<img src="img/${content}"/>`
   }
 
   this.table = (content) => {
