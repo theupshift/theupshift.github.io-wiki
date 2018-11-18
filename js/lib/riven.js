@@ -20,10 +20,10 @@ function Node (id) {
 
   this.setup = () => {
     Object.assign(this.ports, {
-      input: new Port(this, 'in', 'input'),
-      output: new Port(this, 'out', 'output'),
-      answer: new Port(this, 'answer', 'answer'),
-      request: new Port(this, 'request', 'request')
+      input: new Port(this, 'input'),
+      output: new Port(this, 'output'),
+      answer: new Port(this, 'answer'),
+      request: new Port(this, 'request')
     });
   }
 
@@ -57,11 +57,14 @@ function Node (id) {
   this.signal = (target) => {
     const tar = target;
     const {ports} = this;
-    for (let portID in ports) {
-      const {routes} = ports[portID];
+    console.log(ports)
+    for (let port in ports) {
+      const {routes} = ports[port];
       for (let i = 0; i < routes.length; i++) {
         const route = routes[i];
-        if (!route || !route.host || route.host.id !== tar) continue;
+        // console.log(tar)
+        if (!route || route.host.id !== tar) continue;
+        console.log(route.host)
         return route.host;
       }
     }
@@ -104,8 +107,8 @@ function Node (id) {
   }
 }
 
-function Port (host, id, type = 'default') {
-  Object.assign(this, {host, id, type, routes: []});
+function Port (host, type = 'default') {
+  Object.assign(this, {host, type, routes: []});
   this.connect = (b, type = 'transit') => {
     this.routes[this.routes.length] = Q(b);
   }
