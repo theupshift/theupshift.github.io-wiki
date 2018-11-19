@@ -57,14 +57,11 @@ function Node (id) {
   this.signal = (target) => {
     const tar = target;
     const {ports} = this;
-    console.log(ports)
     for (let port in ports) {
       const {routes} = ports[port];
       for (let i = 0; i < routes.length; i++) {
         const route = routes[i];
-        // console.log(tar)
         if (!route || route.host.id !== tar) continue;
-        console.log(route.host)
         return route.host;
       }
     }
