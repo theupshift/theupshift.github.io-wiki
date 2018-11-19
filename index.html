@@ -38,7 +38,9 @@
 <body>
   <script>
     const RIVEN = new Riven();
-    if (!!~navigator.userAgent.indexOf('MSIE')) {
+    if (!!~navigator.userAgent.indexOf('MSIE')
+        || !!~navigator.userAgent.indexOf('Windows')
+        || || !!~navigator.userAgent.indexOf('Edge')) {
       alert('Nope');
     } else {
       bang();
