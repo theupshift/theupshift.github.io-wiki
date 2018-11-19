@@ -28,7 +28,7 @@ function Indental (data) {
       if (line.skip || line.indent > 0) continue;
       let key = line.content.toUpperCase();
       let unde = 'Home';
-      let typ = 'none';
+      let typ = 'page';
 
       if (key.indexOf('@') > -1) {
         key = key.slice(2);
