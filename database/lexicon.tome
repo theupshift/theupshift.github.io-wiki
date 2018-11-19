@@ -1,14 +1,15 @@
 DB.lexicon = `
 @ HOME
   $
-    & Welcome to {*The Athenaeum*}. Housed herein are various documents and records of the various projects within my {{Oeuvre}} as well as some memoirs and {{notes|Commonplace}} on certain topics of interest. Use the title of this page to search for something in particular.
+    & Welcome to The Athenaeum. Documentations of the various projects within my {{Oeuvre}} as well as some memoirs and {{notes|Commonplace}} on topics of interest are housed herein. Click on this page's title to search.
     & {*Note:*} This site is under construction. Some pages may be missing or lacking content. Also beware of goblins!
 
 @ JOSH
   ? : Who I am
   $
-    & My name is Josh and I guess you can call me a hobbyist. I'm currently studying information technology in Thailand. After that, I hope to focus my time and energy traveling the world and working on various {{projects|Oeuvre}}.
+    & I'm a 21-year-old aspiring {{polymath|https://en.wikipedia.org/wiki/Polymath}} working on a variety of {{projects|Oeuvre}} spanning the realms of Arts and Sciences.
     % josh.png
+    & I'm currently studying information technology in Thailand. After that, I hope to focus my time and energy traveling the world and/or continuing to work on my projects.
 
 ABOUT
   ? : What this site is about
@@ -21,39 +22,29 @@ ABOUT
     * Future
     & I plan on integrating some of my log data into this platform hopefully before the dawn of 2019. I also have plans to someday move this site from GitHub and host it in a similar manner as Low Tech Magazine's {{solar-powered website|https://solar.lowtechmagazine.com}}.
     * Issues
-    & If you have some feedback or if you found an issue, you may submit a {{bug report|https://github.com/joshavanier/joshavanier.github.io/issues/new}}.
+    & If you have feedback or if you found an issue, you may submit a {{bug report|https://github.com/joshavanier/joshavanier.github.io/issues/new}}.
     * License
-    & Feel free to fork and modify this site's back-end code, which is made available under the {{MIT|https://opensource.org/licenses/MIT}} license. The content (text, photos, data) is available under the {{BY-NC-SA 4.0|https://creativecommons.org/licenses/by-nc-sa/4.0}} license.
-
-JOSH.STATS
-  BREF : Unnecessary information
-  $
-    = Height: 165cm
-    = Weight: 49kg
-    = Blood type: O-
-    & This will be expanded into a dashboard soon.
+    & You may fork and modify this site's back-end code under the {{MIT|https://opensource.org/licenses/MIT}} license. The wiki content is under {{BY-NC-SA 4.0|https://creativecommons.org/licenses/by-nc-sa/4.0}}.
 
 JOSH.CONTACT
   ? : Send a raven
   $
     & If you have any comments, suggestions, questions, or if you simply just want to chat, here are some of the ways you can get ahold of me:
-    = Twitter: {{@joshavanier|https://twitter.com/joshavanier}}
-    = Send a raven* to 14.674417°N 101.176869°E
-    & * No spam pigeons, please
+    = {{Via Twitter|https://twitter.com/joshavanier}}
+    = {{Via Mastodon|https://sunbeam.city/@joshavanier}}
 
 JOSH.GOALS
   ? : Of things to accomplish
   $
     & Here is an ever-changing list of things I would love to achieve or accomplish, preferably before my inevitable death. Only after I'm able to check off every item below will I be able to say that my life has been well-lived.
     @ One should not pursue goals that are easily achieved. One must develop an instinct for what one can just barely achieve through one’s greatest efforts. | Einstein
-    = Achieve 100% self-sufficiency and live a {{zero waste}} lifestyle
+    = Achieve 100% self-sufficiency and a {{zero waste}} lifestyle
+    = Live off-grid
     = Create my own versions of {{things|Todo}}
-    = Reduce the need for {{sleep}} to as close to zero as possible
+    = Minimise {{sleep}} to as close to zero as possible
     = Reduce personal possessions to only absolute necessities
     = Graduate and forget everything I learned in school
     = Acquire (or build) a boat and sail
-    = Start a company that goes against business principles
-    = Contribute to any form of technological progress that will eventually make non-necessities like educational institutions and accountants obsolete
     = Finish 10,000 {{projects|Oeuvre}} before {{Death}}
 
 JOSH.TODO
@@ -100,10 +91,13 @@ JOSH.TO LEARN
     = Data structures, design patterns
     = Music theory, composition
     = Criminology, forensics
+    = Biomimetics
     * Skills
     = Calligraphy, handlettering
+    = Lucid dreaming
     = Echolocation
     = Braille
+    = Sailing
     * Languages
     = French (ongoing)
     = Italian (ongoing)
@@ -124,71 +118,111 @@ JOSH.TO LEARN
 @ JOSH.INVENTORY
   ? : Of tools
   $
-    & These are some of the tools I use that help me pursue my hobbies and make the things I want to make.
+    & These are some of the tools that help me pursue my hobbies and work on my {{projects|Oeuvre}}.
 
 INVENTORY.NAVIRE
   ? : My primary workstation
   $
-    & Most of my projects are built on Navire, an ancient Victorian-era laptop with barely 2GB of RAM and a 1.10 GHz processor. I run {{Linux}} on it in order to keep resource usage as lightweight and minimal as possible.
+    & Most of my projects are built on Navire, a Victorian-era laptop with barely 2GB of RAM and a 1.10 GHz processor. I run {{Linux}} on it in order to keep resource usage as lightweight and minimal as possible.
     * Dotfiles
     & My {{dotfiles|https://github.com/joshavanier/dots}} are available on GitHub. Feel free to use and modify according to your preferences.
     * Essentials
-    = {*WM*} - {{i3wm|https://i3wm.org}}
-    = {*Terminal*} - {{st|https://st.suckless.org}}
-    = {*Browser*} - {{Firefox|https://www.mozilla.org/en-US/firefox/new}}, {{Chromium|https://www.chromium.org}}, {{surf|https://surf.suckless.org}}
-    = {*Text editor*} - {{vim|https://www.vim.org}}
-    = {*Music*} - {{cmus|https://cmus.github.io/}}
-    = {*Files*} - {{nnn|https://github.com/jarun/nnn}}, pcmanfm
-    = {*Image editor*} - {{GIMP|https://www.gimp.org}}
-    = {*Music composition*} - {{Marabu|https://wiki.xxiivv.com/#marabu}}
+    ! Purpose | Tool
+    + {*WM*} | {{i3wm|https://i3wm.org}}
+    + {*Terminal*} | {{st|https://st.suckless.org}}
+    + {*Browser*} | {{Firefox|https://www.mozilla.org/en-US/firefox/new}}, {{Chromium|https://www.chromium.org}}, {{surf|https://surf.suckless.org}}
+    + {*Text editor*} | {{vim|https://www.vim.org}}
+    + {*Music player*} | {{cmus|https://cmus.github.io}}
+    + {*Files*} | {{nnn|https://github.com/jarun/nnn}}, pcmanfm
+    + {*Image editor*} | {{GIMP|https://www.gimp.org}}
+    + {*Music composition*} | {{Marabu|https://wiki.xxiivv.com/#marabu}}
 
 INVENTORY.ORION
   ? : My mobile workstation
   $
-    & Whenever I'm out and away from my laptop, I have the option of working from my mobile phone. Orion is an Android phone that has Termux running on it. This lets me work with git and other {{Linux}} tools on the go.
+    & Whenever I'm away from my laptop, I have the option of working from my phone &mdash; an Android phone with Termux, letting me work with git and other {{Linux}} tools on the go.
     * Essentials
-    - {*Terminal*} - {{Termux|https://termux.com}}
-    - {*Email*} - {{ProtonMail|https://protonmail.com}}
-    - {*Reading*} - {{Pocket|https://getpocket.com/a/queue}}
-    - {*Notes*} - {{iA Writer|https://ia.net/writer}}
-    - {*Social*} - {{Mastalab|https://mastalab.app}}
-    - {*Photography*} - {{VSCO|https://vsco.co}}
-    - {*Browser*} - {{Brave|https://brave.com}}
-    - {*Dimmer*} - {{Twilight|https://play.google.com/store/apps/details?id=com.urbandroid.lux&hl=en_US}}
+    = {*Terminal*} - {{Termux|https://termux.com}}
+    = {*Email*} - {{ProtonMail|https://protonmail.com}}
+    = {*Reading*} - {{Pocket|https://getpocket.com}}
+    = {*Notes*} - {{iA Writer|https://ia.net/writer}}
+    = {*Social*} - {{Mastalab|https://mastalab.app}}
+    = {*Photography*} - {{VSCO|https://vsco.co}}
+    = {*Browser*} - {{Brave|https://brave.com}}
+    = {*Dimmer*} - {{Twilight|https://play.google.com/store/apps/details?id=com.urbandroid.lux&hl=en_US}}
 
 INVENTORY.EDC
   ? : Everyday carry
   $
-    & As a university student, I'm almost always carrying a backpack containing things for class, although I try to avoid carrying books whenever possible.
+    & As a university student, I often carry a backpack containing things for class, although I try to avoid carrying books whenever possible.
     * Things
     - Renaissance pen
     - {{Phone|Orion}}
     - Tyvek wallet
+    - Steel pocket knife
+    - Keys
 
-JOSH.DEATH
++ JOSH.DEATH
   ? : Of the inevitable
   $
     @ You only live once, but if you do it right, once is enough. | Mae West
+    # TODO: Install Mortem module
+
+DEATH.MORTEM
+  ? : A mortal's hourglass
+  $
+    & The Mortem displays some rather morbid stats on how much time I may have remaining assuming a lifespan of 70 Earth years.
+    % mors.png
 
 @ OEUVRE
   ? : Collective works
   $
-    & The Oeuvre is the collection of everything I have made, am making, and {{will be making|Todo}}, spanning within the realms of Arts and Sciences.
+    & The Oeuvre is the grand collection of everything I have made, am making, and {{will be making|Todo}}.
 
-+ OEUVRE.LABORATORY
-  BREF : Software
++ OEUVRE.ATELIER
+  ? : Of the visual arts
   $
-    & The Laboratory houses my various experiments with software.
+    & The Atelier houses my dabblings in visual arts.
+
+ATELIER.OWL CITY
+  ? : First attempts at design
+  $
+    & The Owl City posters were my first attempts at design. The idea was simple: turn an Owl City song into a poster using GIMP and some free fonts. It was once a daily thing until it was discontinued when I entered university.
+
+ATELIER.PIXELATTIRE
+  ? : A pixel art log of daily outfits
+  $
+    & Pixelattire is a daily pixel art project where I document what I wear every day throughout 2018. All art is created using GIMP and is posted on a {{Tumblr page|https://pixelattire.tumblr.com}}. The custom lightweight Tumblr theme used is available {{here|https://github.com/joshavanier/pixelattire}}.
+    * Future
+    & I plan on continuing this project next year perhaps with a system that generates pixel art from text logs.
+    % pixelattire.png
+
+ATELIER.INKTOBER
+  ? : Inktober
+  $
+    & I still have yet to complete a round of Inktober
+
+ATELIER.GRIDOIRE
+  ? : Dotgrid illustrations
+  $
+    & Gridoire is a {{daily art project|https://gridoire.tumblr.com}} where each illustration is created using the {{Hundred Rabbits|https://100r.co}} vector tool {{Dotgrid|https://hundredrabbits.itch.io/dotgrid}}.
+    % gridoire-masako.png, gridoire-chantal.png, gridoire-avanier.png
+
+@ OEUVRE.LABORATORY
+  ? : Of software experimentations
+  $
+    & The Laboratory houses my collection of various experiments with software. The {{Cryo}} holds in-development projects. The {{Attic}} holds web-related projects.
 
 LABORATORY.EAU
   ? : A hydration log
   $
-    & Eau was a hydration log. It was created to help me keep track of how much water I drink. Every time I rehydrate, I log the quantity in milliliters. The project was eventually discontinued, though I will revisit it again soon.
+    & Eau was a hydration log. Every time I rehydrate, I log the quantity in milliliters. The project was eventually discontinued, though I will revisit it again soon.
+    % eau.png
 
 LABORATORY.LOG
   ? : A time-tracker
   $
-    & Log is a time-tracker inspired by similar systems by {{Neauoire|https://wiki.xxiivv.com/index.html#horaire}} and {{vi|https://log.v-os.ca}}. It is designed for single-tasking: start a log, focus on your task, and then end it when you're done.
+    & Log is a time-tracker, inspired by similar systems by {{Neauoire|https://wiki.xxiivv.com/index.html#horaire}} and {{vi|https://log.v-os.ca}}, designed for single-tasking: start a log, focus on your task, and then end it when you're done.
     % log.png
     & Commands are entered via a console. The app has a built-in Guide that contains a list of commands and their usage.
     & Log is available as an {{Electron|https://electronjs.org}} app for Linux and macOS and can be downloaded on itch.io.
@@ -205,74 +239,22 @@ LABORATORY.SOMNUS
     & It was created to eventually provide me with insight on how much I {{sleep}}. The process is admittedly tedious yet simple. I just record the approximate time I go to bed and the exact time I wake up. The moment I wake up, I immediately check the time.
     % somnus.png
 
-+ LABORATORY.CRYO
-  BREF : Unreleased experiments
-  $
-    & The Cryo is where all unfinished Laboratory experiments are kept.
-
-CRYO.CARGO
-  BREF : A personal inventory management tool
-  $
-    & Cargo is an upcoming personal inventory management tool.
-    # Utility: how often used is an item
-    # Functionality: how useful is an item
-    # Rarity: how rare is an item
-    # Worth: how much an item is worth
-
-CRYO.QYLLIUM
-  BREF : A notes app
-  $
-    & Qyllium is an upcoming notes app. It is inspired by the {{bullet journal|https://bulletjournal.com}} which is designed for rapid logging of tasks, notes, and events.
-    % qyllium.png
-
-CRYO.RISU
-  BREF : A personal finance management tool
-  $
-    & Risu is an upcoming personal finance management tool. Ironically, as soon as I started working on this project, I simply stopped spending and eventually didn't see the need for financial management. I still plan on finishing this though.
-    % risu.png
-
-+ OEUVRE.OBSERVATORY
-  BREF : Of realms and universes
-  $
-    & The Observatory is where I ponder upon the existence of a parallel universe
-
-OBSERVATORY.MITHVAER
-  BREF : A worldbuilding project
-  $
-    & Mithvaer is a long-term worldbuilding project. I've always wanted to create a universe where all of my projects can dwell in. In other words, everything I make will be tied to this fictional(?) universe.
-    & I have a separate wiki dedicated to the lore of Mithvaer which you can find {{here|https://mithvaer.github.io/#home}}.
-    % mithvaer.png
-
-OBSERVATORY.VIDE
-  BREF : A worldbuilding tool
-  $
-    & Vide is a worldbuilding tool that aids in the creation of somewhat scientifically-plausible stars, planets, moons, and planetary systems.
-    * Planned Features
-    & I want to create a tool that lets users create worlds with high in-depth details like planetary orbits, atmospheric compositions, gravity, etc.
-    % vide.png
-
 + LABORATORY.ATTIC
-  BREF : A collection of random things built on the web
+  ? : A collection of random things built on the web
   $
     & Among thousands of intertwined strands is a scattered collection of miscellanea built within and for the vast expanse of the Internet. Here are some web-related tools and toys built in browsers for browsers.
 
 ATTIC.CLAVIER
   ? : A keycode mapping utility
   $
-    & Clavier is a simple JS keycode mapping utility. All it does is tell you the keycode to whatever key you press on your keyboard.
-    % clavier.png, log.png, qyllium.png
+    & Clavier is a {{JS|Javascript}} keycode mapping utility.
+    % clavier.png
 
 ATTIC.HAIAKU
   ? : A text converter
   $
-    & Haiaku (俳悪) is a text converter that rewrites input into top-down, right-to-left fullwidth format reminiscent of haikus. It was built upon the request of a friend who had that specific request.
-    # 水蛙古
-    # の飛池
-    # 音びや
-    # 　込　
-    # 　む　
-    # <br>
-    # -芭蕉
+    & Haiaku (俳悪) is a text converter that rewrites input into top-down, right-to-left fullwidth format reminiscent of haikus.
+    # 水蛙古<br>の飛池<br>音びや<br>　込　<br>　む　<br><br>-芭蕉
 
 ATTIC.KUMO
   ? : A Hacker News client
@@ -295,10 +277,10 @@ ATTIC.ROVARSPRAKET
 ATTIC.TERNARA
   ? : A balanced ternary library
   $
-    & Ternära is a simple JS library for working with the balanced ternary numerical system. It supports a two-way conversion between decimal and ternary integers as well as basic arithmetic operations.
+    & Ternära is a simple {{JS|Javascript}} balanced ternary library. It supports a two-way conversion between decimal and ternary integers as well as basic arithmetic operations.
 
-+ OEUVRE.SANDBOX
-  BREF : Mediums to facilitate play
++ LABORATORY.SANDBOX
+  ? : Mediums to facilitate play
   $
     & The Sandbox houses my mostly-unfinished games, toys, and any medium that facilitates play.
 
@@ -358,10 +340,28 @@ SANDBOX.TEXTE
     # + - New line
     # #[Action>Link] - Action button
 
++ OEUVRE.OBSERVATORY
+  ? : Of realms and universes
+  $
+    & The Observatory is where I ponder upon the existence of a realm beyond this universe.
+
+OBSERVATORY.MITHVAER
+  ? : A worldbuilding project
+  $
+    & Mithvaer is a long-term worldbuilding project focused on creating a universe wherein my {{Oeuvre}} can exist.
+    & I have a separate wiki dedicated to the lore of Mithvaer which you can find {{here|https://mithvaer.github.io/#home}}.
+    % mithvaer.png
+
+OBSERVATORY.VIDE
+  ? : A worldbuilding tool
+  $
+    & Vide is a worldbuilding tool that aids in the creation of somewhat scientifically-plausible stars, planets, moons, and planetary systems, letting users create worlds with high in-depth details like planetary orbits, atmospheric compositions, gravity, etc.
+    % vide.png
+
 + OEUVRE.WORKSHOP
   ? : Of tangible items
   $
-    & A greatly under-used section of the Oeuvre, the Workshop houses projects involving the creation of things of tangible nature.
+    & An unfortunately under-used section of the Oeuvre, the Workshop houses projects that involve the creation of physical things &mdash; tools, toys, crafts, etc.
 
 WORKSHOP.HOLLY
   ? : A Raspberry Pi computer console
@@ -370,30 +370,32 @@ WORKSHOP.HOLLY
     * Current Status
     & The project is put on temporary stasis as I messed up the soldering of the battery circuit.
 
-+ OEUVRE.ATELIER
-  BREF : Visuals
+@ OEUVRE.OUBLIETTE
+  ? : Of the unreleased and unfinished
   $
-    & The Atelier houses my attempts at various mediums of visual arts.
+    & The {*Oubliette*} is a hopefully temporary holding facility for all unfinished and unreleased projects.
 
-ATELIER.OWL CITY
-  BREF : First attempts at design
+OUBLIETTE.CARGO
   ? : A personal inventory management tool
   $
-    & The Owl City posters were my first attempts at design. The idea was simple: turn an Owl City song into a poster. I used GIMP and some free fonts. It was once a daily thing until it was discontinued when I entered university.
+    & Cargo is an upcoming personal inventory management tool.
+    ! Metric | Description
+    + Utility | How often used is an item
+    + Functionality | How useful is an item
+    + Rarity | How rare is an item
+    + Worth | How much an item is worth
 
-ATELIER.PIXELATTIRE
-  BREF : A pixel art log of daily outfits
+OUBLIETTE.QYLLIUM
+  ? : A notes app
   $
-    & Pixelattire is a daily pixel art project where I document what I wear every day throughout 2018. All art is created using GIMP and is posted on a {{Tumblr page|https://pixelattire.tumblr.com}}. The custom lightweight Tumblr theme used is available {{here|https://github.com/joshavanier/pixelattire}}.
-    * Future
-    & I plan on continuing this project next year, although I plan on having a system that generates pixel art from text logs rather than spend ~10 minutes per day manually creating these.
-    % pixelattire.png
+    & Qyllium is an upcoming notes app. It is inspired by the {{bullet journal|https://bulletjournal.com}} which is designed for rapid logging of tasks, notes, and events.
+    % qyllium.png
 
-ATELIER.GRIDOIRE
-  BREF : Dotgrid illustrations
+OUBLIETTE.RISU
+  ? : A personal finance management tool
   $
-    & Gridoire is a daily illustration project which you can view {{here|https://gridoire.tumblr.com}}. Each illustration is created using the free {{Hundred Rabbits|https://100r.co}} vector tool {{Dotgrid|https://hundredrabbits.itch.io/dotgrid}}.
-    % gridoire-masako.png, gridoire-chantal.png, gridoire-avanier.png
+    & Risu is an upcoming personal finance management tool. Ironically, as soon as I started working on this project, I simply stopped spending and eventually didn't see the need for financial management. I still plan on finishing this though.
+    % risu.png
 
 @ COMMONPLACE
   ? : Notes
@@ -402,35 +404,35 @@ ATELIER.GRIDOIRE
     @ You may want to keep a commonplace book which is a notebook where you can copy parts of books you think are in code, or take notes on a series of events you may have observed that are suspicious, unfortunate, or very dull. | Lemony Snicket | Lemony Snicket: The Unauthorized Autobiography | https://www.goodreads.com/book/show/78408.Lemony_Snicket
 
 @ COMMONPLACE.HEALTH
-  ? : Notes on health and well-being
+  ? : On health and well-being
   $
     @ Take care of your body. It's the only place you have to live. | Jim Rohn
 
 HEALTH.NUTRITION
-  ? : Notes on nutrition
+  ? : On nutrition
   $
     @ People eat meat and think they will become as strong as an ox, forgetting that the ox eats grass. | Pino Caruso
     * Japanese Diet
     & The traditional Japanese diet consists of mostly unprocessed foods with very minimal seasoning.
     * Guidelines
-    = Adhere to a plant-based diet.
-    = Avoid foods with more than 10 ingredients.
-    = Consume food in a form that is as close as possible to its natural form (unprocessed, raw).
-    = Avoid sugar and artificial ingredients.
-    = Eat until you're "80% full."
+    = Adhere to a plant-based diet
+    = Avoid foods with more than 10 ingredients
+    = Consume food in a form that is as close as possible to its natural form (unprocessed, raw)
+    = Avoid sugar and artificial ingredients
+    = Eat until you're "80% full.
 
 HEALTH.FITNESS
-  ? : Notes on fitness
+  ? : On fitness
   $
     * Guidelines
-    = Avoid sitting down for too long.
-    = Walk 10,000+ steps per day.
-    = Exercise at least twice a week.
+    = Avoid sitting down for too long
+    = Walk 10,000+ steps per day
+    = Exercise at least twice a week
 
 HEALTH.SLEEP
-  ? : Notes on sleep
+  ? : On sleep
   $
-    & To be honest, I am not a fan of sleep. I consider it a waste of time and a flaw of efficiency in Mother Nature's design. At the time of this writing, I'm still experimenting with ways to minimise sleep without sacrificing anything else.
+    & I am not a fan of sleep. I consider it a waste of time and a flaw of efficiency in Mother Nature's design. At the time of this writing, I'm still experimenting with ways to minimise sleep without sacrificing anything else.
     & What's most important is the quality of sleep, not quantity.
     * Guidelines
     = Go to bed at the same time every day if possible.
@@ -448,20 +450,20 @@ HEALTH.SLEEP
     & Lucid dreaming might be a solution to stay productive all day. Imagine being able to plan your projects while your body rests. Unfortunately, lucid dreaming is one of the many skills I have yet to master.
 
 COMMONPLACE.LIFE
-  ? : Notes on living
+  ? : On living
   $
     * 侘寂
     @ Nothing lasts, nothing is finished, and nothing is perfect. | Richard Powell | Wabi Sabi Simple | https://www.goodreads.com/book/show/840098.Wabi_Sabi_Simple
     & Wabi-sabi is a Japanese philosophy focused on the acceptance of transcience and imperfection in our lives. It teaches us to be content with how things are.
 
 COMMONPLACE.PRODUCTIVITY
-  ? : Notes on getting things done
+  ? : On getting things done
   $
     & As a creator, productivity is a major key point in my life. I'm always obsessing over how I can be more efficient at getting things done so I can get more done later on.
     & The best way to get more done is to work less. Eliminate the unnecessary from your list of priorities and focus on what you really have to do.
 
 @ COMMONPLACE.ENVIRONMENT
-  ? : Notes on environmentalism
+  ? : On environmentalism
   $
     & We as a species are killing the planet, the only home we have. I believe its of the utmost importance that we radically shift our mindset on how we live on spaceship Earth.
 
@@ -471,75 +473,71 @@ ENVIRONMENT.SOLARPUNK
     @ Solarpunk is a rebellion against the structural pessimism in our late visions of how the future will be. | Connor Owens | What is Solarpunk? | https://solarpunkanarchists.com/2016/05/27/what-is-solarpunk/
 
 ENVIRONMENT.ZERO WASTE
-  ? : Notes on the zero-waste lifestyle
+  ? : On the zero-waste lifestyle
   $
     = {*Refuse*} what you don't need
-    = {*Reduce*} what you do need
+    = {*Reduce*} what you need
     = {*Reuse*} what you consume
     = {*Recycle*} what you can't refuse, reduce, or reuse
     = {*Rot*} the rest
 
 COMMONPLACE.PRIVACY
-  ? : Notes on privacy
+  ? : On privacy
   $
-    * Basics
     = Be mindful of {*what*} you share
     = Be mindful of {*where*} you share it
     = Be mindful of {*who*} you share it with
 
 @ COMMONPLACE.DESIGN
-  ? : Notes on design
+  ? : On design
   $
     @ Think more, design less. | Ellen Lupton
+    * Ontological Design
+    @ We design our world, while our world acts back on us and designs us. | Anne-Marie Willis | Ontological Designing | http://www.academia.edu/888457/Ontological_designing
 
 DESIGN.DIETER RAMS
-  BREF : Dieter Rams
+  ? : Dieter Rams
   $
-    & Dieter Rams is a German industrial designer known for designing Braun's products. His design principles are a huge guiding influence in my own work.
-    * Principles of Good Design
-    - Good design is innovative.
-    - Good design makes a product useful.
-    - Good design is aesthetic.
-    - Good design makes a product understandable.
-    - Good design is unobtrusive.
-    - Good design is honest.
-    - Good design is long-lasting.
-    - Good design is thorough down to the last detail.
-    - Good design is environmentally-friendly.
-    - Good design is as little design as possible.
+    & {{Dieter Rams|https://en.wikipedia.org/wiki/Dieter_Rams}} is a German industrial designer. His design principles are a guiding influence in my work.
+    * Principles
+    - Good design is {*innovative*}
+    - Good design makes a product {*useful*}
+    - Good design is {*aesthetic*}
+    - Good design makes a product {*understandable*}
+    - Good design is {*unobtrusive*}
+    - Good design is {*honest*}
+    - Good design is {*long-lasting*}
+    - Good design is {*thorough*} down to the last detail
+    - Good design is {*environmentally-friendly*}
+    - Good design is {*as little design as possible*}
     & {{Source|https://www.vitsoe.com/us/about/good-design}}
     @ A designer who wants to achieve good design must not regard himself as an artist who, according to taste and aesthetics, is merely dressing up products with a last-minute garment. The designer must be the gestaltingenieur or creative engineer. They synthesize the completed product from the various elements that make up its design. Their work is largely rational, meaning that aesthetic decisions are justified by an understanding of the product’s purpose. | Dieter Rams
     @ ‎To use design to impress, to polish things up, to make them chic, is no design at all. This is packaging. When we concentrate on the essential elements in design, when we omit all superfluous elements, we find forms become: quiet, comfortable, understandable and, most importantly, long lasting. | Dieter Rams
 
 DESIGN.TYPOGRAPHY
-  ? : Notes on typography
+  ? : On typography
   $
     @ A great designer knows how to work with text not just as content, he treats text as a user interface. | Oliver Richenstein
     * Typography Scale
     & My go-to type scale:
-    # 2.6179em
-    # 2.0581em
-    # 1.618em
-    # 1.272em
-    # 1em
-    # 0.7862em
+    # 2.6179em<br>2.0581em<br>1.618em<br>1.272em<br>1em<br>0.7862em
     * Resources
     = {{Butterick's Practical Typography|https://practicaltypography.com}}
 
 @ COMMONPLACE.TECHNOLOGY
-  ? : Notes on technology
+  ? : On technology
 
 @ TECHNOLOGY.PROGRAMMING
-  ? : Notes on programming
+  ? : On programming
   $
     * General Guidelines
-    = Keep it simple.
-    = Pick the right language for the job.
-    = Each function, class, and component should have a well-defined and specific purpose.
-    = Avoid code duplication.
-    = Eliminate dead code; don't just comment it out.
-    = Avoid excessive nesting.
-    = Write tests.
+    = Keep it simple
+    = Pick the right language for the job
+    = Each function, class, and component should have a well-defined and specific purpose
+    = Avoid code duplication
+    = Eliminate dead code; don't just comment it out
+    = Avoid excessive nesting
+    = Write tests
     * Optimisation Techniques
     = {*Branch optimisation*}: rearranging code to minimise branching logic
     = {*Code motion*}: performing calculations outside of loops
@@ -555,7 +553,7 @@ DESIGN.TYPOGRAPHY
     = Dependency Inversion Principle
 
 PROGRAMMING.JAVASCRIPT
-  ? : Notes on JavaScript
+  ? : On JavaScript
   $
     * Console
     & Group logs
@@ -574,15 +572,14 @@ PROGRAMMING.JAVASCRIPT
     # console.table([]);
 
 PROGRAMMING.PYTHON
-  ? : Notes on Python
+  ? : On Python
   $
-    * Tricks
     & Swapping values
     # a, b = 1, 2
     # a, b = b, a
 
 PROGRAMMING.R
-  ? : Notes on R
+  ? : On R
   $
     * Guide
     & Creating variables
@@ -617,7 +614,7 @@ PROGRAMMING.R
     # chisq.test(dataset)
 
 TECHNOLOGY.LINUX
-  ? : Notes on Linux
+  ? : On Linux
   $
     * Commandline Time-savers
     = {*Ctrl+R*} to search through command history
@@ -625,7 +622,7 @@ TECHNOLOGY.LINUX
     = {*Ctrl+U*} to kill line
 
 TECHNOLOGY.RASPBERRY PI
-  ? : Notes on Raspberry Pi
+  ? : On Raspberry Pi
   $
     * Security
     & Create a new user
@@ -636,7 +633,7 @@ TECHNOLOGY.RASPBERRY PI
     # sudo passwd --lock pi
 
 TECHNOLOGY.VERSIONING
-  ? : Notes on semantic versioning
+  ? : On semantic versioning
   $
     * v Major.Minor.Patch
     = Major: changes only during major updates
@@ -644,13 +641,13 @@ TECHNOLOGY.VERSIONING
     = Patch: critical patch releases
 
 COMMONPLACE.SOCIAL
-  ? : Notes on being social, I guess
+  ? : On being social, I guess
   $
     @ The reward for conformity is that everyone likes you but yourself. | Rita Mae Brown
     @ Wherever there is a human being, we have an opportunity for kindness. | Seneca
 
 COMMONPLACE.WRITING
-  ? : Notes on writing
+  ? : On writing
   $
     * Story Structure
     = Setup
