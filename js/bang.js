@@ -12,6 +12,8 @@ function bang () {
   Q('index').create(IndexTemplate);
   Q('docs').create(DocsTemplate);
 
+  Q('status').create(StatusTemplate);
+
   Q('document').create(DocumentNode);
   Q('v').create(DomNode);
 
@@ -23,7 +25,7 @@ function bang () {
 
   Q('router').syphon('database');
   Q('database').syphon(['lexicon']);
-  Q('template').syphon(['page','portal','index','docs','home']);
+  Q('template').syphon(['page','portal','index','docs','home', 'status']);
   Q('page').syphon(['missing']);
 
   Q('template').connect(['v','document']);
