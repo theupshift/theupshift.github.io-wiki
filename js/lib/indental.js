@@ -36,6 +36,9 @@ function Indental (data) {
       } else if (key.indexOf('+') > -1) {
         key = key.slice(2);
         typ = key === 'HOME' ? 'home' : 'index';
+      } else if (key.indexOf('!') > -1) {
+        key = key.slice(2);
+        typ = key === 'HOME' ? 'home' : 'status';
       }
 
       if (key.indexOf('.') > -1) {
