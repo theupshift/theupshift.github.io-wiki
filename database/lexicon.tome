@@ -243,6 +243,12 @@ ATTIC.CLAVIER
     & Clavier is a {{JS|Javascript}} keycode mapping utility.
     % clavier.png
 
+ATTIC.CONCENTRIC
+  ? : A polar clock
+  $
+    & Concentric is a polar clock inspired by and based on this {{Pen|https://codepen.io/motorlatitude/pen/uevDx}}.
+    % concentric.png
+
 ATTIC.HAIAKU
   ? : A text converter
   $
