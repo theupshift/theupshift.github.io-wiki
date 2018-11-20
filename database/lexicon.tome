@@ -7,7 +7,7 @@ DB.lexicon = `
 @ JOSH
   ? : Who I am
   $
-    & I'm a 21-year-old aspiring {{polymath|https://en.wikipedia.org/wiki/Polymath}} working on a variety of {{projects|Oeuvre}} spanning the realms of Arts and Sciences.
+    & I'm a 21-year-old aspiring {{polymath|https://en.wikipedia.org/wiki/Polymath}} working on a variety of {{projects|Oeuvre}}.
     % josh.png
     & I'm currently studying information technology in Thailand. After that, I hope to focus my time and energy traveling the world and/or continuing to work on my projects.
 
@@ -29,7 +29,7 @@ ABOUT
 JOSH.CONTACT
   ? : Send a raven
   $
-    & If you have any comments, suggestions, questions, or if you simply just want to chat, here are some of the ways you can get ahold of me:
+    & If you have comments, suggestions, questions, or just want to chat, here's how you can contact me:
     = {{Via Twitter|https://twitter.com/joshavanier}}
     = {{Via Mastodon|https://sunbeam.city/@joshavanier}}
 
@@ -47,7 +47,7 @@ JOSH.GOALS
     = Acquire (or build) a boat and sail
     = Finish 10,000 {{projects|Oeuvre}} before {{Death}}
 
-JOSH.TODO
+JOSH.TO DO
   ? : Of things to create
   $
     * Software
@@ -121,11 +121,9 @@ JOSH.TO LEARN
     & These are some of the tools that help me pursue my hobbies and work on my {{projects|Oeuvre}}.
 
 INVENTORY.NAVIRE
-  ? : My primary workstation
+  ? : The primary workstation
   $
-    & Most of my projects are built on Navire, a Victorian-era laptop with barely 2GB of RAM and a 1.10 GHz processor. I run {{Linux}} on it in order to keep resource usage as lightweight and minimal as possible.
-    * Dotfiles
-    & My {{dotfiles|https://github.com/joshavanier/dots}} are available on GitHub. Feel free to use and modify according to your preferences.
+    & Navire is a Victorian-era laptop with barely 2GB of RAM and a 1.10 GHz processor. I run {{Linux}} on it in order to keep resource usage as lightweight and minimal as possible. {{Dotfiles|https://github.com/joshavanier/dots}} are available on GitHub.
     * Essentials
     ! Purpose | Tool
     + {*WM*} | {{i3wm|https://i3wm.org}}
@@ -138,9 +136,9 @@ INVENTORY.NAVIRE
     + {*Music composition*} | {{Marabu|https://wiki.xxiivv.com/#marabu}}
 
 INVENTORY.ORION
-  ? : My mobile workstation
+  ? : The mobile workstation
   $
-    & Whenever I'm away from my laptop, I have the option of working from my phone &mdash; an Android phone with Termux, letting me work with git and other {{Linux}} tools on the go.
+    & Whenever I'm out, I can work from my phone &mdash; an Android phone with Termux, letting me work with git and other {{Linux}} tools on the go.
     * Essentials
     = {*Terminal*} - {{Termux|https://termux.com}}
     = {*Email*} - {{ProtonMail|https://protonmail.com}}
@@ -171,7 +169,7 @@ INVENTORY.EDC
 DEATH.MORTEM
   ? : A mortal's hourglass
   $
-    & The Mortem displays some rather morbid stats on how much time I may have remaining assuming a lifespan of 70 Earth years.
+    & The Mortem shows how much time I may have remaining assuming a lifespan of 70 Earth years.
     % mors.png
 
 @ OEUVRE
@@ -226,7 +224,6 @@ LABORATORY.LOG
     & A CLI variant and a mobile app is being planned. The CLI variant is more likely to be created soon. Mobile app development is not a possibility with my current resources.
     * Twig
     & {{Twig|https://joshavanier.github.io/twig}} is a tool for converting datetime to Log's hexadecimal format. It's useful for manual editing of log entries.
-    % twig.png
     @ When performance is measured, performance improves. When performance is measured and reported, the rate of improvement accelerates. | Thomas Monson
 
 LABORATORY.SOMNUS
@@ -238,7 +235,7 @@ LABORATORY.SOMNUS
 + LABORATORY.ATTIC
   ? : A collection of random things built on the web
   $
-    & Among thousands of intertwined strands is a scattered collection of miscellanea built within and for the vast expanse of the Internet. Here are some web-related tools and toys built in browsers for browsers.
+    & The Attic holds web-related miscellanea &mdash; tools and toys built in browsers for browsers.
 
 ATTIC.CLAVIER
   ? : A keycode mapping utility
@@ -273,12 +270,12 @@ ATTIC.ROVARSPRAKET
 ATTIC.TERNARA
   ? : A balanced ternary library
   $
-    & Ternära is a simple {{JS|Javascript}} balanced ternary library. It supports a two-way conversion between decimal and ternary integers as well as basic arithmetic operations.
+    & Ternära is a {{JS|Javascript}} balanced ternary library that supports two-way conversions between decimal and ternary integers and arithmetic operations.
 
 + LABORATORY.SANDBOX
   ? : Mediums to facilitate play
   $
-    & The Sandbox houses my mostly-unfinished games, toys, and any medium that facilitates play.
+    & The Sandbox houses mostly-unfinished mediums for play.
 
 SANDBOX.AUDELA
   ? : A text-based space exploration game
@@ -289,13 +286,13 @@ SANDBOX.AUDELA
 SANDBOX.GRYMSTORGE
   ? : An exploration game
   $
-    & Grymstorge is an unfinished exploration game built with {{Bitsy|https://ledoux.itch.io/bitsy}} where you explore the abandoned ruins of the subterranean fortress of the great kingdom of Glachiem.
+    & Grymstorge was a {{Bitsy|https://ledoux.itch.io/bitsy}} exploration game where you explore the ruins of a subterranean fortress.
     % grymstorge.png
 
 SANDBOX.PORTE
   ? : A game about logic gates
   $
-    & Porte was a simple game about logic gates. It was made as a small experiment using the Bitsy game creator.
+    & Porte was a {{Bitsy|https://ledoux.itch.io/bitsy}} game about logic gates.
     % porte.png
 
 SANDBOX.QUOIN
@@ -357,7 +354,7 @@ OBSERVATORY.VIDE
 + OEUVRE.WORKSHOP
   ? : Of tangible items
   $
-    & An unfortunately under-used section of the Oeuvre, the Workshop houses projects that involve the creation of physical things &mdash; tools, toys, crafts, etc.
+    & The Workshop houses projects that involve the creation of physical things &mdash; tools, toys, crafts, etc.
 
 WORKSHOP.HOLLY
   ? : A Raspberry Pi computer console
@@ -396,8 +393,7 @@ OUBLIETTE.RISU
 @ COMMONPLACE
   ? : Notes
   $
-    & The Commonplace contains an assorted medley of notes on various topics. These are mostly serve as reminders and notes to self.
-    @ You may want to keep a commonplace book which is a notebook where you can copy parts of books you think are in code, or take notes on a series of events you may have observed that are suspicious, unfortunate, or very dull. | Lemony Snicket | Lemony Snicket: The Unauthorized Autobiography | https://www.goodreads.com/book/show/78408.Lemony_Snicket
+    & The Commonplace contains an assortment of notes on various topics. These are mostly reminders and notes to self.
 
 @ COMMONPLACE.HEALTH
   ? : On health and well-being
@@ -541,12 +537,6 @@ DESIGN.TYPOGRAPHY
     = {*Dead store elimination*}: removing stores when they're never referenced again
     = {*Instruction scheduling*}: reordering instructions to minimise execution time
     = {*Store motion*}: moving store instructions outside of loops
-    * SOLID
-    = Single Responsibility Principle
-    = Open-Close Principle
-    = Liskov Substitution Principle
-    = Interface Segregation Principle
-    = Dependency Inversion Principle
 
 PROGRAMMING.JAVASCRIPT
   ? : On JavaScript
