@@ -676,5 +676,11 @@ MISCELLANEA.WIKIS
   ? : Wiki status
   $
     & The Status page details The Athenaeum's health: pending tasks, word counts per page, missing links, etc.
+    ! Variable | Meaning
+    + CC | Character count
+    + CI | Completion index
+    + IN | Has info
+    + MD | Has media
+    + LN | Has links
     * Report
 `
