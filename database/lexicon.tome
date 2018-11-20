@@ -558,19 +558,19 @@ PROGRAMMING.JAVASCRIPT
   $
     * Console
     & Group logs
-    # console.group("Chest");
-    # console.log("Treasure");
-    # console.groupEnd("Chest");
+    # console.group("Chest")
+    # console.log("Treasure")
+    # console.groupEnd("Chest")
     & Counter
-    # console.count("Counter"); // 1
-    # console.count("Counter"); // 2
-    # console.countReset("Counter"); // undefined
-    # console.count("Counter"); // 1
+    # console.count("Counter") // 1
+    # console.count("Counter") // 2
+    # console.countReset("Counter") // undefined
+    # console.count("Counter") // 1
     & Timer
-    # console.time("Timer");
-    # console.timeEnd("Timer");
+    # console.time("Timer")
+    # console.timeEnd("Timer")
     & Print array as table
-    # console.table([]);
+    # console.table([])
 
 PROGRAMMING.PYTHON
   ? : On Python
