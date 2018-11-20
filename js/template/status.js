@@ -24,7 +24,7 @@ function StatusTemplate (id, ...params) {
   this.makeIndexTable = (index) => {
     let html = `
       <table><thead><tr>
-      <th>Index</th><th class="ac">IN</th><th class="ac">MD</th><th class="ar">CC</th>
+      <th>Index</th><th class="ac">IN</th><th class="ac">MD</th><th class="ar">WC</th>
       <th class="ar">CI</th></tr></thead><tbody>`;
     let wc = wordCount(index);
     for (let i = 0; i < index.length; i++) {
@@ -48,7 +48,7 @@ function StatusTemplate (id, ...params) {
   this.makePortalTable = (portal) => {
     let html = `
       <table><thead><tr>
-      <th>Portal</th><th class="ac">IN</th><th class="ac">MD</th><th class="ar">CC</th>
+      <th>Portal</th><th class="ac">IN</th><th class="ac">MD</th><th class="ar">WC</th>
       <th class="ar">CI</th></tr></thead><tbody>`;
     let wc = wordCount(portal);
     for (let i = 0; i < portal.length; i++) {
@@ -96,7 +96,7 @@ function StatusTemplate (id, ...params) {
     return `
       <table><thead><tr><th>Page</th><th class="ac">IN</th>
       <th class="ac">MD</th><th class="ac">LN</th>
-      <th class="ar">CC</th><th class="ar">CI</th>
+      <th class="ar">WC</th><th class="ar">CI</th>
       </tr></thead><tbody>`;
   }
 
