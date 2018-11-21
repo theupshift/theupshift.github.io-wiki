@@ -1,8 +1,8 @@
 function MissingTemplate (id, ...params) {
-  Node.call(this, id);
+  Template.call(this, id);
 
-  this.answer = (q) => {
-    const {name, tables: {lexicon}} = q;
+  this.answer = (q, lexicon = riven.lexicon.cache) => {
+    const {name} = q;
     const sim = this.findSimilar(name, lexicon);
     const w1 = sim[0].word;
     const w2 = sim[1].word;
@@ -10,9 +10,9 @@ function MissingTemplate (id, ...params) {
     return {
       title: '404',
       v: {
-        u: `<a onclick="Q('query').bang('Home')">Home</a>`,
         s: name,
-        c: `<p>The page "${capitalise(name)}" does not exist within the Athenaeum. Were you looking for <a onclick="Q('query').bang('${w1}')">${capitalise(w1)}</a> or <a onclick="Q('query').bang('${w2}')">${capitalise(w2)}</a>?</p>`
+        u: `<a onclick="Q('q').bang('Home')">Home</a>`,
+        c: `<p>The page "${capitalise(name)}" does not exist within the Athenaeum. Were you looking for <a onclick="Q('q').bang('${w1}')">${capitalise(w1)}</a> or <a onclick="Q('q').bang('${w2}')">${capitalise(w2)}</a>?`
       }
     }
   }
@@ -26,9 +26,7 @@ function MissingTemplate (id, ...params) {
       }
     }
 
-    return similar.sort(function(a, b) {
-      return a.value - b.value;
-    }).reverse();
+    return similar.sort((a, b) => a.value - b.value).reverse();
   }
 
   this.similarity = (a, b) => {

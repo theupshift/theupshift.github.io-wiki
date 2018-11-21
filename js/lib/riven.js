@@ -1,37 +1,36 @@
-function Riven() {
-  this.network = {};
-}
+const riven = {};
 
-// QUERY
-function Q (id, {network} = RIVEN) {
+function Q (id, network = riven) {
   if (id.indexOf(' ') > -1) {
     const [node, port] = id.split(' ');
-    return network[node] && network[node].ports[port] ?
-      network[node].ports[port] : null;
+    const n = network[node];
+    const p = n.ports[port];
+    return n && p ? p : null;
   }
   const n = network[id];
-  return n ? n : new Node(id);
+  return n ? n : new N(id);
 }
 
-function Node (id) {
-  Object.assign(this, {
-    id, ports: {}, parent: null, children: []
-  });
-
-  this.setup = () => {
-    Object.assign(this.ports, {
-      input: new Port(this, 'input'),
-      output: new Port(this, 'output'),
-      answer: new Port(this, 'answer'),
-      request: new Port(this, 'request')
-    });
+function P (host, type = 'default') {
+  Object.assign(this, {host, type, routes: []});
+  this.connect = (b, type = 'transit') => {
+    this.routes[this.routes.length] = Q(b);
   }
+}
 
-  this.create = (type = Node, ...params) => {
-    const node = new type(this.id, ...params);
-    node.setup();
-    RIVEN.network[node.id] = node;
-    return node;
+function N (id) {
+  Object.assign(this, {id, parent: null, children: []});
+
+  this.create = (type, ...params) => {
+    const id = this.id;
+    const n = new type(id, ...params);
+    n.ports = [
+      new P(n, 0), // input
+      new P(n, 1), // output
+      new P(n, 2), // answer
+      new P(n, 3)  // request
+    ];
+    return riven[id] = n;
   }
 
   this.connect = (q, type = 'default') => {
@@ -40,73 +39,55 @@ function Node (id) {
         this.connect(q[i], type);
       }
     } else {
-      const isRequest = type === 'request';
-      this.ports[isRequest ? 'request' : 'output'].connect(
-        `${q} ${isRequest ? 'answer' : 'input'}`, type
+      const isRequest = type === 3;
+      this.ports[isRequest ? 3 : 1].connect(
+        `${q} ${isRequest ? 2 : 0}`, type
       );
     }
   }
 
-  this.syphon = (q) => this.connect(q, 'request');
+  this.syphon = q => this.connect(q, 3);
 
-  this.bind = (q) => {
+  this.bind = q => {
     this.connect(q);
     this.syphon(q);
   }
 
-  this.signal = (target) => {
-    const tar = target;
+  this.signal = target => {
     const {ports} = this;
-    for (let port in ports) {
-      const {routes} = ports[port];
-      for (let i = 0; i < routes.length; i++) {
-        const route = routes[i];
-        if (!route || route.host.id !== tar) continue;
-        return route.host;
+    for (let i = 0; i < ports.length; i++) {
+      const {routes} = ports[i];
+      for (let e = 0; e < routes.length; e++) {
+        const {host} = routes[e];
+        if (host.id !== target) continue;
+        return host;
       }
     }
     return null;
   }
 
-  this.send = (payload) => {
-    const {routes} = this.ports.output;
+  this.send = payload => {
+    const {routes} = this.ports[1];
     for (let i = 0; i < routes.length; i++) {
-      const route = routes[i];
-      if (route) route.host.receive(payload);
+      const r = routes[i];
+      if (r) r.host.receive(payload);
     }
   }
 
-  this.receive = (q) => {
-    const {routes} = this.ports.output;
-    for (let i = 0; i < routes.length; i++) {
-      const route = routes[i];
-      if (route) route.host.receive(q);
-    }
-  }
+  this.answer = q => this.request(q);
 
-  this.bang = () => this.send(true);
-
-  this.answer = (q) => this.request(q);
-
-  this.request = (q) => {
-    let payload = {};
-    const {routes} = this.ports.request;
-
-    for (let i = 0; i < routes.length; i++) {
-      const route = routes[i];
-      if (!route) continue;
-      const answer = route.host.answer(q);
+  this.request = q => {
+    const {routes} = this.ports[3];
+    const rl = routes.length;
+    if (rl === 0) return {};
+    const payload = {};
+    for (let i = 0; i < rl; i++) {
+      const r = routes[i];
+      if (!r) continue;
+      const answer = r.host.answer(q);
       if (!answer) continue;
-      payload[route.host.id] = answer;
+      payload[r.host.id] = answer;
     }
-
     return payload;
-  }
-}
-
-function Port (host, type = 'default') {
-  Object.assign(this, {host, type, routes: []});
-  this.connect = (b, type = 'transit') => {
-    this.routes[this.routes.length] = Q(b);
   }
 }

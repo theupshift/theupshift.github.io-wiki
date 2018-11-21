@@ -1,5 +1,5 @@
 function QueryNode (id) {
-  Node.call(this, id);
+  N.call(this, id);
 
   this.bang = (target = window.location.hash.substring(1).replace(/[^0-9a-z]/gi, ' ').trim().toLowerCase()) => {
     let t = target;
@@ -20,7 +20,7 @@ function detectBackOrForward (onBack, onForward) {
   let hashHistory = [location.hash];
   let historyLength = history.length;
 
-  return function() {
+  return function () {
     const hash = location.hash;
     const length = history.length;
 
@@ -40,6 +40,6 @@ function detectBackOrForward (onBack, onForward) {
 }
 
 window.addEventListener('hashchange', detectBackOrForward(
-  function () {Q('query').bang()}, // <<
-  function () {Q('query').bang()} // >>
+  function () {Q('q').bang()}, // <<
+  function () {Q('q').bang()} // >>
 ));

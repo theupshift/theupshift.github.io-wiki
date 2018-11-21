@@ -1,20 +1,19 @@
 function IndexTemplate(id, ...params) {
-  TemplateNode.call(this, id);
+  Template.call(this, id);
 
-  this.answer = (q) => {
-    const {name, result: {unde, long}, tables: {lexicon, horaire}} = q;
-
+  this.answer = q => {
+    const {name, result: {unde, long}, tables: {lexicon}} = q;
     return {
       title: capitalise(name),
       v: {
-        u: `<a onclick="Q('query').bang('${unde}')">${unde}</a>`,
-        s: name,
-        c: `${long}${this.makeIndex(name, lexicon, horaire)}`
+        u: `<a onclick="Q('q').bang('${unde}')">${unde}</a>`,
+        c: `${long}${this.makeIndex(name, lexicon)}`,
+        s: name
       }
     }
   }
 
-  this.makeIndex = (name, lexicon, logs, stop = false) => {
+  this.makeIndex = (name, lexicon, stop = false) => {
     let html = '';
     let children = [];
 
@@ -27,10 +26,10 @@ function IndexTemplate(id, ...params) {
     for (let id in children) {
       const child = children[id];
       const {name} = child;
-      const link = `<a onclick="Q('query').bang('${child.name}')">${capitalise(child.name)}</a>`
+      const link = `<a onclick="Q('q').bang('${child.name}')">${capitalise(child.name)}</a>`
 
       html += `<dt>${link}</dt><dd>${toMarkup(child.bref)}</dd></hs>
-      ${!stop ? this.makeIndex(child.name,lexicon,logs,true) : ''}`;
+      ${!stop ? this.makeIndex(child.name,lexicon,true) : ''}`;
     }
 
     return children.length > 0 ? `<dl>${html}</dl>` : '';

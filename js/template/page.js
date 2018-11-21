@@ -1,16 +1,16 @@
-function PageTemplate(id, ...params) {
-  TemplateNode.call(this, id);
+function PageTemplate (id, ...params) {
+  Template.call(this, id);
 
-  this.answer = (q) => {
+  this.answer = q => {
     if (!q.result) return this.signal('missing').answer(q);
-    const {name, result: {bref, links, long, unde}} = q;
+    const {name, result: {long, unde}} = q;
 
     return {
       title: capitalise(name),
       v: {
-        u: `<a onclick="Q('query').bang('${unde}')">${unde}</a>`,
+        c: this.signal(name) ? this.signal(name).answer(q) : long,
+        u: `<a onclick="Q('q').bang('${unde}')">${unde}</a>`,
         s: name,
-        c: this.signal(name) ? this.signal(name).answer(q) : long
       }
     }
   }

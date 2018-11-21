@@ -24,7 +24,7 @@ function Indental (data) {
     let h = {};
 
     for (let i = 0; i < lines.length; i++) {
-      const line = lines[i];
+      let line = lines[i];
       if (line.skip || line.indent > 0) continue;
       let key = line.content.toUpperCase();
       let unde = 'Home';
@@ -47,13 +47,16 @@ function Indental (data) {
         key = split[1];
       }
 
-      h[key] = type ? new type(key, format(line), capitalise(unde), typ) : format(line);
+      line = format(line);
+
+      h[key] = type
+        ? new type(key, line, capitalise(unde), typ) : line;
     }
 
     return h;
   }
 
-  function format(line) {
+  function format (line) {
     let a = [];
     let h = {};
 

@@ -1,16 +1,16 @@
-function PortalTemplate(id, ...params) {
-  TemplateNode.call(this, id);
+function PortalTemplate (id, ...params) {
+  Template.call(this, id);
 
-  this.answer = (q) => {
+  this.answer = q => {
     const {result: {long, links, unde}, name, tables: {lexicon}} = q;
     const children = this.findChildren(name, lexicon);
 
     return {
-      title: capitalise(q.name),
+      title: capitalise(name),
       v: {
-        u: `<a onclick="Q('query').bang('${unde}')">${unde}</a>`,
-        s: name,
-        c: `${long}${this.makePortal(name, children)}`
+        u: `<a onclick="Q('q').bang('${unde}')">${unde}</a>`,
+        c: `${long}${this.makePortal(name, children)}`,
+        s: name
       }
     }
   }
@@ -19,7 +19,7 @@ function PortalTemplate(id, ...params) {
     let html = '<dl>';
     for (let i = 0; i < children.length; i++) {
       const {name, bref} = children[i];
-      const query = `Q('query').bang('${name.toUpperCase()}')`;
+      const query = `Q('q').bang('${name.toUpperCase()}')`;
       const title = `<dt><a onclick="${query}">${capitalise(name)}</a></dt>`;
       html += `${title}<dd>${toMarkup(bref)}</dd>`;
     }

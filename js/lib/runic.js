@@ -1,9 +1,8 @@
 function Rune (opts) {
   Object.assign(this, {
     tag: opts.tag,
-    klass: opts.klass || '',
     sub: opts.sub,
-    stash: opts.stash,
+    stash: opts.stash || 0,
     wrap: opts.wrap
   });
 }
@@ -11,12 +10,12 @@ function Rune (opts) {
 const RUNES = {
   '&': new Rune({tag: 'p'}),
   '*': new Rune({tag: 'h2'}),
-  '-': new Rune({tag: 'ol', sub: 'li', stash: true}),
-  '=': new Rune({tag: 'ul', sub: 'li', stash: true}),
+  '-': new Rune({tag: 'ol', sub: 'li', stash: 1}),
+  '=': new Rune({tag: 'ul', sub: 'li', stash: 1}),
   '@': new Rune({tag: 'blockquote'}),
-  '#': new Rune({tag: 'code', sub: 'ln', stash: true}),
-  '!': new Rune({tag: 'table', sub: 'tr', wrap: 'th', stash: true}),
-  '+': new Rune({tag: 'table', sub: 'tr', wrap: 'td', stash: true})
+  '#': new Rune({tag: 'code', sub: 'ln', stash: 1}),
+  '!': new Rune({tag: 'table', sub: 'tr', wrap: 'th', stash: 1}),
+  '+': new Rune({tag: 'table', sub: 'tr', wrap: 'td', stash: 1})
 }
 
 function Runic (raw) {
@@ -76,16 +75,14 @@ function Runic (raw) {
       line = toMarkup(line.substr(2));
       if (!line || line.trim() === '') continue;
 
-      if (!rune) console.warn(`Unknown rune:${char} : ${line}`);
-
-      if (trail !== ' ') {
-        console.warn('Runic', `Non-rune[${trail}] at: ${id} (${line})`);
+      if (!rune) {
+        console.warn(`Unknown rune:${char} : ${line}`);
         continue;
       }
 
       if (this.stash.isPop(rune)) html += this.renderStash();
 
-      if (rune.stash === true) {
+      if (rune.stash) {
         this.stash.add(rune, line);
         continue;
       }
@@ -117,12 +114,11 @@ function Runic (raw) {
 
   this.render = (line = '', rune = null) => {
     if (rune && rune.tag === 'img') return `<img src="img/${line}"/>`;
-    return rune ? (rune.tag ?
-      `<${rune.tag}>${line}</${rune.tag}>` : line
-    ) : '';
+    const {tag} = rune;
+    return rune ? (tag ? `<${tag}>${line}</${tag}>` : line) : '';
   }
 
-  this.media = (content) => {
+  this.media = content => {
     if (content.indexOf(',') > -1) {
       let html = '';
       const gallery = content.split(',');
@@ -131,18 +127,17 @@ function Runic (raw) {
       }
       return html;
     }
-    return `<img src="img/${content}"/>`
+    return `<img src="img/${content}"/>`;
   }
 
-  this.table = (content) => {
+  this.table = content => {
     return `<td>${content.trim().replace(/ \| /g, '</td><td>')}</td>`;
   }
 
-  this.quote = (content) => {
+  this.quote = content => {
     const [text, author, source, link] = content.split(' | ');
-    const attrib = link ? `${author}, <a href="${link}">${source}</a>` : author;
-
-    return `<blockquote><p class="q">${text}</p>${author ? `<p class="a">${attrib}</p>` : ''}</blockquote>`
+    const attr = link ? `${author}, <a href="${link}">${source}</a>` : author;
+    return `<blockquote><p class="q">${text}</p>${author ? `<p class="a">${attr}</p>` : ''}</blockquote>`
   }
 
   this.html = () => this.parse(raw);

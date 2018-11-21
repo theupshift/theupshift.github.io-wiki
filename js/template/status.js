@@ -1,27 +1,27 @@
 function StatusTemplate (id, ...params) {
-  TemplateNode.call(this, id);
+  Template.call(this, id);
 
-  this.answer = (q) => {
-    const {name, result: {unde, long}, tables: {lexicon, horaire}} = q;
+  this.answer = q => {
+    const {result: {long}, tables: {lexicon}} = q;
 
     return {
       title: 'Status',
       v: {
-        u: `<a onclick="Q('query').bang('HOME')">Home</a>`,
+        u: `<a onclick="Q('q').bang('HOME')">Home</a>`,
         c: `${long}${this.makeIndex(lexicon)}`,
         s: 'Status'
       }
     }
   }
 
-  this.makeIndex = (lexicon) => {
+  this.makeIndex = lexicon => {
     const {home, index, page, portal, status} = organiseByType(lexicon);
     return this.makeIndexTable(index)
       + this.makePortalTable(portal)
       + this.makePageTable(page);
   }
 
-  this.makeIndexTable = (index) => {
+  this.makeIndexTable = index => {
     let html = `
       <table><thead><tr>
       <th>Index</th><th class="ac">IN</th><th class="ac">MD</th><th class="ar">WC</th>
@@ -35,9 +35,9 @@ function StatusTemplate (id, ...params) {
       const indx = calcIndex(CI, 2);
 
       html += `
-        <tr><td><a onclick="Q('query').bang('${name}')">${capitalise(name)}</a></td>
-        <td class="ac">${x ? '&#9899;' : '-'}</td>
-        <td class="ac">${y ? '&#9899;' : '-'}</td>
+        <tr><td><a onclick="Q('q').bang('${name}')">${capitalise(name)}</a></td>
+        <td class="ac">${x ? '+' : '-'}</td>
+        <td class="ac">${y ? '+' : '-'}</td>
         <td class="ar">${wc[i]}</td>
         <td class="ar">${indx.toFixed(2)}</td></tr>
       `;
@@ -45,7 +45,7 @@ function StatusTemplate (id, ...params) {
     return `${html}</tbody></table>`;
   }
 
-  this.makePortalTable = (portal) => {
+  this.makePortalTable = portal => {
     let html = `
       <table><thead><tr>
       <th>Portal</th><th class="ac">IN</th><th class="ac">MD</th><th class="ar">WC</th>
@@ -59,9 +59,9 @@ function StatusTemplate (id, ...params) {
       const indx = calcIndex(CI, 2);
 
       html += `
-        <tr><td><a onclick="Q('query').bang('${name}')">${capitalise(name)}</a></td>
-        <td class="ac">${x ? '&#9899;' : '-'}</td>
-        <td class="ac">${y ? '&#9899;' : '-'}</td>
+        <tr><td><a onclick="Q('q').bang('${name}')">${capitalise(name)}</a></td>
+        <td class="ac">${x ? '+' : '-'}</td>
+        <td class="ac">${y ? '+' : '-'}</td>
         <td class="ar">${wc[i]}</td>
         <td class="ar">${indx.toFixed(2)}</td></tr>
       `;
@@ -69,7 +69,7 @@ function StatusTemplate (id, ...params) {
     return `${html}</tbody></table>`;
   }
 
-  this.makePageTable = (page) => {
+  this.makePageTable = page => {
     let html = makeTableHeader();
     let wc = wordCount(page);
     for (let i = 0; i < page.length; i++) {
@@ -81,10 +81,10 @@ function StatusTemplate (id, ...params) {
       const indx = calcIndex(CI, 3);
 
       html += `
-        <tr><td><a onclick="Q('query').bang('${name}')">${capitalise(name)}</a></td>
-        <td class="ac">${x ? '&#9899;' : '-'}</td>
-        <td class="ac">${y ? '&#9899;' : '-'}</td>
-        <td class="ac">${z ? '&#9899;' : '-'}</td>
+        <tr><td><a onclick="Q('q').bang('${name}')">${capitalise(name)}</a></td>
+        <td class="ac">${x ? '+' : '-'}</td>
+        <td class="ac">${y ? '+' : '-'}</td>
+        <td class="ac">${z ? '+' : '-'}</td>
         <td class="ar">${wc[i]}</td>
         <td class="ar">${indx.toFixed(2)}</td></tr>
       `;

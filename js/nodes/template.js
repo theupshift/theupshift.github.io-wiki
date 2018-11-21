@@ -1,8 +1,8 @@
-function TemplateNode (id) {
-  Node.call(this, id);
+function Template (id) {
+  N.call(this, id);
   this.cache = null;
 
-  this.receive = (q) => {
+  this.receive = q => {
     const {result} = q;
     const type = result && result.type ? result.type : 'page';
     let assoc = this.signal(type);

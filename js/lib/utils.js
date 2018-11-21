@@ -14,10 +14,9 @@ function toMarkup (s) {
   const parts = html.split('{{');
 
   function isExternal (target) {
-    if (target.indexOf('https:') > -1) return true;
-    if (target.indexOf('http:') > -1) return true;
-    if (target.indexOf('dat:') > -1) return true;
-    return false;
+    return target.indexOf('https:') > -1
+      || target.indexOf('http:') > -1
+      || target.indexOf('dat:') > -1;
   }
 
   for (let i = 0; i < parts.length; i++) {
@@ -40,7 +39,7 @@ function toMarkup (s) {
       target = name = content;
     }
 
-    html = html.replace(`{{${content}}}`, isExternal(target) ? `<a href="${target}" target="_blank">${name}</a>` : `<a title="${target}" onclick="Q('query').bang('${target}')">${name}</a>`)
+    html = html.replace(`{{${content}}}`, isExternal(target) ? `<a href="${target}" target="_blank">${name}</a>` : `<a title="${target}" onclick="Q('q').bang('${target}')">${name}</a>`)
   }
 
   return html;
