@@ -362,12 +362,18 @@ OBSERVATORY.VIDE
   $
     & The Workshop houses projects that involve the creation of physical things &mdash; tools, toys, crafts, etc.
 
-WORKSHOP.HOLLY
++ WORKSHOP.HOLLY
   ? : A Raspberry Pi computer console
   $
     & Holly is a computer console built with a {{Raspberry Pi Zero W|https://www.raspberrypi.org/products/raspberry-pi-zero-w}}, features a {{2.7-inch monochrome OLED display|https://www.adafruit.com/product/2674}}, and is powered by a 2700mAh lithium ion battery. The project's goal is to build a portable Linux console that can be used for simple tasks like writing notes and lightweight coding on the go.
     * Current Status
     & The project is put on temporary stasis as I messed up the soldering of the battery circuit.
+
+HOLLY.VERRERIUM
+  ? : Experimental Pi interface
+  $
+    & The Verrerium is an experimental Pi interface built with NodeJS and the {{Blessed}} interface library. It serves as an over-SSH GUI for my {{Pi Zero W|Holly}}.
+    % verrerium.png
 
 @ OEUVRE.OUBLIETTE
   ? : Of the unreleased and unfinished
