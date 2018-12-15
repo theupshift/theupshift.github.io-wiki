@@ -3,7 +3,7 @@ const Runic = require('../lib/runic');
 module.exports = function Page ({term, unde, type, line}) {
   this.id = term.toLowerCase();
   this.parent = unde || 'home';
-  this.path = `./static/${this.id.toUrl()}.html`;
+  this.path = `./docs/${this.id.toUrl()}.html`;
 
   console.log(line)
 

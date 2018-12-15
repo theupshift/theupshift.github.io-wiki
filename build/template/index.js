@@ -4,7 +4,7 @@ module.exports = function IndexPage ({term, unde, type, line}) {
   this.id = term.toLowerCase();
   this.parent = unde || 'home';
   this.filename = this.id.toUrl();
-  this.path = `./static/${this.filename}.html`;
+  this.path = `./docs/${this.filename}.html`;
 
   function _template (acc, term) {
     return `${Array.isArray(line[term]) ? new Runic(line[term]).parse() : line[term]}`;

@@ -5,7 +5,7 @@ module.exports = function Builder (pages) {
     for (const id in pages) {
       const page = pages[id];
       const render = page.render();
-      const path = `./static/${page.filename}.html`;
+      const path = `./docs/${page.filename}.html`;
       fs.writeFile(path, render, (err) => {
         err && console.error(err);
       });
