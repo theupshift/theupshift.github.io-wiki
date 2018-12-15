@@ -5,6 +5,6 @@
   "repository": "https://github.com/joshavanier/joshavanier.github.io",
   "main": "./index.js",
   "scripts": {
-    "start": "npm index.js"
+    "build-site": "node build.js && cd joshavanier.github.io && git add --all && git commit -m \"Update\" && git push -u origin master"
   }
 }
