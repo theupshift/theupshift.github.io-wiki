@@ -27,7 +27,6 @@ module.exports = function IndexPage ({term, unde, type, line}) {
     for (let id in children) {
       const child = children[id];
       const {term, line} = child;
-      console.log(child)
       const link = `<a href="./${term.toUrl()}.html">${term.toCapitalCase()}</a>`
       html += `<dt>${link}</dt><dd>${child.line['?']}</dd>`;
     }

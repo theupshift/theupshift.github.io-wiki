@@ -6,8 +6,6 @@ module.exports = function Page ({term, unde, type, line}) {
   this.filename = this.id.toUrl();
   this.path = `./joshavanier.github.io/${this.filename}.html`;
 
-  console.log(line)
-
   function _template (acc, term) {
     return `${Array.isArray(line[term]) ? new Runic(line[term]).parse() : line[term]}`;
   }
