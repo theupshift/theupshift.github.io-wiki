@@ -1,0 +1,10 @@
+{
+  "name": "Athenaeum",
+  "version": "1.0.0",
+  "description": "A log and time-tracking utility",
+  "repository": "https://github.com/joshavanier/joshavanier.github.io",
+  "main": "./index.js",
+  "scripts": {
+    "start": "npm index.js"
+  }
+}
