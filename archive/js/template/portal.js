@@ -15,9 +15,9 @@ function PortalTemplate (id, ...params) {
     }
   }
 
-  this.makePortal = (name, children, logs) => {
+  this.makePortal = (name, children) => {
     let html = '<dl>';
-    for (let i = 0; i < children.length; i++) {
+    for (let i = 1; i < children.length; i++) {
       const {name, bref} = children[i];
       const query = `Q('q').bang('${name.toUpperCase()}')`;
       const title = `<dt><a onclick="${query}">${capitalise(name)}</a></dt>`;

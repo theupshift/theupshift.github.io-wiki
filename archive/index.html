@@ -6,7 +6,6 @@
   <title>The Athenaeum</title>
   <meta name="author" content="Josh Avanier">
   <meta name="description" content="The Athenaeum is Josh Avanier's wiki">
-  <meta name="keywords" content="Portfolio, Art, Design, Code, Worldbuilding">
   <link rel="stylesheet" href="s.css">
   <script src="js/lib/utils.js"></script>
   <script src="js/lib/riven.js"></script>
@@ -18,7 +17,7 @@
   <script src="js/nodes/template.js"></script>
   <script src="js/types/term.js"></script>
   <script src="js/template/page.js"></script>
-  <script src="js/template/page.missing.js"></script>
+  <script src="js/template/missing.js"></script>
   <script src="js/template/home.js"></script>
   <script src="js/template/portal.js"></script>
   <script src="js/template/index.js"></script>
@@ -27,12 +26,7 @@
 </head>
 <body>
   <script>
-    if (!!~navigator.userAgent.indexOf('MSIE')
-        || !!~navigator.userAgent.indexOf('Edge')) {
-      alert('Nope');
-    } else {
-      bang();
-    }
+    ~navigator.userAgent.indexOf("MSIE")||~navigator.userAgent.indexOf("Edge")?alert("Nope"):bang();
   </script>
 </body>
 </html>

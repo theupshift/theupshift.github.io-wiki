@@ -3,7 +3,7 @@ function toURL (s) {
 }
 
 function capitalise (s) {
-  return s.charAt(0).toUpperCase() + s.slice(1).toLowerCase();
+  return s.substr(0, 1).toUpperCase() + s.slice(1).toLowerCase();
 }
 
 function toMarkup (s) {
