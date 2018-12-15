@@ -3,7 +3,7 @@ const Runic = require('../lib/runic');
 module.exports = function IndexPage ({term, unde, type, line}) {
   this.id = term.toLowerCase();
   this.parent = unde || 'home';
-  this.filename = this.id.toUrl();
+  this.filename = type === 'home' ? 'index' : this.id.toUrl();
   this.path = `./joshavanier.github.io/${this.filename}.html`;
 
   function _template (acc, term) {
