@@ -1,28 +1,23 @@
-DB.lexicon = `
 @ HOME
   $
-    & Welcome to The Athenaeum. Documentations of the various projects within my {{Oeuvre}} as well as some memoirs and {{notes|Commonplace}} on topics of interest are housed herein. Click on this page's title to search.
-    & {*Note:*} This site is under construction. Some pages may be missing or lacking content. Also beware of goblins!
+    & Welcome to The Athenaeum. Documentations of the various projects within my {{Oeuvre}} as well as some memoirs and {{notes|Commonplace}} on topics of interest are housed herein.
 
 @ JOSH
-  ? : Who I am
+  ? : About me
   $
-    & I'm a 21-year-old aspiring {{polymath|https://en.wikipedia.org/wiki/Polymath}} working on a variety of {{projects|Oeuvre}}.
+    & I'm a 21-year-old hobbyist working on a bunch of {{projects|Oeuvre}}.
     % josh.png
-    & I'm currently studying information technology in Thailand. After that, I hope to focus my time and energy traveling the world and/or continuing to work on my projects.
+    & I'm currently studying information technology in Thailand. Afterwards I hope to focus my time and energy traveling the world and/or continuing to work on my projects.
 
 ABOUT
-  ? : What this site is about
+  ? : About this site
   $
     & Inspired by similar {{wikis}}, this site serves as a personal chronicle and knowledge base of my {{Oeuvre}} as it grows over time as well as a place for people to read through and learn more about what I do.
     * Structure
     & The Athenaeum is built on top of stripped down variants of {{Devine Lu Linvega|http://wiki.xxiivv.com/#devine+lu+linvega}}'s {{Oscean|http://wiki.xxiivv.com/#oscean}} wiki engine, {{Riven|http://wiki.xxiivv.com/#riven}} framework, and {{Indental|http://wiki.xxiivv.com/#indental}} flat-file database format. Visit the {{Guide}} to learn more about how it works and how to set one up for yourself.
     * Design
     & Most websites these days are saturated with unnecessary ornamentation and clutter. To against that, I simplified the overall design, stripping it down until what remains is a pure reading experience.
-    * Future
-    & I plan on integrating some of my log data into this platform hopefully before the dawn of 2019. I also have plans to someday move this site from GitHub and host it in a similar manner as Low Tech Magazine's {{solar-powered website|https://solar.lowtechmagazine.com}}.
-    * Issues
-    & If you have feedback or if you found an issue, you may submit a {{bug report|https://github.com/joshavanier/joshavanier.github.io/issues/new}}.
+    & To reduce page weight, images are desaturated and posterised. Quality is lost but this wiki isn't meant to be a showcase portfolio.
     * License
     & You may fork and modify this site's back-end code under the {{MIT|https://opensource.org/licenses/MIT}} license. The wiki content is under {{BY-NC-SA 4.0|https://creativecommons.org/licenses/by-nc-sa/4.0}}.
 
@@ -34,13 +29,12 @@ JOSH.CONTACT
     = {{Via Mastodon|https://sunbeam.city/@joshavanier}}
 
 JOSH.GOALS
-  ? : Of things to accomplish
+  ? : Things to accomplish
   $
-    & Here is an ever-changing list of things I would love to achieve or accomplish, preferably before my inevitable death. Only after I'm able to check off every item below will I be able to say that my life has been well-lived.
-    @ One should not pursue goals that are easily achieved. One must develop an instinct for what one can just barely achieve through one’s greatest efforts. | Einstein
+    & Here is an inconstant list of things to achieve or accomplish, preferably before I {{die|death}}. Only then will I be able to say that my life has been well-lived.
     = Achieve 100% self-sufficiency and a {{zero waste}} lifestyle
     = Live off-grid
-    = Create my own versions of {{things|Todo}}
+    = Create my own versions of {{things|To do}}
     = Minimise {{sleep}} to as close to zero as possible
     = Reduce personal possessions to only absolute necessities
     = Graduate and forget everything I learned in school
@@ -48,25 +42,26 @@ JOSH.GOALS
     = Finish 10,000 {{projects|Oeuvre}} before {{Death}}
 
 JOSH.TO DO
-  ? : Of things to create
+  ? : Things to create
   $
     * Software
-    = Animation studio
-    = {{Calendar|Aeq}}
-    = Conlang tool
-    = Ebook reader
-    = File manager
-    = Journal
-    = Kanji learning tool
-    = Music composer
-    = Music player
-    = {{Notes app|Qyllium}}
-    = {{Pixel art editor|Pixelier}}
-    = Presentation tool
-    = Roguelike creator
-    = Text editor/IDE
-    = Weather app
-    = {{Worldbuilding tool|Vide}}
+    ! Project | Active | Progress
+    + Animation studio | - | -
+    + Calendar | * | {{Aeq}}
+    + Conlang tool | - | -
+    + Ebook reader | - | -
+    + File manager | - | -
+    + Journal | - | -
+    + Kanji learning tool | - | -
+    + Music composer | - | -
+    + Music player | - | -
+    + Notes app | - | {{Qyllium}}
+    + Pixel art editor | - | {{Pixelier}}
+    + Presentation tool | - | -
+    + Roguelike creator | - | -
+    + Text editor/IDE | - | -
+    + Weather app | - | -
+    + Worldbuilding tool | * | {{Vide}}
     * Things
     = Custom phone
     = Monocle device
@@ -82,58 +77,35 @@ JOSH.TO DO
     = Smart mirror
     = Bike computer
 
-JOSH.TO LEARN
-  ? : Of things to learn
-  $
-    & This is an incomplete list of things I want to learn and skills I want to master. If you share one or more of my interests with me, feel free to strike up a conversation about it. I'd love to learn from others.
-    * Topics
-    = Artificial intelligence, neural networks, machine learning
-    = Data structures, design patterns
-    = Music theory, composition
-    = Criminology, forensics
-    = Biomimetics
-    * Skills
-    = Calligraphy, handlettering
-    = Lucid dreaming
-    = Echolocation
-    = Braille
-    = Sailing
-    * Languages
-    = French (ongoing)
-    = Italian (ongoing)
-    = Spanish (ongoing)
-    = German
-    = Dutch (ongoing)
-    = Japanese (ongoing)
-    = Russian
-    = Esperanto
-    = Swedish (ongoing)
-    = Norwegian
-    = Gaelic
-    = Greek
-    = Hebrew
-    = Turkish
-    = Mandarin
-
 @ JOSH.INVENTORY
-  ? : Of tools
+  ? : Tools
   $
     & These are some of the tools that help me pursue my hobbies and work on my {{projects|Oeuvre}}.
 
 INVENTORY.NAVIRE
   ? : The primary workstation
   $
-    & Navire is a Victorian-era laptop with barely 2GB of RAM and a 1.10 GHz processor. I run {{Linux}} on it in order to keep resource usage as lightweight and minimal as possible. {{Dotfiles|https://github.com/joshavanier/dots}} are available on GitHub.
+    & Navire is a Victorian-era laptop with 2GB of RAM and a 1.10 GHz processor. I run {{Linux}} on it in order to keep resource usage as lightweight and minimal as possible. {{Dotfiles|https://github.com/joshavanier/dots}} are available on GitHub.
+    & I've been meaning to switch to {{Debian|https://www.debian.org}} or {{Void Linux|https://voidlinux.org}} but it's not a priority.
     * Essentials
     ! Purpose | Tool
     + {*WM*} | {{i3wm|https://i3wm.org}}
-    + {*Terminal*} | {{st|https://st.suckless.org}}
+    + {*Terminal*} | xterm, {{st|https://st.suckless.org}}
     + {*Browser*} | {{Firefox|https://www.mozilla.org/en-US/firefox/new}}, {{Chromium|https://www.chromium.org}}, {{surf|https://surf.suckless.org}}
     + {*Text editor*} | {{vim|https://www.vim.org}}
     + {*Music player*} | {{cmus|https://cmus.github.io}}
     + {*Files*} | {{nnn|https://github.com/jarun/nnn}}, pcmanfm
     + {*Image editor*} | {{GIMP|https://www.gimp.org}}
     + {*Music composition*} | {{Marabu|https://wiki.xxiivv.com/#marabu}}
+    + {*Vector tool*} | {{Dotgrid|https://wiki.xxiivv.com/#dotgrid}}
+    + {*Media player*} | {{mpv|https://wiki.archlinux.org/index.php/Mpv}}
+    + {*RSS reader*} | {{newsboat|https://newsboat.org}}
+    * Usage
+    = No idling in front of the computer
+    = Focus on one task at a time
+    = Only go online if necessary
+    * Future
+    & When fate presents the required resources and opportunities, I'd like to upgrade this machine, either through the purchase of a more powerful laptop or simply the swapping of components for more powerful alternatives -- additional RAM, an SSD, etc.
 
 INVENTORY.ORION
   ? : The mobile workstation
@@ -175,7 +147,7 @@ DEATH.MORTEM
 @ OEUVRE
   ? : Collective works
   $
-    & The Oeuvre is the grand collection of everything I have made, am making, and {{will be making|Todo}}.
+    & The Oeuvre is the grand collection of everything I have made, am making, and {{will be making|To do}}.
 
 + OEUVRE.ATELIER
   ? : Of the visual arts
@@ -365,16 +337,16 @@ OBSERVATORY.VIDE
   ? : A Raspberry Pi computer console
   $
     & Holly is a computer console built with a {{Raspberry Pi Zero W|https://www.raspberrypi.org/products/raspberry-pi-zero-w}}, features a {{2.7-inch monochrome OLED display|https://www.adafruit.com/product/2674}}, and is powered by a 2700mAh lithium ion battery. The project's goal is to build a portable Linux console that can be used for simple tasks like writing notes and lightweight coding on the go.
-    * Current Status
+    * Status
     & The project is put on temporary stasis as I messed up the soldering of the battery circuit.
 
 HOLLY.VERRERIUM
   ? : Experimental Pi interface
   $
-    & The Verrerium is an experimental Pi interface built with NodeJS and the {{Blessed}} interface library. It serves as an over-SSH GUI for my {{Pi Zero W|Holly}}.
+    & The Verrerium is an experimental {{Pi|Raspberry pi}} interface built with NodeJS and the {{Blessed}} interface library. It serves as an over-SSH GUI for my {{Pi Zero W|Holly}}.
     % verrerium.png
 
-@ OEUVRE.OUBLIETTE
++ OEUVRE.OUBLIETTE
   ? : Of the unreleased and unfinished
   $
     & The {*Oubliette*} is a hopefully temporary holding facility for all unfinished and unreleased projects.
@@ -404,7 +376,26 @@ OUBLIETTE.RISU
 @ COMMONPLACE
   ? : Notes
   $
-    & The Commonplace contains an assortment of notes on various topics. These are mostly reminders and notes to self.
+    & The Commonplace is a collection of notes on various topics. These are mostly reminders and notes to self.
+
+COMMONPLACE.STYLE GUIDE
+  ? : The Athenaeum Style Guide
+  $
+    * Content
+    = Be concise but maintain clarity
+    = Avoid filler words
+    = Check your spelling and grammar
+    * Images
+    = Use images sparingly
+    = Set width to 500 px
+    = Desaturate and posterise
+    = Remove all metadata
+    * Links
+    = Each page should contain at least one internal link
+    = Avoid external links that lead to "evil" sites
+    = Include references wherever appropriate
+    * Et cetera
+    = No memes
 
 @ COMMONPLACE.HEALTH
   ? : On health and well-being
@@ -415,34 +406,31 @@ HEALTH.NUTRITION
   ? : On nutrition
   $
     @ People eat meat and think they will become as strong as an ox, forgetting that the ox eats grass. | Pino Caruso
-    * Japanese Diet
-    & The traditional Japanese diet consists of mostly unprocessed foods with very minimal seasoning.
     * Guidelines
     = Adhere to a plant-based diet
     = Avoid foods with more than 10 ingredients
-    = Consume food in a form that is as close as possible to its natural form (unprocessed, raw)
+    = Consume food as close as possible to its natural form
     = Avoid sugar and artificial ingredients
-    = Eat until you're "80% full.
+    = Eat until you're ~80% full
 
 HEALTH.FITNESS
   ? : On fitness
   $
     * Guidelines
     = Avoid sitting down for too long
-    = Walk 10,000+ steps per day
+    = Walk 10K+ steps per day
     = Exercise at least twice a week
 
 HEALTH.SLEEP
   ? : On sleep
   $
-    & I am not a fan of sleep. I consider it a waste of time and a flaw of efficiency in Mother Nature's design. At the time of this writing, I'm still experimenting with ways to minimise sleep without sacrificing anything else.
-    & What's most important is the quality of sleep, not quantity.
+    & I am not a fan of sleep. I consider it a waste of time and an inefficiency in Mother Nature's design. I'm currently experimenting with ways to minimise sleep without. What's most important is the quality of sleep, not quantity.
     * Guidelines
-    = Go to bed at the same time every day if possible.
-    = Turn off devices 1-2 hours before sleep. Avoid blue light.
-    = Write in a journal before bed to offload your thoughts.
-    = Avoid caffeine 4-6 hours before bed.
-    = Take cold showers before sleeping.
+    = Go to bed at the same time every day if possible
+    = Turn off devices 1-2 hours before sleep. Avoid blue light
+    = Write in a journal before bed to offload your thoughts
+    = Avoid caffeine 4-6 hours before bed
+    = Take cold showers before sleeping
     * Effects of Sleep Deficiency
     = Reduced reliability of memory
     = Slower thinking
@@ -458,6 +446,10 @@ COMMONPLACE.LIFE
     * 侘寂
     @ Nothing lasts, nothing is finished, and nothing is perfect. | Richard Powell | Wabi Sabi Simple | https://www.goodreads.com/book/show/840098.Wabi_Sabi_Simple
     & Wabi-sabi is a Japanese philosophy focused on the acceptance of transcience and imperfection in our lives. It teaches us to be content with how things are.
+
+COMMONPLACE.LEARNING
+  ? : On learning
+  $
 
 COMMONPLACE.PRODUCTIVITY
   ? : On getting things done
@@ -530,10 +522,35 @@ DESIGN.TYPOGRAPHY
 @ COMMONPLACE.TECHNOLOGY
   ? : On technology
 
++ TECHNOLOGY.SOFTWARE
+  ? : On software
+  $
+    & Notes on software
+    * The Free Software Definition
+    & The freedom to...
+    = {*Run*} the program as you wish, for any purpose
+    = {*Study*} how the program works, and {*change*} it
+    = {*Redistribute*} copies so you can help your neighbour
+    = {*Distribute*} copies of your modified versions to others
+    & {{Source|https://www.gnu.org/philosophy/free-sw.html.en}}
+
+SOFTWARE.CLI
+  ? : On CLI software
+  $
+    * Guidelines
+    = Include -h and --help flags
+    = Include -v and --version flags
+    * Error Codes
+    & Error messages must have the following:
+    = Error code
+    = Error title
+    = Optional description
+    = Steps to fix the error
+
 @ TECHNOLOGY.PROGRAMMING
   ? : On programming
   $
-    * General Guidelines
+    * Guidelines
     = Keep it simple
     = Pick the right language for the job
     = Each function, class, and component should have a well-defined and specific purpose
@@ -541,13 +558,13 @@ DESIGN.TYPOGRAPHY
     = Eliminate dead code; don't just comment it out
     = Avoid excessive nesting
     = Write tests
-    * Optimisation Techniques
-    = {*Branch optimisation*}: rearranging code to minimise branching logic
-    = {*Code motion*}: performing calculations outside of loops
-    = {*Dead code elimination*}: removing unused code
-    = {*Dead store elimination*}: removing stores when they're never referenced again
-    = {*Instruction scheduling*}: reordering instructions to minimise execution time
-    = {*Store motion*}: moving store instructions outside of loops
+    * Optimisations
+    = {*Branch optimisation*}: rearrange code to minimise branching logic
+    = {*Code motion*}: perform calculations outside of loops
+    = {*Dead code elimination*}: remove unused code
+    = {*Dead store elimination*}: remove stores when they're never referenced again
+    = {*Instruction scheduling*}: reorder instructions to minimise execution time
+    = {*Store motion*}: move store instructions outside of loops
 
 PROGRAMMING.JAVASCRIPT
   ? : On JavaScript
@@ -599,8 +616,8 @@ PROGRAMMING.R
     & Scatter plot
     # plot(dataset$var1,dataset$var2)
     & Measures of central tendency
-    # mean(c[1,2,3]) // 2
-    # median(c[1,2,3]) // 2
+    # mean(c[1,2,3])
+    # median(c[1,2,3])
     & Correlation
     # cor.test(dataset$var1,dataset$var2)
     & Correlations and significance test
@@ -613,7 +630,7 @@ PROGRAMMING.R
 TECHNOLOGY.LINUX
   ? : On Linux
   $
-    * Commandline Time-savers
+    * Commandline
     = {*Ctrl+R*} to search through command history
     = {*Ctrl+W*} to kill last word
     = {*Ctrl+U*} to kill line
@@ -624,7 +641,7 @@ TECHNOLOGY.RASPBERRY PI
     * Security
     & Create a new user
     # sudo /usr/sbin/useradd --groups sudo -m josh
-    # sudo passwd eggnog
+    # sudo passwd seaweed
     & Reset root password and disable "pi" user
     # sudo passwd root
     # sudo passwd --lock pi
@@ -664,10 +681,15 @@ COMMONPLACE.WRITING
 MISCELLANEA.WIKIS
   ? : Sources of inspiration
   $
-    & The following is a list of other wikis and knowledge bases that are even greater than my own. I hope you find them as immensely inspiring as I have. If you know of other similar sites, let me know about them :)
+    & This is a list of other wikis and knowledge bases that are even greater than my own. I hope you find them as immensely inspiring as I have.
     = {{XXIIVV|https://wiki.xxiivv.com/#home}} by Devine Lu Linvega
     = {{Nikita Voloboev's wiki|https://wiki.nikitavoloboev.xyz}}
+    = {{V-OS|https://v-os.ca}} by Victor Ivanov
+    = {{nomand.co|https://nomand.co/#home}} by Alexey Botkov
+    = {{Hraew|https://hraw.autophagy.io}} by Mika Naylor
     = {{Gwern.net|http://www.gwern.net}}
+    = {{Bayle Shanks|http://www.bayleshanks.com}}
+    & There are other similarly-inspiring sites that are not necessarily wikis. Find them by clicking on the webring icon below.
 
 ! STATUS
   ? : Wiki status
@@ -680,4 +702,3 @@ MISCELLANEA.WIKIS
     + MD | Has media
     + LN | Has links
     * Report
-`
