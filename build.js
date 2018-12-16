@@ -3,7 +3,7 @@ const Builder = require('./build/builder');
 const Manager = require('./build/manager');
 const Database = require('./build/database');
 
-const indexes = ['lexicon', 'monographs'];
+const indexes = ['lexicon', 'oeuvre', 'monographs', 'commonplace'];
 const database = new Database(indexes);
 
 String.prototype.toCapitalCase = function () {

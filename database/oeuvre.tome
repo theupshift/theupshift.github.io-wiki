@@ -1,0 +1,255 @@
+@ OEUVRE
+  ? : Collective works
+  $
+    & The Oeuvre is the grand collection of everything I have made, am making, and {{will be making|To do}}.
+
++ OEUVRE.ATELIER
+  ? : Of the visual arts
+  $
+    & The Atelier houses my dabblings in visual arts.
+
+ATELIER.OWL CITY
+  ? : First attempts at design
+  $
+    & The {{Owl City|https://www.owlcitymusic.com}} posters were my first attempts at design. The idea was simple: turn an Owl City song into a poster using GIMP and some free fonts. It was once a daily thing until I started university. I cringe when I look back at these but it's also good to remind myself of how much I learned since making these.
+    % oc1.png, oc2.png, oc3.png
+
+ATELIER.PIXELATTIRE
+  ? : A pixel art log of daily outfits
+  $
+    & Pixelattire is a daily pixel art project where I document what I wear every day throughout 2018. All art is created using GIMP and is posted on a {{Tumblr page|https://pixelattire.tumblr.com}}. The custom lightweight Tumblr theme used is available {{here|https://github.com/joshavanier/pixelattire}}.
+    * Future
+    & I plan on continuing this project next year perhaps with a system that generates pixel art from text logs.
+    % pixelattire.png
+
+ATELIER.GRIDOIRE
+  ? : Dotgrid illustrations
+  $
+    & Gridoire is a {{daily art project|https://gridoire.tumblr.com}} where each illustration is created using the {{Hundred Rabbits|https://100r.co}} vector tool {{Dotgrid|https://hundredrabbits.itch.io/dotgrid}}.
+    % gridoire-masako.png, gridoire-chantal.png, gridoire-avanier.png
+
+@ OEUVRE.LABORATORY
+  ? : Of software experimentations
+  $
+    & The Laboratory houses my collection of various experiments with software. The {{Cryo}} holds in-development projects. The {{Attic}} holds web-related projects.
+
+LABORATORY.EAU
+  ? : A hydration log
+  $
+    & Eau was a hydration log. Every time I rehydrate, I log the quantity in milliliters. The project was eventually discontinued, though I will revisit it again soon.
+    % eau.png
+
+LABORATORY.LOG
+  ? : A time-tracker
+  $
+    & Log is a time-tracker, inspired by similar systems by {{Neauoire|https://wiki.xxiivv.com/index.html#horaire}} and {{vi|https://log.v-os.ca}}, designed for single-tasking: start a log, focus on your task, and then end it when you're done.
+    % log.png
+    & Commands are entered via a console. The app has a built-in Guide that contains a list of commands and their usage.
+    & Log is available as an {{Electron|https://electronjs.org}} app for Linux and macOS and can be downloaded on itch.io.
+    * Future
+    & A CLI variant and a mobile app is being planned. The CLI variant is more likely to be created soon. Mobile app development is not a possibility with my current resources.
+    * Twig
+    & {{Twig|https://joshavanier.github.io/twig}} is a tool for converting datetime to Log's hexadecimal format. It's useful for manual editing of log entries.
+    @ When performance is measured, performance improves. When performance is measured and reported, the rate of improvement accelerates. | Thomas Monson
+
+LABORATORY.SOMNUS
+  ? : A sleep log
+  $
+    & It was created to eventually provide me with insight on how much I {{sleep}}. The process is admittedly tedious yet simple. I just record the approximate time I go to bed and the exact time I wake up. The moment I wake up, I immediately check the time.
+    % somnus.png
+
++ LABORATORY.ATTIC
+  ? : A collection of random things built on the web
+  $
+    & The Attic holds web-related miscellanea &mdash; tools and toys built in browsers for browsers.
+
+ATTIC.CLAVIER
+  ? : A keycode mapping utility
+  $
+    & Clavier is a {{JS|Javascript}} keycode mapping utility.
+    % clavier.png
+
+ATTIC.CONCENTRIC
+  ? : A polar clock
+  $
+    & Concentric is a polar clock inspired by and based on this {{Pen|https://codepen.io/motorlatitude/pen/uevDx}}.
+    % concentric.png
+
+ATTIC.HAIAKU
+  ? : A text converter
+  $
+    & Haiaku (俳悪) is a text converter that rewrites input into top-down, right-to-left fullwidth format reminiscent of haikus.
+    # 水蛙古<br>の飛池<br>音びや<br>　込　<br>　む　<br><br>-芭蕉
+
+ATTIC.KUMO
+  ? : A Hacker News client
+  $
+    & Kumo (クモ) is a basic {{Hacker News|https://news.ycombinator.com}} client. It's very simple and only shows the top 20 stories. I made it because all I wanted from Hacker News was links to stories. Nothing else.
+    % kumo.png
+
+ATTIC.MACIAN
+  ? : A functional CSS framework
+  $
+    & Macian is a functional CSS framework inspired by and based on Tachyons. It features a set of customisable utility classes.
+    % macian.png
+
+ATTIC.ROVARSPRAKET
+  ? : A Rövarspråket translator
+  $
+    & Rövarspråket is a translator for {{Rövarspråket|https://en.wikipedia.org/wiki/R%C3%B6varspr%C3%A5ket}} (The Robber Language), a Swedish language game where consonants are doubled and an {*o*} is inserted in between while vowels remain as they are.
+    # Hello world - Hohelollolo wowororloldod
+
+ATTIC.TERNARA
+  ? : A balanced ternary library
+  $
+    & Ternära is a {{JS|Javascript}} balanced ternary library that supports two-way conversions between decimal and ternary integers and arithmetic operations.
+
++ LABORATORY.SANDBOX
+  ? : Mediums to facilitate play
+  $
+    & The Sandbox houses mostly-unfinished mediums for play.
+
+SANDBOX.AUDELA
+  ? : A text-based space exploration game
+  $
+    & Audela is an upcoming text-based space exploration game where you can roam around a procedurally-generated galaxy.
+
+SANDBOX.GRYMSTORGE
+  ? : An exploration game
+  $
+    & Grymstorge was an unreleased {{Bitsy|https://ledoux.itch.io/bitsy}} exploration game where you explore the ruins of a subterranean fortress.
+    % grymstorge.png
+
+SANDBOX.PORTE
+  ? : A game about logic gates
+  $
+    & Porte was a {{Bitsy|https://ledoux.itch.io/bitsy}} game about logic gates.
+    % porte.png
+
+SANDBOX.QUOIN
+  ? : A sales management game
+  $
+    & Quoin was an unfinished sales management game where you played as an aspiring shopkeeper in the town of Selletown.
+    & I was taking a boring course called Sales and Selling so to motivate myself to study, I turned it into a game by implementing concepts being taught in class. The project was eventually pushed to the backburner once coursework started piling up and ended up getting left in the archives.
+    % quoin.png
+
+SANDBOX.STRAVAGE
+  ? : A 2D platformer
+  $
+    & Stravage was an abandoned 2D platformer game. Its source code was lost to an unfortunate drive malfunction.
+
+SANDBOX.TEXTE
+  ? : A tool for writing text-based games
+  $
+    & Texte is a tool for generating text-based adventure games, forked from {{vi|https://twitter.com/v_exec}}'s minimalist presentation tool {{Visor|https://github.com/v-exec/Visor}}. Games are written on .txt files following a simple syntax.
+    # $Room1
+    # til: Room 1
+    # con:
+    # + This is the first room
+    # + #[Go forth>Room2]
+    # $Room2
+    # bg: #202020
+    # col: #f8f8f8
+    # til: Room 2
+    # con:
+    # + This is the second room. It's dark in here.
+    # + #[Go back>Room1]
+    & Attributes
+    # $room - Set a room
+    # til - Title attribute
+    # con - Room contents
+    # bg - Background colour
+    # col - Text colour
+    # + - New line
+    # #[Action>Link] - Action button
+
++ OEUVRE.OBSERVATORY
+  ? : Of realms and universes
+  $
+    & The Observatory is where I ponder upon the existence of another world.
+
+OBSERVATORY.MITHVAER
+  ? : A worldbuilding project
+  $
+    & Mithvaer is a long-term worldbuilding project focused on creating a universe wherein my {{Oeuvre}} can exist.
+    & I have a separate wiki dedicated to the lore of Mithvaer which you can find {{here|https://mithvaer.github.io/#home}}.
+    % mithvaer.png
+
+OBSERVATORY.VIDE
+  ? : A worldbuilding tool
+  $
+    & Vide is a worldbuilding tool that aids in the creation of somewhat scientifically-plausible stars, planets, moons, and planetary systems, letting users create worlds with high in-depth details like planetary orbits, atmospheric compositions, gravity, etc.
+    % vide.png
+
++ OEUVRE.WORKSHOP
+  ? : Of the tangible
+  $
+    & The Workshop houses projects that involve the creation of physical things &mdash; tools, toys, crafts, etc.
+
++ WORKSHOP.HOLLY
+  ? : A Raspberry Pi computer console
+  $
+    & Holly is a computer console built with a {{Raspberry Pi Zero W|https://www.raspberrypi.org/products/raspberry-pi-zero-w}}, features a {{2.7-inch monochrome OLED display|https://www.adafruit.com/product/2674}}, and is powered by a 2700mAh lithium ion battery.
+    % holly.png
+    * Status
+    & The project is put on temporary stasis as I messed up the soldering of the battery circuit. In the meantime, the Pi is being used in {{another project|Rabbit}}.
+
+HOLLY.VERRERIUM
+  ? : Experimental Pi interface
+  $
+    & The Verrerium is an experimental {{Pi|Raspberry pi}} interface built with NodeJS and the {{Blessed}} interface library. It serves as an over-SSH GUI for my {{Pi Zero W|Holly}}.
+    % verrerium.png
+
++ WORKSHOP.RABBIT
+  ? : Experimental canvas computer
+  $
+    & Rabbit is an experiment in what I call "subtle technology". When it is inactive, Rabbit is just a blank white canvas. But hidden within it is an LED matrix.
+    & Rabbit is powered by the same Raspberry Pi Zero W that used to power {{Holly}}.
+    % rabbit.png
+    * Components
+    = {{Raspberry Pi Zero W|https://www.raspberrypi.org/products/raspberry-pi-zero-w}}
+    = {{Unicorn pHAT|https://shop.pimoroni.com/products/unicorn-phat}}
+    * Applications
+    & I'm still thinking of ways to utilise the 8x4 RGB LED matrix. As of now, I've mostly used Rabbit to display a binary clock, but there may more potential applications:
+    = Weather indicator
+    = Calendar
+    = Server status indicator
+    = Music visualiser
+    & I will be writing a small library of Unicorn scripts sometime in early 2019. Stay tuned.
+
++ WORKSHOP.NATALIE
+  ? : Another Raspberry Pi computer console
+  $
+    & Natalie is a pocket computer console built with a Raspberry Pi 3 Model A+ and a PiTFT touchscreen display.
+    & I currently use Natalie as a portable school computer as it is more convenient to tote around compared to a laptop.
+    % natalie.png
+    * Components
+    = {{Raspberry Pi 3 Model A+|https://www.raspberrypi.org/products/raspberry-pi-3-model-a-plus}}
+    = {{PiTFT Plus 480x3280 3.5" touchscreen display|https://shop.pimoroni.com/products/pitft-plus-480x320-3-5-tft-touchscreen-for-raspberry-pi-pi-2-and-model-a-b}}
+
++ OEUVRE.OUBLIETTE
+  ? : Of the unreleased and unfinished
+  $
+    & The {*Oubliette*} is a hopefully temporary holding facility for all unfinished and unreleased projects.
+
+OUBLIETTE.CARGO
+  ? : A personal inventory management tool
+  $
+    & Cargo is an upcoming personal inventory management tool.
+    ! Metric | Description
+    + Utility | How often used is an item
+    + Functionality | How useful is an item
+    + Rarity | How rare is an item
+    + Worth | How much an item is worth
+
+OUBLIETTE.QYLLIUM
+  ? : A notes app
+  $
+    & Qyllium is an upcoming notes app. It is inspired by the {{bullet journal|https://bulletjournal.com}} which is designed for rapid logging of tasks, notes, and events.
+    % qyllium.png
+
+OUBLIETTE.RISU
+  ? : A personal finance management tool
+  $
+    & Risu is an upcoming personal finance management tool. Ironically, as soon as I started working on this project, I simply stopped spending and eventually didn't see the need for financial management. I still plan on finishing this though.
+    % risu.png
