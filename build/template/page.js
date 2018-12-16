@@ -43,7 +43,7 @@ module.exports = function Page ({term, unde, type, line}, data) {
       const {h, p} = sv[i];
       let n = '';
       switch (sv[i].n) {
-        case 'DV': n = 'Develoment'; break;
+        case 'DV': n = 'Development'; break;
         case 'VI': n = 'Visual'; break;
         case 'RE': n = 'Research'; break;
         case 'MN': n = 'Maintenance'; break;
