@@ -1,21 +1,12 @@
-function Rune (opts) {
-  Object.assign(this, {
-    tag: opts.tag,
-    sub: opts.sub,
-    stash: opts.stash || 0,
-    wrap: opts.wrap
-  });
-}
-
 const RUNES = {
-  '&': new Rune({tag: 'p'}),
-  '*': new Rune({tag: 'h2'}),
-  '-': new Rune({tag: 'ol', sub: 'li', stash: 1}),
-  '=': new Rune({tag: 'ul', sub: 'li', stash: 1}),
-  '@': new Rune({tag: 'blockquote'}),
-  '#': new Rune({tag: 'code', sub: 'ln', stash: 1}),
-  '!': new Rune({tag: 'table', sub: 'tr', wrap: 'th', stash: 1}),
-  '+': new Rune({tag: 'table', sub: 'tr', wrap: 'td', stash: 1})
+  '&': {tag: 'p'},
+  '*': {tag: 'h2'},
+  '-': {tag: 'ol', sub: 'li', stash: 1},
+  '=': {tag: 'ul', sub: 'li', stash: 1},
+  '@': {tag: 'blockquote'},
+  '#': {tag: 'code', sub: 'ln', stash: 1},
+  '!': {tag: 'table', sub: 'tr', wrap: 'th', stash: 1},
+  '+': {tag: 'table', sub: 'tr', wrap: 'td', stash: 1}
 }
 
 function toURL (s) {
@@ -35,7 +26,7 @@ function toMarkup (s) {
       || target.indexOf('dat:') > -1;
   }
 
-  for (let i = 0; i < parts.length; i++) {
+  for (let i = 0, l = parts.length; i < l; i++) {
     const part = parts[i];
     if (part.indexOf('}}') < 0) continue;
     const content = part.split('}}')[0];
@@ -93,7 +84,7 @@ module.exports = function Runic (raw) {
     let html = '';
     let lines = !Array.isArray(raw) ? raw.split('\n') : raw;
 
-    for (let i = 0; i < lines.length; i++) {
+    for (let i = 0, l = lines.length; i < l; i++) {
       let line = lines[i];
       const char = line.substr(0, 1).trim();
       const rune = RUNES[char];
@@ -134,7 +125,7 @@ module.exports = function Runic (raw) {
     let stash = this.stash.pop();
     let html = '';
 
-    for (let i = 0; i < stash.length; i++) {
+    for (let i = 0, l = stash.length; i < l; i++) {
       const st = stash[i];
       const {sub, wrap} = st.rune;
       const line = st.item;
@@ -156,7 +147,7 @@ module.exports = function Runic (raw) {
     if (content.indexOf(',') > -1) {
       let html = '';
       const gallery = content.split(',');
-      for (let i = 0; i < gallery.length; i++) {
+      for (let i = 0, l = gallery.length; i < l; i++) {
         html += `<img src="./img/${gallery[i].trim()}"/>`;
       }
       return html;

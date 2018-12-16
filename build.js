@@ -27,5 +27,6 @@ fs.readFile(lex, 'utf-8', (err, data) => {
     console.time('Build time');
     builder.build();
     console.timeEnd('Build time');
+    console.log('The Athenaeum is ready')
   }
 });

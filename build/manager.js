@@ -8,13 +8,18 @@ module.exports = function Manager (tables) {
 
   for (let id in tables) {
     const page = tables[id];
-    console.log(page.type)
-    if (page.type === 'index' || page.type === 'portal' || page.type === 'home') {
-      this.pages[id] = new Index(page);
-    } else if (page.type === 'status') {
-      this.pages[id] = new Status(page);
-    } else {
-      this.pages[id] = new Page(page);
+    switch (page.type) {
+      case 'index':
+      case 'portal':
+      case 'home':
+        this.pages[id] = new Index(page);
+        break;
+      case 'status':
+        this.pages[id] = new Status(page);
+        break;
+      default:
+        this.pages[id] = new Page(page);
+        break;
     }
   }
 }

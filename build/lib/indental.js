@@ -8,7 +8,7 @@ module.exports = function Indental (data) {
     let h = {};
 
     // Assoc lines
-    for (let i = 0; i < lines.length; i++) {
+    for (let i = 0, l = lines.length; i < l; i++) {
       const line = lines[i];
       if (line.skip) continue;
       target = stack[line.indent - 2];
@@ -17,7 +17,7 @@ module.exports = function Indental (data) {
     }
 
     // Format
-    for (let i = 0; i < lines.length; i++) {
+    for (let i = 0, l = lines.length; i < l; i++) {
       let line = lines[i];
       if (line.skip || line.indent > 0) continue;
       let term = line.content.toUpperCase();
@@ -55,18 +55,17 @@ module.exports = function Indental (data) {
       children
     } = line;
 
-    for (let i = 0; i < children.length; i++) {
+    for (let i = 0, l = children.length; i < l; i++) {
       const child = line.children[i];
       const {
         term,
-        children,
         value,
         content
       } = child;
 
       if (term) {
         h[term] = value;
-      } else if (children.length === 0 && content) {
+      } else if (child.children.length === 0 && content) {
         a[a.length] = content;
       } else {
         h[content] = format(child);
