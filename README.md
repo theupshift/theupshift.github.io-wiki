@@ -1,4 +1,4 @@
-[![Screenshot](screenshot.png)](https://joshavanier.github.io/#home)
+[![Screenshot](screenshot.png)](https://joshavanier.github.io)
 
 The **Athenaeum** is a personal wiki.
 
