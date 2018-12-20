@@ -3,8 +3,14 @@ const Runic = require('../lib/runic');
 module.exports = function Index ({term, unde, type, line}) {
   this.id = term.toLowerCase();
   this.parent = unde || 'home';
-  this.filename = type === 'home' ? 'index' : this.id.toUrl();
-  this.path = `./joshavanier.github.io/${this.filename}.html`;
+
+  if (type === 'home') {
+    this.filename = 'index';
+    this.path = `./${this.filename}.html`;
+  } else {
+    this.filename = this.id.toUrl();
+    this.path = `./wiki/${this.filename}.html`;
+  }
 
   function _template (acc, term) {
     return `${Array.isArray(line[term]) ? new Runic(line[term]).parse() : line[term]}`;
@@ -37,7 +43,8 @@ module.exports = function Index ({term, unde, type, line}) {
 
   this.render = () => {
     const {id, parent} = this;
-    const parentURL = parent === 'Home' ? 'index' : parent.toUrl();
-    return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="author" content="Josh Avanier"><title>${id.toCapitalCase()}</title><link rel="stylesheet" href="./s.css"/></head><body><div id="v"><p id="u"><a href="./${parentURL}.html">${parent.toCapitalCase()}</a></p><input id="s" value="${id.toCapitalCase()}" spellcheck="false"><main id="c"><p>${_core(id, parent)}</p>${makeIndex(id)}</main><footer id="f"><a href="http://webring.xxiivv.com/#random" target="_blank"><img id="w" src="./img/rotonde.svg"></a><p><a href="./josh.html">Josh Avanier</a> © Éternité</footer></div><script src="./search.js"></script></body></html>`;
+    const parentURL = parent === 'Home' ? '../index.html' : `./${parent.toUrl()}`;
+
+    return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="author" content="Josh Avanier"><title>${id.toCapitalCase()}</title><link rel="stylesheet" href="../s.css"/></head><body><div id="v"><p id="u"><a href="${parentURL}">${parent.toCapitalCase()}</a></p><input id="s" value="${id.toCapitalCase()}" spellcheck="false"><main id="c"><p>${_core(id, parent)}</p>${makeIndex(id)}</main><footer id="f"><a href="http://webring.xxiivv.com/#random" target="_blank"><img id="w" src="./img/rotonde.svg"></a><p><a href="./josh.html">Josh Avanier</a> © Éternité</footer></div><script src="./search.js"></script></body></html>`;
   }
 }

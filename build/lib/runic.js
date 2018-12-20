@@ -148,11 +148,11 @@ module.exports = function Runic (raw) {
       let html = '';
       const gallery = content.split(',');
       for (let i = 0, l = gallery.length; i < l; i++) {
-        html += `<img src="./img/${gallery[i].trim()}"/>`;
+        html += `<img src="../img/${gallery[i].trim()}"/>`;
       }
       return html;
     }
-    return `<img src="./img/${content}"/>`;
+    return `<img src="../img/${content}"/>`;
   }
 
   this.table = content => {
