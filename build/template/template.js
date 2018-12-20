@@ -27,7 +27,7 @@ module.exports = function ({term, unde, type, line}) {
     if (this.id === 'home') {
       unde = '&mdash;'
     } else {
-      unde = `<a href=".${this.parent === 'Home' ? './index' : `/$(this.parent.toUrl())`}.html">${this.parent.toCapitalCase()}</a>`;
+      unde = `<a href=".${this.parent === 'Home' ? './index' : `/${this.parent.toUrl()}`}.html">${this.parent.toCapitalCase()}</a>`;
     }
     return `<p id="u">${unde}</p><input id="s" value="${this.id.toCapitalCase()}" spellcheck="false">`;
   }
