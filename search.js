@@ -6,7 +6,7 @@ Object.assign(s, {
   onkeydown: (e) => {
     if (e.key !== 'Enter') return;
     const v = s.value.trim();
-    window.location.href = v.toLowerCase() === 'home' ? '../index.html' : `wiki/${v.toUrl()}.html`;
+    window.location.href = v.toLowerCase() === 'home' ? '../index.html' : `./${v.toUrl()}.html`;
   },
   onblur: () => {
     s.value = current.toCapitalCase();
