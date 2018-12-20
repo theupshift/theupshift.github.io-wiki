@@ -1,18 +1,22 @@
 const s = document.getElementById('s');
 s.value = document.title;
-let current = s.value;
+let c = s.value;
 Object.assign(s, {
   placeholder: 'Search',
   onkeydown: (e) => {
     if (e.key !== 'Enter') return;
     const v = s.value.trim();
-    window.location.href = v.toLowerCase() === 'home' ? '../index.html' : `./${v.toUrl()}.html`;
+    if (window.location.href.indexOf('index.html') > -1) {
+      window.location.href = v.toLowerCase() === 'home' ? './index.html' : `./wiki/${url(v)}.html`;
+    } else {
+      window.location.href = v.toLowerCase() === 'home' ? '../index.html' : `./${url(v)}.html`;
+    }
   },
   onblur: () => {
-    s.value = current.toCapitalCase();
+    s.value = cap(c);
   },
   onfocus: () => {
-    current = s.value;
+    c = s.value;
     Object.assign(s, {
       title: 'Search for a page or topic',
       value: ''
@@ -20,11 +24,10 @@ Object.assign(s, {
   }
 });
 
-String.prototype.toCapitalCase = function () { return this.charAt(0).toUpperCase() + this.slice(1).toLowerCase() }
+function cap (x) {
+  return x.charAt(0).toUpperCase() + x.slice(1).toLowerCase();
+}
 
-String.prototype.toUrl = function () { return this.replace(/ /g, '_').replace(/\W/g, '').trim().toLowerCase() }
-
-function validate (value) {
-  window.location.href = 'http://www.google.com';
-  Q('q').bang(value);
+function url (x) {
+  return x.replace(/ /g, '_').replace(/\W/g, '').trim().toLowerCase();
 }
