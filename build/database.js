@@ -1,7 +1,6 @@
 const fs = require('fs');
-const indental = require('./lib/indental');
 
-module.exports = function Database (tables) {
+module.exports = function (tables) {
   this.storage = {};
 
   for (const id in tables) {

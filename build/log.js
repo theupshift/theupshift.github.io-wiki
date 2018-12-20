@@ -22,6 +22,7 @@ function toEpoch (h) {
 module.exports = function Log (file) {
   const raw = JSON.parse(fs.readFileSync(file, 'utf8')).log;
 
+  this.raw = [];
   this.data = {sec: {}, pro: {}};
   this.sectors = [];
   this.projects = [];
@@ -45,6 +46,8 @@ module.exports = function Log (file) {
     } else {
       this.data.pro[pro] = [new Entry({s: a, e: b, c})]
     }
+
+    this.raw[this.raw.length] = new Entry({s: a, e: b, c, t});
   }
 
   this.sectors = Object.keys(this.data.sec);

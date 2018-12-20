@@ -1,10 +1,10 @@
 const fs = require('fs');
-module.exports = function Builder (pages) {
+module.exports = function (pages) {
   this.build = () => {
+    console.log('Building pages...');
     for (const id in pages) {
       const page = pages[id];
-      const render = page.render();
-      fs.writeFile(page.path, render, (err) => {
+      fs.writeFile(page.path, page.render(), (err) => {
         err && console.error(err);
       });
     }

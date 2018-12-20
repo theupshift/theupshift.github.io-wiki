@@ -3,9 +3,7 @@ module.exports = function Indental (data) {
 
   this.parse = () => {
     const lines = this.data.split('\n').map(liner);
-    let stack = {};
-    let target = lines[0];
-    let h = {};
+    let stack = {}, target = lines[0], h = {};
 
     // Assoc lines
     for (let i = 0, l = lines.length; i < l; i++) {
@@ -21,8 +19,7 @@ module.exports = function Indental (data) {
       let line = lines[i];
       if (line.skip || line.indent > 0) continue;
       let term = line.content.toUpperCase();
-      let unde = 'Home';
-      let type = 'page';
+      let unde = 'Home', type = 'page';
 
       if (term.indexOf('@') > -1) {
         term = term.slice(2);
@@ -48,20 +45,12 @@ module.exports = function Indental (data) {
   }
 
   function format(line) {
-    let a = [];
-    let h = {};
-
-    const {
-      children
-    } = line;
+    let a = [], h = {};
+    const {children} = line;
 
     for (let i = 0, l = children.length; i < l; i++) {
       const child = line.children[i];
-      const {
-        term,
-        value,
-        content
-      } = child;
+      const {term, value, content} = child;
 
       if (term) {
         h[term] = value;
@@ -76,8 +65,7 @@ module.exports = function Indental (data) {
   }
 
   function liner(line) {
-    let term = null;
-    let value = null;
+    let term = null, value = null;
 
     if (line.indexOf(' : ') > -1) {
       const split = line.split(' : ');

@@ -9,39 +9,7 @@ module.exports = function ({term, unde, type, line}, tables, logs) {
   const set = new LogSet(logs.raw);
 
   function _summary () {
-    let html = `
-      <h2>Time-Tracker</h2>
-      <div class="r">
-      <ul class="stats">
-        <li>
-          <p>${set.lh.toFixed(2)}</p>
-          <span>Logged Hours</span>
-        </li>
-        <li>
-          <p>${set.count}</p>
-          <span>Log Entries</span>
-        </li>
-        <li>
-          <p>${set.dailyAvg().toFixed(2)}</p>
-          <span>Daily Average</span>
-        </li>
-        <li>
-          <p>${set.coverage().toFixed(2)} %</p>
-          <span>Coverage</span>
-        </li>
-        <li>
-          <p>${set.listSectors().length}</p>
-          <span>Projects</span>
-        </li>
-        <li>
-          <p>${set.listProjects().length}</p>
-          <span>Sectors</span>
-        </li>
-      </ul>
-      </div>
-    `;
-
-    return html
+    return `<h2>Time-Tracker</h2><div class="r"><ul class="stats"><li><p>${set.lh.toFixed(2)}</p><span>Logged Hours</span><li><p>${set.count}</p><span>Log Entries</span><li><p>${set.dailyAvg().toFixed(2)}</p><span>Daily Average</span><li><p>${set.coverage().toFixed(2)} %</p><span>Coverage</span><li><p>${set.listSectors().length}</p><span>Projects</span><li><p>${set.listProjects().length}</p><span>Sectors</span></ul></div>`;
   }
 
   function _undocumented () {
@@ -64,22 +32,7 @@ module.exports = function ({term, unde, type, line}, tables, logs) {
     const total = pro.length;
     const undocTotal = undoc.length;
 
-    return `<h2>Undocumented</h2>
-    <ul class="stats">
-      <li>
-        <p>${total}</p>
-        <span>Total Projects</span>
-      </li>
-      <li>
-        <p>${undocTotal}</p>
-        <span>Undocumented</span>
-      </li>
-      <li>
-        <p>${((total - undocTotal) / total * 100).toFixed(2)}%</p>
-        <span>Completion</span>
-      </li>
-    </ul>
-    <div class="col"><ul>${html}</ul></div>`;
+    return `<h2>Undocumented</h2><ul class="stats"><li><p>${total}</p><span>Total Projects</span><li><p>${undocTotal}</p><span>Undocumented</span><li><p>${((total - undocTotal) / total * 100).toFixed(2)}%</p><span>Completion</span></ul><div class="col"><ul>${html}</ul></div>`;
   }
 
   function makeIndex (lexicon = database) {
@@ -90,11 +43,7 @@ module.exports = function ({term, unde, type, line}, tables, logs) {
   }
 
   function countTypes () {
-    const counts = {
-      index: 0,
-      portal: 0,
-      page: 0
-    }
+    const counts = {index: 0, portal: 0, page: 0}
 
     for (let key in tables) {
       counts[tables[key].type]++;
@@ -126,27 +75,17 @@ module.exports = function ({term, unde, type, line}, tables, logs) {
         warnings++;
       }
 
-      html += `<tr class="${klass}"><td><a href="./${term.toUrl()}.html">${term.toCapitalCase()}</a></td><td class="ac">${x ? '' : '#'}</td><td class="ac">${y ? '' : '#'}</td><td class="ar">${indx.toFixed(2)}</td></tr>`;
+      html += `<tr class="${klass}"><td><a href="./${term.toUrl()}.html">${term.toCapitalCase()}</a><td class="ac">${x ? '' : '#'}<td class="ac">${y ? '' : '#'}`;
     }
 
     const indexes = countTypes().index;
     const completion = (indexes - (warnings + criticals)) / indexes * 100;
 
-    return `
-    <h2>Indexes</h2>
-    <ul class="stats">
-      <li><p>${indexes}</p><span>Total</span></li>
-      <li><p>${warnings}</p><span>Warnings</span></li>
-      <li><p>${criticals}</p><span>Critical</span></li>
-      <li><p>${completion.toFixed(2)}%</p><span>Completion</span></li>
-    </ul>
-    <table><thead><tr><th>Index</th><th class="ac">Info</th><th class="ac">Media</th><th class="ar">Completion</th></tr></thead><tbody>${html}</tbody></table>`;
+    return `<h2>Indexes</h2><ul class="stats"><li><p>${indexes}</p><span>Total</span><li><p>${warnings}</p><span>Warnings</span><li><p>${criticals}</p><span>Critical</span><li><p>${completion.toFixed(2)}%</p><span>Completion</span></ul><table><thead><tr><th>Index<th class="ac">Info<th class="ac">Media<tbody>${html}</table>`;
   }
 
   function makePortalTable (portal) {
-    let html = '';
-    let warnings = 0;
-    let criticals = 0;
+    let html = '', warnings = 0, criticals = 0;
     for (let i = 0, l = portal.length; i < l; i++) {
       const {term, line, type} = portal[i];
       const long = new Runic(line['$']).html();
@@ -166,25 +105,17 @@ module.exports = function ({term, unde, type, line}, tables, logs) {
         warnings++;
       }
 
-      html += `<tr class="${klass}"><td><a href="./${term.toUrl()}.html">${term.toCapitalCase()}</a></td><td class="ac">${x ? '' : '#'}</td><td class="ac">${y ? '' : '#'}</td><td class="ar">${indx.toFixed(2)}</td></tr>`;
+      html += `<tr class="${klass}"><td><a href="./${term.toUrl()}.html">${term.toCapitalCase()}</a><td class="ac">${x ? '' : '#'}<td class="ac">${y ? '' : '#'}`;
     }
 
     const portals = countTypes().portal;
     const completion = (portals - (warnings + criticals)) / portals * 100;
 
-    return `<h2>Portals</h2>
-    <ul class="stats">
-      <li><p>${portals}</p><span>Total</span></li>
-      <li><p>${warnings}</p><span>Warnings</span></li>
-      <li><p>${criticals}</p><span>Critical</span></li>
-      <li><p>${completion.toFixed(2)}%</p><span>Completion</span></li>
-    </ul><table><thead><tr><th>Portal</th><th class="ac">Info</th><th class="ac">Media</th><th class="ar">Completion</th></tr></thead><tbody>${html}</tbody></table>`;
+    return `<h2>Portals</h2><ul class="stats"><li><p>${portals}</p><span>Total</span><li><p>${warnings}</p><span>Warnings</span><li><p>${criticals}</p><span>Critical</span><li><p>${completion.toFixed(2)}%</p><span>Completion</span></ul><table><thead><tr><th>Portal<th class="ac">Info<th class="ac">Media<tbody>${html}</table>`;
   }
 
   function makePageTable (page) {
-    let html = '';
-    let warnings = 0;
-    let criticals = 0;
+    let html = '', warnings = 0, criticals = 0;
     for (let i = 0, l = page.length; i < l; i++) {
       const {term, line, type} = page[i];
       const long = new Runic(line['$']).html();
@@ -205,23 +136,13 @@ module.exports = function ({term, unde, type, line}, tables, logs) {
         warnings++;
       }
 
-      html += `<tr class="${klass}"><td><a href="./${term.toUrl()}.html">${term.toCapitalCase()}</a></td><td class="ac">${x ? '' : '#'}</td><td class="ac">${y ? '' : '#'}</td><td class="ac">${z ? '' : '#'}</td><td class="ar">${indx.toFixed(2)}</td></tr>`;
+      html += `<tr class="${klass}"><td><a href="./${term.toUrl()}.html">${term.toCapitalCase()}</a><td class="ac">${x ? '' : '#'}<td class="ac">${y ? '' : '#'}<td class="ac">${z ? '' : '#'}`;
     }
 
     const pages = countTypes().page;
     const completion = (pages - (warnings + criticals)) / pages * 100;
 
-    return `<h2>Pages</h2>
-    <ul class="stats">
-      <li><p>${pages}</p><span>Total</span></li>
-      <li><p>${warnings}</p><span>Warnings</span></li>
-      <li><p>${criticals}</p><span>Critical</span></li>
-      <li><p>${completion.toFixed(2)}%</p><span>Completion</span></li>
-    </ul><table><thead><tr><th>Page</th><th class="ac">Info</th><th class="ac">Media</th><th class="ac">Links</th><th class="ar">Completion</th></tr></thead><tbody>${html}</tbody></table>`;
-  }
-
-  function makeTableHeader () {
-    return `<table><thead><tr><th>Page</th><th class="ac">IN</th><th class="ac">MD</th><th class="ac">LN</th><th class="ar">CI</th></tr></thead><tbody>`;
+    return `<h2>Pages</h2><ul class="stats"><li><p>${pages}</p><span>Total</span><li><p>${warnings}</p><span>Warnings</span><li><p>${criticals}</p><span>Critical</span><li><p>${completion.toFixed(2)}%</p><span>Completion</span></ul><table><thead><tr><th>Page<th class="ac">Info<th class="ac">Media<th class="ac">Links<tbody>${html}</table>`;
   }
 
   function organiseByType (lexicon = database) {
@@ -259,6 +180,6 @@ module.exports = function ({term, unde, type, line}, tables, logs) {
 
   this.render = () => {
     const {id, parent} = this;
-    return `${this.head()}</head><body><div id="v">${this.header()}<main id="c">${this.core(id, parent)}${_summary()}${makeIndex()}${_undocumented()}</main>${this.footer()}</div><script src="../search.js"></script></body></html>`;
+    return `${this.head()}</head><body><div id="v">${this.header()}<main id="c">${this.core(id, parent)}${_summary()}${makeIndex()}${_undocumented()}</main>${this.footer()}</div><script src="../search.js"></script>`;
   }
 }

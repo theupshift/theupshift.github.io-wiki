@@ -9,10 +9,6 @@ const RUNES = {
   '+': {tag: 'table', sub: 'tr', wrap: 'td', stash: 1}
 }
 
-function toURL (s) {
-  return s.toLowerCase().replace(/ /g, '+').replace(/[^0-9a-z\+]/gi, '').trim();
-}
-
 function toMarkup (s) {
   let html = s;
   html = html.replace(/{_/g, '<i>').replace(/_}/g, '</i>');
@@ -31,8 +27,7 @@ function toMarkup (s) {
     if (part.indexOf('}}') < 0) continue;
     const content = part.split('}}')[0];
 
-    let target = '';
-    let name = '';
+    let target = '', name = '';
 
     if (content.indexOf('|') > -1) {
       const bar = content.split('|');
@@ -143,7 +138,7 @@ module.exports = function Runic (raw) {
     return rune ? (tag ? `<${tag}>${line}</${tag}>` : line) : '';
   }
 
-  this.media = content => {
+  this.media = (content) => {
     if (content.indexOf(',') > -1) {
       let html = '';
       const gallery = content.split(',');
@@ -155,11 +150,11 @@ module.exports = function Runic (raw) {
     return `<img src="../img/${content}"/>`;
   }
 
-  this.table = content => {
+  this.table = (content) => {
     return `<td>${content.trim().replace(/ \| /g, '</td><td>')}</td>`;
   }
 
-  this.quote = content => {
+  this.quote = (content) => {
     const [text, author, source, link] = content.split(' | ');
     const attr = link ? `${author}, <a href="${link}">${source}</a>` : author;
     return `<blockquote><p class="q">${text}</p>${author ? `<p class="a">${attr}</p>` : ''}</blockquote>`

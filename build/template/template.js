@@ -17,13 +17,11 @@ module.exports = function ({term, unde, type, line}) {
 
   this.head = () => {
     const css = `${this.id === 'home' ? '.' : '..'}/s.css`;
-    return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="author" content="Josh Avanier"><title>${this.id.toCapitalCase()}</title><link rel="stylesheet" href="${css}"/></head>`;
+    return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="author" content="Josh Avanier"><title>${this.id.toCapitalCase()}</title><link rel="stylesheet" href="${css}"/>`;
   }
 
   this.header = () => {
-    console.log(this.id, this.parent)
     let unde = '';
-    console.log(this.id === 'home')
     if (this.id === 'home') {
       unde = '&mdash;'
     } else {

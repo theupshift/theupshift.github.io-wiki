@@ -23,14 +23,14 @@ module.exports = function ({term, unde, type, line}) {
       if (child.term === 'HOME') continue;
       const {term, line} = child;
       const link = `<a href="./wiki/${term.toUrl()}.html">${term.toCapitalCase()}</a>`
-      html += `<tr><td>${link}</td><td>${child.line['?']}</td></tr>`;
+      html += `<tr><td>${link}<td>${child.line['?']}`;
     }
 
-    return children.length > 0 ? `<div id="i"><table><tbody>${html}</tbody></table></div>` : '';
+    return children.length > 0 ? `<div id="i"><table><tbody>${html}</table></div>` : '';
   }
 
   this.render = () => {
     const {id, parent} = this;
-    return `${this.head()}<body><div id="v">${this.header()}<main id="c"><p>${this.core(id, parent)}</p>${makeIndex(id)}</main>${this.footer()}</div><script src="./search.js"></script></body></html>`;
+    return `${this.head()}<body><div id="v">${this.header()}<main id="c"><p>${this.core(id, parent)}</p>${makeIndex(id)}</main>${this.footer()}</div><script src="./search.js"></script>`;
   }
 }

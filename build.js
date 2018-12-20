@@ -3,9 +3,7 @@ const Builder = require('./build/builder');
 const Manager = require('./build/manager');
 const Database = require('./build/database');
 const Log = require('./build/log');
-
 const homedir = require('os').homedir();
-
 const indexes = ['lexicon', 'oeuvre', 'monographs', 'commonplace'];
 const database = new Database(indexes);
 const logs = new Log(`${homedir}/log.json`);

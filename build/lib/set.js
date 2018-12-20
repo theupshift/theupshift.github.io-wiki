@@ -140,47 +140,12 @@ Date.prototype.ago = function () {
 }
 
 /**
- * Format time
- * @param {number=} f - Time format
- * @return {string} Formatted time
- */
-Date.prototype.formatTime = function (f = Log.config.tm) {
-  switch (f) {
-    case 0:  return this.to12H();
-    case 1:  return this.to24H();
-    default: return this.toDec();
-  }
-}
-
-/**
  * Display timestamp
  * @return {string} Timestamp
  */
 Date.prototype.stamp = function () {
   const x = `${this.getHours()}${this.getMinutes()}`;
   return x in c_stamp ? c_stamp[x] : c_stamp[x] = this.formatTime();
-}
-
-/**
- * Display 12h time
- * @return {string} 12h time
- */
-Date.prototype.to12H = function () {
-  let h = this.getHours();
-  const X =  h >= 12 ? 'PM' : 'AM';
-  const H = (h %= 12 ? h : 12).pad();
-  const M = this.getMinutes().pad();
-  return `${H}:${M} ${X}`;
-}
-
-/**
- * Display 24h time
- * @return {string} 24h time
- */
-Date.prototype.to24H = function () {
-  const h = this.getHours().pad();
-  const m = this.getMinutes().pad();
-  return `${h}:${m}`;
 }
 
 /**

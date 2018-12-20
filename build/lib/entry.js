@@ -31,16 +31,8 @@ module.exports = class Entry {
   get project () { return this.t; }
   get desc ()    { return this.d; }
 
-  // get sc () { return Palette.sp[this.sector]; }
-  // get pc () { return Palette.pp[this.project]; }
   get wh () { return this.calcWidth(); }
   get mg () { return this.calcMargin(); }
-
-  set setStart (s)   { this.s = s; }
-  set setEnd (e)     { this.e = e; }
-  set setSector (c)  { this.c = c; }
-  set setProject (t) { this.t = t; }
-  set setDesc (d)    { this.d = d; }
 
   /**
    * Calculate left margin
