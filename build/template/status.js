@@ -1,21 +1,12 @@
 const Runic = require('../lib/runic');
 const LogSet = require('../lib/set.js');
+const Template = require('./template');
 
-module.exports = function Status ({term, unde, type, line}, tables, logs) {
-  this.id = term.toLowerCase();
-  this.parent = 'home';
-  this.filename = this.id.toUrl();
+module.exports = function ({term, unde, type, line}, tables, logs) {
+  Template.call(this, {term, unde, type, line});
   this.path = `./wiki/${this.filename}.html`;
 
   const set = new LogSet(logs.raw);
-
-  function _template (acc, term) {
-    return `${Array.isArray(line[term]) ? new Runic(line[term]).parse() : line[term]}`;
-  }
-
-  function _core (id, parent, content) {
-    return `${Object.keys(line).reduce(_template, '')}`.trim()
-  }
 
   function _summary () {
     let html = `
@@ -268,6 +259,6 @@ module.exports = function Status ({term, unde, type, line}, tables, logs) {
 
   this.render = () => {
     const {id, parent} = this;
-    return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="author" content="Josh Avanier"><title>${id.toCapitalCase()}</title><link rel="stylesheet" href="../s.css"/></head><body><div id="v"><p id="u"><a href="../index.html">Home</a></p><input id="s" value="${id.toCapitalCase()}" spellcheck="false"><main id="c">${_core(id, parent)}${_summary()}${makeIndex()}${_undocumented()}</main><footer id="f"><a href="http://webring.xxiivv.com/#random" target="_blank"><img id="w" src="./img/rotonde.svg"></a><p><a href="./josh.html">Josh Avanier</a> © Éternité</footer></div><script src="./search.js"></script></body></html>`;
+    return `${this.head()}</head><body><div id="v">${this.header()}<main id="c">${this.core(id, parent)}${_summary()}${makeIndex()}${_undocumented()}</main>${this.footer()}</div><script src="../search.js"></script></body></html>`;
   }
 }
