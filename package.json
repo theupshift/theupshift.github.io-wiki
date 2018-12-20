@@ -5,6 +5,6 @@
   "repository": "https://github.com/joshavanier/joshavanier.github.io",
   "main": "./index.js",
   "scripts": {
-    "build-site": "node build.js && cd joshavanier.github.io && git add --all && git commit -m \"Update\" && git push -u origin master"
+    "build-site": "node build.js && git add wiki/* && git commit -m \"Build\""
   }
 }
