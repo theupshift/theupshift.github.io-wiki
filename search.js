@@ -1,5 +1,4 @@
 const s = document.getElementById('s');
-s.value = document.title;
 let c = s.value;
 Object.assign(s, {
   placeholder: 'Search',
