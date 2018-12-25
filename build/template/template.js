@@ -39,6 +39,6 @@ module.exports = function ({term, unde, type, line}) {
       ring = '../img/rotonde.svg';
       josh = './josh.html';
     }
-    return `<footer id="f"><a title="Kin" href="http://webring.xxiivv.com/#random" target="_blank"><img id="w" src="${ring}"></a><p><a href="${josh}">Josh Avanier</a> © Éternité</footer>`;
+    return `<footer><a title="Kin" href="http://webring.xxiivv.com/#random" target="_blank"><img id="w" src="${ring}"></a><p><a href="${josh}">Josh Avanier</a> © Éternité</footer>`;
   }
 }

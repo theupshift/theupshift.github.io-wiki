@@ -37,6 +37,6 @@ module.exports = function ({term, unde, type, line}, data) {
   }
 
   this.render = () => {
-    return `${this.head()}<body><div id="v">${this.header()}<main id="c">${this.core(this.id, this.parent)}${data.logs.length !== 0 ? _summary() : ''}</main>${this.footer()}</div><script src="../search.js"></script>`;
+    return `${this.head()}<body>${this.header()}<div id="c">${this.core(this.id, this.parent)}${data.logs.length !== 0 ? _summary() : ''}</div>${this.footer()}<script src="../search.js"></script>`;
   }
 }

@@ -28,6 +28,6 @@ module.exports = function ({term, unde, type, line}) {
 
   this.render = () => {
     const {id, parent} = this;
-    return `${this.head()}<body><div id="v">${this.header()}<main id="c"><p>${this.core(id, parent)}</p>${makeIndex(id)}</main>${this.footer()}</div><script src="../search.js"></script>`;
+    return `${this.head()}<body>${this.header()}<div id="c"><p>${this.core(id, parent)}</p>${makeIndex(id)}</div>${this.footer()}<script src="../search.js"></script>`;
   }
 }

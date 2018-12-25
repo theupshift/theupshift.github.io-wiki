@@ -180,6 +180,6 @@ module.exports = function ({term, unde, type, line}, tables, logs) {
 
   this.render = () => {
     const {id, parent} = this;
-    return `${this.head()}</head><body><div id="v">${this.header()}<main id="c">${this.core(id, parent)}${_summary()}${makeIndex()}${_undocumented()}</main>${this.footer()}</div><script src="../search.js"></script>`;
+    return `${this.head()}<body>${this.header()}<div id="c">${this.core(id, parent)}${_summary()}${makeIndex()}${_undocumented()}</div>${this.footer()}<script src="../search.js"></script>`;
   }
 }
