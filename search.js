@@ -30,3 +30,8 @@ function cap (x) {
 function url (x) {
   return x.replace(/ /g, '_').replace(/\W/g, '').trim().toLowerCase();
 }
+
+document.onkeydown = ({which}) => {
+  which >= 65 && which <= 90 && s.focus();
+  which === 27 && s.blur();
+};
