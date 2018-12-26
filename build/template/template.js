@@ -31,14 +31,10 @@ module.exports = function ({term, unde, type, line}) {
   }
 
   this.footer = () => {
-    let josh = '', ring = '';
-    if (this.id === 'home') {
-      ring = './img/rotonde.svg';
-      josh = './wiki/josh.html';
-    } else {
-      ring = '../img/rotonde.svg';
-      josh = './josh.html';
-    }
-    return `<footer><a title="Kin" href="http://webring.xxiivv.com/#random" target="_blank"><img id="w" src="${ring}"></a><p><a href="${josh}">Josh Avanier</a> © Éternité</footer>`;
+    const home = this.id === 'home';
+    const josh = `.${home ? '/wiki' : ''}/josh.html`;
+    const ring = `${home ? '' : '.'}./img/rotonde.svg`;
+    const merv = `${home ? '' : '.'}./img/merveilles.svg`
+    return `<footer><a title="Kin" href="http://webring.xxiivv.com/#random" target="_blank"><img id="w" src="${ring}" alt="Webring"></a><a title="Town" href="https://merveilles.town/@joshavanier" target="_blank"><img id="m" src="${merv}" alt="Merveilles"></a><p><a href="${josh}">Josh Avanier</a> © Éternité</footer>`;
   }
 }
