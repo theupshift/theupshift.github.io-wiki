@@ -1,9 +1,10 @@
 const Runic = require('../lib/runic');
 const Template = require('./template');
 const months = 'Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec'.split(' ');
+const Aequirys = require('aequirys');
 
-function displayDate (d) {
-  return `${d.getDate()} ${months[d.getMonth()]} ${d.getFullYear()}`;
+const displayDate = d => new Aequirys(d).display();
+const hoverDate = d => `${d.getDate()} ${months[d.getMonth()]} ${d.getFullYear()}`;
 }
 
 module.exports = function ({term, unde, type, line}, data) {
@@ -27,6 +28,7 @@ module.exports = function ({term, unde, type, line}, data) {
         default: return x;
       }
     }
+    let html = `<div id="i"><table><tbody><tr><td title="${hoverDate(sd)}&ndash;${hoverDate(ed)}">${displayDate(sd)}&ndash;${displayDate(ed)}<td class="ar">${data.count} logs<td class="ar">${data.lh.toFixed(2)} h</table><table><tbody>`;
 
     for (let i = 0, l = sv.length; i < l; i++) {
       const {h, p, n} = sv[i];
