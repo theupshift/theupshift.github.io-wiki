@@ -10,16 +10,13 @@ code, ln {
   width: 100%
 }
 
-#s, #v, .ac {
+#s, body, .ac {
   text-align: center
 }
 
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box
 }
 
 body, body * {
@@ -32,20 +29,21 @@ body {
   padding: 5.38em 1.618em 4.236em
 }
 
-#v {
-  margin: .5em auto 0
+body {
+  margin: .5em auto 0;
 }
 
 #u a {
   font-weight: 400;
-  font-family: serif
 }
 
 #s {
   margin: 1.272em auto;
   background-color: transparent;
   outline: 0;
-  font: 2.0581em/1.272em serif
+  font-size: 2.0581em;
+  line-height: 1.272em;
+  font-weight: bold;
 }
 
 #c {
@@ -71,7 +69,9 @@ a:hover {
 }
 
 h2 {
-  font: 700 1.618em/1.272em serif
+  font-weight: 700;
+  font-size: 1.618em;
+  line-height: 1.272em;
 }
 
 blockquote {
@@ -83,7 +83,9 @@ blockquote {
 }
 
 .q {
-  font: italic 1.618em/1.272em serif
+  font-style: italic;
+  font-size: 1.618em;
+  line-height: 1.272em;
 }
 
 .q:after {
@@ -91,7 +93,7 @@ blockquote {
 }
 
 .a:before {
-  content: '\002014  '
+  content: '\002014'
 }
 
 .a {
@@ -126,7 +128,7 @@ td {
 }
 
 #i {
-  border-top: 1px solid #f8f8f8;
+  border-top: 1px solid #333;
   padding-top: 1.272em;
 }
 
@@ -144,8 +146,17 @@ meter::-webkit-meter-optimum-value {
 }
 
 #w {
-  margin: 0 0 .7862em;
+  margin: 0 .7862em 0 0;
   width: 2.0581em
+}
+
+#m {
+  margin: 0;
+  width: 2.0581em;
+}
+
+footer p {
+margin-top: .7862em;
 }
 
 .stats {
@@ -155,10 +166,12 @@ meter::-webkit-meter-optimum-value {
 }
 
 .stats li {
-  width: 25%;
   float: left;
   margin-bottom: 1.272em;
 }
+
+.c3 {width: 33.33%}
+.c4 {width: 25%}
 
 .stats p {font-size: 1.618em; line-height: 1.272em; font-weight: bold; margin-bottom: 0 !important;}
 .stats span {font-size: .7862em;}
@@ -183,7 +196,7 @@ meter::-webkit-meter-optimum-value {
 }
 
 @media screen and (min-width:30em) {
-  #v {
+  body {
     width: 34rem;
     max-width: 100%;
   }
