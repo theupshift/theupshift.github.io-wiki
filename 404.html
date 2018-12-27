@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="author" content="Avanier">
 <title>404</title>
-<link rel="stylesheet" href="./s.css">
+<link rel="stylesheet" href="../s.css">
 </head>
 <body>
   <p id=u>&mdash;</p><input id="s" spellcheck="false">
@@ -16,16 +16,16 @@
     <p><a href="./wiki/josh.html">Josh Avanier</a> © Éternité
   </footer>
 
-  <script src="./search.js"></script>
-  <script src="./lexicon.js"></script>
-  <script src="./404.js"></script>
+  <script src="../search.js"></script>
+  <script src="../lexicon.js"></script>
+  <script src="../404.js"></script>
   <script>
     const href = window.location.href;
     const slash = href.lastIndexOf('/') + 1;
     const term = cap(href.substring(slash, href.length - 5));
     const sim = _findSimilar(term.toUpperCase());
 
-    const link = x => {
+    function link (x) {
       return `<a href="${x === 'Home' ? './index' : `./wiki/${url(x)}`}.html">${x}</a>`;
     }
 
