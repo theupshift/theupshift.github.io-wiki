@@ -134,13 +134,13 @@ td {
 
 #i th {border-bottom: none;}
 
-meter, meter::-webkit-meter-bar {
+meter {
   border: 1px solid #f8f8f8;
   background: none;
   -moz-appearance: none;
 }
 
-meter::-webkit-meter-optimum-value {
+meter::-webkit-meter-bar, meter::-moz-meter-bar {
   background: none;
   background-color: #f8f8f8;
 }
