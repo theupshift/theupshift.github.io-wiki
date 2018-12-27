@@ -2,6 +2,7 @@ const Indental = require('./build/lib/indental');
 const Builder = require('./build/builder');
 const Manager = require('./build/manager');
 const Database = require('./build/database');
+const Lexicon = require('./build/lexicon');
 const Log = require('./build/log');
 const homedir = require('os').homedir();
 const indexes = ['lexicon', 'oeuvre', 'monographs', 'commonplace'];
@@ -23,8 +24,10 @@ for (let key in database.storage) {
 
 const manager = new Manager(new Indental(data).parse(), logs);
 const builder = new Builder(manager.pages);
+const lexicon = new Lexicon(manager.pages);
 
 console.time('Build time');
+lexicon.build();
 builder.build();
 console.timeEnd('Build time');
 console.log('The Athenaeum is ready');
