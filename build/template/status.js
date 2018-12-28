@@ -29,8 +29,8 @@ module.exports = function ({term, unde, type, line}, tables, logs) {
       `<li><p>${set.count}</p><span>Log Entries</span>`,
       `<li><p>${set.dailyAvg().toFixed(2)}</p><span>Daily Average</span>`,
       `<li><p>${set.coverage().toFixed(2)}%</p><span>Coverage</span>`,
-      `<li><p>${set.listSectors().length}</p><span>Projects</span>`,
-      `<li><p>${set.listProjects().length}</p><span>Sectors</span>`,
+      `<li><p>${set.listSectors().length}</p><span>Sectors</span>`,
+      `<li><p>${set.listProjects().length}</p><span>Projects</span>`,
       '</ul></div>'
     ]);
   }
