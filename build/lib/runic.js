@@ -26,25 +26,26 @@ function toMarkup (s) {
     const part = parts[i];
     if (part.indexOf('}}') < 0) continue;
     const content = part.split('}}')[0];
-
     let target = '', name = '';
 
     if (content.indexOf('|') > -1) {
-      const bar = content.split('|');
-      target = bar[1];
-      name = bar[0];
+      [name, target] = content.split('|');
     } else {
       target = name = content;
     }
 
-    html = html.replace(`{{${content}}}`, isExternal(target) ? `<a href="${target}" target="_blank">${name}</a>` : `<a title="${target}" href="./${target.toUrl()}.html">${name}</a>`)
+    const link = isExternal(target)
+      ? `<a href="${target}" target="_blank">${name}</a>`
+      : `<a title="${target}" href="./${target.toUrl()}.html">${name}</a>`;
+
+    html = html.replace(`{{${content}}}`, link);
   }
 
   return html;
 }
 
-module.exports = function Runic (raw) {
-  this.raw = raw;
+module.exports = function (raw) {
+  this.raw = raw
   this.stash = {
     rune: '',
     all: [],
@@ -90,8 +91,7 @@ module.exports = function Runic (raw) {
         case '%': html += this.media(content); continue;
         case '|': html += this.table(content); continue;
         case '@': html += this.quote(content); continue;
-        default:
-          break;
+        default: break;
       }
 
       line = toMarkup(line.substr(2));
@@ -125,7 +125,8 @@ module.exports = function Runic (raw) {
       const {sub, wrap} = st.rune;
       const line = st.item;
 
-      html += wrap ? `<${sub}><${wrap}>${line.replace(/\|/g,`</${wrap}><${wrap}>`).trim()}</${wrap}></${sub}>` :
+      html += wrap ?
+        `<${sub}><${wrap}>${line.replace(/\|/g,`</${wrap}><${wrap}>`).trim()}</${wrap}></${sub}>` :
         `<${sub}>${line}</${sub}>`;
     }
 
@@ -133,7 +134,9 @@ module.exports = function Runic (raw) {
   }
 
   this.render = (line = '', rune = null) => {
-    if (rune && rune.tag === 'img') return `<img src="../img/${line}"/>`;
+    if (rune && rune.tag === 'img') {
+      return `<img src="../img/${line}"/>`;
+    }
     const {tag} = rune;
     return rune ? (tag ? `<${tag}>${line}</${tag}>` : line) : '';
   }
@@ -143,7 +146,7 @@ module.exports = function Runic (raw) {
       let html = '';
       const gallery = content.split(',');
       for (let i = 0, l = gallery.length; i < l; i++) {
-        html += `<img src="../img/${gallery[i].trim()}"/>`;
+        html += `<img src="../img/${gallery[i].trim()}">`;
       }
       return html;
     }
@@ -161,5 +164,4 @@ module.exports = function Runic (raw) {
   }
 
   this.html = () => this.parse(raw);
-  this.toString = () => this.html();
 }

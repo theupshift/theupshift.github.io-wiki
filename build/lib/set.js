@@ -58,24 +58,6 @@ function sd (v = []) {
 }
 
 /**
- * Display as stat
- * @param {number=} format - Stat format
- * @return {string} Stat
- */
-Number.prototype.toStat = function (format = Log.config.st) {
-  switch (format) {
-    case 0:
-      return this.toFixed(2);
-    case 1:
-      const min = this % 1;
-      const tail = +(min * 60).toFixed(0);
-      return `${this - min}:${tail.pad()}`;
-    default:
-      return this;
-  }
-}
-
-/**
  * Convert decimal to time
  * @param {number} x
  * @return {string} Time
@@ -121,23 +103,6 @@ Date.prototype.addDays = function (i = 1) {
   d.setDate(d.getDate() + i);
   return d;
 };
-
-/**
- * Calculate time ago
- * @return {string} Time ago
- */
-Date.prototype.ago = function () {
-  const m = Math.abs(~~((new Date - this.valueOf()) / 6E4));
-  return m ===     0 ? 'less than a minute ago' :
-         m ===     1 ? 'a minute ago' :
-         m <      59 ? `${m} minutes ago` :
-         m <     120 ? 'an hour ago':
-         m <    1440 ? `${~~(m / 60)} hours ago` :
-         m <    2880 ? 'yesterday' :
-         m <   86400 ? `${~~(m / 1440)} days ago` :
-         m < 1051199 ? `${~~(m / 43200)} months ago` :
-                       `over ${~~(m / 525960)} years ago`;
-}
 
 /**
  * Display timestamp
@@ -675,49 +640,6 @@ module.exports = class LogSet {
   projectFocus () {
     const l = this.listProjects().length;
     return l === 0 ? 0 : 1 / l;
-  }
-
-  /**
-   * Get recent entries
-   * @param {number} [n] - Number of days
-   * @return {Array} Entries
-   */
-  recent (n = 1) {
-    const x = n % 1 === 0 ? n : Math.round(n);
-    return x < 1 ? [] : this.byPeriod((new Date).addDays(-x));
-  }
-
-  /**
-   * Calculate sector counts
-   * @return {Array} Counts
-   */
-  sectorCounts () {
-    if (this.count === 0) return [];
-    const sorted = this.sortEntries();
-    const counts = [];
-    for (let i = 0, l = sorted.length; i < l; i++) {
-      let set = new Set();
-      for (let o = 0; o < sorted[i].length; o++) {
-        set.add(sorted[i][o].sector);
-      }
-      counts[counts.length] = [...set].length;
-    }
-    return counts;
-  }
-
-  /**
-   * Sort entries by day
-   * @return {Array} Sorted entries
-   */
-  sortByDay () {
-    const l = this.count;
-    if (l === 0) return [];
-    let s = Array(7).fill([]);
-    for (let i = l - 1; i >= 0; i--) {
-      const d = this.logs[i].start.getDay();
-      s[d][s[d].length] = this.logs[i];
-    }
-    return s;
   }
 
   /**

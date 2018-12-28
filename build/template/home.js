@@ -1,36 +1,53 @@
-const Runic = require('../lib/runic');
 const Template = require('./template');
+const Utils = require('../lib/utils');
 
-module.exports = function ({term, unde, type, line}) {
-  Template.call(this, {term, unde, type, line});
+module.exports = function ({term, type, line}) {
+  Template.call(this, {term, type, line});
   this.parent = 'home';
   this.filename = 'index';
   this.path = `./${this.filename}.html`;
 
-  function makeIndex (name, lexicon = database, stop = false) {
-    let html = '';
-    let children = [];
-    const n = name.toUpperCase();
-
-    for (let id in lexicon) {
-      const term = lexicon[id];
+  function _getChildren (n, db = database) {
+    let scion = [];
+    for (let id in db) {
+      const term = db[id];
       if (!term.unde || n !== term.unde.toUpperCase()) continue;
-      children[children.length] = term;
+      scion[scion.length] = term;
+    }
+    return scion;
+  }
+
+  function _link (t) {
+    return `<a href="./wiki/${t.toUrl()}.html">${t.toCapitalCase()}</a>`;
+  }
+
+  function _index (name) {
+    const n = name.toUpperCase();
+    const scion = _getChildren(n);
+    const l = scion.length;
+    let html = '';
+
+    const _row = (x, y) =>`<tr><td>${x}<td>${y}`;
+
+    for (let i = 0; i < l; i++) {
+      const {term, line} = scion[i];
+      if (term !== n) html += _row(_link(term), line['?']);
     }
 
-    for (let id in children) {
-      const child = children[id];
-      if (child.term === 'HOME') continue;
-      const {term, line} = child;
-      const link = `<a href="./wiki/${term.toUrl()}.html">${term.toCapitalCase()}</a>`
-      html += `<tr><td>${link}<td>${child.line['?']}`;
-    }
-
-    return children.length > 0 ? `<div id="i"><table><tbody>${html}</table></div>` : '';
+    return l > 0 ? `<div id="i"><table>${html}</table></div>` : '';
   }
 
   this.render = () => {
-    const {id, parent} = this;
-    return `${this.head()}<body>${this.header()}<div id="c"><p>${this.core(id, parent)}</p>${makeIndex(id)}</div>${this.footer()}<script src="./search.js"></script>`;
+    return Utils.merge([
+      this.head(false),
+      '<body>',
+      this.header(false),
+      '<div id="c">',
+      this.core(),
+      _index(this.id),
+      '</div>',
+      this.footer(false),
+      this.search(false)
+    ]);
   }
 }

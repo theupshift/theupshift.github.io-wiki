@@ -1,33 +1,44 @@
-const Runic = require('../lib/runic');
 const Template = require('./template');
+const Utils = require('../lib/utils');
 
 module.exports = function ({term, unde, type, line}) {
   Template.call(this, {term, unde, type, line});
   this.path = `./wiki/${this.filename}.html`;
 
-  function makeIndex (name, lexicon = database, stop = false) {
-    let html = '';
-    let children = [];
-    const n = name.toUpperCase();
+  const _lnk = t => `<a href="./${t.toUrl()}.html">${t.toCapitalCase()}</a>`;
+  const _row = (x, y) => `<tr><td>${x}</td><td>${y}</td></tr>`;
 
-    for (let id in lexicon) {
-      const term = lexicon[id];
+  function _getChildren (n, db = database) {
+    let scion = [];
+    for (let id in db) {
+      const term = db[id];
       if (!term.unde || n !== term.unde.toUpperCase()) continue;
-      children[children.length] = term;
+      scion[scion.length] = term;
     }
+    return scion;
+  }
 
-    for (let id in children) {
-      const child = children[id];
-      const {term, line} = child;
-      const link = `<a href="./${term.toUrl()}.html">${term.toCapitalCase()}</a>`
-      html += `<tr><td>${link}</td><td>${child.line['?']}</td></tr>`;
-    }
+  function _index (name) {
+    const n = name.toUpperCase();
+    const scion = _getChildren(n);
+    const html = scion.reduce((c, {term, line}) => {
+      return c += _row(_lnk(term), line['?']);
+    }, '');
 
-    return children.length > 0 ? `<div id="i"><table><tbody>${html}</table></div>` : '';
+    return scion.length > 0 ? `<div id="i"><table>${html}</table></div>` : '';
   }
 
   this.render = () => {
-    const {id, parent} = this;
-    return `${this.head()}<body>${this.header()}<div id="c"><p>${this.core(id, parent)}</p>${makeIndex(id)}</div>${this.footer()}<script src="../search.js"></script>`;
+    return Utils.merge([
+      this.head(),
+      '<body>',
+      this.header(),
+      '<div id="c">',
+      this.core(),
+      _index(this.id),
+      '</div>',
+      this.footer(),
+      this.search()
+    ]);
   }
 }
