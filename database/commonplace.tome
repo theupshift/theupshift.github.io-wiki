@@ -30,6 +30,7 @@ COMMONPLACE.STYLE GUIDE
 HEALTH.NUTRITION
   ? : On nutrition
   $
+    % nutrition.png
     @ People eat meat and think they will become as strong as an ox, forgetting that the ox eats grass. | Pino Caruso
     * Guidelines
     = Adhere to a plant-based diet
@@ -49,6 +50,7 @@ HEALTH.FITNESS
 HEALTH.SLEEP
   ? : On sleep
   $
+    % sleep.png
     & I am not a fan of sleep. I consider it a waste of time and an inefficiency in Mother Nature's design. I'm currently experimenting with ways to minimise sleep without. What's most important is the quality of sleep, not quantity.
     * Guidelines
     = Go to bed at the same time every day if possible
@@ -71,10 +73,6 @@ COMMONPLACE.LIFE
     * 侘寂
     @ Nothing lasts, nothing is finished, and nothing is perfect. | Richard Powell | Wabi Sabi Simple | https://www.goodreads.com/book/show/840098.Wabi_Sabi_Simple
     & Wabi-sabi is a Japanese philosophy focused on the acceptance of transcience and imperfection in our lives. It teaches us to be content with how things are.
-
-COMMONPLACE.LEARNING
-  ? : On learning
-  $
 
 COMMONPLACE.PRODUCTIVITY
   ? : On getting things done
@@ -293,7 +291,7 @@ COMMONPLACE.WRITING
 @ COMMONPLACE.MISCELLANEA
   ? : Et cetera
   $
-    & The Miscellanea section holds notes that do not (yet) belong to any existing category within the Commonplace. Information here may be subject to regular revisions.
+    & The Miscellanea section holds notes that are yet to be categorised.
 
 MISCELLANEA.WIKIS
   ? : Sources of inspiration
@@ -303,7 +301,7 @@ MISCELLANEA.WIKIS
     = {{Nikita Voloboev's wiki|https://wiki.nikitavoloboev.xyz}}
     = {{V-OS|https://v-os.ca}} by Victor Ivanov
     = {{nomand.co|https://nomand.co/#home}} by Alexey Botkov
-    = {{Hraew|https://hraw.autophagy.io}} by Mika Naylor
+    = {{Hrǽw|https://hraw.autophagy.io}} by Mika Naylor
     = {{Gwern.net|http://www.gwern.net}}
     = {{Bayle Shanks|http://www.bayleshanks.com}}
     & There are other similarly-inspiring sites that are not necessarily wikis. Find them by clicking on the webring icon below.

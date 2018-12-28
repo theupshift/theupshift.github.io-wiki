@@ -1,32 +1,29 @@
 @ OEUVRE
   ? : Collective works
   $
-    & The Oeuvre is the grand collection of everything I have made, am making, and {{will be making|To do}}.
+    & The Oeuvre is everything I have made, am making, and will be making.
 
 + OEUVRE.ATELIER
   ? : Of the visual arts
   $
     & The Atelier houses my dabblings in visual arts.
 
-ATELIER.OWL CITY
-  ? : First attempts at design
-  $
-    & The {{Owl City|https://www.owlcitymusic.com}} posters were my first attempts at design. The idea was simple: turn an Owl City song into a poster using GIMP and some free fonts. It was once a daily thing until I started university. I cringe when I look back at these but it's also good to remind myself of how much I learned since making these.
-    % oc1.png, oc2.png, oc3.png
-
-ATELIER.PIXELATTIRE
-  ? : A pixel art log of daily outfits
-  $
-    & Pixelattire is a daily pixel art project where I document what I wear every day throughout 2018. All art is created using GIMP and is posted on a {{Tumblr page|https://pixelattire.tumblr.com}}. The custom lightweight Tumblr theme used is available {{here|https://github.com/joshavanier/pixelattire}}.
-    * Future
-    & I plan on continuing this project next year perhaps with a system that generates pixel art from text logs.
-    % pixelattire.png
-
 ATELIER.GRIDOIRE
   ? : Dotgrid illustrations
   $
     & Gridoire is a {{daily art project|https://gridoire.tumblr.com}} where each illustration is created using the {{Hundred Rabbits|https://100r.co}} vector tool {{Dotgrid|https://hundredrabbits.itch.io/dotgrid}}.
     % gridoire-masako.png, gridoire-chantal.png, gridoire-avanier.png
+
+ATELIER.INKTOBER
+  ? : Unfinished Inktober attempts
+
+ATELIER.PIXELATTIRE
+  ? : A pixel art daily outfit log
+  $
+    & Pixelattire is a {{daily pixel art project|https://pixelattire.tumblr.com}} where I document what I wear every day throughout 2018 through pixel art self-portraits. The custom Tumblr theme used is available {{here|https://github.com/joshavanier/pixelattire}}.
+    * Future
+    & I plan on continuing this project next year perhaps with a system that generates pixel art from text logs.
+    % pixelattire.png
 
 @ OEUVRE.LABORATORY
   ? : Of software experimentations
@@ -50,18 +47,31 @@ LABORATORY.LOG
     & A CLI variant and a mobile app is being planned. The CLI variant is more likely to be created soon. Mobile app development is not a possibility with my current resources.
     * Twig
     & {{Twig|https://joshavanier.github.io/twig}} is a tool for converting datetime to Log's hexadecimal format. It's useful for manual editing of log entries.
+    * Time-Travelers
+    & Here is a {{list|https://github.com/merveilles/Time-Travelers}} of other time-tracking tools built by friends.
     @ When performance is measured, performance improves. When performance is measured and reported, the rate of improvement accelerates. | Thomas Monson
 
 LABORATORY.SOMNUS
   ? : A sleep log
   $
-    & It was created to eventually provide me with insight on how much I {{sleep}}. The process is admittedly tedious yet simple. I just record the approximate time I go to bed and the exact time I wake up. The moment I wake up, I immediately check the time.
+    & Somnus was a {{sleep}} log.
     % somnus.png
+
+LABORATORY.VERRERIUM
+  ? : An experimental Pi interface
+  $
+    & The Verrerium was an experimental {{Pi|Raspberry pi}} interface built with NodeJS and the {{Blessed library|https://github.com/chjj/blessed}}. It serves as an via-SSH GUI for my {{Pi Zero W|Holly}}.
+    % verrerium.png
 
 + LABORATORY.ATTIC
   ? : A collection of random things built on the web
   $
     & The Attic holds web-related miscellanea &mdash; tools and toys built in browsers for browsers.
+
+ATTIC.ATHENAEUM
+  ? : A wiki
+  $
+    & The Athenaeum is a wiki that serves as a personal knowledge base as well as a place where people can come and learn more about the things I do.
 
 ATTIC.CLAVIER
   ? : A keycode mapping utility
@@ -90,7 +100,7 @@ ATTIC.KUMO
 ATTIC.MACIAN
   ? : A functional CSS framework
   $
-    & Macian is a functional CSS framework inspired by and based on Tachyons. It features a set of customisable utility classes.
+    & Macian is a functional CSS framework inspired by and based on {{Tachyons|https://tachyons.io}}. It features a set of customisable utility classes.
     % macian.png
 
 ATTIC.ROVARSPRAKET
@@ -98,6 +108,11 @@ ATTIC.ROVARSPRAKET
   $
     & Rövarspråket is a translator for {{Rövarspråket|https://en.wikipedia.org/wiki/R%C3%B6varspr%C3%A5ket}} (The Robber Language), a Swedish language game where consonants are doubled and an {*o*} is inserted in between while vowels remain as they are.
     # Hello world - Hohelollolo wowororloldod
+
+ATTIC.TAB
+  ? : A new tab page
+  $
+    & Tab is a very simple Chrome extension I built to replace the new tab page with one that features a random quote, reminder, or note to self.
 
 ATTIC.TERNARA
   ? : A balanced ternary library
@@ -186,66 +201,66 @@ OBSERVATORY.VIDE
   $
     & The Workshop houses projects that involve the creation of physical things &mdash; tools, toys, crafts, etc.
 
-+ WORKSHOP.HOLLY
-  ? : A Raspberry Pi computer console
+WORKSHOP.HOLLY
+  ? : A Pi computer console
   $
     & Holly is a computer console built with a {{Raspberry Pi Zero W|https://www.raspberrypi.org/products/raspberry-pi-zero-w}}, features a {{2.7-inch monochrome OLED display|https://www.adafruit.com/product/2674}}, and is powered by a 2700mAh lithium ion battery.
-    % holly.png
-    * Status
-    & The project is put on temporary stasis as I messed up the soldering of the battery circuit. In the meantime, the Pi is being used in {{another project|Rabbit}}.
+    & The project is put on hold as I messed up the soldering of the battery circuit. In the meantime, the Pi is being used in {{another project|Rabbit}}.
+    % holly.png, holly2.png
 
-HOLLY.VERRERIUM
-  ? : Experimental Pi interface
+WORKSHOP.NATALIE
+  ? : A Pi computer console
   $
-    & The Verrerium is an experimental {{Pi|Raspberry pi}} interface built with NodeJS and the {{Blessed}} interface library. It serves as an over-SSH GUI for my {{Pi Zero W|Holly}}.
-    % verrerium.png
+    & Natalie is a computer console built with a {{Pi 3 Model A+|https://www.raspberrypi.org/products/raspberry-pi-3-model-a-plus}} and a {{3.5" touchscreen display|https://shop.pimoroni.com/products/pitft-plus-480x320-3-5-tft-touchscreen-for-raspberry-pi-pi-2-and-model-a-b}}. I currently use it as a portable school computer as it is more convenient to tote around compared to a laptop.
+    % natalie.png
 
-+ WORKSHOP.RABBIT
-  ? : Experimental canvas computer
+WORKSHOP.RABBIT
+  ? : An experimental canvas computer
   $
-    & Rabbit is an experiment in what I call "subtle technology". When it is inactive, Rabbit is just a blank white canvas. But hidden within it is an LED matrix.
-    & Rabbit is powered by the same Raspberry Pi Zero W that used to power {{Holly}}.
+    & Rabbit is an experiment in "subtle technology". When inactive, it is just a blank white canvas. An {{8x4 RGB LED matrix|https://shop.pimoroni.com/products/unicorn-phat}} powered by {{Pi Zero W|https://www.raspberrypi.org/products/raspberry-pi-zero-w}} is hidden beneath the canvas.
     % rabbit.png
-    * Components
-    = {{Raspberry Pi Zero W|https://www.raspberrypi.org/products/raspberry-pi-zero-w}}
-    = {{Unicorn pHAT|https://shop.pimoroni.com/products/unicorn-phat}}
     * Applications
-    & I'm still thinking of ways to utilise the 8x4 RGB LED matrix. As of now, I've mostly used Rabbit to display a binary clock, but there may more potential applications:
+    & I'm still thinking of ways to utilise the LED matrix. As of now, I've mostly used Rabbit to display a binary clock, but there may more potential applications:
     = Weather indicator
     = Calendar
     = Server status indicator
     = Music visualiser
-    & I will be writing a small library of Unicorn scripts sometime in early 2019. Stay tuned.
 
-+ WORKSHOP.NATALIE
-  ? : Another Raspberry Pi computer console
+WORKSHOP.TERRARIUM
+  ? : Terrariums
   $
-    & Natalie is a pocket computer console built with a Raspberry Pi 3 Model A+ and a PiTFT touchscreen display.
-    & I currently use Natalie as a portable school computer as it is more convenient to tote around compared to a laptop.
-    % natalie.png
-    * Components
-    = {{Raspberry Pi 3 Model A+|https://www.raspberrypi.org/products/raspberry-pi-3-model-a-plus}}
-    = {{PiTFT Plus 480x3280 3.5" touchscreen display|https://shop.pimoroni.com/products/pitft-plus-480x320-3-5-tft-touchscreen-for-raspberry-pi-pi-2-and-model-a-b}}
+    & Terrarium projects
 
 + OEUVRE.OUBLIETTE
   ? : Of the unreleased and unfinished
   $
-    & The {*Oubliette*} is a hopefully temporary holding facility for all unfinished and unreleased projects.
+    & The {*Oubliette*} is a houses all unfinished and unreleased projects.
 
 OUBLIETTE.CARGO
   ? : A personal inventory management tool
   $
     & Cargo is an upcoming personal inventory management tool.
+    * System
     ! Metric | Description
     + Utility | How often used is an item
     + Functionality | How useful is an item
     + Rarity | How rare is an item
     + Worth | How much an item is worth
 
+OUBLIETTE.HEATHER
+  ? : A Habitica client
+  $
+    & Heather was an unreleased custom {{Habitica|https://habitica.com}} client.
+
+OUBLIETTE.LIS
+  ? : An ebook reader
+  $
+    & Lis was an unreleased ebook reader desktop app. The project was discontinued after I lost the source code to a drive crash.
+
 OUBLIETTE.QYLLIUM
   ? : A notes app
   $
-    & Qyllium is an upcoming notes app. It is inspired by the {{bullet journal|https://bulletjournal.com}} which is designed for rapid logging of tasks, notes, and events.
+    & Qyllium is an upcoming notes app inspired by the {{bullet journal|https://bulletjournal.com}}'s rapid logging system.
     % qyllium.png
 
 OUBLIETTE.RISU
@@ -253,3 +268,18 @@ OUBLIETTE.RISU
   $
     & Risu is an upcoming personal finance management tool. Ironically, as soon as I started working on this project, I simply stopped spending and eventually didn't see the need for financial management. I still plan on finishing this though.
     % risu.png
+
+OUBLIETTE.SCROLLS
+  ? : A Bible app
+  $
+    & Scrolls is a Bible app (available both as a desktop app and an Android mobile app) currently in development.
+
+OUBLIETTE.TRACKER
+  ? : A tracker
+  $
+    & Tracker is another data tracker currently in development.
+
+OUBLIETTE.WANDER
+  ? : Exploration utility
+  $
+    & Coming soon
