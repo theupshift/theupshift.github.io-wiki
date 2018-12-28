@@ -26,7 +26,7 @@
     const sim = _findSimilar(term.toUpperCase());
 
     function link (x) {
-      return `<a href="${x === 'Home' ? './index' : `./wiki/${url(x)}`}.html">${x}</a>`;
+      return `<a href="${x === 'Home' ? './index' : `./${url(x)}`}.html">${x}</a>`;
     }
 
     t.innerHTML = term;
