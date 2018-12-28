@@ -24,9 +24,7 @@ module.exports = function ({term, unde, type, line}, data) {
     const sd = data.logs[0].start;
     const ed = data.logs.slice(-1)[0].end;
 
-    let html = `
-    <div id="l">
-      <p><span title="${hoverDate(sd)}&ndash;${hoverDate(ed)}">${displayDate(sd)}&ndash;${displayDate(ed)}</span> &middot; ${data.count} logs &middot; ${data.lh.toFixed(2)} h`;
+    let html = `<div id="l"><p><span title="${hoverDate(sd)}&ndash;${hoverDate(ed)}">${displayDate(sd)}&ndash;${displayDate(ed)}</span> &middot; ${data.count} logs &middot; ${data.lh.toFixed(2)} h`;
 
     for (let i = 0, l = sv.length; i < l; i++) {
       const {h, n} = sv[i];
