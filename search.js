@@ -31,7 +31,8 @@ function url (x) {
   return x.replace(/ /g, '_').replace(/\W/g, '').trim().toLowerCase();
 }
 
-document.onkeydown = ({which}) => {
+document.onkeydown = ({which, ctrlKey}) => {
+  if (ctrlKey) return;
   which >= 65 && which <= 90 && s.focus();
   which === 27 && s.blur();
 };
