@@ -3,7 +3,7 @@
   $
     & The Oeuvre is everything I have made, am making, and will be making.
 
-+ OEUVRE.ATELIER
+@ OEUVRE.ATELIER
   ? : Of the visual arts
   $
     & The Atelier houses my dabblings in visual arts.
@@ -63,7 +63,7 @@ LABORATORY.VERRERIUM
     & The Verrerium was an experimental {{Pi|Raspberry pi}} interface built with NodeJS and the {{Blessed library|https://github.com/chjj/blessed}}. It serves as an via-SSH GUI for my {{Pi Zero W|Holly}}.
     % verrerium.png
 
-+ LABORATORY.ATTIC
+@ LABORATORY.ATTIC
   ? : A collection of random things built on the web
   $
     & The Attic holds web-related miscellanea &mdash; tools and toys built in browsers for browsers.
@@ -119,7 +119,7 @@ ATTIC.TERNARA
   $
     & Ternära is a {{JS|Javascript}} balanced ternary library that supports two-way conversions between decimal and ternary integers and arithmetic operations.
 
-+ LABORATORY.SANDBOX
+@ LABORATORY.SANDBOX
   ? : Mediums to facilitate play
   $
     & The Sandbox houses mostly-unfinished mediums for play.
@@ -178,7 +178,7 @@ SANDBOX.TEXTE
     # + - New line
     # #[Action>Link] - Action button
 
-+ OEUVRE.OBSERVATORY
+@ OEUVRE.OBSERVATORY
   ? : Of realms and universes
   $
     & The Observatory is where I ponder upon the existence of another world.
@@ -196,7 +196,7 @@ OBSERVATORY.VIDE
     & Vide is a worldbuilding tool that aids in the creation of somewhat scientifically-plausible stars, planets, moons, and planetary systems, letting users create worlds with high in-depth details like planetary orbits, atmospheric compositions, gravity, etc.
     % vide.png
 
-+ OEUVRE.WORKSHOP
+@ OEUVRE.WORKSHOP
   ? : Of the tangible
   $
     & The Workshop houses projects that involve the creation of physical things &mdash; tools, toys, crafts, etc.
@@ -231,7 +231,7 @@ WORKSHOP.TERRARIUM
   $
     & Terrarium projects
 
-+ OEUVRE.OUBLIETTE
+@ OEUVRE.OUBLIETTE
   ? : Of the unreleased and unfinished
   $
     & The {*Oubliette*} is a houses all unfinished and unreleased projects.

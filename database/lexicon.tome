@@ -1,4 +1,4 @@
-@ HOME
+HOME
   $
     & Welcome to The Athenaeum.
 
@@ -104,7 +104,7 @@ INVENTORY.EDC
     - Steel pocket knife
     - Keys
 
-+ JOSH.DEATH
+@ JOSH.DEATH
   ? : L'inévitabilité
   $
     @ You only live once, but if you do it right, once is enough. | Mae West

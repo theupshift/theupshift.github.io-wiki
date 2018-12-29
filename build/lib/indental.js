@@ -26,7 +26,7 @@ module.exports = function Indental (data) {
         type = term === 'HOME' ? 'home' : 'portal';
       } else if (term.indexOf('+') > -1) {
         term = term.slice(2);
-        type = term === 'HOME' ? 'home' : 'index';
+        type = term === 'HOME' ? 'home' : 'note';
       } else if (term.indexOf('!') > -1) {
         term = term.slice(2);
         type = term === 'HOME' ? 'home' : 'status';

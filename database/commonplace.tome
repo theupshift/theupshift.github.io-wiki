@@ -3,7 +3,7 @@
   $
     & The Commonplace is a collection of notes on various topics. These are mostly reminders and notes to self.
 
-COMMONPLACE.STYLE GUIDE
++ COMMONPLACE.STYLE GUIDE
   ? : The Athenaeum Style Guide
   $
     * Content
@@ -27,7 +27,7 @@ COMMONPLACE.STYLE GUIDE
   $
     @ Take care of your body. It's the only place you have to live. | Jim Rohn
 
-HEALTH.NUTRITION
++ HEALTH.NUTRITION
   ? : On nutrition
   $
     % nutrition.png
@@ -39,7 +39,7 @@ HEALTH.NUTRITION
     = Avoid sugar and artificial ingredients
     = Eat until you're ~80% full
 
-HEALTH.FITNESS
++ HEALTH.FITNESS
   ? : On fitness
   $
     * Guidelines
@@ -47,7 +47,7 @@ HEALTH.FITNESS
     = Walk 10K+ steps per day
     = Exercise at least twice a week
 
-HEALTH.SLEEP
++ HEALTH.SLEEP
   ? : On sleep
   $
     % sleep.png
@@ -67,14 +67,14 @@ HEALTH.SLEEP
     * Lucid Dreaming
     & Lucid dreaming might be a solution to stay productive all day. Imagine being able to plan your projects while your body rests. Unfortunately, lucid dreaming is one of the many skills I have yet to master.
 
-COMMONPLACE.LIFE
++ COMMONPLACE.LIFE
   ? : On living
   $
     * 侘寂
     @ Nothing lasts, nothing is finished, and nothing is perfect. | Richard Powell | Wabi Sabi Simple | https://www.goodreads.com/book/show/840098.Wabi_Sabi_Simple
     & Wabi-sabi is a Japanese philosophy focused on the acceptance of transcience and imperfection in our lives. It teaches us to be content with how things are.
 
-COMMONPLACE.PRODUCTIVITY
++ COMMONPLACE.PRODUCTIVITY
   ? : On getting things done
   $
     & As a creator, productivity is a major key point in my life. I'm always obsessing over how I can be more efficient at getting things done so I can get more done later on.
@@ -85,12 +85,12 @@ COMMONPLACE.PRODUCTIVITY
   $
     & We as a species are killing the planet, the only home we have. I believe its of the utmost importance that we radically shift our mindset on how we live on spaceship Earth.
 
-ENVIRONMENT.SOLARPUNK
++ ENVIRONMENT.SOLARPUNK
   ? : Because the only other options are denial or despair
   $
     @ Solarpunk is a rebellion against the structural pessimism in our late visions of how the future will be. | Connor Owens | What is Solarpunk? | https://solarpunkanarchists.com/2016/05/27/what-is-solarpunk/
 
-ENVIRONMENT.ZERO WASTE
++ ENVIRONMENT.ZERO WASTE
   ? : On the zero-waste lifestyle
   $
     = {*Refuse*} what you don't need
@@ -99,7 +99,7 @@ ENVIRONMENT.ZERO WASTE
     = {*Recycle*} what you can't refuse, reduce, or reuse
     = {*Rot*} the rest
 
-COMMONPLACE.PRIVACY
++ COMMONPLACE.PRIVACY
   ? : On privacy
   $
     = Be mindful of {*what*} you share
@@ -113,7 +113,7 @@ COMMONPLACE.PRIVACY
     * Ontological Design
     @ We design our world, while our world acts back on us and designs us. | Anne-Marie Willis | Ontological Designing | http://www.academia.edu/888457/Ontological_designing
 
-DESIGN.DIETER RAMS
++ DESIGN.DIETER RAMS
   ? : Dieter Rams
   $
     & {{Dieter Rams|https://en.wikipedia.org/wiki/Dieter_Rams}} is a German industrial designer. His design principles are a guiding influence in my work.
@@ -132,7 +132,7 @@ DESIGN.DIETER RAMS
     @ A designer who wants to achieve good design must not regard himself as an artist who, according to taste and aesthetics, is merely dressing up products with a last-minute garment. The designer must be the gestaltingenieur or creative engineer. They synthesize the completed product from the various elements that make up its design. Their work is largely rational, meaning that aesthetic decisions are justified by an understanding of the product’s purpose. | Dieter Rams
     @ ‎To use design to impress, to polish things up, to make them chic, is no design at all. This is packaging. When we concentrate on the essential elements in design, when we omit all superfluous elements, we find forms become: quiet, comfortable, understandable and, most importantly, long lasting. | Dieter Rams
 
-DESIGN.TYPOGRAPHY
++ DESIGN.TYPOGRAPHY
   ? : On typography
   $
     @ A great designer knows how to work with text not just as content, he treats text as a user interface. | Oliver Richenstein
@@ -145,7 +145,7 @@ DESIGN.TYPOGRAPHY
 @ COMMONPLACE.TECHNOLOGY
   ? : On technology
 
-+ TECHNOLOGY.SOFTWARE
+@ TECHNOLOGY.SOFTWARE
   ? : On software
   $
     & Notes on software
@@ -157,7 +157,7 @@ DESIGN.TYPOGRAPHY
     = {*Distribute*} copies of your modified versions to others
     & {{Source|https://www.gnu.org/philosophy/free-sw.html.en}}
 
-SOFTWARE.CLI
++ SOFTWARE.CLI
   ? : On CLI software
   $
     * Guidelines
@@ -189,7 +189,7 @@ SOFTWARE.CLI
     = {*Instruction scheduling*}: reorder instructions to minimise execution time
     = {*Store motion*}: move store instructions outside of loops
 
-PROGRAMMING.JAVASCRIPT
++ PROGRAMMING.JAVASCRIPT
   ? : On JavaScript
   $
     * Console
@@ -208,7 +208,7 @@ PROGRAMMING.JAVASCRIPT
     & Print array as table
     # console.table([])
 
-PROGRAMMING.R
++ PROGRAMMING.R
   ? : On R
   $
     * Guide
@@ -243,7 +243,7 @@ PROGRAMMING.R
     & Chi-Square
     # chisq.test(dataset)
 
-TECHNOLOGY.LINUX
++ TECHNOLOGY.LINUX
   ? : On Linux
   $
     * Commandline
@@ -251,7 +251,7 @@ TECHNOLOGY.LINUX
     = {*Ctrl+W*} to kill last word
     = {*Ctrl+U*} to kill line
 
-TECHNOLOGY.RASPBERRY PI
++ TECHNOLOGY.RASPBERRY PI
   ? : On the Raspberry Pi
   $
     * Security
@@ -262,7 +262,7 @@ TECHNOLOGY.RASPBERRY PI
     # sudo passwd root
     # sudo passwd --lock pi
 
-TECHNOLOGY.VERSIONING
++ TECHNOLOGY.VERSIONING
   ? : On semantic versioning
   $
     * v Major.Minor.Patch
@@ -270,13 +270,14 @@ TECHNOLOGY.VERSIONING
     = Minor: general maintenance and other minor changes
     = Patch: critical patch releases
 
-COMMONPLACE.SOCIAL
++ COMMONPLACE.LEARNING
++ COMMONPLACE.SOCIAL
   ? : On being social
   $
     @ The reward for conformity is that everyone likes you but yourself. | Rita Mae Brown
     @ Wherever there is a human being, we have an opportunity for kindness. | Seneca
 
-COMMONPLACE.WRITING
++ COMMONPLACE.WRITING
   ? : On writing
   $
     @ A sentence should contain no unnecessary words, a paragraph no unnecessary sentences, for the same reason that a drawing should have no unnecessary lines and a machine no unnecessary parts. | William Strunk Jr.
@@ -293,7 +294,7 @@ COMMONPLACE.WRITING
   $
     & The Miscellanea section holds notes that are yet to be categorised.
 
-MISCELLANEA.WIKIS
++ MISCELLANEA.WIKIS
   ? : Sources of inspiration
   $
     & This is a list of other wikis and knowledge bases that are even greater than my own. I hope you find them as immensely inspiring as I have.
