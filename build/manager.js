@@ -11,7 +11,7 @@ module.exports = function (tables, logs) {
   function _createPage (page) {
     switch (page.type) {
       case 'home': return new Home(page);
-      case 'index': return new Index(page);
+      case 'portal': return new Index(page);
       case 'status': return new Status(page, tables, logs);
       default: {
         const id = page.term;

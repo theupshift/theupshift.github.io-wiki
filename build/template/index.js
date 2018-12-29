@@ -6,7 +6,10 @@ module.exports = function ({term, unde, type, line}) {
   this.path = `./wiki/${this.filename}.html`;
 
   const _lnk = t => `<a href="./${t.toUrl()}.html">${t.toCapitalCase()}</a>`;
-  const _row = (x, y) => `<tr><td>${x}</td><td>${y}</td></tr>`;
+  const _row = (x, y) => {
+    const glyph = `<img src="../glyphs/${x.toLowerCase()}.svg">`;
+    return `<div class="p"><a href="./${x.toUrl()}.html">${glyph}</a><p>${_lnk(x)}<br>${y}</div>`;
+  };
 
   function _getChildren (n, db = database) {
     let scion = [];
@@ -22,7 +25,7 @@ module.exports = function ({term, unde, type, line}) {
     const n = name.toUpperCase();
     const scion = _getChildren(n);
     const html = scion.reduce((c, {term, line}) => {
-      return c += _row(_lnk(term), line['?']);
+      return c += _row(term, line['?']);
     }, '');
 
     return scion.length > 0 ? `<div id="i"><table>${html}</table></div>` : '';
