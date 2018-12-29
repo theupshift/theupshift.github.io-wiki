@@ -35,8 +35,8 @@ module.exports = function ({term, unde, type, line}, tables, logs) {
     ]);
   }
 
-  function _makeTables ({index, page, portal}) {
-    return _indexTable(index) + _portalTable(portal) + _pageTable(page);
+  function _makeTables ({portal, page}) {
+    return _portalTable(portal) + _pageTable(page);
   }
 
   function _undocumented () {
@@ -50,8 +50,6 @@ module.exports = function ({term, unde, type, line}, tables, logs) {
       }
     }
 
-    const sort = undoc.sort();
-    const html = sort.reduce((c, v) => c += `<li>${v}`, '');
     const total = pro.length;
     const undocTotal = undoc.length;
 
@@ -60,18 +58,17 @@ module.exports = function ({term, unde, type, line}, tables, logs) {
       `<li><p>${total}</p><span>Total Projects</span>`,
       `<li><p>${undocTotal}</p><span>Undocumented</span>`,
       `<li><p>${((total - undocTotal) / total * 100).toFixed(2)}%</p><span>Completion</span>`,
-      '</ul><div class="col">',
-      `<ul>${html}</ul></div>`
+      '</ul>'
     ]);
   }
 
   function _countTypes () {
-    const counts = {index: 0, portal: 0, page: 0}
+    const counts = {portal: 0, note: 0, page: 0}
     for (let key in tables) counts[tables[key].type]++;
     return counts;
   }
 
-  function _indexTable (index) {
+  function _portalTable (index) {
     let html = '', warnings = 0, criticals = 0;
     for (let i = 0, l = index.length; i < l; i++) {
       const {term, line} = index[i];
@@ -88,45 +85,6 @@ module.exports = function ({term, unde, type, line}, tables, logs) {
         klass = 'critical';
         criticals++;
       } else {
-        klass = 'warning';
-        warnings++;
-      }
-
-      html += `<tr class="${klass}"><td><a href="./${term.toUrl()}.html">${term.toCapitalCase()}</a><td class="ac">${_mark(x)}<td class="ac">${_mark(y)}`;
-    }
-
-    const indexes = _countTypes().index;
-    const completion = (indexes - (warnings + criticals)) / indexes * 100;
-
-    return Utils.merge([
-      '<h2>Indexes</h2><ul class="stats c4">',
-      `<li><p>${indexes}</p><span>Total</span>`,
-      `<li><p>${warnings}</p><span>Warnings</span>`,
-      `<li><p>${criticals}</p><span>Critical</span>`,
-      `<li><p>${completion.toFixed(2)}%</p><span>Completion</span>`,
-      '</ul><table><thead><tr>',
-      '<th>Index<th class="ac">Info<th class="ac">Media',
-      `<tbody>${html}</table>`
-    ]);
-  }
-
-  function _portalTable (portal) {
-    let html = '', warnings = 0, criticals = 0;
-    for (let i = 0, l = portal.length; i < l; i++) {
-      const {term, line} = portal[i];
-      const long = new Runic(line['$']).html();
-      const x = long.length > 0;
-      const y = long.indexOf('<img') > -1;
-      const CI = _calcCI(x, y);
-      const indx = _calcIndex(CI, 2);
-
-      if (indx > 0.5) continue;
-
-      let klass = '';
-      if (indx < 0.5) {
-        klass = 'critical';
-        criticals++;
-      } else if (indx < 1) {
         klass = 'warning';
         warnings++;
       }
