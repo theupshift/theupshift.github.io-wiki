@@ -5,7 +5,7 @@
   "repository": "https://github.com/joshavanier/joshavanier.github.io",
   "main": "./index.js",
   "scripts": {
-    "build-site": "node build.js && git add wiki/* && git commit -m \"Build\""
+    "build-site": "./build.sh"
   },
   "dependencies": {
     "aequirys": "^2.0.0"
