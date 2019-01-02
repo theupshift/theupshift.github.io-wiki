@@ -19,6 +19,22 @@ module.exports = function ({term, unde, type, line}) {
     ]);
   }
 
+  /**
+   * Build meta
+   * @return {string} Meta
+   */
+  this.meta = () => {
+    return Utils.merge([
+      '<meta name="author" content="Avanier">',
+      '<meta name="description" content="The Athenaeum is Josh Avanier\'s wiki">',
+      '<meta name="twitter:card" content="summary">',
+      '<meta name="twitter:site" content="@joshavanier">',
+      `<meta name="twitter:title" content="The Athenaeum">`,
+      `<meta name="twitter:description" content="The Athenaeum is Josh Avanier\'s wiki">`,
+      '<meta name="twitter:creator" content="@joshavanier">',
+      `<meta name="twitter:image" content="https://joshavanier.github.io/img/josh.png">`
+    ]);
+  }
   this.header = (mode = true) => {
     const {id, parent} = this;
     const unde = !mode ? '&mdash;'
