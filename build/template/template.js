@@ -38,13 +38,7 @@ module.exports = function ({term, unde, type, line}) {
       `<meta name="twitter:title" content="The Athenaeum">`,
       `<meta name="twitter:description" content="The Athenaeum is Josh Avanier\'s wiki">`,
       '<meta name="twitter:creator" content="@joshavanier">',
-      `<meta name="twitter:image" content="https://joshavanier.github.io/img/josh.png">`,
-      '<meta property="og:title" content="The Athenaeum">',
-      '<meta property="og:type" content="article">',
-      '<meta property="og:url" content="https://joshavanier.github.io">',
-      '<meta property="og:image" content="https://joshavanier.github.io/img/josh.png">',
-      '<meta property="og:description" content="The Athenaeum is Josh Avanier\'s wiki">',
-      '<meta property="og:site_name" content="The Athenaeum">'
+      `<meta name="twitter:image" content="https://joshavanier.github.io/img/josh.png">`
     ]);
   }
 
