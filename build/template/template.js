@@ -1,5 +1,4 @@
 const Runic = require('../lib/runic');
-const Utils = require('../lib/utils');
 
 module.exports = function ({term, unde, type, line}) {
   this.id = term.toLowerCase();
@@ -15,13 +14,13 @@ module.exports = function ({term, unde, type, line}) {
     const id = this.id;
     const css = `${mode ? '..' : '.'}/s.css`;
 
-    return Utils.merge([
+    return [
       '<!doctype html><html lang="en"><meta charset="utf-8">',
       '<meta name="viewport" content="width=device-width, initial-scale=1">',
       `<title>${this.id.toCap()}</title>`,
       this.meta(),
       `<link rel="stylesheet" href="${css}"/>`
-    ]);
+    ].join('');
   }
 
   /**
@@ -29,7 +28,7 @@ module.exports = function ({term, unde, type, line}) {
    * @return {string} Meta
    */
   this.meta = () => {
-    return Utils.merge([
+    return [
       '<meta name="author" content="Avanier">',
       '<meta name="description" content="The Athenaeum is Josh Avanier\'s wiki">',
       '<meta name="thumbnail" content="https://joshavanier.github.io/img/av.png" />',
@@ -39,7 +38,7 @@ module.exports = function ({term, unde, type, line}) {
       `<meta name="twitter:description" content="The Athenaeum is Josh Avanier\'s wiki">`,
       '<meta name="twitter:creator" content="@joshavanier">',
       `<meta name="twitter:image" content="https://joshavanier.github.io/img/josh.png">`
-    ]);
+    ].join('');
   }
 
   /**
@@ -78,13 +77,13 @@ module.exports = function ({term, unde, type, line}) {
     const rURL = 'http://webring.xxiivv.com/#random';
     const mURL = 'https://merveilles.town/@joshavanier';
 
-    return Utils.merge([
+    return [
       `<footer><a title="Kin" href="${rURL}" target="_blank">`,
       `<img id="w" src="${ring}" alt="Webring">`,
       `</a><a title="Town" href="${mURL}" target="_blank">`,
       `<img id="m" src="${merv}" alt="Merveilles">`,
       `</a><p><a href="${josh}">Josh Avanier</a> © Éternité</footer>`
-    ]);
+    ].join('');
   }
 
   /**

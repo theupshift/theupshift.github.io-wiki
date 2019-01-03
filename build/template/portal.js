@@ -1,5 +1,4 @@
 const Template = require('./template');
-const Utils = require('../lib/utils');
 
 module.exports = function ({term, unde, type, line}) {
   Template.call(this, {term, unde, type, line});
@@ -49,7 +48,7 @@ module.exports = function ({term, unde, type, line}) {
    * @return {string} Content
    */
   this.render = () => {
-    return Utils.merge([
+    return [
       this.head(),
       '<body>',
       this.header(),
@@ -57,6 +56,6 @@ module.exports = function ({term, unde, type, line}) {
       `${_index(this.id)}</div>`,
       this.footer(),
       this.search()
-    ]);
+    ].join('');
   }
 }

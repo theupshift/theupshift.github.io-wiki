@@ -1,6 +1,5 @@
 const Runic = require('../lib/runic');
 const LogSet = require('../lib/set');
-const Utils = require('../lib/utils');
 const Template = require('./template');
 
 module.exports = function ({term, unde, type, line}, tables, logs) {
@@ -57,13 +56,13 @@ module.exports = function ({term, unde, type, line}, tables, logs) {
    * @return {string} Summary
    */
   function _summary () {
-    return Utils.merge([
+    return [
       '<h2>Time-Tracker</h2><div class="r"><ul class="stats c3">',
       `<li><p>${set.lh.toFixed(2)}</p><span>Logged Hours</span>`,
       `<li><p>${set.count}</p><span>Log Entries</span>`,
       `<li><p>${set.dailyAvg().toFixed(2)}</p><span>Daily Average</span>`,
       '</ul></div>'
-    ]);
+    ].join('');
   }
 
   /**
@@ -108,7 +107,7 @@ module.exports = function ({term, unde, type, line}, tables, logs) {
     const total = _countTypes().portal;
     const completion = (total - (warnings + criticals)) / total * 100;
 
-    return Utils.merge([
+    return [
       '<h2>Portals</h2><ul class="stats c4">',
       `<li><p>${total}</p><span>Total</span>`,
       `<li><p>${warnings}</p><span>Warnings</span>`,
@@ -117,7 +116,7 @@ module.exports = function ({term, unde, type, line}, tables, logs) {
       '</ul><table><thead><tr>',
       '<th>Portal<th class="ac">Info<th class="ac">Media',
       `<tbody>${html}</table>`
-    ]);
+    ].join('');
   }
 
   /**
@@ -153,7 +152,7 @@ module.exports = function ({term, unde, type, line}, tables, logs) {
     const pages = _countTypes().page;
     const completion = (pages - (warnings + criticals)) / pages * 100;
 
-    return Utils.merge([
+    return [
       '<h2>Pages</h2><ul class="stats c4">',
       `<li><p>${pages}</p><span>Total</span>`,
       `<li><p>${warnings}</p><span>Warnings</span>`,
@@ -162,7 +161,7 @@ module.exports = function ({term, unde, type, line}, tables, logs) {
       '</ul><table><thead><tr>',
       '<th>Page<th class="ac">Info<th class="ac">Media<th class="ac">Links',
       `<tbody>${html}</table>`
-    ]);
+    ].join('');
   }
 
   /**
@@ -193,13 +192,13 @@ module.exports = function ({term, unde, type, line}, tables, logs) {
     const total = pro.length;
     const undocTotal = undoc.length;
 
-    return Utils.merge([
+    return [
       '<h2>Undocumented</h2><ul class="stats c4">',
       `<li><p>${total}</p><span>Total Projects</span>`,
       `<li><p>${undocTotal}</p><span>Undocumented</span>`,
       `<li><p>${((total - undocTotal) / total * 100).toFixed(2)}%</p><span>Completion</span>`,
       '</ul>'
-    ]);
+    ].join('');
   }
 
   /**
@@ -207,7 +206,7 @@ module.exports = function ({term, unde, type, line}, tables, logs) {
    * @return {string} Content
    */
   this.render = () => {
-    return Utils.merge([
+    return [
       this.head(),
       '<body>',
       this.header(),
@@ -216,6 +215,6 @@ module.exports = function ({term, unde, type, line}, tables, logs) {
       `${_undocumented()}</div>`,
       this.footer(),
       this.search()
-    ]);
+    ].join('');
   }
 }

@@ -1,5 +1,4 @@
 const Template = require('./template');
-const Utils = require('../lib/utils');
 const Aequirys = require('aequirys');
 
 const months = 'Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec'.split(' ');
@@ -28,13 +27,13 @@ module.exports = function ({term, unde, type, line}, data) {
     const sd = data.logs[0].start;
     const ed = data.logs.slice(-1)[0].end;
 
-    let html = Utils.merge([
+    let html = [
       '<div id="l"><p>',
       `<span title="${hoverDate(sd)}&ndash;${hoverDate(ed)}">`,
       `${displayDate(sd)}&ndash;${displayDate(ed)}</span>`,
       ` &middot; ${data.count} logs`,
       ` &middot; ${data.lh.toFixed(2)} h`
-    ]);
+    ].join('');
 
     for (let i = 0, l = sv.length; i < l; i++) {
       const {h, n} = sv[i];
@@ -49,7 +48,7 @@ module.exports = function ({term, unde, type, line}, data) {
    * @return {string} Content
    */
   this.render = () => {
-    return Utils.merge([
+    return [
       this.head(),
       '<body>',
       this.header(),
@@ -59,6 +58,6 @@ module.exports = function ({term, unde, type, line}, data) {
       '</div>',
       this.footer(),
       this.search()
-    ]);
+    ].join('');
   }
 }
