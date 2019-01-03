@@ -32,7 +32,7 @@ module.exports = function ({term, unde, type, line}) {
     return Utils.merge([
       '<meta name="author" content="Avanier">',
       '<meta name="description" content="The Athenaeum is Josh Avanier\'s wiki">',
-      '<meta name="thumbnail" content="https://joshavanier.github.io/img/josh.png" />',
+      '<meta name="thumbnail" content="https://joshavanier.github.io/img/av.png" />',
       '<meta name="twitter:card" content="summary">',
       '<meta name="twitter:site" content="@joshavanier">',
       `<meta name="twitter:title" content="The Athenaeum">`,
