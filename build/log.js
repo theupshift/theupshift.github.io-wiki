@@ -17,15 +17,11 @@ module.exports = function (file) {
     const b = epoch(e);
     const entry = new Entry({s:a, e:b, c, t});
 
-    if (sec in this.data.sec)
-      this.data.sec[sec].push(entry);
-    else
-      this.data.sec[sec] = [entry];
+    if (sec in this.data.sec) this.data.sec[sec].push(entry);
+    else this.data.sec[sec] = [entry];
 
-    if (pro in this.data.pro)
-      this.data.pro[pro].push(entry);
-    else
-      this.data.pro[pro] = [entry];
+    if (pro in this.data.pro) this.data.pro[pro].push(entry);
+    else this.data.pro[pro] = [entry];
 
     this.raw[this.raw.length] = entry;
   }

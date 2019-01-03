@@ -18,7 +18,6 @@ module.exports = class Entry {
    * @param {Date}   attr.e  - End time
    * @param {string} attr.c  - Sector
    * @param {string} attr.t  - Project
-   * @param {string} attr.d  - Description
    */
   constructor(attr) {
     Object.assign(this, attr);
@@ -29,7 +28,6 @@ module.exports = class Entry {
   get end ()     { return this.e; }
   get sector ()  { return this.c; }
   get project () { return this.t; }
-  get desc ()    { return this.d; }
 
   get wh () { return this.calcWidth(); }
   get mg () { return this.calcMargin(); }

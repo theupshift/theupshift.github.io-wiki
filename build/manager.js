@@ -1,6 +1,6 @@
 const Page = require('./template/page');
 const Home = require('./template/home');
-const Index = require('./template/index');
+const Portal = require('./template/portal');
 const Status = require('./template/status');
 const LogSet = require('./lib/set');
 
@@ -8,14 +8,21 @@ module.exports = function (tables, logs) {
   this.pages = {};
   database = tables;
 
+  /**
+   * Create a Page
+   * @param {Object} page
+   * @return {Object} Page
+   */
   function _createPage (page) {
     switch (page.type) {
       case 'home': return new Home(page);
-      case 'portal': return new Index(page);
+      case 'portal': return new Portal(page);
       case 'status': return new Status(page, tables, logs);
       default: {
         const id = page.term;
-        const data = new LogSet(id in logs.data.pro ? logs.data.pro[id] : []);
+        const data = new LogSet(
+          id in logs.data.pro ? logs.data.pro[id] : []
+        );
         return new Page(page, data);
       }
     }

@@ -19,12 +19,22 @@ module.exports = function ({term, unde, type, line}, data) {
     'AU': 'Audio'
   }
 
+  /**
+   * Build Summary
+   * @return {string} Summary
+   */
   function _summary () {
     const sv = data.sortValues();
     const sd = data.logs[0].start;
     const ed = data.logs.slice(-1)[0].end;
 
-    let html = `<div id="l"><p><span title="${hoverDate(sd)}&ndash;${hoverDate(ed)}">${displayDate(sd)}&ndash;${displayDate(ed)}</span> &middot; ${data.count} logs &middot; ${data.lh.toFixed(2)} h`;
+    let html = Utils.merge([
+      '<div id="l"><p>',
+      `<span title="${hoverDate(sd)}&ndash;${hoverDate(ed)}">`,
+      `${displayDate(sd)}&ndash;${displayDate(ed)}</span>`,
+      ` &middot; ${data.count} logs`,
+      ` &middot; ${data.lh.toFixed(2)} h`
+    ]);
 
     for (let i = 0, l = sv.length; i < l; i++) {
       const {h, n} = sv[i];
@@ -34,6 +44,10 @@ module.exports = function ({term, unde, type, line}, data) {
     return `${html}</div>`;
   }
 
+  /**
+   * Render Page
+   * @return {string} Content
+   */
   this.render = () => {
     return Utils.merge([
       this.head(),

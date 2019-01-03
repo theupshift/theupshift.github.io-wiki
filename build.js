@@ -9,7 +9,7 @@ const indexes = ['lexicon', 'oeuvre', 'monographs', 'commonplace'];
 const database = new Database(indexes);
 const logs = new Log(`${homedir}/log.json`);
 
-String.prototype.toCapitalCase = function () {
+String.prototype.toCap = function () {
   return this.charAt(0).toUpperCase() + this.slice(1).toLowerCase();
 }
 

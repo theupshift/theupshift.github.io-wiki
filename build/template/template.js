@@ -6,15 +6,20 @@ module.exports = function ({term, unde, type, line}) {
   this.parent = unde || 'Home';
   this.filename = this.id.toUrl();
 
+  /**
+   * Build document head
+   * @param {boolean=} mode - Subsurface?
+   * @return {string} Head
+   */
   this.head = (mode = true) => {
     const id = this.id;
     const css = `${mode ? '..' : '.'}/s.css`;
 
     return Utils.merge([
-      '<!doctype html><html><meta charset="utf-8">',
+      '<!doctype html><html lang="en"><meta charset="utf-8">',
       '<meta name="viewport" content="width=device-width, initial-scale=1">',
-      '<meta name="author" content="Avanier">',
-      `<title>${this.id.toCapitalCase()}</title>`,
+      `<title>${this.id.toCap()}</title>`,
+      this.meta(),
       `<link rel="stylesheet" href="${css}"/>`
     ]);
   }
@@ -34,21 +39,31 @@ module.exports = function ({term, unde, type, line}) {
       `<meta name="twitter:description" content="The Athenaeum is Josh Avanier\'s wiki">`,
       '<meta name="twitter:creator" content="@joshavanier">',
       `<meta name="twitter:image" content="https://joshavanier.github.io/img/josh.png">`,
-      '<meta property="og:title" content="The Athenaeum" />',
-      '<meta property="og:type" content="article" />',
-      '<meta property="og:url" content="https://joshavanier.github.io" />',
-      '<meta property="og:image" content="https://joshavanier.github.io/img/josh.png" />',
-      '<meta property="og:description" content="The Athenaeum is Josh Avanier\'s wiki" />',
-      '<meta property="og:site_name" content="The Athenaeum" />'
+      '<meta property="og:title" content="The Athenaeum">',
+      '<meta property="og:type" content="article">',
+      '<meta property="og:url" content="https://joshavanier.github.io">',
+      '<meta property="og:image" content="https://joshavanier.github.io/img/josh.png">',
+      '<meta property="og:description" content="The Athenaeum is Josh Avanier\'s wiki">',
+      '<meta property="og:site_name" content="The Athenaeum">'
     ]);
   }
+
+  /**
+   * Build header
+   * @param {boolean=} mode - Subsurface?
+   * @return {string} Header
+   */
   this.header = (mode = true) => {
     const {id, parent} = this;
     const unde = !mode ? '&mdash;'
-      : `<a href=".${parent === 'Home' ? './index' : `/${parent.toUrl()}`}.html">${parent.toCapitalCase()}</a>`;
-    return `<p id=u>${unde}</p><input id=s value="${id.toCapitalCase()}" spellcheck=false>`;
+      : `<a href=".${parent === 'Home' ? './index' : `/${parent.toUrl()}`}.html">${parent.toCap()}</a>`;
+    return `<p id=u>${unde}</p><input id=s value="${id.toCap()}" spellcheck=false>`;
   }
 
+  /**
+   * Build core
+   * @return {string} Core
+   */
   this.core = () => {
     return `${Object.keys(line).reduce((acc, term) => {
       const l = line[term];
@@ -56,22 +71,33 @@ module.exports = function ({term, unde, type, line}) {
     }, '')}`.trim();
   }
 
+  /**
+   * Build footer
+   * @param {boolean=} mode - Subsurface?
+   * @return {string} Footer
+   */
   this.footer = (mode = true) => {
     const josh = `.${mode ? '' : '/wiki'}/josh.html`;
-    const ring = `${mode ? '.' : ''}./img/rotonde.svg`;
-    const merv = `${mode ? '.' : ''}./img/merveilles.svg`;
-    const ringURL = 'http://webring.xxiivv.com/#random';
-    const mervURL = 'https://merveilles.town/@joshavanier';
+    const pref = mode ? '.' : '';
+    const ring = `${pref}./img/rotonde.svg`;
+    const merv = `${pref}./img/merveilles.svg`;
+    const rURL = 'http://webring.xxiivv.com/#random';
+    const mURL = 'https://merveilles.town/@joshavanier';
 
     return Utils.merge([
-      `<footer><a title="Kin" href="${ringURL}" target="_blank">`,
+      `<footer><a title="Kin" href="${rURL}" target="_blank">`,
       `<img id="w" src="${ring}" alt="Webring">`,
-      `</a><a title="Town" href="${mervURL}" target="_blank">`,
+      `</a><a title="Town" href="${mURL}" target="_blank">`,
       `<img id="m" src="${merv}" alt="Merveilles">`,
       `</a><p><a href="${josh}">Josh Avanier</a> © Éternité</footer>`
     ]);
   }
 
+  /**
+   * Link search script
+   * @param {boolean=} mode - Subsurface?
+   * @return {string} Script link
+   */
   this.search = (mode = true) => {
     return `<script src="${mode ? '.' : ''}./search.js"></script>`;
   }

@@ -4,7 +4,6 @@ module.exports = function (tables) {
   for (let id in tables) {
     const file = tables[id];
     const path = `./database/${file}.tome`;
-    const data = fs.readFileSync(path, 'utf8');
-    this.storage[file] = data;
+    this.storage[file] = fs.readFileSync(path, 'utf8');
   }
 }

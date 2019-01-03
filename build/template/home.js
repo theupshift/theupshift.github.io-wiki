@@ -7,6 +7,12 @@ module.exports = function ({term, type, line}) {
   this.filename = 'index';
   this.path = `./${this.filename}.html`;
 
+  /**
+   * Get term children
+   * @param {string} n
+   * @param {Object=} db
+   * @return {Array} Children
+   */
   function _getChildren (n, db = database) {
     let scion = [];
     for (let id in db) {
@@ -17,17 +23,35 @@ module.exports = function ({term, type, line}) {
     return scion;
   }
 
+  /**
+   * Create link
+   * @param {string} t - Term
+   * @return {string} Link
+   */
   function _link (t) {
-    return `<a href="./wiki/${t.toUrl()}.html">${t.toCapitalCase()}</a>`;
+    return `<a href="./wiki/${t.toUrl()}.html">${t.toCap()}</a>`;
   }
 
+  /**
+   * Insert item into Home Index
+   * @param {string} x - Term
+   * @param {string} y - Bref
+   * @return {string} Item
+   */
+  function _row (x, y) {
+    return `<tr><td>${x}<td>${y}`;
+  }
+
+  /**
+   * Build Home Index
+   * @param {string} name - Term
+   * @return {string} Index
+   */
   function _index (name) {
     const n = name.toUpperCase();
     const scion = _getChildren(n);
     const l = scion.length;
     let html = '';
-
-    const _row = (x, y) =>`<tr><td>${x}<td>${y}`;
 
     for (let i = 0; i < l; i++) {
       const {term, line} = scion[i];
@@ -37,6 +61,10 @@ module.exports = function ({term, type, line}) {
     return l > 0 ? `<div id="i"><table>${html}</table></div>` : '';
   }
 
+  /**
+   * Render Home page
+   * @return {string} Content
+   */
   this.render = () => {
     return Utils.merge([
       this.head(false),
