@@ -8,7 +8,7 @@ Object.assign(s, {
       a = s.value.trim();
       let u = '';
 
-      if (window.location.href.indexOf("wiki/index.html") > -1) {
+      if (window.location.href.indexOf("index.html") > -1) {
         console.log('surface')
         u = "home" === a.toLowerCase() ? "./index.html" : "./wiki/" + url(a) + ".html"
       } else {
