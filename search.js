@@ -1,38 +1,43 @@
-const s = document.getElementById('s');
-let c = s.value;
+var s = document.getElementById("s"),
+  c = s.value;
 Object.assign(s, {
-  placeholder: 'Search',
-  onkeydown: (e) => {
-    if (e.key !== 'Enter') return;
-    const v = s.value.trim();
-    if (window.location.href.indexOf('index.html') > -1) {
-      window.location.href = v.toLowerCase() === 'home' ? './index.html' : `./wiki/${url(v)}.html`;
-    } else {
-      window.location.href = v.toLowerCase() === 'home' ? '../index.html' : `./${url(v)}.html`;
+  placeholder: "Search",
+  onkeydown: function (a) {
+
+    if ("Enter" === a.key) {
+      a = s.value.trim();
+      let u = '';
+
+      if (window.location.href.indexOf("wiki/index.html") > -1) {
+        console.log('surface')
+        u = "home" === a.toLowerCase() ? "./index.html" : "./wiki/" + url(a) + ".html"
+      } else {
+        console.log('underwater')
+        u = "home" === a.toLowerCase() ? "../index.html" : "./" + url(a) + ".html"
+      }
+      window.location.href = u;
     }
   },
-  onblur: () => {
-    s.value = cap(c);
+  onblur: function() {
+    s.value = cap(c)
   },
-  onfocus: () => {
+  onfocus: function() {
     c = s.value;
     Object.assign(s, {
-      title: 'Search for a page or topic',
-      value: ''
-    });
+      title: "Search for a page or topic",
+      value: ""
+    })
   }
 });
 
-function cap (x) {
-  return x.charAt(0).toUpperCase() + x.slice(1).toLowerCase();
+function cap(a) {
+  return a[0].toUpperCase() + a.slice(1).toLowerCase()
 }
 
-function url (x) {
-  return x.replace(/ /g, '_').replace(/\W/g, '').trim().toLowerCase();
+function url(a) {
+  return a.replace(/ /g, "_").replace(/\W/g, "").trim().toLowerCase()
 }
-
-document.onkeydown = ({which, ctrlKey}) => {
-  if (ctrlKey) return;
-  which >= 65 && which <= 90 && s.focus();
-  which === 27 && s.blur();
+document.onkeydown = function(a) {
+  var b = a.which;
+  a.ctrlKey || (65 <= b && 90 >= b && s.focus(), 27 === b && s.blur())
 };
