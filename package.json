@@ -1,7 +1,7 @@
 {
   "name": "Athenaeum",
   "version": "1.0.0",
-  "description": "A log and time-tracking utility",
+  "description": "A wiki",
   "repository": "https://github.com/joshavanier/joshavanier.github.io",
   "main": "./index.js",
   "scripts": {
