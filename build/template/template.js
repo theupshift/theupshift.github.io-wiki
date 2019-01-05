@@ -50,7 +50,7 @@ module.exports = function ({term, unde, type, line}) {
     const {id, parent} = this;
     const unde = !mode ? '&mdash;'
       : `<a href=".${parent === 'Home' ? './index' : `/${parent.toUrl()}`}.html">${parent.toCap()}</a>`;
-    return `<p id=u>${unde}</p><input id=s value="${id.toCap()}" spellcheck=false>`;
+    return `<p id=u>${unde}</p><input id=s value="${id.toCap()}" spellcheck=false autocomplete=off>`;
   }
 
   /**
