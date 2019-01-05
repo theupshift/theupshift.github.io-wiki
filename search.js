@@ -8,12 +8,12 @@ Object.assign(s, {
       a = s.value.trim();
       let u = '';
 
-      if (window.location.href.indexOf("index.html") > -1) {
-        console.log('surface')
-        u = "home" === a.toLowerCase() ? "./index.html" : "./wiki/" + url(a) + ".html"
-      } else {
+      if (window.location.href.indexOf("/wiki") > -1) {
         console.log('underwater')
         u = "home" === a.toLowerCase() ? "../index.html" : "./" + url(a) + ".html"
+      } else {
+        console.log('surface')
+        u = "home" === a.toLowerCase() ? "./index.html" : "./wiki/" + url(a) + ".html"
       }
       window.location.href = u;
     }
