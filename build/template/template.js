@@ -78,11 +78,11 @@ module.exports = function ({term, unde, type, line}) {
     const mURL = 'https://merveilles.town/@joshavanier';
 
     return [
-      `<footer><a title="Kin" href="${rURL}" target="_blank">`,
+      `<footer><a title="Ring" href="${rURL}" target="_blank">`,
       `<img id="w" src="${ring}" alt="Webring">`,
       `</a><a title="Town" href="${mURL}" target="_blank">`,
       `<img id="m" src="${merv}" alt="Merveilles">`,
-      `</a><p><a href="${josh}">Josh Avanier</a> © Éternité</footer>`
+      `</a><p><a title="Josh Avanier" href="${josh}">JA</a> © 2017&ndash;${new Date().getFullYear()}</footer>`
     ].join('');
   }
 
