@@ -57,7 +57,7 @@ module.exports = function ({term, unde, type, line}, tables, logs) {
    */
   function _summary () {
     return [
-      '<h2>Time-Tracker</h2><div class="r"><ul class="stats c3">',
+      '<h2>Time-Tracker</h2><div class="r"><ul class="c3">',
       `<li><p>${set.lh.toFixed(2)}</p><span>Logged Hours</span>`,
       `<li><p>${set.count}</p><span>Log Entries</span>`,
       `<li><p>${set.dailyAvg().toFixed(2)}</p><span>Daily Average</span>`,
@@ -108,7 +108,7 @@ module.exports = function ({term, unde, type, line}, tables, logs) {
     const completion = (total - (warnings + criticals)) / total * 100;
 
     return [
-      '<h2>Portals</h2><ul class="stats c4">',
+      '<h2>Portals</h2><ul class="c4">',
       `<li><p>${total}</p><span>Total</span>`,
       `<li><p>${warnings}</p><span>Warnings</span>`,
       `<li><p>${criticals}</p><span>Critical</span>`,
@@ -153,7 +153,7 @@ module.exports = function ({term, unde, type, line}, tables, logs) {
     const completion = (pages - (warnings + criticals)) / pages * 100;
 
     return [
-      '<h2>Pages</h2><ul class="stats c4">',
+      '<h2>Pages</h2><ul class="c4">',
       `<li><p>${pages}</p><span>Total</span>`,
       `<li><p>${warnings}</p><span>Warnings</span>`,
       `<li><p>${criticals}</p><span>Critical</span>`,
@@ -193,7 +193,7 @@ module.exports = function ({term, unde, type, line}, tables, logs) {
     const undocTotal = undoc.length;
 
     return [
-      '<h2>Undocumented</h2><ul class="stats c4">',
+      '<h2>Undocumented</h2><ul class="c4">',
       `<li><p>${total}</p><span>Total Projects</span>`,
       `<li><p>${undocTotal}</p><span>Undocumented</span>`,
       `<li><p>${((total - undocTotal) / total * 100).toFixed(2)}%</p><span>Completion</span>`,
