@@ -10,16 +10,13 @@ module.exports = function ({term, unde, type, line}) {
    * @param {boolean=} mode - Subsurface?
    * @return {string} Head
    */
-  this.head = (mode = true) => {
-    const id = this.id;
-    const css = `${mode ? '..' : '.'}/s.css`;
-
+  this.head = () => {
     return [
       '<!doctype html><html lang="en"><meta charset="utf-8">',
       '<meta name="viewport" content="width=device-width, initial-scale=1">',
       `<title>${this.id.toCap()}</title>`,
       this.meta(),
-      `<link rel="stylesheet" href="${css}"/>`
+      `<link rel="stylesheet" href="../s.css"/>`
     ].join('');
   }
 
@@ -43,14 +40,12 @@ module.exports = function ({term, unde, type, line}) {
 
   /**
    * Build header
-   * @param {boolean=} mode - Subsurface?
    * @return {string} Header
    */
-  this.header = (mode = true) => {
+  this.header = () => {
     const {id, parent} = this;
-    const unde = !mode ? '&mdash;'
-      : `<a href=".${parent === 'Home' ? './index' : `/${parent.toUrl()}`}.html">${parent.toCap()}</a>`;
-    return `<p id=u>${unde}</p><input id=s value="${id.toCap()}" spellcheck=false autocomplete=off>`;
+    const unde = id === 'home' ? '&mdash;' : `<a href="./${parent === 'Home' ? 'index' : parent.toUrl()}.html">${parent.toCap()}</a>`;
+    return `<p id="u">${unde}</p><input id="s" value="${id.toCap()}" spellcheck="false" autocomplete="off">`;
   }
 
   /**
@@ -66,14 +61,12 @@ module.exports = function ({term, unde, type, line}) {
 
   /**
    * Build footer
-   * @param {boolean=} mode - Subsurface?
    * @return {string} Footer
    */
-  this.footer = (mode = true) => {
-    const josh = `.${mode ? '' : '/wiki'}/josh.html`;
-    const pref = mode ? '.' : '';
-    const ring = `${pref}./img/rotonde.svg`;
-    const merv = `${pref}./img/merveilles.svg`;
+  this.footer = () => {
+    const josh = './wiki/josh.html';
+    const ring = '../img/rotonde.svg';
+    const merv = '../img/merveilles.svg';
     const rURL = 'http://webring.xxiivv.com/#random';
     const mURL = 'https://merveilles.town/@joshavanier';
 
@@ -88,10 +81,9 @@ module.exports = function ({term, unde, type, line}) {
 
   /**
    * Link search script
-   * @param {boolean=} mode - Subsurface?
    * @return {string} Script link
    */
-  this.search = (mode = true) => {
-    return `<script src="${mode ? '.' : ''}./search.js"></script>`;
+  this.search = () => {
+    return `<script src="../search.js"></script>`;
   }
 }

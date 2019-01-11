@@ -4,7 +4,7 @@ module.exports = function ({term, type, line}) {
   Template.call(this, {term, type, line});
   this.parent = 'home';
   this.filename = 'index';
-  this.path = `./${this.filename}.html`;
+  this.path = `./wiki/${this.filename}.html`;
 
   /**
    * Get term children
@@ -28,7 +28,7 @@ module.exports = function ({term, type, line}) {
    * @return {string} Link
    */
   function _link (t) {
-    return `<a href="./wiki/${t.toUrl()}.html">${t.toCap()}</a>`;
+    return `<a href="./${t.toUrl()}.html">${t.toCap()}</a>`;
   }
 
   /**
@@ -66,15 +66,15 @@ module.exports = function ({term, type, line}) {
    */
   this.render = () => {
     return [
-      this.head(false),
+      this.head(),
       '<body>',
-      this.header(false),
+      this.header(),
       '<div id="c">',
       this.core(),
       _index(this.id),
       '</div>',
-      this.footer(false),
-      this.search(false)
+      this.footer(),
+      this.search()
     ].join('');
   }
 }
