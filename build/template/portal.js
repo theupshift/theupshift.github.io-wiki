@@ -23,12 +23,12 @@ module.exports = function ({term, unde, type, line}) {
   /**
    * Insert item to Portal index
    * @param {string} t - Term
-   * @param {string} y - Description
+   * @param {string} d - Description
    * @return {string} Item
    */
-  function _ins (t, y) {
+  function _ins (t, d) {
     const url = t.toUrl();
-    return `<p><a href="./${url}.html">${t.toCap()}</a><br>${y}`;
+    return `<a href="./${url}.html">${t.toCap()}</a>. ${d}<br>`;
   }
 
   /**

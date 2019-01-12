@@ -23,22 +23,14 @@ module.exports = function ({term, type, line}) {
   }
 
   /**
-   * Create link
-   * @param {string} t - Term
-   * @return {string} Link
-   */
-  function _link (t) {
-    return `<a href="./${t.toUrl()}.html">${t.toCap()}</a>`;
-  }
-
-  /**
    * Insert item into Home Index
-   * @param {string} x - Term
-   * @param {string} y - Bref
+   * @param {string} t - Term
+   * @param {string} b - Bref
    * @return {string} Item
    */
-  function _row (x, y) {
-    return `<tr><td>${x}<td>${y}`;
+  function _row (t, b) {
+    const url = t.toUrl();
+    return `<a href="./${url}.html">${t.toCap()}</a>. ${b}<br>`;
   }
 
   /**
@@ -54,10 +46,10 @@ module.exports = function ({term, type, line}) {
 
     for (let i = 0; i < l; i++) {
       const {term, line} = scion[i];
-      if (term !== n) html += _row(_link(term), line['?']);
+      if (term !== n) html += _row(term, line['?']);
     }
 
-    return l > 0 ? `<div id="i"><table>${html}</table></div>` : '';
+    return l > 0 ? `<div id="i">${html}</div>` : '';
   }
 
   /**
