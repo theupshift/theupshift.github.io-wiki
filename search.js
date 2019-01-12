@@ -1,7 +1,6 @@
 var s = document.getElementById("s"),
   c = s.value;
 Object.assign(s, {
-  placeholder: "Search",
   onkeydown: function (a) {
     if ("Enter" === a.key) {
       a = s.value.trim();

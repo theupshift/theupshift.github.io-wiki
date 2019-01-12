@@ -40,6 +40,7 @@ module.exports = function ({term, unde, type, line}) {
     const {id, parent} = this;
     const unde = id === 'home' ? '&mdash;' : `<a href="./${parent === 'Home' ? 'index' : parent.toUrl()}.html">${parent.toCap()}</a>`;
     return `<p id="u">${unde}</p><input id="s" value="${id.toCap()}" spellcheck="false" autocomplete="off">`;
+    return `<p id="u">${unde}<input id="s" value="${id.toCap()}" placeholder="Query" spellcheck="false" autocomplete="off">`;
   }
 
   /**
