@@ -14,7 +14,7 @@ module.exports = function ({term, unde, type, line}, tables, logs) {
    * @return {string} Mark
    */
   function _mark (x) {
-    return x ? '' : '∅';
+    return x ? '' : '&mdash;';
   }
 
   /**
@@ -57,11 +57,11 @@ module.exports = function ({term, unde, type, line}, tables, logs) {
    */
   function _summary () {
     return [
-      '<h2>Time-Tracker</h2><div class="r"><ul class="c3">',
+      '<ul class="c3">',
       `<li><p>${set.lh.toFixed(2)}</p><span>Logged Hours</span>`,
       `<li><p>${set.count}</p><span>Log Entries</span>`,
       `<li><p>${set.dailyAvg().toFixed(2)}</p><span>Daily Average</span>`,
-      '</ul></div>'
+      '</ul>'
     ].join('');
   }
 
@@ -101,7 +101,7 @@ module.exports = function ({term, unde, type, line}, tables, logs) {
         warnings++;
       }
 
-      html += `<tr class="${klass}"><td><a href="./${term.toUrl()}.html">${term.toCap()}</a><td class="ac">${_mark(x)}<td class="ac">${_mark(y)}`;
+      html += `<tr class="${klass}"><td><a href="./${term.toUrl()}.html">${term.toCap()}</a><td class="c">${_mark(x)}<td class="c">${_mark(y)}`;
     }
 
     const total = _countTypes().portal;
@@ -114,7 +114,7 @@ module.exports = function ({term, unde, type, line}, tables, logs) {
       `<li><p>${criticals}</p><span>Critical</span>`,
       `<li><p>${completion.toFixed(2)}%</p><span>Completion</span>`,
       '</ul><table><thead><tr>',
-      '<th>Portal<th class="ac">Info<th class="ac">Media',
+      '<th>Portal<th class="c">Info<th class="c">Media',
       `<tbody>${html}</table>`
     ].join('');
   }
@@ -146,7 +146,7 @@ module.exports = function ({term, unde, type, line}, tables, logs) {
         warnings++;
       }
 
-      html += `<tr class="${klass}"><td><a href="./${term.toUrl()}.html">${term.toCap()}</a><td class="ac">${_mark(x)}<td class="ac">${_mark(y)}<td class="ac">${_mark(z)}`;
+      html += `<tr class="${klass}"><td><a href="./${term.toUrl()}.html">${term.toCap()}</a><td class="c">${_mark(x)}<td class="c">${_mark(y)}<td class="c">${_mark(z)}`;
     }
 
     const pages = _countTypes().page;
@@ -159,7 +159,7 @@ module.exports = function ({term, unde, type, line}, tables, logs) {
       `<li><p>${criticals}</p><span>Critical</span>`,
       `<li><p>${completion.toFixed(2)}%</p><span>Completion</span>`,
       '</ul><table><thead><tr>',
-      '<th>Page<th class="ac">Info<th class="ac">Media<th class="ac">Links',
+      '<th>Page<th class="c">Info<th class="c">Media<th class="c">Links',
       `<tbody>${html}</table>`
     ].join('');
   }

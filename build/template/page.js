@@ -28,7 +28,7 @@ module.exports = function ({term, unde, type, line}, data) {
     const ed = data.logs.slice(-1)[0].end;
 
     let html = [
-      '<div id="l"><p>',
+      '<div id="l">',
       `<span title="${hoverDate(sd)}&ndash;${hoverDate(ed)}">`,
       `${displayDate(sd)}&ndash;${displayDate(ed)}</span>`,
       ` &middot; ${data.count} logs`,
@@ -53,8 +53,8 @@ module.exports = function ({term, unde, type, line}, data) {
       '<body>',
       this.header(),
       '<div id="c">',
-      this.core(),
       data.logs.length > 0 ? _summary() : '',
+      this.core(),
       '</div>',
       this.footer(),
       this.search()

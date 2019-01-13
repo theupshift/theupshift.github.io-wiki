@@ -28,7 +28,7 @@ module.exports = function ({term, unde, type, line}) {
    */
   function _ins (t, d) {
     const url = t.toUrl();
-    return `<a href="./${url}.html">${t.toCap()}</a>. ${d}<br>`;
+    return `<li><a href="./${url}.html">${t.toCap()}</a>`;
   }
 
   /**
@@ -40,7 +40,7 @@ module.exports = function ({term, unde, type, line}) {
     const n = t.toUpperCase();
     const c = _getChildren(n);
     const i = c.reduce((v, {term, line}) => v += _ins(term, line['?']), '');
-    return c.length > 0 ? `<div id="i">${i}</div>` : '';
+    return c.length > 0 ? `<ul class="c3">${i}</ul>` : '';
   }
 
   /**

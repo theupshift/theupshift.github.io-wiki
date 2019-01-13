@@ -30,7 +30,7 @@ module.exports = function ({term, type, line}) {
    */
   function _row (t, b) {
     const url = t.toUrl();
-    return `<a href="./${url}.html">${t.toCap()}</a>. ${b}<br>`;
+    return `<li><a href="./${url}.html">${t.toCap()}</a>`;
   }
 
   /**
@@ -49,7 +49,7 @@ module.exports = function ({term, type, line}) {
       if (term !== n) html += _row(term, line['?']);
     }
 
-    return l > 0 ? `<div id="i">${html}</div>` : '';
+    return l > 0 ? `<ul class="c3">${html}</ul>` : '';
   }
 
   /**
