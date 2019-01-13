@@ -1,46 +1,45 @@
-HOME
+@ HOME
   $
-    & Welcome to The Athenaeum.
+    & Welcome to the Athenaeum.
 
 ABOUT
   ? : About this site
   $
-    & Inspired by similar {{wikis}}, this site serves as a personal knowledge base as well as a place for people to read through and learn more about {{what I do|Oeuvre}}.
-    * Structure
-    & The {{Athenaeum}} is built on top of stripped down variants of {{Devine Lu Linvega|http://wiki.xxiivv.com/#devine+lu+linvega}}'s {{Oscean|http://wiki.xxiivv.com/#oscean}} wiki engine, {{Riven|http://wiki.xxiivv.com/#riven}} framework, and {{Indental|http://wiki.xxiivv.com/#indental}} flat-file database format. As of Y1318, the wiki features a static site generator.
-    * Design
-    & Most websites these days are saturated with unnecessary ornamentation and clutter. To deviate from that norm, I maintain a simple site design, only keeping what is essential for a pure reading experience.
-    & To reduce page weight, images are desaturated and posterised. Quality is lost but this wiki isn't meant to be a showcase portfolio.
+    & Inspired by similar {{wikis}}, the {{Athenaeum}} is a place for people to learn about {{me|Josh}} and {{what I do|Oeuvre}}. I hope to inspire others to pursue their passions and create things.
     * License
-    & You may fork and modify the Athenaeum's {{back-end code|https://github.com/joshavanier/athenaeum}} under the {{MIT|https://opensource.org/licenses/MIT}} license. The wiki content is under {{BY-NC-SA 4.0|https://creativecommons.org/licenses/by-nc-sa/4.0}}.
+    & You may fork and modify the site's {{back-end code|https://github.com/joshavanier/joshavanier.github.io}} under the {{MIT|https://opensource.org/licenses/MIT}} license. The wiki content is under {{BY-NC-SA 4.0|https://creativecommons.org/licenses/by-nc-sa/4.0}}.
 
 @ JOSH
   ? : About me
   $
-    & I'm a 21-year-old hobbyist working on a bunch of {{projects|Oeuvre}}.
+    & I am a 21-year-old hobbyist with many interests and not enough free time. Whenever I can, I work on a bunch of {{projects|Oeuvre}}.
     % josh.png
     & I currently study information technology in Thailand. Afterwards I plan on traveling the world and continuing to work on projects.
-    * Support
-    & If you'd like to help support me so I can keep making things, consider buying me a {{Ko-Fi|https://www.ko-fi.com/joshavanier}}. A little goes a long a way.
     * Contact
     & If you have comments, suggestions, questions, or just want to chat, here's how you can contact me:
     = {{Visit me at Merveilles Town|https://merveilles.town/@joshavanier}}
     = {{Find me on Twitter|https://twitter.com/joshavanier}}
+    * Support
+    & If you'd like to help support me so I can keep making things, consider buying me a {{Ko-Fi|https://www.ko-fi.com/joshavanier}}. A little goes a long a way.
 
 JOSH.GOALS
   ? : Things to accomplish
   $
-    & Here is an inconstant list of things to achieve or accomplish.
     * Daily
-    = Make at least one thing
     = Learn something new
-    = Keep a journal
     = Take a photo
-    = Create pixel art
+    = Draw something
+    = Create an entry for Pixel Dailies
+    = Create a {{Gridoire}} illustration
+    = Make one thing other than the ones mentioned above
+    = Write in your journal
     * Weekly
     = {{Blog|Monographs}} about something
     = Compose a soundtrack
     = Make a contribution to an open-source project
+    = Write a short story
+    * Fortnightly
+    = Read a book
     * Monthly
     = Develop a small game (game jam)
     * Eventually
@@ -61,37 +60,45 @@ JOSH.GOALS
 INVENTORY.NAVIRE
   ? : The primary workstation
   $
-    & Navire is a Victorian-era {{Linux}} laptop with 2GB of RAM and a 1.10 GHz processor. {{Dotfiles|https://github.com/joshavanier/dots}} are available on GitHub.
-    * Essentials
-    = WM - {{i3wm|https://i3wm.org}}
-    = Terminal - xterm, {{st|https://st.suckless.org}}
-    = Browser - {{Firefox|https://www.mozilla.org/en-US/firefox/new}}, {{surf|https://surf.suckless.org}}
-    = Text editor - {{vim|https://www.vim.org}}
-    = Music player - {{cmus|https://cmus.github.io}}
-    = Files - {{ranger|https://wiki.archlinux.org/index.php/Ranger}}
-    = Image editor - {{GIMP|https://www.gimp.org}}
-    = Music composition - {{Marabu|https://wiki.xxiivv.com/#marabu}}
-    = Vector tool - {{Dotgrid|https://wiki.xxiivv.com/#dotgrid}}
-    = Media player - {{mpv|https://wiki.archlinux.org/index.php/Mpv}}
-    = RSS - {{newsboat|https://newsboat.org}}
+    & Navire is a Victorian-era {{Linux}} laptop with 2GB of RAM and a 1.10 GHz processor. This is what I primarily use when working on {{projects|Oeuvre}}. {{Dotfiles|https://github.com/joshavanier/dots}} are available on GitHub.
     * Usage
+    & When I work, I make it a point to work offline to minimise distractions and maximise focus. I only go online if I need to look something up, download something, or share something on the Internet.
     = No idling in front of the computer
     = Focus on one task at a time
     = Only go online if necessary
+    * Essentials
+    + Browser | {{Firefox|https://www.mozilla.org/en-US/firefox/new}}, {{surf|https://surf.suckless.org}}
+    + Files | {{ranger|https://wiki.archlinux.org/index.php/Ranger}}, {{nnn|https://github.com/jarun/nnn}}
+    + Image compression | {{optipng|http://optipng.sourceforge.net}}, {{jpegoptim|https://github.com/tjko/jpegoptim}}
+    + Image editor | {{GIMP|https://www.gimp.org}}
+    + Image viewer | {{feh|https://feh.finalrewind.org}}
+    + Media player | {{mpv|https://wiki.archlinux.org/index.php/Mpv}}
+    + Metadata cleaner | {{mat|https://github.com/jubalh/MAT}}
+    + Music composition | {{Marabu|https://wiki.xxiivv.com/#marabu}}
+    + Music player | {{cmus|https://cmus.github.io}}
+    + PDF reader | {{zathura|https://wiki.archlinux.org/index.php/Zathura}}
+    + RSS reader | {{newsboat|https://newsboat.org}}
+    + Terminal | xterm, {{st|https://st.suckless.org}}
+    + Text editor | {{vim|https://www.vim.org}}
+    + Vector tool | {{Dotgrid|https://wiki.xxiivv.com/#dotgrid}}
+    + WM | {{i3wm|https://i3wm.org}}
 
 INVENTORY.ORION
   ? : The mobile workstation
   $
-    & Orion is my mobile workstation &mdash; an Android phone with Termux, letting me work with git and other {{Linux}} tools on the go.
+    & Orion is an Android phone that serves as my mobile workstation that allows me to work on the go.
     * Essentials
-    = Terminal - {{Termux|https://termux.com}}
-    = Email - {{ProtonMail|https://protonmail.com}}
-    = Reading - {{Pocket|https://getpocket.com}}
-    = Notes - {{iA Writer|https://ia.net/writer}}
-    = Social - {{Mastalab|https://mastalab.app}}
-    = Photography - {{VSCO|https://vsco.co}}
-    = Browser - {{Brave|https://brave.com}}
-    = Dimmer - {{Twilight|https://play.google.com/store/apps/details?id=com.urbandroid.lux&hl=en_US}}
+    + Browser | {{Firefox|https://www.mozilla.org/en-US/firefox/mobile}}
+    + Dimmer | {{Twilight|https://play.google.com/store/apps/details?id=com.urbandroid.lux&hl=en_US}}
+    + Email | {{ProtonMail|https://protonmail.com}}
+    + Habit Tracker | {{Habitica|https://habitica.com/static/home}}
+    + Language Learning | {{Duolingo|https://www.duolingo.com}}
+    + Notes | {{iA Writer|https://ia.net/writer}}
+    + Photography | {{VSCO|https://vsco.co}}, Snapseed
+    + Reading | {{Lithium|https://play.google.com/store/apps/details?id=com.faultexception.reader&hl=en}}, {{Pocket|https://getpocket.com}}
+    + Social Media | {{Mastalab|https://mastalab.app}}, {{Twitter Lite|https://play.google.com/store/apps/details?id=com.twitter.android.lite&hl=en_US}}
+    + Team Communication | {{Slack|https://slack.com/downloads/android}}
+    + Terminal | {{Termux|https://termux.com}}
 
 INVENTORY.EDC
   ? : Everyday carry
@@ -117,5 +124,3 @@ DEATH.MORTEM
 
 ! STATUS
   ? : Wiki status
-  $
-    & The Status page details The Athenaeum's health: pending tasks, word counts per page, missing links, etc.

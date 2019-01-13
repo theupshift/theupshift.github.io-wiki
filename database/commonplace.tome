@@ -1,7 +1,7 @@
 @ COMMONPLACE
   ? : Notes
   $
-    & The Commonplace is a collection of notes on various topics. These are mostly reminders and notes to self.
+    & The Commonplace is a collection of notes on various topics. These are mostly reminders and notes to self and thus may be poorly structured.
 
 + COMMONPLACE.STYLE GUIDE
   ? : The Athenaeum Style Guide
@@ -11,27 +11,28 @@
     = Avoid filler words
     = Check your spelling and grammar
     * Images
-    = Use images sparingly
-    = Set width to 500 px
-    = Desaturate and posterise
-    = Remove all metadata
+    % fib.png
+    = Set ratio to the Fibonacci rectangle
+    = Compress images; the smaller the file size, the better
+    = Remove metadata
     * Links
     = Each page should contain at least one internal link
     = Avoid external links that lead to "evil" sites
     = Include references wherever appropriate
-    * Et cetera
+    * Etc.
+    = No tracking scripts
+    = No advertisements
     = No memes
 
 @ COMMONPLACE.HEALTH
   ? : On health and well-being
   $
-    @ Take care of your body. It's the only place you have to live. | Jim Rohn
+    @ Take care of your body. It's the only place you have to live | Jim Rohn
 
 + HEALTH.NUTRITION
   ? : On nutrition
   $
     % nutrition.png
-    @ People eat meat and think they will become as strong as an ox, forgetting that the ox eats grass. | Pino Caruso
     * Guidelines
     = Adhere to a plant-based diet
     = Avoid foods with more than 10 ingredients
@@ -51,34 +52,40 @@
   ? : On sleep
   $
     % sleep.png
-    & I am not a fan of sleep. I consider it a waste of time and an inefficiency in Mother Nature's design. I'm currently experimenting with ways to minimise sleep without. What's most important is the quality of sleep, not quantity.
+    & I am not a fan of sleep. I see it a waste of time and an inefficiency in Mother Nature's design. I'm currently experimenting with ways to minimise sleep. Sleep quality is more important than quantity.
     * Guidelines
     = Go to bed at the same time every day if possible
     = Turn off devices 1-2 hours before sleep. Avoid blue light
-    = Write in a journal before bed to offload your thoughts
+    = Write in a journal before bed to offload thoughts
     = Avoid caffeine 4-6 hours before bed
     = Take cold showers before sleeping
     * Effects of Sleep Deficiency
-    = Reduced reliability of memory
+    = Reduced memory reliability
     = Slower thinking
-    = Reduced decision making abilities
+    = Reduced decision-making abilities
     = Poorer insight and focus
     = Exhaustion
     * Lucid Dreaming
     & Lucid dreaming might be a solution to stay productive all day. Imagine being able to plan your projects while your body rests. Unfortunately, lucid dreaming is one of the many skills I have yet to master.
+    * Noctuary
+    & I keep a dream journal to capture anything that could be of interest or inspiration in dreams. To be made available soon.
 
 + COMMONPLACE.LIFE
   ? : On living
   $
     * 侘寂
-    @ Nothing lasts, nothing is finished, and nothing is perfect. | Richard Powell | Wabi Sabi Simple | https://www.goodreads.com/book/show/840098.Wabi_Sabi_Simple
+    @ Nothing lasts, nothing is finished, and nothing is perfect | Richard Powell | Wabi Sabi Simple | https://www.goodreads.com/book/show/840098.Wabi_Sabi_Simple
     & Wabi-sabi is a Japanese philosophy focused on the acceptance of transcience and imperfection in our lives. It teaches us to be content with how things are.
+    * 生き甲斐
+    & Ikigai is the "reason for being" &mdash; things that make life worthwhile.
+    % ikigai.png
+    @ He who has a why to live can bear almost any how | Friedrich Nietzsche
 
 + COMMONPLACE.PRODUCTIVITY
   ? : On getting things done
   $
     & As a creator, productivity is a major key point in my life. I'm always obsessing over how I can be more efficient at getting things done so I can get more done later on.
-    & The best way to get more done is to work less. Eliminate the unnecessary from your list of priorities and focus on what you really have to do.
+    & The best way to get more done is to do less. Eliminate the unnecessary from your list of priorities and focus on what you really have to do.
 
 @ COMMONPLACE.ENVIRONMENT
   ? : On environmentalism
@@ -88,7 +95,7 @@
 + ENVIRONMENT.SOLARPUNK
   ? : Because the only other options are denial or despair
   $
-    @ Solarpunk is a rebellion against the structural pessimism in our late visions of how the future will be. | Connor Owens | What is Solarpunk? | https://solarpunkanarchists.com/2016/05/27/what-is-solarpunk/
+    @ Solarpunk is a rebellion against the structural pessimism in our late visions of how the future will be | Connor Owens | What is Solarpunk? | https://solarpunkanarchists.com/2016/05/27/what-is-solarpunk
 
 + ENVIRONMENT.ZERO WASTE
   ? : On the zero-waste lifestyle
@@ -109,9 +116,12 @@
 @ COMMONPLACE.DESIGN
   ? : On design
   $
-    @ Think more, design less. | Ellen Lupton
+    % golden.png
+    @ Think more, design less | Ellen Lupton
     * Ontological Design
-    @ We design our world, while our world acts back on us and designs us. | Anne-Marie Willis | Ontological Designing | http://www.academia.edu/888457/Ontological_designing
+    @ We design our world, while our world acts back on us and designs us | Anne-Marie Willis | Ontological Designing | http://www.academia.edu/888457/Ontological_designing
+    * Etc.
+    @ Clutter and confusion are not attributes of information, they are failures of design | Edward Tufte
 
 + DESIGN.DIETER RAMS
   ? : Dieter Rams
@@ -129,18 +139,20 @@
     - Good design is {*environmentally-friendly*}
     - Good design is {*as little design as possible*}
     & {{Source|https://www.vitsoe.com/us/about/good-design}}
-    @ A designer who wants to achieve good design must not regard himself as an artist who, according to taste and aesthetics, is merely dressing up products with a last-minute garment. The designer must be the gestaltingenieur or creative engineer. They synthesize the completed product from the various elements that make up its design. Their work is largely rational, meaning that aesthetic decisions are justified by an understanding of the product’s purpose. | Dieter Rams
-    @ ‎To use design to impress, to polish things up, to make them chic, is no design at all. This is packaging. When we concentrate on the essential elements in design, when we omit all superfluous elements, we find forms become: quiet, comfortable, understandable and, most importantly, long lasting. | Dieter Rams
+    * Quotes
+    @ A designer who wants to achieve good design must not regard himself as an artist who, according to taste and aesthetics, is merely dressing up products with a last-minute garment. The designer must be the gestaltingenieur or creative engineer. They synthesize the completed product from the various elements that make up its design. Their work is largely rational, meaning that aesthetic decisions are justified by an understanding of the product’s purpose.
+    @ ‎To use design to impress, to polish things up, to make them chic, is no design at all. This is packaging. When we concentrate on the essential elements in design, when we omit all superfluous elements, we find forms become: quiet, comfortable, understandable and, most importantly, long lasting.
 
 + DESIGN.TYPOGRAPHY
   ? : On typography
   $
-    @ A great designer knows how to work with text not just as content, he treats text as a user interface. | Oliver Richenstein
+    @ A great designer knows how to work with text not just as content, he treats text as a user interface | Oliver Richenstein
     * Typography Scale
     & My go-to type scale:
     # 2.6179em<br>2.0581em<br>1.618em<br>1.272em<br>1em<br>0.7862em
     * Resources
     = {{Butterick's Practical Typography|https://practicaltypography.com}}
+    = {{Diatonic Type Scale|http://ty-p.cc}}
 
 @ COMMONPLACE.TECHNOLOGY
   ? : On technology
@@ -148,7 +160,6 @@
 @ TECHNOLOGY.SOFTWARE
   ? : On software
   $
-    & Notes on software
     * The Free Software Definition
     & The freedom to...
     = {*Run*} the program as you wish, for any purpose
@@ -156,6 +167,11 @@
     = {*Redistribute*} copies so you can help your neighbour
     = {*Distribute*} copies of your modified versions to others
     & {{Source|https://www.gnu.org/philosophy/free-sw.html.en}}
+    * Semantic Versioning
+    & {*v Major.Minor.Patch*}
+    = Major: changes only during major updates
+    = Minor: general maintenance and other minor changes
+    = Patch: critical patch releases
 
 + SOFTWARE.CLI
   ? : On CLI software
@@ -262,32 +278,34 @@
     # sudo passwd root
     # sudo passwd --lock pi
 
-+ TECHNOLOGY.VERSIONING
-  ? : On semantic versioning
-  $
-    * v Major.Minor.Patch
-    = Major: changes only during major updates
-    = Minor: general maintenance and other minor changes
-    = Patch: critical patch releases
-
 + COMMONPLACE.LEARNING
+  ? : On learning
+  $
+    @ Learning never exhausts the mind | Leonardo da Vinci
+    & It's good to keep on learning new things to further extend the perimeters of our minds. But learning shouldn't be reserved for academic environments; I'd argue that learning is much better outside of school.
+    @ I consider that a man's brain originally is like a little empty attic, and you have to stock it with such furniture as you choose. [...] It is of the highest importance, therefore, not to have useless facts elbowing out the useful ones | Arthur Conan Doyle, A Study in Scarlet
+    & Curate what you learn. The world is full of information but much of it is just noise. Trivial things like celebrity birthdays and accounting are hardly worth knowing.
+    @ Knowing is not enough; we must apply. Willing is not enough; we must do | Johann Wolfgang von Goethe
+    & Knowledge should be applicable somehow in our lives in order for it to be of value.
+
 + COMMONPLACE.SOCIAL
   ? : On being social
   $
-    @ The reward for conformity is that everyone likes you but yourself. | Rita Mae Brown
-    @ Wherever there is a human being, we have an opportunity for kindness. | Seneca
+    @ The reward for conformity is that everyone likes you but yourself | Rita Mae Brown
+    @ Wherever there is a human being, we have an opportunity for kindness | Seneca
 
 + COMMONPLACE.WRITING
   ? : On writing
   $
-    @ A sentence should contain no unnecessary words, a paragraph no unnecessary sentences, for the same reason that a drawing should have no unnecessary lines and a machine no unnecessary parts. | William Strunk Jr.
-    * Story Structure
-    = Setup
-    = Complication
-    = Rising Action
-    = Meanwhile
-    = Climax
-    = Denouement
+    @ A sentence should contain no unnecessary words, a paragraph no unnecessary sentences, for the same reason that a drawing should have no unnecessary lines and a machine no unnecessary parts | William Strunk Jr.
+    * 7 C's of Effective Communication
+    = {*Clear*}: The message's goal must be clear to the recipient.
+    = {*Concise*}: The message should be brief and to the point.
+    = {*Concrete*}: The message must be solid.
+    = {*Correct*}: The message must have accurate information.
+    = {*Coherent*}: The message must be logical, its content relevant and consistent.
+    = {*Complete*}: The message must have everything the recipient may need.
+    = {*Courteous*}: Convey the message in a friendly tone.
 
 @ COMMONPLACE.MISCELLANEA
   ? : Et cetera

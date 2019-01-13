@@ -1,12 +1,43 @@
 @ OEUVRE
   ? : Collective works
   $
-    & The Oeuvre is everything I have made, am making, and will be making.
+    & The Oeuvre is all of my collective works &mdash; past, present, future.
+    % hexagram.png
 
 @ OEUVRE.ATELIER
-  ? : Of the visual arts
+  ? : Visual arts
   $
     & The Atelier houses my dabblings in visual arts.
+
+@ OEUVRE.LABORATORY
+  ? : Software experimentations
+  $
+    & The Laboratory houses various experiments with software.
+
+@ LABORATORY.ATTIC
+  ? : The Web
+  $
+    & The Attic holds web-related miscellanea &mdash; tools and toys built in browsers for browsers.
+
+@ LABORATORY.SANDBOX
+  ? : Mediums to facilitate play
+  $
+    & The Sandbox houses mostly-unfinished mediums for play.
+
+@ OEUVRE.OBSERVATORY
+  ? : Realms and universes
+  $
+    & The Observatory is where I gaze and ponder upon the unseen.
+
+@ OEUVRE.WORKSHOP
+  ? : The tangible
+  $
+    & The Workshop houses projects that involve the creation of physical things &mdash; tools, toys, crafts, etc.
+
+@ OEUVRE.OUBLIETTE
+  ? : The unreleased and unfinished
+  $
+    & The {*Oubliette*} is a houses all unfinished and unreleased projects.
 
 ATELIER.GRIDOIRE
   ? : Dotgrid illustrations
@@ -20,20 +51,20 @@ ATELIER.INKTOBER
 ATELIER.PIXELATTIRE
   ? : A pixel art daily outfit log
   $
-    & Pixelattire is a {{daily pixel art project|https://pixelattire.tumblr.com}} where I document what I wear every day throughout 2018 through pixel art self-portraits. The custom Tumblr theme used is available {{here|https://github.com/joshavanier/pixelattire}}.
+    & Pixelattire is a daily pixel art project where I document what I wear every day through pixel art self-portraits.
+    * 2018
+    & Pixelattire started in 2018 where entries were created using GIMP and posted onto a {{Tumblr page|https://pixelattire.tumblr.com}}. The custom Tumblr theme used is available {{here|https://github.com/joshavanier/pixelattire}}.
+    * 2019
+    & As of 2019, I've stopped manually creating entries and opted to a simple log system that auto-generates a small pixel sprite.
+    # DDMYY 00112233
     * Future
     & I plan on continuing this project next year perhaps with a system that generates pixel art from text logs.
     % pixelattire.png
 
-@ OEUVRE.LABORATORY
-  ? : Of software experimentations
-  $
-    & The Laboratory houses my collection of various experiments with software. The {{Cryo}} holds in-development projects. The {{Attic}} holds web-related projects.
-
 LABORATORY.EAU
   ? : A hydration log
   $
-    & Eau was a hydration log. Every time I rehydrate, I log the quantity in milliliters. The project was eventually discontinued, though I will revisit it again soon.
+    & Eau was a hydration log.
     % eau.png
 
 LABORATORY.LOG
@@ -43,13 +74,12 @@ LABORATORY.LOG
     % log.png
     & Commands are entered via a console. The app has a built-in Guide that contains a list of commands and their usage.
     & Log is available as an {{Electron|https://electronjs.org}} app for Linux and macOS and can be downloaded on itch.io.
+    @ When performance is measured, performance improves. When performance is measured and reported, the rate of improvement accelerates. | Thomas Monson
     * Future
     & A CLI variant and a mobile app is being planned. The CLI variant is more likely to be created soon. Mobile app development is not a possibility with my current resources.
-    * Twig
-    & {{Twig|https://joshavanier.github.io/twig}} is a tool for converting datetime to Log's hexadecimal format. It's useful for manual editing of log entries.
-    * Time-Travelers
-    & Here is a {{list|https://github.com/merveilles/Time-Travelers}} of other time-tracking tools built by friends.
-    @ When performance is measured, performance improves. When performance is measured and reported, the rate of improvement accelerates. | Thomas Monson
+    * See Also
+    - A {{list|https://github.com/merveilles/Time-Travelers}} of time-tracking tools by friends
+    - {{Twig|https://joshavanier.github.io/twig}}, a datetime conversion utility for Log
 
 LABORATORY.SOMNUS
   ? : A sleep log
@@ -58,71 +88,71 @@ LABORATORY.SOMNUS
     % somnus.png
 
 LABORATORY.VERRERIUM
-  ? : An experimental Pi interface
+  ? : A Pi interface
   $
-    & The Verrerium was an experimental {{Pi|Raspberry pi}} interface built with NodeJS and the {{Blessed library|https://github.com/chjj/blessed}}. It serves as an via-SSH GUI for my {{Pi Zero W|Holly}}.
+    & Verrerium was an experimental {{Pi|Raspberry pi}} interface built with NodeJS and the {{Blessed library|https://github.com/chjj/blessed}}, serving as a via-SSH GUI for {{Holly}}.
     % verrerium.png
-
-@ LABORATORY.ATTIC
-  ? : A collection of random things built on the web
-  $
-    & The Attic holds web-related miscellanea &mdash; tools and toys built in browsers for browsers.
 
 ATTIC.ATHENAEUM
   ? : A wiki
   $
     & The Athenaeum is a wiki that serves as a personal knowledge base as well as a place where people can come and learn more about the things I do.
+    * Structure
+    & The {{Athenaeum}} is built on top of stripped down variants of {{Devine Lu Linvega|http://wiki.xxiivv.com/#devine+lu+linvega}}'s {{Oscean|http://wiki.xxiivv.com/#oscean}} wiki engine, {{Riven|http://wiki.xxiivv.com/#riven}} framework, and {{Indental|http://wiki.xxiivv.com/#indental}} flat-file database format.
+    & As of 13Y18, the wiki features a static site generator. The site is locally built and pushed to GitHub whenever changes are made.
+    * Design
+    & The site is designed to be simple, featuring few elements essential for a pure reading experience. Images are desaturated and dithered to help reduce page weight. This keeps the website light and fast.
+    * Templates
+    & There are four page templates &mdash; home, page, portal, and status. Pages are either project or {{commonplace}} pages. Portals contain indexes of links to pages. The {{Status}} page contains information on the wiki's status.
+    * Build
+    # npm i
+    # npm run build-site
 
 ATTIC.CLAVIER
   ? : A keycode mapping utility
   $
-    & Clavier is a {{JS|Javascript}} keycode mapping utility.
+    & Clavier is a {{JS|Javascript}} keycode mapping utility. View it {{here|https://joshavanier.github.io/clavier}}.
     % clavier.png
 
 ATTIC.CONCENTRIC
   ? : A polar clock
   $
-    & Concentric is a polar clock inspired by and based on this {{Pen|https://codepen.io/motorlatitude/pen/uevDx}}.
+    & Concentric is a polar clock inspired by and based on this {{Pen|https://codepen.io/motorlatitude/pen/uevDx}}. View it {{here|https://joshavanier.github.io/concentric}}.
     % concentric.png
 
 ATTIC.HAIAKU
   ? : A text converter
   $
-    & Haiaku (俳悪) is a text converter that rewrites input into top-down, right-to-left fullwidth format reminiscent of haikus.
-    # 水蛙古<br>の飛池<br>音びや<br>　込　<br>　む　<br><br>-芭蕉
+    & Haiaku (俳悪) is a text converter that rewrites input into top-down, right-to-left fullwidth format reminiscent of haikus. It was built upon the request of a friend. View it {{here|https://joshavanier.github.io/haiaku}}.
+    % haiaku.png
 
 ATTIC.KUMO
   ? : A Hacker News client
   $
-    & Kumo (クモ) is a basic {{Hacker News|https://news.ycombinator.com}} client. It's very simple and only shows the top 20 stories. I made it because all I wanted from Hacker News was links to stories. Nothing else.
+    & Kumo (クモ) is a basic {{Hacker News|https://news.ycombinator.com}} client made because I only wanted links and nothing else. View it {{here|https://joshavanier.github.io/kumo}}.
     % kumo.png
 
 ATTIC.MACIAN
   ? : A functional CSS framework
   $
-    & Macian is a functional CSS framework inspired by and based on {{Tachyons|https://tachyons.io}}. It features a set of customisable utility classes.
+    & Macian is a functional CSS framework inspired by and based on {{Tachyons|https://tachyons.io}}. It features a set of customisable utility classes. Most of the things I create that use CSS for layouts use Macian or stripped down variants of it.
     % macian.png
 
 ATTIC.ROVARSPRAKET
   ? : A Rövarspråket translator
   $
-    & Rövarspråket is a translator for {{Rövarspråket|https://en.wikipedia.org/wiki/R%C3%B6varspr%C3%A5ket}} (The Robber Language), a Swedish language game where consonants are doubled and an {*o*} is inserted in between while vowels remain as they are.
+    & Rövarspråket is a translator for {{Rövarspråket|https://en.wikipedia.org/wiki/R%C3%B6varspr%C3%A5ket}} (The Robber Language), a Swedish language game where consonants are doubled and an {*o*} is inserted in between while vowels remain as they are. View it {{here|https://joshavanier.github.io/rovarspraket}}.
     # Hello world - Hohelollolo wowororloldod
 
 ATTIC.TAB
   ? : A new tab page
   $
-    & Tab is a very simple Chrome extension I built to replace the new tab page with one that features a random quote, reminder, or note to self.
+    & Tab was a simple Chrome extension that replaced the new tab page with one that features a random quote, reminder, or note to self.
 
 ATTIC.TERNARA
   ? : A balanced ternary library
   $
     & Ternära is a {{JS|Javascript}} balanced ternary library that supports two-way conversions between decimal and ternary integers and arithmetic operations.
-
-@ LABORATORY.SANDBOX
-  ? : Mediums to facilitate play
-  $
-    & The Sandbox houses mostly-unfinished mediums for play.
 
 SANDBOX.AUDELA
   ? : A text-based space exploration game
@@ -132,13 +162,13 @@ SANDBOX.AUDELA
 SANDBOX.GRYMSTORGE
   ? : An exploration game
   $
-    & Grymstorge was an unreleased {{Bitsy|https://ledoux.itch.io/bitsy}} exploration game where you explore the ruins of a subterranean fortress.
+    & Grymstorge was an unreleased {{Bitsy|https://ledoux.itch.io/bitsy}} exploration game where you explore an abandoned subterranean fortress and discover its secrets.
     % grymstorge.png
 
 SANDBOX.PORTE
   ? : A game about logic gates
   $
-    & Porte was a {{Bitsy|https://ledoux.itch.io/bitsy}} game about logic gates.
+    & Porte was an experimental {{Bitsy|https://ledoux.itch.io/bitsy}} game where you play as a robot unlocking portals by solving very simple logic gate puzzles.
     % porte.png
 
 SANDBOX.QUOIN
@@ -178,16 +208,10 @@ SANDBOX.TEXTE
     # + - New line
     # #[Action>Link] - Action button
 
-@ OEUVRE.OBSERVATORY
-  ? : Of realms and universes
-  $
-    & The Observatory is where I ponder upon the existence of another world.
-
 OBSERVATORY.MITHVAER
   ? : A worldbuilding project
   $
     & Mithvaer is a long-term worldbuilding project focused on creating a universe wherein my {{Oeuvre}} can exist.
-    & I have a separate wiki dedicated to the lore of Mithvaer which you can find {{here|https://mithvaer.github.io/#home}}.
     % mithvaer.png
 
 OBSERVATORY.VIDE
@@ -195,11 +219,6 @@ OBSERVATORY.VIDE
   $
     & Vide is a worldbuilding tool that aids in the creation of somewhat scientifically-plausible stars, planets, moons, and planetary systems, letting users create worlds with high in-depth details like planetary orbits, atmospheric compositions, gravity, etc.
     % vide.png
-
-@ OEUVRE.WORKSHOP
-  ? : Of the tangible
-  $
-    & The Workshop houses projects that involve the creation of physical things &mdash; tools, toys, crafts, etc.
 
 WORKSHOP.HOLLY
   ? : A Pi computer console
@@ -215,7 +234,7 @@ WORKSHOP.NATALIE
     % natalie.png
 
 WORKSHOP.RABBIT
-  ? : An experimental canvas computer
+  ? : An canvas computer
   $
     & Rabbit is an experiment in "subtle technology". When inactive, it is just a blank white canvas. An {{8x4 RGB LED matrix|https://shop.pimoroni.com/products/unicorn-phat}} powered by {{Pi Zero W|https://www.raspberrypi.org/products/raspberry-pi-zero-w}} is hidden beneath the canvas.
     % rabbit.png
@@ -228,13 +247,6 @@ WORKSHOP.RABBIT
 
 WORKSHOP.TERRARIUM
   ? : Terrariums
-  $
-    & Terrarium projects
-
-@ OEUVRE.OUBLIETTE
-  ? : Of the unreleased and unfinished
-  $
-    & The {*Oubliette*} is a houses all unfinished and unreleased projects.
 
 OUBLIETTE.CARGO
   ? : A personal inventory management tool
@@ -260,13 +272,13 @@ OUBLIETTE.LIS
 OUBLIETTE.QYLLIUM
   ? : A notes app
   $
-    & Qyllium is an upcoming notes app inspired by the {{bullet journal|https://bulletjournal.com}}'s rapid logging system.
+    & Qyllium is a notes app inspired by the {{bullet journal|https://bulletjournal.com}}.
     % qyllium.png
 
 OUBLIETTE.RISU
   ? : A personal finance management tool
   $
-    & Risu is an upcoming personal finance management tool. Ironically, as soon as I started working on this project, I simply stopped spending and eventually didn't see the need for financial management. I still plan on finishing this though.
+    & Risu is a personal finance management tool. Ironically, as soon as I started working on this project, I simply stopped spending and eventually didn't see the need for financial management. I still plan on finishing this though.
     % risu.png
 
 OUBLIETTE.SCROLLS
