@@ -46,7 +46,7 @@ module.exports = function ({term, type, line}) {
 
     for (let i = 0; i < l; i++) {
       const {term, line} = scion[i];
-      if (term !== n) html += _row(term, line['?']);
+      term !== n && (html += _row(term, line['?']));
     }
 
     return l > 0 ? `<ul class="c3">${html}</ul>` : '';
@@ -59,7 +59,6 @@ module.exports = function ({term, type, line}) {
   this.render = () => {
     return [
       this.head(),
-      '<body>',
       this.header(),
       '<div id="c">',
       this.core(),

@@ -50,7 +50,6 @@ module.exports = function ({term, unde, type, line}, data) {
   this.render = () => {
     return [
       this.head(),
-      '<body>',
       this.header(),
       '<div id="c">',
       data.logs.length > 0 ? _summary() : '',

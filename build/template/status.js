@@ -45,7 +45,7 @@ module.exports = function ({term, unde, type, line}, tables, logs) {
     const types = {};
     for (let key in db) {
       const {type, name} = db[key];
-      if (types[type] === undefined) types[type] = [];
+      types[type] === undefined && (types[type] = []);
       types[type][types[type].length] = db[key];
     }
     return types;
@@ -208,7 +208,6 @@ module.exports = function ({term, unde, type, line}, tables, logs) {
   this.render = () => {
     return [
       this.head(),
-      '<body>',
       this.header(),
       `<div id="c">${this.core()}`,
       `${_summary()}${_makeTables(organiseByType())}`,

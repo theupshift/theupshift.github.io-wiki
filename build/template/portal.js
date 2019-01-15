@@ -50,7 +50,6 @@ module.exports = function ({term, unde, type, line}) {
   this.render = () => {
     return [
       this.head(),
-      '<body>',
       this.header(),
       `<div id="c">${this.core()}`,
       `${_index(this.id)}</div>`,
