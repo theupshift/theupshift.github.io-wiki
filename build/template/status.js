@@ -209,9 +209,9 @@ module.exports = function ({term, unde, type, line}, tables, logs) {
     return [
       this.head(),
       this.header(),
-      `<div id="c">${this.core()}`,
+      `<main>${this.core()}`,
       `${_summary()}${_makeTables(organiseByType())}`,
-      `${_undocumented()}</div>`,
+      `${_undocumented()}</main>`,
       this.footer(),
       this.search()
     ].join('');

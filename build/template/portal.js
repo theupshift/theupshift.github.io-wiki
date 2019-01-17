@@ -51,8 +51,8 @@ module.exports = function ({term, unde, type, line}) {
     return [
       this.head(),
       this.header(),
-      `<div id="c">${this.core()}`,
-      `${_index(this.id)}</div>`,
+      `<main>${this.core()}`,
+      `${_index(this.id)}</main>`,
       this.footer(),
       this.search()
     ].join('');

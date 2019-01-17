@@ -60,10 +60,10 @@ module.exports = function ({term, type, line}) {
     return [
       this.head(),
       this.header(),
-      '<div id="c">',
+      '<main>',
       this.core(),
       _index(this.id),
-      '</div>',
+      '</main>',
       this.footer(),
       this.search()
     ].join('');

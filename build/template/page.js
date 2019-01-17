@@ -31,13 +31,12 @@ module.exports = function ({term, unde, type, line}, data) {
       '<div id="l">',
       `<span title="${hoverDate(sd)}&ndash;${hoverDate(ed)}">`,
       `${displayDate(sd)}&ndash;${displayDate(ed)}</span>`,
-      ` &middot; ${data.count} logs`,
       ` &middot; ${data.lh.toFixed(2)} h`
     ].join('');
 
     for (let i = 0, l = sv.length; i < l; i++) {
       const {h, n} = sv[i];
-      html += ` &middot; <span title="${sectors[n]}">${h.toFixed(2)} ${n}</span>`;
+      html += ` &middot; ${h.toFixed(2)} <span title="${sectors[n]}">${n}</span>`;
     }
 
     return `${html}</div>`;
@@ -51,10 +50,10 @@ module.exports = function ({term, unde, type, line}, data) {
     return [
       this.head(),
       this.header(),
-      '<div id="c">',
+      '<main>',
       data.logs.length > 0 ? _summary() : '',
       this.core(),
-      '</div>',
+      '</main>',
       this.footer(),
       this.search()
     ].join('');
