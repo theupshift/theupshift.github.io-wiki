@@ -90,18 +90,18 @@ LABORATORY.SOMNUS
 LABORATORY.VERRERIUM
   ? : A Pi interface
   $
-    & Verrerium was an experimental {{Pi|Raspberry pi}} interface built with {{NodeJS|https://nodejs.org/en}} and {{Blessed|https://github.com/chjj/blessed}}, serving as a via-SSH GUI for {{Holly}}.
+    & Verrerium was an experimental {{Pi|Raspberry pi}} interface built with {{Node.js|https://nodejs.org/en}} and {{Blessed|https://github.com/chjj/blessed}}, serving as a via-SSH GUI for {{Holly}}.
     % verrerium.png
 
 ATTIC.ATH
   ? : A wiki
   $
-    & The Ath (short for <i>Athenaeum</i>) is a wiki that serves as a personal knowledge base as well as a place where people can come and learn more about the things I do.
+    & The Ath (Athenaeum) is a wiki that serves as a personal knowledge base as well as a place where people can come and learn more about the things I do.
     * Structure
-    & The site is built on top of stripped down variants of {{Devine Lu Linvega|http://wiki.xxiivv.com/#devine+lu+linvega}}'s {{Oscean|http://wiki.xxiivv.com/#oscean}} wiki engine and {{Indental|http://wiki.xxiivv.com/#indental}} format.
-    & As of 13Y18, the wiki features a static site generator. The site is locally built and pushed to GitHub whenever changes are made.
+    & The site is built on top of stripped down variants of {{Neauoire|http://wiki.xxiivv.com/#devine+lu+linvega}}'s {{Oscean|http://wiki.xxiivv.com/#oscean}} wiki engine and {{Indental|http://wiki.xxiivv.com/#indental}} format. Pages are generated from .tome files stored in the 'db' folder.
+    & As of 13Y18, the wiki features a static site generator. The site is locally built and pushed to GitHub whenever changes are made. A {{mirror site|https://athenaeum.now.sh}} is also deployed on {{ZEIT Now|https://zeit.co/now}}.
     * Design
-    & Taking inspiration from Low-Tech Magazine's {{solar site|https://solar.lowtechmagazine.com}}, the site is designed to be simple, featuring few elements essential for a pure reading experience. Images are desaturated and dithered. The typeface is set to your browser's default. While it isn't a requirement, I try to keep each page below 100 kB (including assets). This keeps the website light and fast.
+    & Inspired by Low-Tech Magazine's {{solar site|https://solar.lowtechmagazine.com}}, the site is designed to be simple, featuring few elements essential for a pure reading experience. While it isn't a requirement, I try to keep each page below 100 kB (including assets). Images are desaturated and dithered. The typeface is set to your browser's default. This keeps the website light and fast.
     & There are no ads, tracking scripts, and popups. The only JavaScript code that runs on this site are a couple of scripts for the search functionality and the 404 page handler. Since everything is static, viewing this site with JS disabled won't be much of a hassle.
     * Templates
     & There are four page templates &mdash; home, page, portal, and status. Pages are either project or {{commonplace}} pages. Portals contain indexes of links to pages. The {{Status}} page contains information on the status of the wiki's pages and a summary of my {{time-tracking|Log}} data.
@@ -112,7 +112,7 @@ ATTIC.ATH
 ATTIC.CLAVIER
   ? : A keycode mapping utility
   $
-    & Clavier is a {{JS|Javascript}} keycode mapping utility. View it {{here|https://joshavanier.github.io/clavier}}.
+    & Clavier is a JS keycode mapping utility. View it {{here|https://joshavanier.github.io/clavier}}.
     % clavier.png
 
 ATTIC.CONCENTRIC
@@ -243,10 +243,9 @@ WORKSHOP.NATALIE
 WORKSHOP.RABBIT
   ? : An canvas computer
   $
-    & Rabbit is an experiment in "subtle technology". When inactive, it is just a blank white canvas. An {{8x4 RGB LED matrix|https://shop.pimoroni.com/products/unicorn-phat}} powered by {{Pi Zero W|https://www.raspberrypi.org/products/raspberry-pi-zero-w}} is hidden beneath the canvas.
+    & Rabbit is an experiment in "subtle technology". An {{8x4 RGB LED matrix|https://shop.pimoroni.com/products/unicorn-phat}} powered by {{Pi Zero W|https://www.raspberrypi.org/products/raspberry-pi-zero-w}} is hidden beneath the canvas. When inactive, it is just a blank white square.
     % rabbit.png
-    * Applications
-    & I'm still thinking of ways to utilise the LED matrix. As of now, I've mostly used Rabbit to display a binary clock, but there may more potential applications:
+    & I'm still thinking of ways to utilise the LED matrix. I currently use it as a binary clock, but there may be more potential applications:
     = Weather indicator
     = Calendar
     = Server status indicator
@@ -285,7 +284,7 @@ OUBLIETTE.QYLLIUM
 OUBLIETTE.RISU
   ? : A personal finance management tool
   $
-    & Risu is a personal finance management tool. Ironically, as soon as I started working on this project, I simply stopped spending and eventually didn't see the need for financial management. I still plan on finishing this though.
+    & Risu is a personal finance management tool. Ironically, as soon as I started working on this project, I simply stopped spending and eventually didn't see the need for financial management.
     % risu.png
 
 OUBLIETTE.SCROLLS
