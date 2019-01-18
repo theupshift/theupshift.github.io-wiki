@@ -1,6 +1,7 @@
 @ HOME
   $
-    & Welcome to the Athenaeum.
+    & Welcome to the {{Athenaeum|Ath}}.
+    & <i>Note: Under construction.</i>
 
 ABOUT
   ? : About this site
@@ -12,13 +13,13 @@ ABOUT
 @ JOSH
   ? : About me
   $
-    & I am a 21-year-old hobbyist with many interests and not enough free time. Whenever I can, I work on a bunch of {{projects|Oeuvre}}.
     % josh.png
-    & I currently study information technology in Thailand. Afterwards I plan on traveling the world and continuing to work on projects.
+    & I am a hobbyist working on a few {{projects|Oeuvre}} and currently studying information technology in Thailand.
     * Contact
-    & If you have comments, suggestions, questions, or just want to chat, here's how you can contact me:
+    & If you have comments, questions, suggestions, or just want to chat:
     = {{Visit me at Merveilles Town|https://merveilles.town/@joshavanier}}
     = {{Find me on Twitter|https://twitter.com/joshavanier}}
+    = {*joshavanier (at) gmail*}
     * Support
     & If you'd like to help support me so I can keep making things, consider buying me a {{Ko-Fi|https://www.ko-fi.com/joshavanier}}. A little goes a long a way.
 

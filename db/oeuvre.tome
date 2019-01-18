@@ -1,7 +1,7 @@
 @ OEUVRE
   ? : Collective works
   $
-    & The Oeuvre is all of my collective works &mdash; past, present, future.
+    & My collective works &mdash; passé, présent, futur.
     % hexagram.png
 
 @ OEUVRE.ATELIER
@@ -17,7 +17,7 @@
 @ LABORATORY.ATTIC
   ? : The Web
   $
-    & The Attic holds web-related miscellanea &mdash; tools and toys built in browsers for browsers.
+    & The Attic holds web-related miscellanea.
 
 @ LABORATORY.SANDBOX
   ? : Mediums to facilitate play
@@ -90,20 +90,21 @@ LABORATORY.SOMNUS
 LABORATORY.VERRERIUM
   ? : A Pi interface
   $
-    & Verrerium was an experimental {{Pi|Raspberry pi}} interface built with NodeJS and the {{Blessed library|https://github.com/chjj/blessed}}, serving as a via-SSH GUI for {{Holly}}.
+    & Verrerium was an experimental {{Pi|Raspberry pi}} interface built with {{NodeJS|https://nodejs.org/en}} and {{Blessed|https://github.com/chjj/blessed}}, serving as a via-SSH GUI for {{Holly}}.
     % verrerium.png
 
-ATTIC.ATHENAEUM
+ATTIC.ATH
   ? : A wiki
   $
-    & The Athenaeum is a wiki that serves as a personal knowledge base as well as a place where people can come and learn more about the things I do.
+    & The Ath (short for <i>Athenaeum</i>) is a wiki that serves as a personal knowledge base as well as a place where people can come and learn more about the things I do.
     * Structure
-    & The {{Athenaeum}} is built on top of stripped down variants of {{Devine Lu Linvega|http://wiki.xxiivv.com/#devine+lu+linvega}}'s {{Oscean|http://wiki.xxiivv.com/#oscean}} wiki engine, {{Riven|http://wiki.xxiivv.com/#riven}} framework, and {{Indental|http://wiki.xxiivv.com/#indental}} flat-file database format.
+    & The site is built on top of stripped down variants of {{Devine Lu Linvega|http://wiki.xxiivv.com/#devine+lu+linvega}}'s {{Oscean|http://wiki.xxiivv.com/#oscean}} wiki engine and {{Indental|http://wiki.xxiivv.com/#indental}} format.
     & As of 13Y18, the wiki features a static site generator. The site is locally built and pushed to GitHub whenever changes are made.
     * Design
-    & The site is designed to be simple, featuring few elements essential for a pure reading experience. Images are desaturated and dithered to help reduce page weight. This keeps the website light and fast.
+    & Taking inspiration from Low-Tech Magazine's {{solar site|https://solar.lowtechmagazine.com}}, the site is designed to be simple, featuring few elements essential for a pure reading experience. Images are desaturated and dithered. The typeface is set to your browser's default. While it isn't a requirement, I try to keep each page below 100 kB (including assets). This keeps the website light and fast.
+    & There are no ads, tracking scripts, and popups. The only JavaScript code that runs on this site are a couple of scripts for the search functionality and the 404 page handler. Since everything is static, viewing this site with JS disabled won't be much of a hassle.
     * Templates
-    & There are four page templates &mdash; home, page, portal, and status. Pages are either project or {{commonplace}} pages. Portals contain indexes of links to pages. The {{Status}} page contains information on the wiki's status.
+    & There are four page templates &mdash; home, page, portal, and status. Pages are either project or {{commonplace}} pages. Portals contain indexes of links to pages. The {{Status}} page contains information on the status of the wiki's pages and a summary of my {{time-tracking|Log}} data.
     * Build
     # npm i
     # npm run build-site
@@ -147,7 +148,7 @@ ATTIC.ROVARSPRAKET
 ATTIC.TAB
   ? : A new tab page
   $
-    & Tab was a simple Chrome extension that replaced the new tab page with one that features a random quote, reminder, or note to self.
+    & Tab was a simple Chromium extension that replaced the new tab page with one that features a random quote, reminder, or note to self.
 
 ATTIC.TERNARA
   ? : A balanced ternary library
@@ -158,6 +159,12 @@ SANDBOX.AUDELA
   ? : A text-based space exploration game
   $
     & Audela is an upcoming text-based space exploration game where you can roam around a procedurally-generated galaxy.
+
+SANDBOX.DOIRF
+  ? : 7x7 DF tileset
+  $
+    & Doirf is a 7x7 tileset for {{Dwarf Fortress|http://www.bay12games.com/dwarves}}. Download it {{here|https://github.com/joshavanier/doirf}}.
+    % doirf.png
 
 SANDBOX.GRYMSTORGE
   ? : An exploration game

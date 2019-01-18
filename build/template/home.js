@@ -2,7 +2,7 @@ const Template = require('./template');
 
 module.exports = function ({term, type, line}) {
   Template.call(this, {term, type, line});
-  this.parent = 'home';
+  this.root = 'home';
   this.filename = 'index';
   this.path = `./wiki/${this.filename}.html`;
 

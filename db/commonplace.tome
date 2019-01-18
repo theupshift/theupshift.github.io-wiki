@@ -8,17 +8,14 @@
   $
     * Content
     = Be concise but maintain clarity
-    = Avoid filler words
-    = Check your spelling and grammar
+    = Each page should have at least one internal link
+    = Avoid external links that lead to "evil" sites
+    = Include references wherever appropriate
     * Images
     % fib.png
     = Set ratio to the Fibonacci rectangle
     = Compress images; the smaller the file size, the better
     = Remove metadata
-    * Links
-    = Each page should contain at least one internal link
-    = Avoid external links that lead to "evil" sites
-    = Include references wherever appropriate
     * Etc.
     = No tracking scripts
     = No advertisements
@@ -204,68 +201,6 @@
     = {*Dead store elimination*}: remove stores when they're never referenced again
     = {*Instruction scheduling*}: reorder instructions to minimise execution time
     = {*Store motion*}: move store instructions outside of loops
-
-+ PROGRAMMING.JAVASCRIPT
-  ? : On JavaScript
-  $
-    * Console
-    & Group logs
-    # console.group("Chest")
-    # console.log("Treasure")
-    # console.groupEnd("Chest")
-    & Counter
-    # console.count("Counter") // 1
-    # console.count("Counter") // 2
-    # console.countReset("Counter") // undefined
-    # console.count("Counter") // 1
-    & Timer
-    # console.time("Timer")
-    # console.timeEnd("Timer")
-    & Print array as table
-    # console.table([])
-
-+ PROGRAMMING.R
-  ? : On R
-  $
-    * Guide
-    & Creating variables
-    # egg<-5
-    & View dataframe
-    # str(dataset)
-    & Concatenate
-    # egg<-c(1, 2) // [1] 1 2
-    & Create a table
-    # egg<-table(dataset$variable)
-    & Stem and leaf plot
-    # stem(dataset$variable)
-    & Histogram
-    # hist(dataset$variable)
-    & Bar graph
-    # egg<-table(dataset$variable)
-    # barplot(egg)
-    & Pie chart
-    # pie(egg)
-    & Scatter plot
-    # plot(dataset$var1,dataset$var2)
-    & Measures of central tendency
-    # mean(c[1,2,3])
-    # median(c[1,2,3])
-    & Correlation
-    # cor.test(dataset$var1,dataset$var2)
-    & Correlations and significance test
-    # corr.test(dataset[,x:y])
-    & Regression model
-    # lm(var1~var2,data=dataset)
-    & Chi-Square
-    # chisq.test(dataset)
-
-+ TECHNOLOGY.LINUX
-  ? : On Linux
-  $
-    * Commandline
-    = {*Ctrl+R*} to search through command history
-    = {*Ctrl+W*} to kill last word
-    = {*Ctrl+U*} to kill line
 
 + TECHNOLOGY.RASPBERRY PI
   ? : On the Raspberry Pi

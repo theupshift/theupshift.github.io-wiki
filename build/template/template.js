@@ -2,7 +2,7 @@ const Runic = require('../lib/runic');
 
 module.exports = function ({term, unde, type, line}) {
   this.id = term.toLowerCase();
-  this.parent = unde || 'Home';
+  this.root = unde || 'Home';
   this.filename = this.id.toUrl();
 
   /**
@@ -35,10 +35,10 @@ module.exports = function ({term, unde, type, line}) {
    * @return {string} Header
    */
   this.header = () => {
-    const {id, parent} = this;
+    const {id, root} = this;
     const unde = id === 'home' ? '&mdash;' : `<a href="./${
-      parent === 'Home' ? 'index' : parent.toUrl()
-    }.html">${parent.toCap()}</a>`;
+      root === 'Home' ? 'index' : root.toUrl()
+    }.html">${root.toCap()}</a>`;
     return `<p id="u">${unde}<input id="s" value="${id.toCap()}" placeholder="Query" spellcheck="false" autocomplete="off">`;
   }
 
