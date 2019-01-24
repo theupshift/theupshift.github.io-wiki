@@ -14,7 +14,7 @@ module.exports = function ({term, unde, type, line}, tables, logs) {
    * @return {string} Mark
    */
   function _mark (x) {
-    return x ? '&#9679;' : '&#9675;';
+    return x ? '＋' : '－';
   }
 
   /**
@@ -59,7 +59,7 @@ module.exports = function ({term, unde, type, line}, tables, logs) {
     return [
       '<ul class="x">',
       `<li><b>${set.lh.toFixed(2)}</b> hours`,
-      `<li><b>${set.count}</b> entries`,
+      `<li><b>${set.count}</b> logs`,
       `<li><b>${set.dailyAvg().toFixed(2)}</b> daily avg`,
       _undocumented(),
       '</ul>'
@@ -82,7 +82,7 @@ module.exports = function ({term, unde, type, line}, tables, logs) {
    * @return {string} Table
    */
   function _portalTable (portals) {
-    let html = '', warnings = 0, criticals = 0;
+    let html = '', todo = 0;
     for (let i = 0, l = portals.length; i < l; i++) {
       const {term, line} = portals[i];
       const long = new Runic(line['$']).html();
@@ -92,21 +92,21 @@ module.exports = function ({term, unde, type, line}, tables, logs) {
       const indx = _calcIndex(CI, 2);
 
       if (indx > 0.5) continue;
-      indx < 0.5 ? (criticals++) : (warnings++);
+      todo++;
 
       html += `<li>${_mark(x)}${_mark(y)} <a href="./${term.toUrl()}.html">${term.toCap()}</a></li>`;
     }
 
     const total = _countTypes().portal;
-    const completion = (total - (warnings + criticals)) / total * 100;
+    const completion = (total - todo) / total * 100;
 
     return [
-      '<h2>Portals</h2><ul class="y">',
-      `<li><b>${total}</b> Total`,
-      `<li><b>${warnings}</b> Warnings`,
-      `<li><b>${criticals}</b> Critical`,
-      `<li><b>${completion.toFixed(2)}%</b> Complete`,
-      `</ul><ul class="x">${html}</ul>`
+      '<h2>Portals</h2><ul class="x">',
+      `<li><b>${total}</b> Σ`,
+      `<li><b>${todo}</b> unfini`,
+      `<li><b>${completion.toFixed(2)}%</b> fini`,
+      '</ul><p><b>Key:</b> info, media',
+      `<ul class="x">${html}</ul>`
     ].join('');
   }
 
@@ -116,7 +116,7 @@ module.exports = function ({term, unde, type, line}, tables, logs) {
    * @return {string} Table
    */
   function _pageTable (page) {
-    let html = '', warnings = 0, criticals = 0;
+    let html = '', todo = 0;
     for (let i = 0, l = page.length; i < l; i++) {
       const {term, line} = page[i];
       const long = new Runic(line['$']).html();
@@ -127,21 +127,20 @@ module.exports = function ({term, unde, type, line}, tables, logs) {
       const indx = _calcIndex(CI, 3);
 
       if (indx > 0.7) continue;
-
-      indx < 0.5 ? (criticals++) : (warnings++);
+      todo++;
 
       html += `<li>${_mark(x)}${_mark(y)}${_mark(z)} <a href="./${term.toUrl()}.html">${term.toCap()}</a></li>`;
     }
 
     const pages = _countTypes().page;
-    const completion = (pages - (warnings + criticals)) / pages * 100;
+    const completion = (pages - todo) / pages * 100;
 
     return [
-      '<h2>Pages</h2><ul class="y">',
-      `<li><b>${pages}</b> total`,
-      `<li><b>${warnings}</b> warnings`,
-      `<li><b>${criticals}</b> critical`,
-      `<li><b>${completion.toFixed(2)}%</b> complete`,
+      '<h2>Pages</h2><ul class="x">',
+      `<li><b>${pages}</b> Σ`,
+      `<li><b>${todo}</b> unfini`,
+      `<li><b>${completion.toFixed(2)}%</b> fini`,
+      '</ul><p><b>Key:</b> info, media, links',
       `</ul><ul class="x">${html}</ul>`
     ].join('');
   }
@@ -177,7 +176,7 @@ module.exports = function ({term, unde, type, line}, tables, logs) {
     return [
       `<li><b>${total}</b> projects`,
       `<li><b>${undocTotal}</b> missing`,
-      `<li><b>${((total - undocTotal) / total * 100).toFixed(2)}%</b> complete`
+      `<li><b>${((total - undocTotal) / total * 100).toFixed(2)}%</b> fini`
     ].join('');
   }
 
