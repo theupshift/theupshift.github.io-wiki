@@ -49,7 +49,7 @@ module.exports = function ({term, type, line}) {
       term !== n && (html += _row(term, line['?']));
     }
 
-    return l > 0 ? `<ul class="c3">${html}</ul>` : '';
+    return l > 0 ? `<ul class="x">${html}</ul>` : '';
   }
 
   /**
