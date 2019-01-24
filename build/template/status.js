@@ -14,7 +14,7 @@ module.exports = function ({term, unde, type, line}, tables, logs) {
    * @return {string} Mark
    */
   function _mark (x) {
-    return x ? '' : '&mdash;';
+    return x ? '&#9679;' : '&#9675;';
   }
 
   /**
@@ -57,10 +57,11 @@ module.exports = function ({term, unde, type, line}, tables, logs) {
    */
   function _summary () {
     return [
-      '<ul class="c3">',
-      `<li><p>${set.lh.toFixed(2)}</p><span>Logged Hours</span>`,
-      `<li><p>${set.count}</p><span>Log Entries</span>`,
-      `<li><p>${set.dailyAvg().toFixed(2)}</p><span>Daily Average</span>`,
+      '<ul class="x">',
+      `<li><b>${set.lh.toFixed(2)}</b> hours`,
+      `<li><b>${set.count}</b> entries`,
+      `<li><b>${set.dailyAvg().toFixed(2)}</b> daily avg`,
+      _undocumented(),
       '</ul>'
     ].join('');
   }
@@ -91,31 +92,21 @@ module.exports = function ({term, unde, type, line}, tables, logs) {
       const indx = _calcIndex(CI, 2);
 
       if (indx > 0.5) continue;
+      indx < 0.5 ? (criticals++) : (warnings++);
 
-      let klass = '';
-      if (indx < 0.5) {
-        klass = 'critical';
-        criticals++;
-      } else {
-        klass = 'warning';
-        warnings++;
-      }
-
-      html += `<tr class="${klass}"><td><a href="./${term.toUrl()}.html">${term.toCap()}</a><td class="c">${_mark(x)}<td class="c">${_mark(y)}`;
+      html += `<li>${_mark(x)}${_mark(y)} <a href="./${term.toUrl()}.html">${term.toCap()}</a></li>`;
     }
 
     const total = _countTypes().portal;
     const completion = (total - (warnings + criticals)) / total * 100;
 
     return [
-      '<h2>Portals</h2><ul class="c4">',
-      `<li><p>${total}</p><span>Total</span>`,
-      `<li><p>${warnings}</p><span>Warnings</span>`,
-      `<li><p>${criticals}</p><span>Critical</span>`,
-      `<li><p>${completion.toFixed(2)}%</p><span>Completion</span>`,
-      '</ul><table><thead><tr>',
-      '<th>Portal<th class="c">Info<th class="c">Media',
-      `<tbody>${html}</table>`
+      '<h2>Portals</h2><ul class="y">',
+      `<li><b>${total}</b> Total`,
+      `<li><b>${warnings}</b> Warnings`,
+      `<li><b>${criticals}</b> Critical`,
+      `<li><b>${completion.toFixed(2)}%</b> Complete`,
+      `</ul><ul class="x">${html}</ul>`
     ].join('');
   }
 
@@ -137,30 +128,21 @@ module.exports = function ({term, unde, type, line}, tables, logs) {
 
       if (indx > 0.7) continue;
 
-      let klass = '';
-      if (indx < 0.5) {
-        klass = 'critical';
-        criticals++;
-      } else if (indx < 1) {
-        klass = 'warning';
-        warnings++;
-      }
+      indx < 0.5 ? (criticals++) : (warnings++);
 
-      html += `<tr class="${klass}"><td><a href="./${term.toUrl()}.html">${term.toCap()}</a><td class="c">${_mark(x)}<td class="c">${_mark(y)}<td class="c">${_mark(z)}`;
+      html += `<li>${_mark(x)}${_mark(y)}${_mark(z)} <a href="./${term.toUrl()}.html">${term.toCap()}</a></li>`;
     }
 
     const pages = _countTypes().page;
     const completion = (pages - (warnings + criticals)) / pages * 100;
 
     return [
-      '<h2>Pages</h2><ul class="c4">',
-      `<li><p>${pages}</p><span>Total</span>`,
-      `<li><p>${warnings}</p><span>Warnings</span>`,
-      `<li><p>${criticals}</p><span>Critical</span>`,
-      `<li><p>${completion.toFixed(2)}%</p><span>Completion</span>`,
-      '</ul><table><thead><tr>',
-      '<th>Page<th class="c">Info<th class="c">Media<th class="c">Links',
-      `<tbody>${html}</table>`
+      '<h2>Pages</h2><ul class="y">',
+      `<li><b>${pages}</b> total`,
+      `<li><b>${warnings}</b> warnings`,
+      `<li><b>${criticals}</b> critical`,
+      `<li><b>${completion.toFixed(2)}%</b> complete`,
+      `</ul><ul class="x">${html}</ul>`
     ].join('');
   }
 
@@ -193,11 +175,9 @@ module.exports = function ({term, unde, type, line}, tables, logs) {
     const undocTotal = undoc.length;
 
     return [
-      '<h2>Undocumented</h2><ul class="c4">',
-      `<li><p>${total}</p><span>Total Projects</span>`,
-      `<li><p>${undocTotal}</p><span>Undocumented</span>`,
-      `<li><p>${((total - undocTotal) / total * 100).toFixed(2)}%</p><span>Completion</span>`,
-      '</ul>'
+      `<li><b>${total}</b> projects`,
+      `<li><b>${undocTotal}</b> missing`,
+      `<li><b>${((total - undocTotal) / total * 100).toFixed(2)}%</b> complete`
     ].join('');
   }
 
@@ -211,7 +191,7 @@ module.exports = function ({term, unde, type, line}, tables, logs) {
       this.header(),
       `<main>${this.core()}`,
       `${_summary()}${_makeTables(organiseByType())}`,
-      `${_undocumented()}</main>`,
+      '</main>',
       this.footer(),
       this.search()
     ].join('');
