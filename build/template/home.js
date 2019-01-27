@@ -29,8 +29,7 @@ module.exports = function ({term, type, line}) {
    * @return {string} Item
    */
   function _row (t, b) {
-    const url = t.toUrl();
-    return `<li><a href="./${url}.html">${t.toCap()}</a>`;
+    return `<a href="${t.toUrl()}.html">${t.toCap()}</a><br>`;
   }
 
   /**
@@ -49,7 +48,7 @@ module.exports = function ({term, type, line}) {
       term !== n && (html += _row(term, line['?']));
     }
 
-    return l > 0 ? `<ul class="x">${html}</ul>` : '';
+    return l > 0 ? `<p class="x">${html}` : '';
   }
 
   /**

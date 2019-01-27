@@ -57,12 +57,11 @@ module.exports = function ({term, unde, type, line}, tables, logs) {
    */
   function _summary () {
     return [
-      '<ul class="x">',
-      `<li><b>${set.lh.toFixed(2)}</b> hours`,
-      `<li><b>${set.count}</b> logs`,
-      `<li><b>${set.dailyAvg().toFixed(2)}</b> daily avg`,
-      _undocumented(),
-      '</ul>'
+      '<p class="x">',
+      `<b>${s.lh.toFixed(2)}</b> hours<br>`,
+      `<b>${s.count}</b> logs<br>`,
+      `<b>${s.dailyAvg().toFixed(2)}</b> daily avg<br>`,
+      `${_undoc()}</p>`
     ].join('');
   }
 
@@ -94,19 +93,19 @@ module.exports = function ({term, unde, type, line}, tables, logs) {
       if (indx > 0.5) continue;
       todo++;
 
-      html += `<li>${_mark(x)}${_mark(y)} <a href="./${term.toUrl()}.html">${term.toCap()}</a></li>`;
+      html += `${_mark(x)}${_mark(y)} <a href="./${term.toUrl()}.html">${term.toCap()}</a><br>`;
     }
 
     const total = _countTypes().portal;
     const completion = (total - todo) / total * 100;
 
     return [
-      '<h2>Portals</h2><ul class="x">',
-      `<li><b>${total}</b> Σ`,
-      `<li><b>${todo}</b> unfini`,
-      `<li><b>${completion.toFixed(2)}%</b> fini`,
-      '</ul><p><b>Key:</b> info, media',
-      `<ul class="x">${html}</ul>`
+      '<h2>Portals</h2><p class="x">',
+      `<b>${total}</b> Σ<br>`,
+      `<b>${todo}</b> unfini<br>`,
+      `<b>${fini.toFixed(2)}%</b> fini<br>`,
+      '</p><p><b>Key:</b> info, media',
+      `<p class="x">${html}</p>`
     ].join('');
   }
 
@@ -129,19 +128,19 @@ module.exports = function ({term, unde, type, line}, tables, logs) {
       if (indx > 0.7) continue;
       todo++;
 
-      html += `<li>${_mark(x)}${_mark(y)}${_mark(z)} <a href="./${term.toUrl()}.html">${term.toCap()}</a></li>`;
+      html += `${_mark(x)}${_mark(y)}${_mark(z)} <a href="./${term.toUrl()}.html">${term.toCap()}</a><br>`;
     }
 
     const pages = _countTypes().page;
     const completion = (pages - todo) / pages * 100;
 
     return [
-      '<h2>Pages</h2><ul class="x">',
-      `<li><b>${pages}</b> Σ`,
-      `<li><b>${todo}</b> unfini`,
-      `<li><b>${completion.toFixed(2)}%</b> fini`,
-      '</ul><p><b>Key:</b> info, media, links',
-      `</ul><ul class="x">${html}</ul>`
+      '<h2>Pages</h2><p class="x">',
+      `<b>${pages}</b> Σ<br>`,
+      `<b>${todo}</b> unfini<br>`,
+      `<b>${fini.toFixed(2)}%</b> fini`,
+      '</p><p><b>Key:</b> info, media, links',
+      `<p class="x">${html}</p>`
     ].join('');
   }
 
@@ -174,9 +173,9 @@ module.exports = function ({term, unde, type, line}, tables, logs) {
     const undocTotal = undoc.length;
 
     return [
-      `<li><b>${total}</b> projects`,
-      `<li><b>${undocTotal}</b> missing`,
-      `<li><b>${((total - undocTotal) / total * 100).toFixed(2)}%</b> fini`
+      `<b>${total}</b> projects<br>`,
+      `<b>${undocTotal}</b> missing<br>`,
+      `<b>${perc.toFixed(2)}%</b> fini<br>`
     ].join('');
   }
 
