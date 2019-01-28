@@ -47,6 +47,6 @@ module.exports = class Entry {
    * @return {number} Width
    */
   calcWidth () {
-    return this.dur * 25 / 6;;
+    return this.dur * 25 / 6;
   }
 }

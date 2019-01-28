@@ -1,0 +1,2 @@
+function _findSimilar(c,b){b=void 0===b?lexicon:b;for(var d=[],a=0,f=b.length;a<f;a++){var e=b[a];d[d.length]={word:e,value:_similarity(c,e)}}return d.sort(function(a,b){return a.value-b.value}).reverse()}
+function _similarity(c,b){for(var d=0,a=0;a<c.length;a++)d+=+(-1<b.indexOf(c.substr(a)));for(a=0;a<b.length;a++)d+=+(-1<c.indexOf(b.substr(a)));c=c.split("").sort().join("");b=b.split("").sort().join("");for(a=0;a<c.length;a++)d+=+(-1<b.indexOf(c.substr(a)));for(a=0;a<b.length;a++)d+=+(-1<c.indexOf(b.substr(a)));return d};

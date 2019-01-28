@@ -2,10 +2,9 @@ const Runic = require('../lib/runic');
 const LogSet = require('../lib/set');
 const Template = require('./template');
 
-module.exports = function ({term, unde, type, line}, tables, logs) {
-  Template.call(this, {term, unde, type, line});
-  this.path = `./wiki/${this.filename}.html`;
-
+module.exports = function ({term, root, line}, tables, logs) {
+  Template.call(this, {term, root, line});
+  this.path = `./wiki/${this.file}.html`;
   const set = new LogSet(logs.raw);
 
   /**
@@ -13,9 +12,7 @@ module.exports = function ({term, unde, type, line}, tables, logs) {
    * @param {boolean} x
    * @return {string} Mark
    */
-  function _mark (x) {
-    return x ? '＋' : '－';
-  }
+  const _mark = x => x ? '＋' : '－';
 
   /**
    * Calculate Completion Index
@@ -55,12 +52,12 @@ module.exports = function ({term, unde, type, line}, tables, logs) {
    * Build log summary
    * @return {string} Summary
    */
-  function _summary () {
+  function _sum (s = set) {
     return [
       '<p class="x">',
-      `<b>${s.lh.toFixed(2)}</b> hours<br>`,
-      `<b>${s.count}</b> logs<br>`,
-      `<b>${s.dailyAvg().toFixed(2)}</b> daily avg<br>`,
+      `${s.lh.toFixed(2)} hours<br>`,
+      `${s.count} logs<br>`,
+      `${s.dailyAvg().toFixed(2)} daily avg<br>`,
       `${_undoc()}</p>`
     ].join('');
   }
@@ -97,14 +94,14 @@ module.exports = function ({term, unde, type, line}, tables, logs) {
     }
 
     const total = _countTypes().portal;
-    const completion = (total - todo) / total * 100;
+    const fini = (total - todo) / total * 100;
 
     return [
       '<h2>Portals</h2><p class="x">',
-      `<b>${total}</b> Σ<br>`,
-      `<b>${todo}</b> unfini<br>`,
-      `<b>${fini.toFixed(2)}%</b> fini<br>`,
-      '</p><p><b>Key:</b> info, media',
+      `${total} Σ<br>`,
+      `${todo} unfini<br>`,
+      `${fini.toFixed(2)}% fini<br>`,
+      '</p><p>Key: info, media',
       `<p class="x">${html}</p>`
     ].join('');
   }
@@ -132,14 +129,14 @@ module.exports = function ({term, unde, type, line}, tables, logs) {
     }
 
     const pages = _countTypes().page;
-    const completion = (pages - todo) / pages * 100;
+    const fini = (pages - todo) / pages * 100;
 
     return [
       '<h2>Pages</h2><p class="x">',
-      `<b>${pages}</b> Σ<br>`,
-      `<b>${todo}</b> unfini<br>`,
-      `<b>${fini.toFixed(2)}%</b> fini`,
-      '</p><p><b>Key:</b> info, media, links',
+      `${pages} Σ<br>`,
+      `${todo} unfini<br>`,
+      `${fini.toFixed(2)}% fini`,
+      '</p><p>Key: info, media, links',
       `<p class="x">${html}</p>`
     ].join('');
   }
@@ -158,9 +155,9 @@ module.exports = function ({term, unde, type, line}, tables, logs) {
    * Build Undocumented section
    * @return {string} Undocumented
    */
-  function _undocumented () {
-    const keys = Object.keys(tables);
-    const pro = set.listProjects();
+  function _undoc (t = tables, s = set) {
+    const keys = Object.keys(t);
+    const pro = s.listProjects();
     const undoc = [];
 
     for (let i = 0, l = pro.length; i < l; i++) {
@@ -171,11 +168,12 @@ module.exports = function ({term, unde, type, line}, tables, logs) {
 
     const total = pro.length;
     const undocTotal = undoc.length;
+    const perc = (total - undocTotal) / total * 100;
 
     return [
-      `<b>${total}</b> projects<br>`,
-      `<b>${undocTotal}</b> missing<br>`,
-      `<b>${perc.toFixed(2)}%</b> fini<br>`
+      `${total} projects<br>`,
+      `${undocTotal} missing<br>`,
+      `${perc.toFixed(2)}% fini<br>`
     ].join('');
   }
 
@@ -185,13 +183,10 @@ module.exports = function ({term, unde, type, line}, tables, logs) {
    */
   this.render = () => {
     return [
-      this.head(),
-      this.header(),
+      this.head(), this.header(),
       `<main>${this.core()}`,
-      `${_summary()}${_makeTables(organiseByType())}`,
-      '</main>',
-      this.footer(),
-      this.search()
+      `${_sum()}${_makeTables(organiseByType())}`,
+      '</main>', this.footer(), this.search()
     ].join('');
   }
 }

@@ -1,9 +1,10 @@
 const fs = require('fs');
 module.exports = function (tables) {
-  this.storage = {};
+  this.store = {};
   for (let id in tables) {
     const file = tables[id];
-    const path = `./db/${file}.tome`;
-    this.storage[file] = fs.readFileSync(path, 'utf8');
+    this.store[file] = fs.readFileSync(
+      `./db/${file}.tome`, 'utf8'
+    );
   }
 }

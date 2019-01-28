@@ -1,8 +1,8 @@
 const Template = require('./template');
 
-module.exports = function ({term, unde, type, line}) {
-  Template.call(this, {term, unde, type, line});
-  this.path = `./wiki/${this.filename}.html`;
+module.exports = function ({term, root, line}) {
+  Template.call(this, {term, root, line});
+  this.path = `./wiki/${this.file}.html`;
 
   /**
    * Get term children
@@ -14,14 +14,14 @@ module.exports = function ({term, unde, type, line}) {
     let scion = [];
     for (let id in db) {
       const term = db[id];
-      if (!term.unde || n !== term.unde.toUpperCase()) continue;
+      if (!term.root || n !== term.root) continue;
       scion[scion.length] = term;
     }
     return scion;
   }
 
   /**
-   * Insert item to Portal index
+   * Insert index item
    * @param {string} t - Term
    * @param {string} d - Description
    * @return {string} Item
@@ -31,13 +31,12 @@ module.exports = function ({term, unde, type, line}) {
   }
 
   /**
-   * Build Portal index
+   * Build index
    * @param {string} t - Term
    * @return {string} Index
    */
   function _index (t) {
-    const n = t.toUpperCase();
-    const c = _getChildren(n);
+    const c = _getChildren(t);
     const i = c.reduce((v, {term, line}) => v += _ins(term, line['?']), '');
     return c.length > 0 ? `<p class="x">${i}` : '';
   }
@@ -48,12 +47,9 @@ module.exports = function ({term, unde, type, line}) {
    */
   this.render = () => {
     return [
-      this.head(),
-      this.header(),
-      `<main>${this.core()}`,
-      `${_index(this.id)}</main>`,
-      this.footer(),
-      this.search()
+      this.head(), this.header(),
+      `<main>${this.core()}${_index(this.id)}</main>`,
+      this.footer(), this.search()
     ].join('');
   }
 }

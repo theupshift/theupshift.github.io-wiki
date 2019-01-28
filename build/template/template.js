@@ -1,9 +1,7 @@
 const Runic = require('../lib/runic');
 
-module.exports = function ({term, unde, type, line}) {
-  this.id = term.toLowerCase();
-  this.root = unde || 'Home';
-  this.filename = this.id.toUrl();
+module.exports = function ({term, root, line}) {
+  Object.assign(this, {id: term, file: term.toUrl(), root});
 
   /**
    * Build document head
@@ -11,10 +9,9 @@ module.exports = function ({term, unde, type, line}) {
    */
   this.head = () => {
     return [
-      '<!doctype html><html lang="en"><meta charset="utf-8">',
+      '<!doctype html><html><meta charset="utf-8">',
       '<meta name="viewport" content="width=device-width, initial-scale=1">',
-      `<title>${this.id.toCap()}</title>`,
-      this.meta(),
+      `<title>${this.id.toCap()}</title>${this.meta()}`,
       `<link rel="stylesheet" href="../s.css"/>`
     ].join('');
   }
@@ -24,10 +21,7 @@ module.exports = function ({term, unde, type, line}) {
    * @return {string} Meta
    */
   this.meta = () => {
-    return [
-      '<meta name="author" content="Avanier">',
-      '<meta name="description" content="The Athenaeum is Josh Avanier\'s wiki">'
-    ].join('');
+    return '<meta name="author" content="Avanier"><meta name="description" content="Avanier\'s wiki">';
   }
 
   /**
@@ -36,10 +30,10 @@ module.exports = function ({term, unde, type, line}) {
    */
   this.header = () => {
     const {id, root} = this;
-    const unde = id === 'home' ? '&mdash;' : `<a href="./${
-      root === 'Home' ? 'index' : root.toUrl()
+    const u = id === 'HOME' ? '&mdash;' : `<a href="./${
+      root === 'HOME' ? 'index' : root.toUrl()
     }.html">${root.toCap()}</a>`;
-    return `<p id="u">${unde}</p><input id="s" value="${id.toCap()}" placeholder="Query" spellcheck="false" autocomplete="off">`;
+    return `${u}<input id="s" value="${id.toCap()}" placeholder="Query" spellcheck="false" autocomplete="off">`;
   }
 
   /**
@@ -58,18 +52,14 @@ module.exports = function ({term, unde, type, line}) {
    * @return {string} Footer
    */
   this.footer = () => {
-    const ring = '../img/rotonde.svg';
-    const merv = '../img/merveilles.svg';
     const rURL = 'https://webring.xxiivv.com/#random';
     const mURL = 'https://merveilles.town/@joshavanier';
-
     return [
-      `<footer><a title="Ring" href="${rURL}" target="_blank">`,
-      `<img id="w" src="${ring}" alt="Webring">`,
-      `</a><a title="Town" href="${mURL}" target="_blank">`,
-      `<img id="m" src="${merv}" alt="Merveilles">`,
-      '</a><p><a title="Josh Avanier" href="./josh.html">JA</a> ',
-      `© 2017&ndash;${new Date().getFullYear()}</footer>`
+      `<footer><p><a title="Josh Avanier" href="./josh.html">JA</a> `,
+      `© 2017&ndash;${new Date().getFullYear()}</p>`,
+      `<a href="${rURL}"><img id="w" src="img/r.svg" alt="Ring"></a>`,
+      `<a href="${mURL}" target="_blank">`,
+      `<img id="m" src="img/m.svg" alt="Town"></a></footer>`
     ].join('');
   }
 
@@ -77,7 +67,5 @@ module.exports = function ({term, unde, type, line}) {
    * Link search script
    * @return {string} Script link
    */
-  this.search = () => {
-    return `<script src="../search.js"></script>`;
-  }
+  this.search = () => `<script src="../s.js"></script>`;
 }

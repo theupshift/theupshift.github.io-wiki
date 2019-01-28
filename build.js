@@ -6,9 +6,10 @@ const Lexicon = require('./build/lexicon');
 const Log = require('./build/log');
 
 const home = require('os').homedir();
-const indexes = ['lexicon', 'oeuvre', 'monographs', 'commonplace'];
-const db = new Database(indexes);
 const logs = new Log(`${home}/log.json`);
+const db = new Database([
+  'lexicon', 'oeuvre', 'monographs', 'commonplace'
+]);
 
 String.prototype.toCap = function () {
   return this.charAt(0).toUpperCase() + this.slice(1).toLowerCase();
@@ -19,13 +20,9 @@ String.prototype.toUrl = function () {
 }
 
 let data = '';
-for (let key in db.storage) {
-  data += db.storage[key]
-}
+for (let key in db.store) data += db.store[key];
 
 const {pages} = new Manager(new Indental(data).parse(), logs);
 
-console.time('Build time');
 new Builder(pages).build();
 new Lexicon(pages).build();
-console.timeEnd('Build time');

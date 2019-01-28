@@ -1,10 +1,12 @@
 const Template = require('./template');
 
-module.exports = function ({term, type, line}) {
-  Template.call(this, {term, type, line});
-  this.root = 'home';
-  this.filename = 'index';
-  this.path = `./wiki/${this.filename}.html`;
+module.exports = function ({term, line}) {
+  Template.call(this, {term, line});
+  Object.assign(this, {
+    root: 'HOME',
+    file: 'index',
+    path: './wiki/index.html'
+  });
 
   /**
    * Get term children
@@ -16,7 +18,7 @@ module.exports = function ({term, type, line}) {
     let scion = [];
     for (let id in db) {
       const term = db[id];
-      if (!term.unde || n !== term.unde.toUpperCase()) continue;
+      if (!term.root || n !== term.root) continue;
       scion[scion.length] = term;
     }
     return scion;
@@ -38,14 +40,13 @@ module.exports = function ({term, type, line}) {
    * @return {string} Index
    */
   function _index (name) {
-    const n = name.toUpperCase();
-    const scion = _getChildren(n);
+    const scion = _getChildren(name);
     const l = scion.length;
     let html = '';
 
     for (let i = 0; i < l; i++) {
       const {term, line} = scion[i];
-      term !== n && (html += _row(term, line['?']));
+      term !== name && (html += _row(term, line['?']));
     }
 
     return l > 0 ? `<p class="x">${html}` : '';
@@ -57,14 +58,9 @@ module.exports = function ({term, type, line}) {
    */
   this.render = () => {
     return [
-      this.head(),
-      this.header(),
-      '<main>',
-      this.core(),
-      _index(this.id),
-      '</main>',
-      this.footer(),
-      this.search()
+      this.head(), this.header(),
+      `<main>${this.core()}${_index(this.id)}</main>`,
+      this.footer(), this.search()
     ].join('');
   }
 }

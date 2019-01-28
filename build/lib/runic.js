@@ -36,7 +36,7 @@ function toMarkup (s) {
 
     const link = isExternal(target)
       ? `<a href="${target}" target="_blank">${name}</a>`
-      : `<a title="${target}" href="./${target.toUrl()}.html">${name}</a>`;
+      : `<a href="./${target.toUrl()}.html">${name}</a>`;
 
     html = html.replace(`{{${content}}}`, link);
   }
@@ -135,22 +135,22 @@ module.exports = function (raw) {
 
   this.render = (line = '', rune = null) => {
     if (rune && rune.tag === 'img') {
-      return `<img src="../img/${line}"/>`;
+      return `<img src="img/${line}"/>`;
     }
     const {tag} = rune;
     return rune ? (tag ? `<${tag}>${line}</${tag}>` : line) : '';
   }
 
   this.media = (content) => {
-    if (content.indexOf(',') > -1) {
-      let html = '';
-      const gallery = content.split(',');
-      for (let i = 0, l = gallery.length; i < l; i++) {
-        html += `<img src="../img/${gallery[i].trim()}">`;
-      }
-      return html;
+    if (content.indexOf(',') < 0) {
+      return `<img src="img/${content}"/>`;
     }
-    return `<img src="../img/${content}"/>`;
+    let html = '';
+    const gallery = content.split(',');
+    for (let i = 0, l = gallery.length; i < l; i++) {
+      html += `<img src="img/${gallery[i].trim()}">`;
+    }
+    return html;
   }
 
   this.table = (content) => {
