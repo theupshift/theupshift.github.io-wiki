@@ -55,9 +55,9 @@ module.exports = function ({term, root, line}, tables, logs) {
   function _sum (s = set) {
     return [
       '<p class="x">',
-      `${s.lh.toFixed(2)} hours<br>`,
+      `${s.lh.toFixed(0)} hours<br>`,
       `${s.count} logs<br>`,
-      `${s.dailyAvg().toFixed(2)} daily avg<br>`,
+      `${s.dailyAvg().toFixed(0)} daily avg<br>`,
       `${_undoc()}</p>`
     ].join('');
   }
@@ -100,7 +100,7 @@ module.exports = function ({term, root, line}, tables, logs) {
       '<h2>Portals</h2><p class="x">',
       `${total} Σ<br>`,
       `${todo} unfini<br>`,
-      `${fini.toFixed(2)}% fini<br>`,
+      `${fini.toFixed(0)}% fini<br>`,
       '</p><p>Key: info, media',
       `<p class="x">${html}</p>`
     ].join('');
@@ -135,7 +135,7 @@ module.exports = function ({term, root, line}, tables, logs) {
       '<h2>Pages</h2><p class="x">',
       `${pages} Σ<br>`,
       `${todo} unfini<br>`,
-      `${fini.toFixed(2)}% fini`,
+      `${fini.toFixed(0)}% fini`,
       '</p><p>Key: info, media, links',
       `<p class="x">${html}</p>`
     ].join('');
@@ -173,7 +173,7 @@ module.exports = function ({term, root, line}, tables, logs) {
     return [
       `${total} projects<br>`,
       `${undocTotal} missing<br>`,
-      `${perc.toFixed(2)}% fini<br>`
+      `${perc.toFixed(0)}% fini<br>`
     ].join('');
   }
 
