@@ -160,7 +160,7 @@ module.exports = function (raw) {
   this.quote = (content) => {
     const [text, author, source, link] = content.split(' | ');
     const attr = link ? `${author}, <a href="${link}">${source}</a>` : author;
-    return `<blockquote><p class="q">${text}</p>${author ? `<p class="a">${attr}</p>` : ''}</blockquote>`
+    return `<blockquote><p class="q">&ldquo;${text}&rdquo;</p>${author ? `<p class="a">&mdash; ${attr}</p>` : ''}</blockquote>`
   }
 
   this.html = () => this.parse(raw);
