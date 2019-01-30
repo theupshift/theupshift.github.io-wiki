@@ -78,7 +78,7 @@ module.exports = function (raw) {
     if (!raw) return '';
 
     let html = '';
-    let lines = !Array.isArray(raw) ? raw.split('\n') : raw;
+    let lines = raw;
 
     for (let i = 0, l = lines.length; i < l; i++) {
       let line = lines[i];

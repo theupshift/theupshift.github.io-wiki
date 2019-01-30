@@ -41,10 +41,7 @@ module.exports = function ({term, root, line}) {
    * @return {string} Core
    */
   this.core = () => {
-    return `${Object.keys(line).reduce((acc, term) => {
-      const l = line[term];
-      return `${Array.isArray(l) ? new Runic(l).parse() : ''}`;
-    }, '')}`.trim();
+    return new Runic(line).parse();
   }
 
   /**

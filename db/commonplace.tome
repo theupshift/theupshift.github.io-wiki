@@ -1,261 +1,210 @@
 @ COMMONPLACE
-  ? : Notes
-  $
-    & The Commonplace is a collection of notes on various topics. These are mostly reminders and notes to self and thus may be poorly structured.
+  & The Commonplace is a collection of notes on various topics. These are mostly reminders and notes to self and thus may be poorly structured.
 
 + COMMONPLACE.STYLE GUIDE
-  ? : The Athenaeum Style Guide
-  $
-    * Content
-    = Be concise but maintain clarity
-    = Each page should have at least one internal link
-    = Avoid external links that lead to "evil" sites
-    = Include references wherever appropriate
-    * Images
-    % fib.png
-    = Set ratio to the Fibonacci rectangle
-    = Compress images; the smaller the file size, the better
-    = Remove metadata
-    * Etc.
-    = No tracking scripts
-    = No advertisements
-    = No memes
+  * Content
+  = Be concise but maintain clarity
+  = Each page should have at least one internal link
+  = Avoid external links that lead to "evil" sites
+  = Include references wherever appropriate
+  * Images
+  % fib.png
+  = Set ratio to the Fibonacci rectangle
+  = Compress images; the smaller the file size, the better
+  = Remove metadata
+  * Etc.
+  = No tracking scripts
+  = No advertisements
+  = No memes
 
 @ COMMONPLACE.HEALTH
-  ? : On health and well-being
-  $
-    @ Take care of your body. It's the only place you have to live | Jim Rohn
+  @ Take care of your body. It's the only place you have to live | Jim Rohn
 
 + HEALTH.NUTRITION
-  ? : On nutrition
-  $
-    % nutrition.png
-    * Guidelines
-    = Adhere to a plant-based diet
-    = Avoid foods with more than 10 ingredients
-    = Consume food as close as possible to its natural form
-    = Avoid sugar and artificial ingredients
-    = Eat until you're ~80% full
+  % nutrition.png
+  * Guidelines
+  = Adhere to a plant-based diet
+  = Avoid foods with more than 10 ingredients
+  = Consume food as close as possible to its natural form
+  = Avoid sugar and artificial ingredients
+  = Eat until you're ~80% full
 
 + HEALTH.FITNESS
-  ? : On fitness
-  $
-    * Guidelines
-    = Avoid sitting down for too long
-    = Walk 10K+ steps per day
-    = Exercise at least twice a week
+  * Guidelines
+  = Avoid sitting down for too long
+  = Walk 10K+ steps per day
+  = Exercise at least twice a week
 
 + HEALTH.SLEEP
-  ? : On sleep
-  $
-    % sleep.png
-    & I am not a fan of sleep. I see it a waste of time and an inefficiency in Mother Nature's design. I'm currently experimenting with ways to minimise sleep. Sleep quality is more important than quantity.
-    * Guidelines
-    = Go to bed at the same time every day if possible
-    = Turn off devices 1-2 hours before sleep. Avoid blue light
-    = Write in a journal before bed to offload thoughts
-    = Avoid caffeine 4-6 hours before bed
-    = Take cold showers before sleeping
-    * Effects of Sleep Deficiency
-    = Reduced memory reliability
-    = Slower thinking
-    = Reduced decision-making abilities
-    = Poorer insight and focus
-    = Exhaustion
-    * Lucid Dreaming
-    & Lucid dreaming might be a solution to stay productive all day. Imagine being able to plan your projects while your body rests. Unfortunately, lucid dreaming is one of the many skills I have yet to master.
-    * Noctuary
-    & I keep a dream journal to capture anything that could be of interest or inspiration in dreams. To be made available soon.
+  % sleep.png
+  & I am not a fan of sleep. I see it a waste of time and an inefficiency in Mother Nature's design. I'm currently experimenting with ways to minimise sleep. Sleep quality is more important than quantity.
+  * Guidelines
+  = Go to bed at the same time every day if possible
+  = Turn off devices 1-2 hours before sleep. Avoid blue light
+  = Write in a journal before bed to offload thoughts
+  = Avoid caffeine 4-6 hours before bed
+  = Take cold showers before sleeping
+  * Effects of Sleep Deficiency
+  = Reduced memory reliability
+  = Slower thinking
+  = Reduced decision-making abilities
+  = Poorer insight and focus
+  = Exhaustion
+  * Lucid Dreaming
+  & Lucid dreaming might be a solution to stay productive all day. Imagine being able to plan your projects while your body rests. Unfortunately, lucid dreaming is one of the many skills I have yet to master.
+  * Noctuary
+  & I keep a dream journal to capture anything that could be of interest or inspiration in dreams. To be made available soon.
 
 + COMMONPLACE.LIFE
-  ? : On living
-  $
-    * 侘寂
-    @ Nothing lasts, nothing is finished, and nothing is perfect | Richard Powell | Wabi Sabi Simple | https://www.goodreads.com/book/show/840098.Wabi_Sabi_Simple
-    & Wabi-sabi is a Japanese philosophy focused on the acceptance of transcience and imperfection in our lives. It teaches us to be content with how things are.
-    * 生き甲斐
-    & Ikigai is the "reason for being" &mdash; things that make life worthwhile.
-    % ikigai.png
-    @ He who has a why to live can bear almost any how | Friedrich Nietzsche
+  * 侘寂
+  @ Nothing lasts, nothing is finished, and nothing is perfect | Richard Powell | Wabi Sabi Simple | https://www.goodreads.com/book/show/840098.Wabi_Sabi_Simple
+  & Wabi-sabi is a Japanese philosophy focused on the acceptance of transcience and imperfection in our lives. It teaches us to be content with how things are.
+  * 生き甲斐
+  & Ikigai is the "reason for being" &mdash; things that make life worthwhile.
+  % ikigai.png
+  @ He who has a why to live can bear almost any how | Friedrich Nietzsche
 
 + COMMONPLACE.PRODUCTIVITY
-  ? : On getting things done
-  $
-    & As a creator, productivity is a major key point in my life. I'm always obsessing over how I can be more efficient at getting things done so I can get more done later on.
-    & The best way to get more done is to do less. Eliminate the unnecessary from your list of priorities and focus on what you really have to do.
+  & As a creator, productivity is a major key point in my life. I'm always obsessing over how I can be more efficient at getting things done so I can get more done later on.
+  & The best way to get more done is to do less. Eliminate the unnecessary from your list of priorities and focus on what you really have to do.
 
 @ COMMONPLACE.ENVIRONMENT
-  ? : On environmentalism
-  $
-    & We as a species are killing the planet, the only home we have. I believe its of the utmost importance that we radically shift our mindset on how we live on spaceship Earth.
+  & We as a species are killing the planet, the only home we have. I believe its of the utmost importance that we radically shift our mindset on how we live on spaceship Earth.
 
 + ENVIRONMENT.SOLARPUNK
-  ? : Because the only other options are denial or despair
-  $
-    @ Solarpunk is a rebellion against the structural pessimism in our late visions of how the future will be | Connor Owens | What is Solarpunk? | https://solarpunkanarchists.com/2016/05/27/what-is-solarpunk
+  @ Solarpunk is a rebellion against the structural pessimism in our late visions of how the future will be | Connor Owens | What is Solarpunk? | https://solarpunkanarchists.com/2016/05/27/what-is-solarpunk
 
 + ENVIRONMENT.ZERO WASTE
-  ? : On the zero-waste lifestyle
-  $
-    = {*Refuse*} what you don't need
-    = {*Reduce*} what you need
-    = {*Reuse*} what you consume
-    = {*Recycle*} what you can't refuse, reduce, or reuse
-    = {*Rot*} the rest
+  = {*Refuse*} what you don't need
+  = {*Reduce*} what you need
+  = {*Reuse*} what you consume
+  = {*Recycle*} what you can't refuse, reduce, or reuse
+  = {*Rot*} the rest
 
 + COMMONPLACE.PRIVACY
-  ? : On privacy
-  $
-    = Be mindful of {*what*} you share
-    = Be mindful of {*where*} you share it
-    = Be mindful of {*who*} you share it with
+  = Be mindful of {*what*} you share
+  = Be mindful of {*where*} you share it
+  = Be mindful of {*who*} you share it with
 
 @ COMMONPLACE.DESIGN
-  ? : On design
-  $
-    % golden.png
-    @ Think more, design less | Ellen Lupton
-    * Ontological Design
-    @ We design our world, while our world acts back on us and designs us | Anne-Marie Willis | Ontological Designing | http://www.academia.edu/888457/Ontological_designing
-    * Etc.
-    @ Clutter and confusion are not attributes of information, they are failures of design | Edward Tufte
+  % golden.png
+  @ Think more, design less | Ellen Lupton
+  * Ontological Design
+  @ We design our world, while our world acts back on us and designs us | Anne-Marie Willis | Ontological Designing | http://www.academia.edu/888457/Ontological_designing
+  * Etc.
+  @ Clutter and confusion are not attributes of information, they are failures of design | Edward Tufte
 
 + DESIGN.DIETER RAMS
-  ? : Dieter Rams
-  $
-    & {{Dieter Rams|https://en.wikipedia.org/wiki/Dieter_Rams}} is a German industrial designer. His design principles are a guiding influence in my work.
-    * Principles
-    - Good design is {*innovative*}
-    - Good design makes a product {*useful*}
-    - Good design is {*aesthetic*}
-    - Good design makes a product {*understandable*}
-    - Good design is {*unobtrusive*}
-    - Good design is {*honest*}
-    - Good design is {*long-lasting*}
-    - Good design is {*thorough*} down to the last detail
-    - Good design is {*environmentally-friendly*}
-    - Good design is {*as little design as possible*}
-    & {{Source|https://www.vitsoe.com/us/about/good-design}}
-    * Quotes
-    @ A designer who wants to achieve good design must not regard himself as an artist who, according to taste and aesthetics, is merely dressing up products with a last-minute garment. The designer must be the gestaltingenieur or creative engineer. They synthesize the completed product from the various elements that make up its design. Their work is largely rational, meaning that aesthetic decisions are justified by an understanding of the product’s purpose.
-    @ ‎To use design to impress, to polish things up, to make them chic, is no design at all. This is packaging. When we concentrate on the essential elements in design, when we omit all superfluous elements, we find forms become: quiet, comfortable, understandable and, most importantly, long lasting.
+  & {{Dieter Rams|https://en.wikipedia.org/wiki/Dieter_Rams}} is a German industrial designer. His design principles are a guiding influence in my work.
+  * Principles
+  - Good design is {*innovative*}
+  - Good design makes a product {*useful*}
+  - Good design is {*aesthetic*}
+  - Good design makes a product {*understandable*}
+  - Good design is {*unobtrusive*}
+  - Good design is {*honest*}
+  - Good design is {*long-lasting*}
+  - Good design is {*thorough*} down to the last detail
+  - Good design is {*environmentally-friendly*}
+  - Good design is {*as little design as possible*}
+  & {{Source|https://www.vitsoe.com/us/about/good-design}}
+  * Quotes
+  @ A designer who wants to achieve good design must not regard himself as an artist who, according to taste and aesthetics, is merely dressing up products with a last-minute garment. The designer must be the gestaltingenieur or creative engineer. They synthesize the completed product from the various elements that make up its design. Their work is largely rational, meaning that aesthetic decisions are justified by an understanding of the product’s purpose.
+  @ ‎To use design to impress, to polish things up, to make them chic, is no design at all. This is packaging. When we concentrate on the essential elements in design, when we omit all superfluous elements, we find forms become: quiet, comfortable, understandable and, most importantly, long lasting.
 
 + DESIGN.TYPOGRAPHY
-  ? : On typography
-  $
-    @ A great designer knows how to work with text not just as content, he treats text as a user interface | Oliver Richenstein
-    * Typography Scale
-    & My go-to type scale:
-    # 2.6179em<br>2.0581em<br>1.618em<br>1.272em<br>1em<br>0.7862em
-    * Resources
-    = {{Butterick's Practical Typography|https://practicaltypography.com}}
-    = {{Diatonic Type Scale|http://ty-p.cc}}
+  @ A great designer knows how to work with text not just as content, he treats text as a user interface | Oliver Richenstein
+  * Typography Scale
+  & My go-to type scale:
+  # 2.6179em<br>2.0581em<br>1.618em<br>1.272em<br>1em<br>0.7862em
+  * Resources
+  = {{Butterick's Practical Typography|https://practicaltypography.com}}
+  = {{Diatonic Type Scale|http://ty-p.cc}}
 
 @ COMMONPLACE.TECHNOLOGY
-  ? : On technology
 
 @ TECHNOLOGY.SOFTWARE
-  ? : On software
-  $
-    * The Free Software Definition
-    & The freedom to...
-    = {*Run*} the program as you wish, for any purpose
-    = {*Study*} how the program works, and {*change*} it
-    = {*Redistribute*} copies so you can help your neighbour
-    = {*Distribute*} copies of your modified versions to others
-    & {{Source|https://www.gnu.org/philosophy/free-sw.html.en}}
-    * Semantic Versioning
-    & {*v Major.Minor.Patch*}
-    = Major: changes only during major updates
-    = Minor: general maintenance and other minor changes
-    = Patch: critical patch releases
+  * The Free Software Definition
+  & The freedom to...
+  = {*Run*} the program as you wish, for any purpose
+  = {*Study*} how the program works, and {*change*} it
+  = {*Redistribute*} copies so you can help your neighbour
+  = {*Distribute*} copies of your modified versions to others
+  & {{Source|https://www.gnu.org/philosophy/free-sw.html.en}}
+  * Semantic Versioning
+  & {*v Major.Minor.Patch*}
+  = Major: changes only during major updates
+  = Minor: general maintenance and other minor changes
+  = Patch: critical patch releases
 
 + SOFTWARE.CLI
-  ? : On CLI software
-  $
-    * Guidelines
-    = Include -h and --help flags
-    = Include -v and --version flags
-    * Error Codes
-    & Error messages must have the following:
-    = Error code
-    = Error title
-    = Optional description
-    = Steps to fix the error
+  * Guidelines
+  = Include -h and --help flags
+  = Include -v and --version flags
+  * Error Codes
+  & Error messages must have the following:
+  = Error code
+  = Error title
+  = Optional description
+  = Steps to fix the error
 
 @ TECHNOLOGY.PROGRAMMING
-  ? : On programming
-  $
-    * Guidelines
-    = Keep it simple
-    = Pick the right language for the job
-    = Each function, class, and component should have a well-defined and specific purpose
-    = Avoid code duplication
-    = Eliminate dead code; don't just comment it out
-    = Avoid excessive nesting
-    = Write tests
-    * Optimisations
-    = {*Branch optimisation*}: rearrange code to minimise branching logic
-    = {*Code motion*}: perform calculations outside of loops
-    = {*Dead code elimination*}: remove unused code
-    = {*Dead store elimination*}: remove stores when they're never referenced again
-    = {*Instruction scheduling*}: reorder instructions to minimise execution time
-    = {*Store motion*}: move store instructions outside of loops
+  * Guidelines
+  = Keep it simple
+  = Pick the right language for the job
+  = Each function, class, and component should have a well-defined and specific purpose
+  = Avoid code duplication
+  = Eliminate dead code; don't just comment it out
+  = Avoid excessive nesting
+  = Write tests
+  * Optimisations
+  = {*Branch optimisation*}: rearrange code to minimise branching logic
+  = {*Code motion*}: perform calculations outside of loops
+  = {*Dead code elimination*}: remove unused code
+  = {*Dead store elimination*}: remove stores when they're never referenced again
+  = {*Instruction scheduling*}: reorder instructions to minimise execution time
+  = {*Store motion*}: move store instructions outside of loops
 
 + TECHNOLOGY.RASPBERRY PI
-  ? : On the Raspberry Pi
-  $
-    * Security
-    & Create a new user
-    # sudo /usr/sbin/useradd --groups sudo -m josh
-    # sudo passwd seaweed
-    & Reset root password and disable "pi" user
-    # sudo passwd root
-    # sudo passwd --lock pi
+  * Security
+  & Create a new user
+  # sudo /usr/sbin/useradd --groups sudo -m josh
+  # sudo passwd seaweed
+  & Reset root password and disable "pi" user
+  # sudo passwd root
+  # sudo passwd --lock pi
 
 + COMMONPLACE.LEARNING
-  ? : On learning
-  $
-    @ Learning never exhausts the mind | Leonardo da Vinci
-    & It's good to keep on learning new things to further extend the perimeters of our minds. But learning shouldn't be reserved for academic environments; I'd argue that learning is much better outside of school.
-    @ I consider that a man's brain originally is like a little empty attic, and you have to stock it with such furniture as you choose. [...] It is of the highest importance, therefore, not to have useless facts elbowing out the useful ones | Arthur Conan Doyle, A Study in Scarlet
-    & Curate what you learn. The world is full of information but much of it is just noise. Trivial things like celebrity birthdays and accounting are hardly worth knowing.
-    @ Knowing is not enough; we must apply. Willing is not enough; we must do | Johann Wolfgang von Goethe
-    & Knowledge should be applicable somehow in our lives in order for it to be of value.
+  @ Learning never exhausts the mind | Leonardo da Vinci
+  & It's good to keep on learning new things to further extend the perimeters of our minds. But learning shouldn't be reserved for academic environments; I'd argue that learning is much better outside of school.
+  @ I consider that a man's brain originally is like a little empty attic, and you have to stock it with such furniture as you choose. [...] It is of the highest importance, therefore, not to have useless facts elbowing out the useful ones | Arthur Conan Doyle, A Study in Scarlet
+  & Curate what you learn. The world is full of information but much of it is just noise. Trivial things like celebrity birthdays and accounting are hardly worth knowing.
+  @ Knowing is not enough; we must apply. Willing is not enough; we must do | Johann Wolfgang von Goethe
+  & Knowledge should be applicable somehow in our lives in order for it to be of value.
 
 + COMMONPLACE.SOCIAL
-  ? : On being social
-  $
-    @ The reward for conformity is that everyone likes you but yourself | Rita Mae Brown
-    @ Wherever there is a human being, we have an opportunity for kindness | Seneca
+  @ The reward for conformity is that everyone likes you but yourself | Rita Mae Brown
+  @ Wherever there is a human being, we have an opportunity for kindness | Seneca
 
 + COMMONPLACE.WRITING
-  ? : On writing
-  $
-    @ A sentence should contain no unnecessary words, a paragraph no unnecessary sentences, for the same reason that a drawing should have no unnecessary lines and a machine no unnecessary parts | William Strunk Jr.
-    * 7 C's of Effective Communication
-    = {*Clear*}: The message's goal must be clear to the recipient.
-    = {*Concise*}: The message should be brief and to the point.
-    = {*Concrete*}: The message must be solid.
-    = {*Correct*}: The message must have accurate information.
-    = {*Coherent*}: The message must be logical, its content relevant and consistent.
-    = {*Complete*}: The message must have everything the recipient may need.
-    = {*Courteous*}: Convey the message in a friendly tone.
+  @ A sentence should contain no unnecessary words, a paragraph no unnecessary sentences, for the same reason that a drawing should have no unnecessary lines and a machine no unnecessary parts | William Strunk Jr.
+  * 7 C's of Effective Communication
+  = {*Clear*}: The message's goal must be clear to the recipient.
+  = {*Concise*}: The message should be brief and to the point.
+  = {*Concrete*}: The message must be solid.
+  = {*Correct*}: The message must have accurate information.
+  = {*Coherent*}: The message must be logical, its content relevant and consistent.
+  = {*Complete*}: The message must have everything the recipient may need.
+  = {*Courteous*}: Convey the message in a friendly tone.
 
 @ COMMONPLACE.MISCELLANEA
-  ? : Et cetera
-  $
-    & The Miscellanea section holds notes that are yet to be categorised.
 
 + MISCELLANEA.WIKIS
-  ? : Sources of inspiration
-  $
-    & This is a list of other wikis and knowledge bases that are even greater than my own. I hope you find them as immensely inspiring as I have.
-    = {{XXIIVV|https://wiki.xxiivv.com/#home}} by Devine Lu Linvega
-    = {{Nikita Voloboev's wiki|https://wiki.nikitavoloboev.xyz}}
-    = {{V-OS|https://v-os.ca}} by Victor Ivanov
-    = {{nomand.co|https://nomand.co/#home}} by Alexey Botkov
-    = {{Hrǽw|https://hraw.autophagy.io}} by Mika Naylor
-    = {{Gwern.net|http://www.gwern.net}}
-    = {{Bayle Shanks|http://www.bayleshanks.com}}
-    & There are other similarly-inspiring sites that are not necessarily wikis. Find them by clicking on the webring icon below.
+  & This is a list of other wikis and knowledge bases that are even greater than my own. I hope you find them as immensely inspiring as I have.
+  = {{XXIIVV|https://wiki.xxiivv.com/#home}} by Devine Lu Linvega
+  = {{Nikita Voloboev's wiki|https://wiki.nikitavoloboev.xyz}}
+  = {{V-OS|https://v-os.ca}} by Victor Ivanov
+  = {{nomand.co|https://nomand.co/#home}} by Alexey Botkov
+  = {{Hrǽw|https://hraew.autophagy.io}} by Mika Naylor
+  = {{Gwern.net|http://www.gwern.net}}
+  = {{Bayle Shanks|http://www.bayleshanks.com}}

@@ -9,9 +9,7 @@ module.exports = function (data) {
       const child = line.children[i];
       const {term, value, content} = child;
 
-      if (term) {
-        h[term] = value;
-      } else if (child.children.length === 0 && content) {
+      if (child.children.length === 0 && content) {
         a[a.length] = content;
       } else {
         h[content] = format(child);
@@ -22,21 +20,11 @@ module.exports = function (data) {
   }
 
   function liner (line) {
-    let term = null, value = null;
-
-    if (line.indexOf(' : ') > -1) {
-      const split = line.split(' : ');
-      value = split[1].trim();
-      term = split[0].trim();
-    }
-
     return {
       skip: line === '' || line.substr(0, 1) === '~',
       indent: line.search(/\S|$/),
       content: line.trim(),
-      children: [],
-      value,
-      term,
+      children: []
     }
   }
 

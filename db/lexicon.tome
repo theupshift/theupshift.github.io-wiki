@@ -1,127 +1,107 @@
 @ HOME
-  $
-    & Welcome to the {{Athenaeum|Ath}}.
-    & <i>Note: Under construction.</i>
+  & Welcome to the {{Athenaeum|Ath}}.
+  & <i>Note: Under construction.</i>
 
 ABOUT
-  ? : About this site
-  $
-    & Inspired by similar {{wikis}}, the {{Athenaeum}} is a place for people to learn about {{me|Josh}} and {{what I do|Oeuvre}}. I hope to inspire others to pursue their passions and create things.
-    * License
-    & You may fork and modify the site's {{back-end code|https://github.com/joshavanier/joshavanier.github.io}} under the {{MIT|https://opensource.org/licenses/MIT}} license. The wiki content is under {{BY-NC-SA 4.0|https://creativecommons.org/licenses/by-nc-sa/4.0}}.
+  & Inspired by similar {{wikis}}, the {{Athenaeum|Ath}} is a place for people to learn about {{me|Josh}} and {{what I do|Oeuvre}}. I hope this inspire others to pursue their passions and create things.
+  * License
+  & You may fork and modify the site's {{back-end code|https://github.com/joshavanier/joshavanier.github.io}} under the {{MIT|https://opensource.org/licenses/MIT}} license. The wiki content is under {{BY-NC-SA 4.0|https://creativecommons.org/licenses/by-nc-sa/4.0}}.
 
 @ JOSH
-  ? : About me
-  $
-    % josh.png
-    & I am a hobbyist working on a few {{projects|Oeuvre}} and currently studying information technology in Thailand.
-    * Contact
-    & If you have comments, questions, suggestions, or just want to chat:
-    = {{Visit me at Merveilles Town|https://merveilles.town/@joshavanier}}
-    = {{Find me on Twitter|https://twitter.com/joshavanier}}
-    = {*joshavanier (at) gmail*}
-    * Support
-    & If you'd like to help support me so I can keep making things, consider buying me a {{Ko-Fi|https://www.ko-fi.com/joshavanier}}. A little goes a long a way.
+  % josh.png
+  & I am a hobbyist working on a few {{projects|Oeuvre}} and currently studying information technology in Thailand.
+  * Contact
+  & If you have comments, questions, suggestions, or just want to chat:
+  = {{Visit me at Merveilles Town|https://merveilles.town/@joshavanier}}
+  = {{Find me on Twitter|https://twitter.com/joshavanier}}
+  = {*joshavanier (at) gmail*}
+  * Support
+  & If you'd like to help support me so I can keep making things, consider buying me a {{Ko-Fi|https://www.ko-fi.com/joshavanier}}. A little goes a long a way.
 
 JOSH.GOALS
-  ? : Things to accomplish
-  $
-    * Daily
-    = Learn something new
-    = Take a photo
-    = Draw something
-    = Create an entry for Pixel Dailies
-    = Create a {{Gridoire}} illustration
-    = Make one thing other than the ones mentioned above
-    = Write in your journal
-    * Weekly
-    = {{Blog|Monographs}} about something
-    = Compose a soundtrack
-    = Make a contribution to an open-source project
-    = Write a short story
-    * Fortnightly
-    = Read a book
-    * Monthly
-    = Develop a small game (game jam)
-    * Eventually
-    = Achieve 100% self-sufficiency and a {{zero waste}} lifestyle
-    = Live off-grid
-    = Create my own versions of {{things|To do}}
-    = Minimise {{sleep}} to as close to zero as possible
-    = Reduce personal possessions to only absolute necessities
-    = Graduate and forget everything I learned in school
-    = Acquire (or build) a boat and sail
-    = Finish 10,000 {{projects|Oeuvre}} before {{Death}}
+  * Daily
+  = Learn something new
+  = Take a photo
+  = Draw something
+  = Create an entry for Pixel Dailies
+  = Create a {{Gridoire}} illustration
+  = Make one thing other than the ones mentioned above
+  = Write in your journal
+  * Weekly
+  = {{Blog|Monographs}} about something
+  = Compose a soundtrack
+  = Make a contribution to an open-source project
+  = Write a short story
+  * Fortnightly
+  = Read a book
+  * Monthly
+  = Develop a small game (game jam)
+  * Eventually
+  = Achieve 100% self-sufficiency and a {{zero waste}} lifestyle
+  = Live off-grid
+  = Create my own versions of {{things|To do}}
+  = Minimise {{sleep}} to as close to zero as possible
+  = Reduce personal possessions to only absolute necessities
+  = Graduate and forget everything I learned in school
+  = Acquire (or build) a boat and sail
+  = Finish 10,000 {{projects|Oeuvre}} before {{Death}}
 
 @ JOSH.INVENTORY
-  ? : Tools
-  $
-    & These are some of the tools that help me pursue my hobbies and work on my {{projects|Oeuvre}}.
+  & These are some of the tools that help me pursue my hobbies and work on my {{projects|Oeuvre}}.
 
 INVENTORY.NAVIRE
-  ? : The primary workstation
-  $
-    & Navire is a Victorian-era {{Linux}} laptop with 2GB of RAM and a 1.10 GHz processor. This is what I primarily use when working on {{projects|Oeuvre}}. {{Dotfiles|https://github.com/joshavanier/dots}} are available on GitHub.
-    * Usage
-    & When I work, I make it a point to work offline to minimise distractions and maximise focus. I only go online if I need to look something up, download something, or share something on the Internet.
-    = No idling in front of the computer
-    = Focus on one task at a time
-    = Only go online if necessary
-    * Essentials
-    + Browser | {{Firefox|https://www.mozilla.org/en-US/firefox/new}}, {{surf|https://surf.suckless.org}}
-    + Files | {{ranger|https://wiki.archlinux.org/index.php/Ranger}}, {{nnn|https://github.com/jarun/nnn}}
-    + Image compression | {{optipng|http://optipng.sourceforge.net}}, {{jpegoptim|https://github.com/tjko/jpegoptim}}
-    + Image editor | {{GIMP|https://www.gimp.org}}
-    + Image viewer | {{feh|https://feh.finalrewind.org}}
-    + Media player | {{mpv|https://wiki.archlinux.org/index.php/Mpv}}
-    + Metadata cleaner | {{mat|https://github.com/jubalh/MAT}}
-    + Music composition | {{Marabu|https://wiki.xxiivv.com/#marabu}}
-    + Music player | {{cmus|https://cmus.github.io}}
-    + PDF reader | {{zathura|https://wiki.archlinux.org/index.php/Zathura}}
-    + RSS reader | {{newsboat|https://newsboat.org}}
-    + Terminal | xterm, {{st|https://st.suckless.org}}
-    + Text editor | {{vim|https://www.vim.org}}
-    + Vector tool | {{Dotgrid|https://wiki.xxiivv.com/#dotgrid}}
-    + WM | {{i3wm|https://i3wm.org}}
+  & Navire is a Victorian-era {{Linux}} laptop with 2GB of RAM and a 1.10 GHz processor. This is what I primarily use when working on {{projects|Oeuvre}}. {{Dotfiles|https://github.com/joshavanier/dots}} are available on GitHub.
+  * Usage
+  & When I work, I make it a point to work offline to minimise distractions and maximise focus. I only go online if I need to look something up, download something, or share something on the Internet.
+  = No idling in front of the computer
+  = Focus on one task at a time
+  = Only go online if necessary
+  * Essentials
+  + Browser | {{Firefox|https://www.mozilla.org/en-US/firefox/new}}, {{surf|https://surf.suckless.org}}
+  + Files | {{ranger|https://wiki.archlinux.org/index.php/Ranger}}, {{nnn|https://github.com/jarun/nnn}}
+  + Image compression | {{optipng|http://optipng.sourceforge.net}}, {{jpegoptim|https://github.com/tjko/jpegoptim}}
+  + Image editor | {{GIMP|https://www.gimp.org}}
+  + Image viewer | {{feh|https://feh.finalrewind.org}}
+  + Media player | {{mpv|https://wiki.archlinux.org/index.php/Mpv}}
+  + Metadata cleaner | {{mat|https://github.com/jubalh/MAT}}
+  + Music composition | {{Marabu|https://wiki.xxiivv.com/#marabu}}
+  + Music player | {{cmus|https://cmus.github.io}}
+  + PDF reader | {{zathura|https://wiki.archlinux.org/index.php/Zathura}}
+  + RSS reader | {{newsboat|https://newsboat.org}}
+  + Terminal | xterm, {{st|https://st.suckless.org}}
+  + Text editor | {{vim|https://www.vim.org}}
+  + Vector tool | {{Dotgrid|https://wiki.xxiivv.com/#dotgrid}}
+  + WM | {{i3wm|https://i3wm.org}}
 
 INVENTORY.ORION
-  ? : The mobile workstation
-  $
-    & Orion is an Android phone that serves as my mobile workstation that allows me to work on the go.
-    * Essentials
-    + Browser | {{Firefox|https://www.mozilla.org/en-US/firefox/mobile}}
-    + Dimmer | {{Twilight|https://play.google.com/store/apps/details?id=com.urbandroid.lux&hl=en_US}}
-    + Email | {{ProtonMail|https://protonmail.com}}
-    + Habit Tracker | {{Habitica|https://habitica.com/static/home}}
-    + Language Learning | {{Duolingo|https://www.duolingo.com}}
-    + Notes | {{iA Writer|https://ia.net/writer}}
-    + Photography | {{VSCO|https://vsco.co}}, Snapseed
-    + Reading | {{Lithium|https://play.google.com/store/apps/details?id=com.faultexception.reader&hl=en}}, {{Pocket|https://getpocket.com}}
-    + Social Media | {{Mastalab|https://mastalab.app}}, {{Twitter Lite|https://play.google.com/store/apps/details?id=com.twitter.android.lite&hl=en_US}}
-    + Team Communication | {{Slack|https://slack.com/downloads/android}}
-    + Terminal | {{Termux|https://termux.com}}
+  & Orion is an Android phone that serves as my mobile workstation that allows me to work on the go.
+  * Essentials
+  + Browser | {{Firefox|https://www.mozilla.org/en-US/firefox/mobile}}
+  + Dimmer | {{Twilight|https://play.google.com/store/apps/details?id=com.urbandroid.lux&hl=en_US}}
+  + Email | {{ProtonMail|https://protonmail.com}}
+  + Habit Tracker | {{Habitica|https://habitica.com/static/home}}
+  + Language Learning | {{Duolingo|https://www.duolingo.com}}
+  + Notes | {{iA Writer|https://ia.net/writer}}
+  + Photography | {{VSCO|https://vsco.co}}, Snapseed
+  + Reading | {{Lithium|https://play.google.com/store/apps/details?id=com.faultexception.reader&hl=en}}, {{Pocket|https://getpocket.com}}
+  + Social Media | {{Mastalab|https://mastalab.app}}, {{Twitter Lite|https://play.google.com/store/apps/details?id=com.twitter.android.lite&hl=en_US}}
+  + Team Communication | {{Slack|https://slack.com/downloads/android}}
+  + Terminal | {{Termux|https://termux.com}}
 
 INVENTORY.EDC
-  ? : Everyday carry
-  $
-    & As a university student, I often carry a backpack containing things for class, although I try to carry as little weight as possible.
-    * Things
-    - Renaissance pen
-    - {{Phone|Orion}}
-    - Tyvek wallet
-    - Steel pocket knife
-    - Keys
+  & As a university student, I often carry a backpack containing things for class, although I try to carry as little weight as possible.
+  * Things
+  - Renaissance pen
+  - {{Phone|Orion}}
+  - Tyvek wallet
+  - Steel pocket knife
+  - Keys
 
 @ JOSH.DEATH
-  ? : L'inévitabilité
-  $
-    @ You only live once, but if you do it right, once is enough. | Mae West
+  @ You only live once, but if you do it right, once is enough. | Mae West
 
 DEATH.MORTEM
-  ? : A mortal's hourglass
-  $
-    & The Mortem shows how much time I may have remaining assuming a lifespan of 70 Earth years.
-    % mors.png
+  & The Mortem shows how much time I may have remaining assuming a lifespan of 70 Earth years.
+  % mors.png
 
 ! STATUS
-  ? : Wiki status

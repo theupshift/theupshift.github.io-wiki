@@ -81,7 +81,7 @@ module.exports = function ({term, root, line}, tables, logs) {
     let html = '', todo = 0;
     for (let i = 0, l = portals.length; i < l; i++) {
       const {term, line} = portals[i];
-      const long = new Runic(line['$']).html();
+      const long = new Runic(line).html();
       const x = long.length > 0;
       const y = long.indexOf('<img') > -1;
       const CI = _calcCI(x, y);
@@ -115,7 +115,7 @@ module.exports = function ({term, root, line}, tables, logs) {
     let html = '', todo = 0;
     for (let i = 0, l = page.length; i < l; i++) {
       const {term, line} = page[i];
-      const long = new Runic(line['$']).html();
+      const long = new Runic(line).html();
       const x = long.length > 0;
       const y = long.indexOf('<img') > -1;
       const z = long.indexOf('<a') > -1;
