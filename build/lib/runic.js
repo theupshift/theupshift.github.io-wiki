@@ -135,7 +135,7 @@ module.exports = function (raw) {
 
   this.render = (line = '', rune = null) => {
     if (rune && rune.tag === 'img') {
-      return `<img src="img/${line}"/>`;
+      return `<img src="m/${line}"/>`;
     }
     const {tag} = rune;
     return rune ? (tag ? `<${tag}>${line}</${tag}>` : line) : '';
@@ -143,12 +143,12 @@ module.exports = function (raw) {
 
   this.media = (content) => {
     if (content.indexOf(',') < 0) {
-      return `<img src="img/${content}"/>`;
+      return `<img src="m/${content}"/>`;
     }
     let html = '';
     const gallery = content.split(',');
     for (let i = 0, l = gallery.length; i < l; i++) {
-      html += `<img src="img/${gallery[i].trim()}">`;
+      html += `<img src="m/${gallery[i].trim()}">`;
     }
     return html;
   }

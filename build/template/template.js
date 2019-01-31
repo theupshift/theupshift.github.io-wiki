@@ -54,9 +54,9 @@ module.exports = function ({term, root, line}) {
     return [
       `<footer><p><a title="Josh Avanier" href="./josh.html">JA</a> `,
       `© 2017&ndash;${new Date().getFullYear()}</p>`,
-      `<a href="${rURL}"><img id="w" src="img/r.svg" alt="Ring"></a>`,
+      `<a href="${rURL}"><img id="w" src="m/r.svg" alt="Ring"></a>`,
       `<a href="${mURL}" target="_blank">`,
-      `<img id="m" src="img/m.svg" alt="Town"></a></footer>`
+      `<img id="m" src="m/m.svg" alt="Town"></a></footer>`
     ].join('');
   }
 
