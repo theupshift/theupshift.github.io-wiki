@@ -9,10 +9,10 @@ module.exports = function ({term, root, line}) {
    */
   this.head = () => {
     return [
-      '<!doctype html><html><meta charset="utf-8">',
-      '<meta name="viewport" content="width=device-width, initial-scale=1">',
+      '<!doctype html><meta charset="utf-8">',
+      '<meta name="viewport"content="width=device-width,initial-scale=1">',
       `<title>${this.id.toCap()}</title>${this.meta()}`,
-      `<link rel="stylesheet" href="../s.css"/>`
+      `<link rel="stylesheet"href="../s.css">`
     ].join('');
   }
 
@@ -21,7 +21,7 @@ module.exports = function ({term, root, line}) {
    * @return {string} Meta
    */
   this.meta = () => {
-    return '<meta name="author" content="Avanier"><meta name="description" content="Avanier\'s wiki">';
+    return '<meta name="author" content="Avanier">';
   }
 
   /**
@@ -30,10 +30,10 @@ module.exports = function ({term, root, line}) {
    */
   this.header = () => {
     const {id, root} = this;
-    const u = id === 'HOME' ? '&mdash;' : `<a href="./${
+    const u = id === 'HOME' ? '&mdash;' : `<a href="${
       root === 'HOME' ? 'index' : root.toUrl()
     }.html">${root.toCap()}</a>`;
-    return `${u}<input id="s" value="${id.toCap()}" placeholder="Query" spellcheck="false" autocomplete="off">`;
+    return `${u}<input id="s"value="${id.toCap()}"placeholder="⧃" spellcheck="false"autocomplete="off">`;
   }
 
   /**
@@ -52,11 +52,11 @@ module.exports = function ({term, root, line}) {
     const rURL = 'https://webring.xxiivv.com/#random';
     const mURL = 'https://merveilles.town/@joshavanier';
     return [
-      `<footer><p><a title="Josh Avanier" href="./josh.html">JA</a> `,
+      `<footer><p><a href="./josh.html">JA</a> `,
       `© 2017&ndash;${new Date().getFullYear()}</p>`,
-      `<a href="${rURL}"><img id="w" src="m/r.svg" alt="Ring"></a>`,
-      `<a href="${mURL}" target="_blank">`,
-      `<img id="m" src="m/m.svg" alt="Town"></a></footer>`
+      `<a href="${rURL}"><img id="w"src="m/r.svg"alt="Ring"></a>`,
+      `<a href="${mURL}"target="_blank">`,
+      `<img id="m"src="m/m.svg"alt="Town"></a></footer>`
     ].join('');
   }
 
