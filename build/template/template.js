@@ -1,7 +1,7 @@
 const Runic = require('../lib/runic');
 
-module.exports = function ({term, root, line}) {
-  Object.assign(this, {id: term, file: term.toUrl(), root});
+module.exports = function ({term, root, type, line}) {
+  Object.assign(this, {id: term, file: term.toUrl(), root, type});
 
   /**
    * Build document head
@@ -12,7 +12,7 @@ module.exports = function ({term, root, line}) {
       '<!doctype html><meta charset="utf-8">',
       '<meta name="viewport"content="width=device-width,initial-scale=1">',
       `<title>${this.id.toCap()}</title>${this.meta()}`,
-      `<link rel="stylesheet"href="../s.css">`
+      this.css()
     ].join('');
   }
 
@@ -22,6 +22,21 @@ module.exports = function ({term, root, line}) {
    */
   this.meta = () => {
     return '<meta name="author" content="Avanier">';
+  }
+
+  /**
+   * Create CSS link
+   * @return {string} Link
+   */
+  this.css = () => {
+    let c = '';
+    switch (this.type) {
+      case 'home': c = 'a'; break;
+      case 'status': c = 'b'; break;
+      case 'portal': c = 'c'; break;
+      default: c = 'd'; break;
+    }
+    return `<link href="../${c}.css"rel="stylesheet">`;
   }
 
   /**

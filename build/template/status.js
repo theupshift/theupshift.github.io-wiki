@@ -2,8 +2,8 @@ const Runic = require('../lib/runic');
 const LogSet = require('../lib/set');
 const Template = require('./template');
 
-module.exports = function ({term, root, line}, tables, logs) {
-  Template.call(this, {term, root, line});
+module.exports = function ({term, root, type, line}, tables, logs) {
+  Template.call(this, {term, root, type, line});
   this.path = `./wiki/${this.file}.html`;
   const set = new LogSet(logs.raw);
 

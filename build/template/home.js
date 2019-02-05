@@ -1,7 +1,7 @@
 const Template = require('./template');
 
-module.exports = function ({term, line}) {
-  Template.call(this, {term, line});
+module.exports = function ({term, type, line}) {
+  Template.call(this, {term, type, line});
   Object.assign(this, {
     root: 'HOME',
     file: 'index',

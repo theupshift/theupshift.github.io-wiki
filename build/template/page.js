@@ -12,8 +12,8 @@ const sectors = {
   'AU': 'Audio'
 }
 
-module.exports = function ({term, root, line}, data) {
-  Template.call(this, {term, root, line});
+module.exports = function ({term, root, type, line}, data) {
+  Template.call(this, {term, root, type, line});
   this.path = `./wiki/${this.file}.html`;
 
   /**
