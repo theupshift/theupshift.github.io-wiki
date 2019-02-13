@@ -58,7 +58,7 @@ module.exports = function ({term, root, type, line}, tables, logs) {
       `${s.lh.toFixed(0)} hours<br>`,
       `${s.count} logs<br>`,
       `${s.dailyAvg().toFixed(0)} daily avg<br>`,
-      `${_undoc()}</p>`
+      _undoc()
     ].join('');
   }
 
@@ -100,9 +100,9 @@ module.exports = function ({term, root, type, line}, tables, logs) {
       '<h2>Portals</h2><p class="x">',
       `${total} Σ<br>`,
       `${todo} unfini<br>`,
-      `${fini.toFixed(0)}% fini<br>`,
-      '</p><p>Key: info, media',
-      `<p class="x">${html}</p>`
+      `${fini.toFixed(0)}% fini`,
+      '<p>Key: info, media',
+      `<p class="x">${html}`
     ].join('');
   }
 
@@ -136,8 +136,8 @@ module.exports = function ({term, root, type, line}, tables, logs) {
       `${pages} Σ<br>`,
       `${todo} unfini<br>`,
       `${fini.toFixed(0)}% fini`,
-      '</p><p>Key: info, media, links',
-      `<p class="x">${html}</p>`
+      '<p>Key: info, media, links',
+      `<p class="x">${html}`
     ].join('');
   }
 
@@ -173,7 +173,7 @@ module.exports = function ({term, root, type, line}, tables, logs) {
     return [
       `${total} projects<br>`,
       `${undocTotal} missing<br>`,
-      `${perc.toFixed(0)}% fini<br>`
+      `${perc.toFixed(0)}% fini`
     ].join('');
   }
 

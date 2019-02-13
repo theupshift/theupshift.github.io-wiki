@@ -23,10 +23,9 @@ module.exports = function ({term, root, type, line}) {
   /**
    * Insert index item
    * @param {string} t - Term
-   * @param {string} d - Description
    * @return {string} Item
    */
-  function _ins (t, d) {
+  function _ins (t) {
     return `<a href="${t.toUrl()}.html">${t.toCap()}</a><br>`;
   }
 
@@ -37,7 +36,7 @@ module.exports = function ({term, root, type, line}) {
    */
   function _index (t) {
     const c = _getChildren(t);
-    const i = c.reduce((v, {term, line}) => v += _ins(term, line['?']), '');
+    const i = c.reduce((v, {term}) => v += _ins(term), '');
     return c.length > 0 ? `<p class="x">${i}` : '';
   }
 
