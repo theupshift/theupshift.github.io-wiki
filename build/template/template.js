@@ -67,7 +67,7 @@ module.exports = function ({term, root, type, line}) {
     const rURL = 'https://webring.xxiivv.com/#random';
     const mURL = 'https://merveilles.town/@joshavanier';
     return [
-      `<footer><p><a href="./josh.html">JA</a> `,
+      `<footer><p><a href="josh.html">J</a> `,
       `© 2017&ndash;${new Date().getFullYear()}</p>`,
       `<a href="${rURL}"><img id="w"src="m/r.svg"alt="Ring"></a>`,
       `<a href="${mURL}"target="_blank">`,
