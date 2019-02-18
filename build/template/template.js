@@ -20,9 +20,7 @@ module.exports = function ({term, root, type, line}) {
    * Build meta
    * @return {string} Meta
    */
-  this.meta = () => {
-    return '<meta name="author" content="Avanier">';
-  }
+  this.meta = () => '<meta name="author"content="Avanier">';
 
   /**
    * Create CSS link
@@ -48,16 +46,14 @@ module.exports = function ({term, root, type, line}) {
     const u = id === 'HOME' ? '&mdash;' : `<a href="${
       root === 'HOME' ? 'index' : root.toUrl()
     }.html">${root.toCap()}</a>`;
-    return `${u}<input id="s"value="${id.toCap()}"placeholder="⧃" spellcheck="false"autocomplete="off">`;
+    return `${u}<input id="s"value="${id.toCap()}"placeholder="⧃"spellcheck="false"autocomplete="off">`;
   }
 
   /**
    * Build core
    * @return {string} Core
    */
-  this.core = () => {
-    return new Runic(line).parse();
-  }
+  this.core = () => new Runic(line).parse();
 
   /**
    * Build footer
