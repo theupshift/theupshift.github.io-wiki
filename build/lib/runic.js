@@ -4,9 +4,7 @@ const RUNES = {
   '-': {tag: 'ol', sub: 'li', stash: 1},
   '=': {tag: 'ul', sub: 'li', stash: 1},
   '@': {tag: 'blockquote'},
-  '#': {tag: 'code', sub: 'ln', stash: 1},
-  '!': {tag: 'table', sub: 'tr', wrap: 'th', stash: 1},
-  '+': {tag: 'table', sub: 'tr', wrap: 'td', stash: 1}
+  '#': {tag: 'code', sub: 'ln', stash: 1}
 }
 
 function toMarkup (s) {
@@ -89,7 +87,6 @@ module.exports = function (raw) {
 
       switch (char) {
         case '%': html += this.media(content); continue;
-        case '|': html += this.table(content); continue;
         case '@': html += this.quote(content); continue;
         default: break;
       }
@@ -151,10 +148,6 @@ module.exports = function (raw) {
       html += `<img src="m/${gallery[i].trim()}">`;
     }
     return html;
-  }
-
-  this.table = (content) => {
-    return `<td>${content.trim().replace(/ \| /g, '</td><td>')}</td>`;
   }
 
   this.quote = (content) => {
