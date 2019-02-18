@@ -1,8 +1,15 @@
 const Template = require('./template');
 const Aequirys = require('aequirys');
 
-const _dd = d => new Aequirys(d).display();
-const _hv = d => `${d.getDate()}&middot;${d.getMonth() + 1}&middot;${d.getFullYear()}`;
+const _p = n => `0${n}`.substr(-2);
+const _dd = d => {
+  const a = new Aequirys(d);
+  const y = Math.abs(17 - +a.year.toString().slice(-2)) + 1;
+  const m = a.month;
+  const x = (+a.date).toString(15).toUpperCase();
+  return `${x}${m}${y}`;
+}
+const _hv = d => `${_p(d.getDate())}${_p(d.getMonth() + 1)}${d.getFullYear().toString().slice(-2)}`;
 
 const sectors = {
   'DV': 'Development',
@@ -25,7 +32,7 @@ module.exports = function ({term, root, type, line}, data) {
     let html = '';
     for (let i = 0, l = sv.length; i < l; i++) {
       const {h, n} = sv[i];
-      html += ` &middot; ${h.toFixed(2)} <span title="${sectors[n]}">${n}</span>`;
+      html += ` · <span title="${sectors[n]}">${h.toFixed(2)}${n[0]}</span>`;
     }
     return html;
   }
@@ -41,7 +48,7 @@ module.exports = function ({term, root, type, line}, data) {
     return [
       `<div id="l"><span title="${_hv(sd)}&ndash;${_hv(ed)}">`,
       `${_dd(sd)}&ndash;${_dd(ed)}</span>`,
-      ` &middot; ${d.lh.toFixed(2)} h`,
+      ` · ${d.lh.toFixed(2)}`,
       `${_sh(d.sortValues())}</div>`
     ].join('');
   }
