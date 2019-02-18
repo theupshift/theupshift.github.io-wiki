@@ -64,15 +64,7 @@ module.exports = function ({term, root, type, line}) {
    * @return {string} Footer
    */
   this.footer = () => {
-    const rURL = 'https://webring.xxiivv.com/#random';
-    const mURL = 'https://merveilles.town/@joshavanier';
-    return [
-      `<footer><p><a href="josh.html">J</a> `,
-      `© 2017&ndash;${new Date().getFullYear()}</p>`,
-      `<a href="${rURL}"><img id="w"src="m/r.svg"alt="Ring"></a>`,
-      `<a href="${mURL}"target="_blank">`,
-      `<img id="m"src="m/m.svg"alt="Town"></a></footer>`
-    ].join('');
+    return `<a href="copyright.html">&copy; 2017&ndash;${new Date().getFullYear()}</a>`;
   }
 
   /**

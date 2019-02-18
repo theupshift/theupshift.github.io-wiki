@@ -53,6 +53,18 @@ module.exports = function ({term, type, line}) {
   }
 
   /**
+   * Build footer
+   * @return {string} Footer
+   */
+  this.footer = () => {
+    return [
+      '<a href="copyright.html">&copy; ',
+      `2017&ndash;${new Date().getFullYear()}</a><br>`,
+      '<a href="https://webring.xxiivv.com/#random">Webring</a>'
+    ].join('');
+  }
+
+  /**
    * Render Home page
    * @return {string} Content
    */
