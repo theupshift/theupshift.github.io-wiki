@@ -1,71 +1,9 @@
-/*
- * Calculate average
- * @param {Array=} v - Values
- * @return {number} Average
- */
-function avg (v = []) {
-  const l = v.length;
-  return l === 0 ? 0 : sum(v) / l;
-}
-
-/**
- * Calculate maximum value
- * @param {Array=} v - Values
- * @return {number} Maximum
- */
-function max (v = []) {
-  return v.length === 0 ? 0 : Math.max(...v);
-}
-
-/**
- * Calculate minimum value
- * @param {Array=} v - Values
- * @return {number} Minimum
- */
-function min (v = []) {
-  return v.length === 0 ? 0 : Math.min(...v);
-}
-
 /**
  * Add leading zeroes
  * @return {string}
  */
 Number.prototype.pad = function () {
   return `0${this}`.substr(-2);
-}
-
-/**
- * Calculate range
- * @param {Array=} v - Values
- * @return {number} Range
- */
-function range (v = []) {
-  return v.length === 0 ? 0 : max(v) - min(v);
-}
-
-/**
- * Calculate standard deviation
- * @param {Array=} v - Values
- * @return {number} Standard deviation
- */
-function sd (v = []) {
-  const l = v.length;
-  if (l === 0) return 0;
-  const x = avg(v);
-  let y = 0;
-  for (let i = 0; i < l; i++) y += (v[i] - x) ** 2;
-  return Math.sqrt(y / (l - 1));
-}
-
-/**
- * Convert decimal to time
- * @param {number} x
- * @return {string} Time
- */
-function convertToTime (x) {
-  const min = x % 1;
-  const tail = +(min * 60).toFixed(0);
-  return `${x - min}:${tail.pad()}`;
 }
 
 /**
@@ -82,18 +20,6 @@ function sum (v = []) {
 }
 
 /**
- * Calculate trend
- * @param {number} a
- * @param {number} b
- * @return {string} Trend
- */
-function trend (a, b) {
-  const t = (a - b) / b * 100;
-  return `${t < 0 ? '' : '+'}${t.toFixed(2)}%`;
-}
-
-
-/**
  * Add days to date
  * @param {number=} i - Increment
  * @return {Date}
@@ -105,15 +31,6 @@ Date.prototype.addDays = function (i = 1) {
 };
 
 /**
- * Display timestamp
- * @return {string} Timestamp
- */
-Date.prototype.stamp = function () {
-  const x = `${this.getHours()}${this.getMinutes()}`;
-  return x in c_stamp ? c_stamp[x] : c_stamp[x] = this.formatTime();
-}
-
-/**
  * Convert to date ID
  * @return {string} YYYYMMDD
  */
@@ -122,29 +39,6 @@ Date.prototype.toDate = function () {
   const m = this.getMonth().pad();
   const d = this.getDate().pad();
   return `${y}${m}${d}`;
-}
-
-/**
- * Convert to decimal time
- * @param {Date} d
- * @return {string} Decimal beat
- */
-Date.prototype.toDec = function () {
-  const d = new Date(this);
-  const b = new Date(d).setHours(0, 0, 0);
-  const v = (d - b) / 864E5;
-  const t = v.toFixed(6).substr(2,6);
-  return t.substr(0, 3);
-}
-
-/**
- * Convert to hexadecimal
- * @return {string} Hex
- */
-Date.prototype.toHex = function () {
-  const d = new Date(this);
-  d.setMilliseconds(0);
-  return (+d / 1E3).toString(16);
 }
 
 /**
@@ -186,25 +80,6 @@ function listDates (s, e = new Date) {
   return l;
 }
 
-/**
- * Calculate offset
- * @param {string} h
- * @param {number} d - Duration in seconds
- * @return {string} Offset in hexadecimal
- */
-function offset (h, d) {
-  return (convertHex(h) + d).toString(16);
-}
-
-/**
- * Convert hex time to epoch time
- * @param {string} h
- * @return {number} Epoch time
- */
-function toEpoch (h) {
-  return h in c_unix ? c_unix[h] : c_unix[h] = new Date(convertHex(h) * 1E3);
-}
-
 module.exports = class LogSet {
 
   /**
@@ -223,90 +98,6 @@ module.exports = class LogSet {
 
   lastUpdated () {
     return this.last.end.ago();
-  }
-
-  /**
-   * Get logs by date
-   * @param {Date=} d
-   * @return {Array} Entries
-   */
-  byDate (d = new Date) {
-    const l = this.count;
-    if (
-      l === 0
-      || typeof d !== 'object'
-      || +d > +new Date
-    ) return [];
-
-    const logs = [];
-
-    function match (a) {
-      return a.getFullYear() === d.getFullYear()
-        && a.getMonth() === d.getMonth()
-        && a.getDate() === d.getDate();
-    }
-
-    for (let i = 0; i < l; i++) {
-      const {start, end} = this.logs[i];
-      if (end !== undefined && match(start)) logs[logs.length] = this.logs[i];
-    }
-
-    return logs;
-  }
-
-  /**
-   * Get logs by day
-   * @param {number} d - Day of the week
-   * @return {Array} Entries
-   */
-  byDay (d) {
-    if (
-      this.count === 0
-      || typeof d !== 'number'
-      || d < 0 || d > 6
-    ) return [];
-    return this.logs.filter(({start, end}) =>
-      end !== undefined && start.getDay() === d
-    );
-  }
-
-  /**
-   * Get logs by month
-   * @param {number} m - Month
-   * @return {Array} Entries
-   */
-  byMonth (m) {
-    if (
-      this.count === 0
-      || typeof m !== 'number'
-      || m < 0 || m > 11
-    ) return [];
-    return this.logs.filter(({start, end}) =>
-      end !== undefined && start.getMonth() === m
-    );
-  }
-
-  /**
-   * Get logs by period
-   * @param {Date}  start
-   * @param {Date=} end
-   * @return {Array} Entries
-   */
-  byPeriod (start, end = new Date) {
-    if (
-      this.count === 0
-      || typeof start !== 'object'
-      || typeof end !== 'object'
-      || start > end
-    ) return [];
-
-    let logs = [];
-    for (let now = start; now <= end;) {
-      logs = logs.concat(this.byDate(now));
-      now = now.addDays(1);
-    }
-
-    return logs;
   }
 
   /**
@@ -346,23 +137,6 @@ module.exports = class LogSet {
   }
 
   /**
-   * Calculate coverage
-   * @return {number} Coverage
-   */
-  coverage () {
-    const l = this.count;
-    if (l === 0) return 0;
-
-    const {end, start} = this.logs[0];
-    const endd = l === 1 ? end : this.last.start;
-    const dif = (endd - start) / 864E5;
-    let n = dif << 0;
-    n = n === dif ? n : n + 1;
-
-    return (25 * this.logHours()) / (6 * n);
-  }
-
-  /**
    * Calculate average log hours per day
    * @return {number} Average log hours
    */
@@ -371,21 +145,6 @@ module.exports = class LogSet {
     const l = se.length;
     return l === 0 ? 0 :
       se.reduce((s, c) => s + new LogSet(c).lh, 0) / l;
-  }
-
-  /**
-   * Count entries per day
-   * @return {Array} Entries per day
-   */
-  entryCounts () {
-    if (this.count === 0) return 0;
-    const sorted = this.sortEntries();
-    const l = sorted.length;
-    const counts = [];
-    for (let i = 0; i < l; i++) {
-      counts[counts.length] = sorted[i].length;
-    }
-    return counts;
   }
 
   /**
@@ -402,28 +161,6 @@ module.exports = class LogSet {
       d[d.length] = this.logs[i].dur;
     }
     return d;
-  }
-
-  /**
-   * List focus
-   * @param {number=} mode - Sector (0) or project (1)
-   * @return {Array} List
-   */
-  listFocus (mode = 0) {
-    const l = [];
-    if (mode < 0 || mode > 1) return l;
-    const sort = this.sortEntries();
-    const sl = sort.length;
-    if (sl === 0) return l;
-
-    const key = `list${mode === 0 ? 'Sectors' : 'Projects'}`;
-
-    for (let i = 0; i < sl; i++) {
-      if (sort[i].length === 0) continue;
-      l[l.length] = 1 / new LogSet(sort[i])[key]().length;
-    }
-
-    return l;
   }
 
   /**
@@ -468,35 +205,6 @@ module.exports = class LogSet {
    */
   logHours () {
     return this.count === 0 ? 0 : sum(this.listDurations());
-  }
-
-  /**
-   * Calculate project counts
-   * @return {Array} Counts
-   */
-  projectCounts () {
-    if (this.count === 0) return [];
-    const sorted = this.sortEntries();
-    const counts = [];
-
-    for (let i = 0, l = sorted.length; i < l; i++) {
-      let set = new Set();
-      for (let o = 0; o < sorted[i].length; o++) {
-        set.add(sorted[i][o].project);
-      }
-      counts[counts.length] = [...set].length;
-    }
-
-    return counts;
-  }
-
-  /**
-   * Calculate project focus
-   * @return {number} Focus
-   */
-  projectFocus () {
-    const l = this.listProjects().length;
-    return l === 0 ? 0 : 1 / l;
   }
 
   /**
