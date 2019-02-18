@@ -1,10 +1,11 @@
 @ HOME
+  & En construction
 
-@ JOSH
+@ AVANIER
   % josh.png
   & I'm a hobbyist working on a few {{projects|Oeuvre}}.
 
-JOSH.GOALS
+AVANIER.GOALS
   * Daily
   = Learn something
   = Create something
@@ -26,7 +27,7 @@ JOSH.GOALS
   = Acquire (or build) a boat and sail
   = Finish 10'000 {{projects|Oeuvre}}
 
-@ JOSH.INVENTORY
+@ AVANIER.INVENTORY
 
 INVENTORY.NAVIRE
   & Navire, my primary workstation, is a Victorian-era Linux laptop with 2GB of RAM and a 1.10 GHz processor. {{Dotfiles|https://github.com/joshavanier/dots}} are available on GitHub.
@@ -52,7 +53,7 @@ INVENTORY.NAVIRE
   = WM: {{i3wm|https://i3wm.org}}
 
 INVENTORY.ORION
-  & Orion is an Android phone that serves as my mobile workstation.
+  & Orion is an Android phone that serves as my mobile workstation. I'm currently in the process of moving away from Google services.
   * Essentials
   = Browser: {{Firefox|https://www.mozilla.org/en-US/firefox/mobile}}
   = Dimmer: {{Twilight|https://play.google.com/store/apps/details?id=com.urbandroid.lux&hl=en_US}}
@@ -62,7 +63,7 @@ INVENTORY.ORION
   = Notes: {{iA Writer|https://ia.net/writer}}
   = Photography: {{VSCO|https://vsco.co}}, Snapseed
   = Reading: {{Lithium|https://play.google.com/store/apps/details?id=com.faultexception.reader&hl=en}}, {{Pocket|https://getpocket.com}}
-  = Social: {{Mastalab|https://mastalab.app}}, {{Twitter Lite|https://play.google.com/store/apps/details?id=com.twitter.android.lite&hl=en_US}}
+  = Social: {{Fedilab|https://fedilab.app}}
   = Team Communication: {{Slack|https://slack.com/downloads/android}}
   = Terminal: {{Termux|https://termux.com}}
 
@@ -76,11 +77,14 @@ INVENTORY.EDC
   - Steel pocket knife
   - Tyvek wallet
 
-@ JOSH.DEATH
+@ AVANIER.DEATH
   @ You only live once, but if you do it right, once is enough. | Mae West
 
 DEATH.MORTEM
   & The Mortem shows how much time I may have remaining assuming a lifespan of 70 Earth years. View it {{here|https://joshavanier.github.io/mortem}}.
   % mors.png
+
+COPYRIGHT
+  & The wiki's contents (text and media) is available under the {{BY-NC-SA 4.0 license|https://creativecommons.org/licenses/by-nc-sa/4.0}}. You are free to copy and redistribute them in any medium or format or remix, transform, and build upon them so long as you provide attribution and use them for non-commercial purposes.
 
 ! STATUS

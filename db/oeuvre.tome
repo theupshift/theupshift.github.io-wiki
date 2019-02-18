@@ -13,7 +13,7 @@
 @ OEUVRE.OUBLIETTE
 
 ATELIER.BADGES
-  & Badges are a series of SVG badges to be used in {{GH|https://github.com}} repositories.
+  & Badges are a series of SVG {{GH|https://github.com}} repository badges. View them {{here|https://github.com/joshavanier/badges}}.
 
 ATELIER.DOTCON
   & Dotcon is an icon set made with {{Dotgrid|https://hundredrabbits.itch.io/dotgrid}}.
@@ -182,6 +182,9 @@ WORKSHOP.HOLLY
 WORKSHOP.NATALIE
   & Natalie is a {{RPi|https://www.raspberrypi.org/products/raspberry-pi-3-model-a-plus}} with a {{3.5" touchscreen|https://shop.pimoroni.com/products/pitft-plus-480x320-3-5-tft-touchscreen-for-raspberry-pi-pi-2-and-model-a-b}}. I currently use it as a portable computer as it is more convenient to carry than a laptop.
   % natalie.png
+
+WORKSHOP.OLAF
+  & Olaf is an upcoming homemade pinhole camera I'm currently working on.
 
 WORKSHOP.ORIGAMI
   & The art of paper folding
