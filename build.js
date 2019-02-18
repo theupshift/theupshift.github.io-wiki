@@ -8,7 +8,7 @@ const Log = require('./build/log');
 const home = require('os').homedir();
 const logs = new Log(`${home}/log.json`);
 const db = new Database([
-  'lexicon', 'oeuvre', 'monographs', 'commonplace'
+  'lexicon', 'oeuvre', 'commonplace'
 ]);
 
 String.prototype.toCap = function () {
