@@ -49,20 +49,6 @@ module.exports = function ({term, root, type, line}, tables, logs) {
   }
 
   /**
-   * Build log summary
-   * @return {string} Summary
-   */
-  function _sum (s = set) {
-    return [
-      '<p class="x">',
-      `${s.lh.toFixed(0)} hours<br>`,
-      `${s.count} logs<br>`,
-      `${s.dailyAvg().toFixed(0)} daily avg<br>`,
-      _undoc()
-    ].join('');
-  }
-
-  /**
    * Count page types
    * @return {Object} Counts
    */
@@ -171,7 +157,7 @@ module.exports = function ({term, root, type, line}, tables, logs) {
     const perc = (total - undocTotal) / total * 100;
 
     return [
-      `${total} projects<br>`,
+      `<p class="x">${total} projects<br>`,
       `${undocTotal} missing<br>`,
       `${perc.toFixed(0)}% fini`
     ].join('');
@@ -185,7 +171,7 @@ module.exports = function ({term, root, type, line}, tables, logs) {
     return [
       this.head(), this.header(),
       `<main>${this.core()}`,
-      `${_sum()}${_makeTables(organiseByType())}`,
+      `${_undoc()}${_makeTables(organiseByType())}`,
       '</main>', this.footer(), this.search()
     ].join('');
   }
