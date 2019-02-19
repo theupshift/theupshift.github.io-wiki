@@ -65,8 +65,13 @@ module.exports = function ({term, root, type, line}, tables, logs) {
    */
   function _portalTable (portals) {
     let html = '', todo = 0;
-    for (let i = 0, l = portals.length; i < l; i++) {
-      const {term, line} = portals[i];
+
+    const sorted = Object.keys(portals).sort((a, b) => {
+      return (portals[a].term > portals[b].term) ? 1 : -1;
+    });
+
+    for (let i = 0, l = sorted.length; i < l; i++) {
+      const {term, line} = portals[sorted[i]];
       const long = new Runic(line).html();
       const x = long.length > 0;
       const y = long.indexOf('<img') > -1;
@@ -94,13 +99,18 @@ module.exports = function ({term, root, type, line}, tables, logs) {
 
   /**
    * Build Page table
-   * @param {Array} page
+   * @param {Array} pages
    * @return {string} Table
    */
-  function _pageTable (page) {
+  function _pageTable (pages) {
     let html = '', todo = 0;
-    for (let i = 0, l = page.length; i < l; i++) {
-      const {term, line} = page[i];
+
+    const sorted = Object.keys(pages).sort((a, b) => {
+      return (pages[a].term > pages[b].term) ? 1 : -1;
+    });
+
+    for (let i = 0, l = sorted.length; i < l; i++) {
+      const {term, line} = pages[sorted[i]];
       const long = new Runic(line).html();
       const x = long.length > 0;
       const y = long.indexOf('<img') > -1;
@@ -114,12 +124,12 @@ module.exports = function ({term, root, type, line}, tables, logs) {
       html += `${_mark(x)}${_mark(y)}${_mark(z)} <a href="./${term.toUrl()}.html">${term.toCap()}</a><br>`;
     }
 
-    const pages = _countTypes().page;
-    const fini = (pages - todo) / pages * 100;
+    const total = _countTypes().page;
+    const fini = (total - todo) / total * 100;
 
     return [
       '<h2>Pages</h2><p class="x">',
-      `${pages} Σ<br>`,
+      `${total} Σ<br>`,
       `${todo} unfini<br>`,
       `${fini.toFixed(0)}% fini`,
       '<p>Key: info, media, links',

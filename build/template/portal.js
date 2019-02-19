@@ -11,12 +11,21 @@ module.exports = function ({term, root, type, line}) {
    * @return {Array} Children
    */
   function _getChildren (n, db = database) {
-    let scion = [];
+    let scion = [], temp = [];
     for (let id in db) {
       const term = db[id];
       if (!term.root || n !== term.root) continue;
-      scion[scion.length] = term;
+      temp[temp.length] = term;
     }
+
+    const sorted = Object.keys(temp).sort((a, b) => {
+      return (temp[a].term > temp[b].term) ? 1 : -1;
+    });
+
+    for (let i = 0, l = sorted.length; i < l; i++) {
+      scion[scion.length] = temp[sorted[i]];
+    }
+
     return scion;
   }
 
