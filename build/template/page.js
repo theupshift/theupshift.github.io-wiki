@@ -12,11 +12,11 @@ const _dd = d => {
 const _hv = d => `${_p(d.getDate())}${_p(d.getMonth() + 1)}${d.getFullYear().toString().slice(-2)}`;
 
 const sectors = {
-  'DV': 'Development',
-  'RE': 'Research',
-  'PY': 'Physical',
-  'VI': 'Visual',
-  'AU': 'Audio'
+  'D': 'Development',
+  'R': 'Research',
+  'P': 'Physical',
+  'V': 'Visual',
+  'A': 'Audio'
 }
 
 module.exports = function ({term, root, type, line}, data) {
@@ -32,7 +32,7 @@ module.exports = function ({term, root, type, line}, data) {
     let html = '';
     for (let i = 0, l = sv.length; i < l; i++) {
       const {h, n} = sv[i];
-      html += ` · <span title="${sectors[n]}">${h.toFixed(2)}${n[0]}</span>`;
+      html += ` · <span title="${sectors[n]}">${h.toFixed(2)}${n}</span>`;
     }
     return html;
   }
