@@ -32,7 +32,7 @@ module.exports = function ({term, root, type, line}, data) {
     let html = '';
     for (let i = 0, l = sv.length; i < l; i++) {
       const {h, n} = sv[i];
-      html += ` · <span title="${sectors[n]}">${h.toFixed(2)}${n}</span>`;
+      html += ` <span title="${sectors[n]}">${h.toFixed(2)}${n}</span>`;
     }
     return html;
   }
@@ -48,7 +48,7 @@ module.exports = function ({term, root, type, line}, data) {
     return [
       `<div id="l"><span title="${_hv(sd)}&ndash;${_hv(ed)}">`,
       `${_dd(sd)}&ndash;${_dd(ed)}</span>`,
-      ` · ${d.lh.toFixed(2)}`,
+      ` ${d.lh.toFixed(2)}`,
       `${_sh(d.sortValues())}</div>`
     ].join('');
   }
