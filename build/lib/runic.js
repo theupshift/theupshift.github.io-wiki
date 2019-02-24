@@ -139,12 +139,9 @@ module.exports = function (raw) {
   }
 
   this.media = (content) => {
-    const png = x => !~x.indexOf('.') ? `${x}.png` : x;
-    if (content.indexOf(',') < 0) {
-      return `<img src="m/${png(content)}"/>`;
-    }
     let html = '';
-    const gallery = content.split(',');
+    const gallery = content.split(' ');
+    const png = x => !~x.indexOf('.') ? `${x}.png` : x;
     for (let i = 0, l = gallery.length; i < l; i++) {
       html += `<img src="m/${png(gallery[i].trim())}">`;
     }
