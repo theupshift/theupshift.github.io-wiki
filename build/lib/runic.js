@@ -49,12 +49,12 @@ module.exports = function (raw) {
     all: [],
 
     add (rune, item) {
-      this.rune = this.copy(rune);
+      this.rune = rune;
       this.all[this.all.length] = {rune, item};
     },
 
     pop () {
-      const copy = this.copy(this.all);
+      const copy = this.all;
       this.all = [];
       return copy;
     },
@@ -65,10 +65,6 @@ module.exports = function (raw) {
 
     length () {
       return this.all.length;
-    },
-
-    copy (data) {
-      return JSON.parse(JSON.stringify(data));
     }
   }
 
