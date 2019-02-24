@@ -150,8 +150,15 @@ module.exports = function (raw) {
 
   this.quote = (content) => {
     const [text, author, source, link] = content.split(' | ');
-    const attr = link ? `${author}, <a href="${link}">${source}</a>` : author;
-    return `<blockquote><p class="q">&ldquo;${text}&rdquo;</p>${author ? `<p class="a">&mdash; ${attr}</p>` : ''}</blockquote>`
+    let attr = '';
+    if (source) {
+      attr = link ?
+        `${author}, <a href="${link}"><i>${source}</i></a>` :
+        `${author}, <i>${source}</i>`;
+    } else {
+      attr = author;
+    }
+    return `<blockquote><p class="q">&ldquo;${text}&rdquo;${author ? `<p class="a">&mdash; ${attr}` : ''}</blockquote>`
   }
 
   this.html = () => this.parse(raw);
