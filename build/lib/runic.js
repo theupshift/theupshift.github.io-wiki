@@ -123,17 +123,14 @@ module.exports = function (raw) {
       const line = st.item;
 
       html += wrap ?
-        `<${sub}><${wrap}>${line.replace(/\|/g,`</${wrap}><${wrap}>`).trim()}</${wrap}></${sub}>` :
-        `<${sub}>${line}</${sub}>`;
+        `<${sub}><${wrap}>${line.replace(/\|/g,`</${wrap}><${wrap}>`).trim()}</${wrap}>` :
+        `<${sub}>${line}`;
     }
 
     return `<${tag}>${html}</${tag}>`;
   }
 
   this.render = (line = '', rune = null) => {
-    if (rune && rune.tag === 'img') {
-      return `<img src="m/${line}"/>`;
-    }
     const {tag} = rune;
     return rune ? (tag ? `<${tag}>${line}</${tag}>` : line) : '';
   }
