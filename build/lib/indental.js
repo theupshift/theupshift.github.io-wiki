@@ -4,18 +4,9 @@ module.exports = function (data) {
   function format (line) {
     let a = [], h = {};
     const {children} = line;
-
     for (let i = 0, l = children.length; i < l; i++) {
-      const child = line.children[i];
-      const {term, value, content} = child;
-
-      if (child.children.length === 0 && content) {
-        a[a.length] = content;
-      } else {
-        h[content] = format(child);
-      }
+      a[a.length] = children[i].content;
     }
-
     return a.length > 0 ? a : h;
   }
 
