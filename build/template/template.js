@@ -46,7 +46,7 @@ module.exports = function ({term, root, type, line}) {
     const u = id === 'HOME' ? '&mdash;' : `<a href="${
       root === 'HOME' ? 'index' : root.toUrl()
     }.html">${root.toCap()}</a>`;
-    return `${u}<input id="s"value="${id.toCap()}"placeholder="⧃"spellcheck="false"autocomplete="off">`;
+    return `${u}<input id="s"value="${id.toCap()}"placeholder="Search"spellcheck="false"autocomplete="off">`;
   }
 
   /**
