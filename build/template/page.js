@@ -60,8 +60,8 @@ module.exports = function ({term, root, type, line}, data) {
   this.render = () => {
     return [
       this.head(), this.header(),
-      `<main>${data.logs.length > 0 ? _sum() : ''}`,
-      `${this.core()}</main>`,
+      `<main>${this.core()}`,
+      `${data.logs.length > 0 ? _sum() : ''}</main>`,
       this.footer(), this.search()
     ].join('');
   }
