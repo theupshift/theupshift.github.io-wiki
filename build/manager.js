@@ -9,15 +9,18 @@ module.exports = function (tables, logs) {
   database = tables;
 
   /**
-   * Create a Status page
-   * @param {Object} page
-   * @param {Object} [t] - Tables
-   * @param {Array} [l] - Logs
+   * Create a Home page
+   * @param {Object} p - Page
    * @return {Object} Page
    */
-  function _status (page, t = tables, l = logs) {
-    return new Status(page, t, l);
-  }
+  const _home = p => new Home(p, logs, tables);
+
+  /**
+   * Create a Status page
+   * @param {Object} p - Page
+   * @return {Object} Page
+   */
+  const _status = p => new Status(p, logs, tables);
 
   /**
    * Create a standard page
@@ -26,8 +29,8 @@ module.exports = function (tables, logs) {
    * @return {Object} Page
    */
   function _standard (p, {data: {pro}} = logs) {
-    const id = p.term;
-    return new Page(p, new LogSet(id in pro ? pro[id] : []));
+    const {term} = p;
+    return new Page(p, new LogSet(term in pro ? pro[term] : []));
   }
 
   /**
@@ -37,7 +40,7 @@ module.exports = function (tables, logs) {
    */
   function _render (p) {
     switch (p.type) {
-      case 'home': return new Home(p);
+      case 'home': return _home(p);
       case 'portal': return new Portal(p);
       case 'status': return _status(p);
       default: return _standard(p);

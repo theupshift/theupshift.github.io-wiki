@@ -6,15 +6,15 @@ module.exports = function (file) {
   this.data = {sec: {}, pro: {}};
   this.raw = [];
 
-  const epoch = h => new Date(parseInt(h, 16) * 1E3);
+  const _epoch = h => new Date(parseInt(h, 16) * 1E3);
 
   for (let i = 0, l = raw.length; i < l; i++) {
     const {s, e, c, t} = raw[i];
     if (e === undefined) continue;
     const sec = c.toUpperCase();
     const pro = t.toUpperCase();
-    const a = epoch(s);
-    const b = epoch(e);
+    const a = _epoch(s);
+    const b = _epoch(e);
     const entry = new Entry({s:a, e:b, c, t});
 
     if (sec in this.data.sec) this.data.sec[sec].push(entry);

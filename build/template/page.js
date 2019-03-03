@@ -41,15 +41,15 @@ module.exports = function ({term, root, type, line}, data) {
    * Build Summary
    * @return {string} Summary
    */
-  function _sum (d = data) {
-    const sd = d.logs[0].start;
-    const ed = d.logs.slice(-1)[0].end;
+  function _sum () {
+    const sd = data.logs[0].start;
+    const ed = data.logs.slice(-1)[0].end;
 
     return [
       `<div id="l"><span title="${_hv(sd)}&ndash;${_hv(ed)}">`,
       `${_dd(sd)}&ndash;${_dd(ed)}</span>`,
-      ` ${d.lh.toFixed(2)}`,
-      `${_sh(d.sortValues())}</div>`
+      ` ${data.lh.toFixed(2)}`,
+      `${_sh(data.sortValues())}</div>`
     ].join('');
   }
 

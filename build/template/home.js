@@ -1,6 +1,7 @@
 const Template = require('./template');
+const LogSet = require('../lib/set');
 
-module.exports = function ({term, type, line}) {
+module.exports = function ({term, type, line}, logs, tables) {
   Template.call(this, {term, type, line});
   Object.assign(this, {
     root: 'HOME',
@@ -36,10 +37,9 @@ module.exports = function ({term, type, line}) {
   /**
    * Insert item into Home Index
    * @param {string} t - Term
-   * @param {string} b - Bref
    * @return {string} Item
    */
-  function _row (t, b) {
+  function _row (t) {
     return `<a href="${t.toUrl()}.html">${t.toCap()}</a><br>`;
   }
 
@@ -98,11 +98,7 @@ module.exports = function ({term, type, line}) {
    * @return {string} Footer
    */
   this.footer = () => {
-    return [
-      '<a href="copyright.html">&copy; ',
-      `2017&ndash;${new Date().getFullYear()}</a><br>`,
-      '<a href="https://webring.xxiivv.com/#random">Webring</a>'
-    ].join('');
+    return `<a id="c"href="copyright.html">© 2017&ndash;${new Date().getFullYear()}</a>`;
   }
 
   /**

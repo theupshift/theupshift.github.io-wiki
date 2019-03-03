@@ -2,7 +2,7 @@ const Runic = require('../lib/runic');
 const LogSet = require('../lib/set');
 const Template = require('./template');
 
-module.exports = function ({term, root, type, line}, tables, logs) {
+module.exports = function ({term, root, type, line}, logs, tables) {
   Template.call(this, {term, root, type, line});
   this.path = `./wiki/${this.file}.html`;
   const set = new LogSet(logs.raw);
@@ -151,8 +151,8 @@ module.exports = function ({term, root, type, line}, tables, logs) {
    * Build Undocumented section
    * @return {string} Undocumented
    */
-  function _undoc (t = tables, s = set) {
-    const keys = Object.keys(t);
+  function _undoc (s = set) {
+    const keys = Object.keys(tables);
     const pro = s.listProjects();
     const undoc = [];
 

@@ -1,7 +1,7 @@
 module.exports = function (data) {
   this.data = data;
 
-  function format (line) {
+  function _format (line) {
     let a = [], h = {};
     const {children} = line;
     for (let i = 0, l = children.length; i < l; i++) {
@@ -10,9 +10,9 @@ module.exports = function (data) {
     return a.length > 0 ? a : h;
   }
 
-  function liner (line) {
+  function _liner (line) {
     return {
-      skip: line === '' || line.substr(0, 1) === '~',
+      skip: line === '' || line[0] === '~',
       indent: line.search(/\S|$/),
       content: line.trim(),
       children: []
@@ -20,10 +20,11 @@ module.exports = function (data) {
   }
 
   this.parse = () => {
-    const lines = this.data.split('\n').map(liner);
+    const lines = this.data.split('\n').map(_liner);
+    const l = lines.length;
     let stack = {}, target = lines[0], h = {};
 
-    for (let i = 0, l = lines.length; i < l; i++) {
+    for (let i = 0; i < l; i++) {
       const line = lines[i];
       if (line.skip) continue;
       target = stack[line.indent - 2];
@@ -31,7 +32,7 @@ module.exports = function (data) {
       stack[line.indent] = line;
     }
 
-    for (let i = 0, l = lines.length; i < l; i++) {
+    for (let i = 0; i < l; i++) {
       let line = lines[i];
       if (line.skip || line.indent > 0) continue;
       let term = line.content;
@@ -48,7 +49,7 @@ module.exports = function (data) {
       type = term === root ? 'home' : type;
 
       term.indexOf('.') > -1 && ([root, term] = term.split('.'));
-      h[term] = {term, root, type, line: format(line)};
+      h[term] = {term, root, type, line: _format(line)};
     }
 
     return h;

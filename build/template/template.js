@@ -43,7 +43,7 @@ module.exports = function ({term, root, type, line}) {
    */
   this.header = () => {
     const {id, root} = this;
-    const u = id === 'HOME' ? '&mdash;' : `<a href="${
+    const u = id === 'HOME' ? '—' : `<a id="u"href="${
       root === 'HOME' ? 'index' : root.toUrl()
     }.html">${root.toCap()}</a>`;
     return `${u}<input id="s"value="${id.toCap()}"placeholder="Search"spellcheck="false"autocomplete="off">`;
@@ -60,7 +60,7 @@ module.exports = function ({term, root, type, line}) {
    * @return {string} Footer
    */
   this.footer = () => {
-    return `<a href="copyright.html">&copy; 2017&ndash;${new Date().getFullYear()}</a>`;
+    return `<a id="c"href="copyright.html">© 2017–${new Date().getFullYear()}</a>`;
   }
 
   /**
