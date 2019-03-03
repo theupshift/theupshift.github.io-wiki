@@ -64,6 +64,36 @@ module.exports = function ({term, type, line}) {
   }
 
   /**
+   * Get a list of recently updated projects
+   * @param {Array} l - Logs
+   * @param {Object} t - Tables
+   * @return {Array} Recently updated projects
+   */
+  function _getRecent (l = logs, t = tables) {
+    const p = new LogSet(l.raw).listProjects();
+    let r = [];
+
+    for (let i = 0, pl = p.length; i < pl; i++) {
+      const P = p[i].toUpperCase();
+      if (P in tables) r[r.length] = P;
+    }
+
+    return r;
+  }
+
+  /**
+   * Build Recent Index
+   * @return {string} Index
+   */
+  function _recent (name) {
+    const list = _getRecent();
+    const l = list.length;
+    let html = '';
+    for (let i = 0; i < 18; i++) html += _row(list[i]);
+    return l > 0 ? `<p>Recently:<p class="x">${html}` : '';
+  }
+
+  /**
    * Build footer
    * @return {string} Footer
    */
@@ -82,7 +112,7 @@ module.exports = function ({term, type, line}) {
   this.render = () => {
     return [
       this.head(), this.header(),
-      `<main>${this.core()}${_index(this.id)}</main>`,
+      `<main>${this.core()}${_index(this.id)}${_recent()}</main>`,
       this.footer(), this.search()
     ].join('');
   }
