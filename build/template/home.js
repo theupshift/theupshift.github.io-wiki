@@ -58,6 +58,8 @@ module.exports = function ({term, type, line}) {
       term !== name && (html += _row(term, line['?']));
     }
 
+    html += '<a href="https://webring.xxiivv.com/#random">Webring</a>'
+
     return l > 0 ? `<p class="x">${html}` : '';
   }
 
