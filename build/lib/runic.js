@@ -4,7 +4,8 @@ const RUNES = {
   '-': {tag: 'ol', sub: 'li', stash: 1},
   '=': {tag: 'ul', sub: 'li', stash: 1},
   '@': {tag: 'blockquote'},
-  '#': {tag: 'code', sub: 'ln', stash: 1}
+  '#': {tag: 'code', sub: 'ln', stash: 1},
+  '>': {tag: 'ul', sub: 'li', stash: 1}
 }
 
 /**
@@ -86,14 +87,15 @@ module.exports = function (raw) {
       const rune = RUNES[char];
       const content = line.substr(2);
 
+      line = _toMarkup(content);
+      if (!line || line.trim() === '') continue;
+
       switch (char) {
         case '%': html += this.media(content); continue;
         case '@': html += this.quote(content); continue;
+        case '>': this.stash.add(rune, this.termItem(line)); continue;
         default: break;
       }
-
-      line = _toMarkup(content);
-      if (!line || line.trim() === '') continue;
 
       if (!rune) {
         console.warn(`Unknown rune: ${char} : ${line}`);
@@ -129,6 +131,11 @@ module.exports = function (raw) {
   this.render = (line = '', rune = null) => {
     const {tag} = rune;
     return rune ? (tag ? `<${tag}>${line}</${tag}>` : line) : '';
+  }
+
+  this.termItem = content => {
+    let [term, def] = content.split(' : ');
+    return `<b>${term.trim()}</b>: ${def.trim()}`;
   }
 
   this.media = content => {
