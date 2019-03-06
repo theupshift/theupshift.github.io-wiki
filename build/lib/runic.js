@@ -33,14 +33,15 @@ function _toMarkup (s) {
     let target = '', name = '';
 
     if (content.indexOf('|') > -1) {
-      [name, target] = content.split('|');
+      [name, target, title] = content.split('|');
     } else {
       target = name = content;
     }
 
+    const ttl = title ? title : name;
     const link = _isExternal(target)
-      ? `<a href="${target}"target="_blank">${name}</a>`
-      : `<a href="./${target.toUrl()}.html">${name}</a>`;
+      ? `<a href="${target}"title="${ttl}"target="_blank">${name}</a>`
+      : `<a href="./${target.toUrl()}.html"title="${ttl}">${name}</a>`;
 
     html = html.replace(`{{${content}}}`, link);
   }
