@@ -92,7 +92,6 @@ module.exports = function (raw) {
       if (!line || line.trim() === '') continue;
 
       switch (char) {
-        case '*': html += this.heading(rune, content); continue;
         case '%': html += this.media(content); continue;
         case '@': html += this.quote(content); continue;
         case '>': this.stash.add(rune, this.termItem(line)); continue;
@@ -135,8 +134,6 @@ module.exports = function (raw) {
     return rune ? (tag ? `<${tag}>${line}</${tag}>` : line) : '';
   }
 
-  this.heading = ({tag}, content) => {
-    return `<${tag} id="${content.toUrl()}">${content}</${tag}>`;
   }
 
   this.termItem = content => {
