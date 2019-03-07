@@ -19,11 +19,11 @@ function _isExternal (target) {
     || !!~target.indexOf('dat:');
 }
 
-function _toMarkup (s) {
-  let html = s;
-  html = html.replace(/{_/g, '<em>').replace(/_}/g, '</em>');
-  html = html.replace(/{\*/g, '<strong>').replace(/\*}/g, '</strong>');
+const _parI = c => c.replace(/{_/g, '<em>').replace(/_}/g, '</em>');
+const _parB = c => c.replace(/{\*/g, '<strong>').replace(/\*}/g, '</strong>');
 
+function _parA (c) {
+  let html = c;
   const parts = html.split('{{');
 
   for (let i = 0, l = parts.length; i < l; i++) {
@@ -47,6 +47,14 @@ function _toMarkup (s) {
   }
 
   return html;
+}
+
+function _toMarkup (s) {
+  let h = s;
+  h = _parI(h);
+  h = _parB(h);
+  h = _parA(h);
+  return h;
 }
 
 module.exports = function (raw) {
