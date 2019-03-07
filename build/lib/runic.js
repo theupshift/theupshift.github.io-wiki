@@ -21,8 +21,8 @@ function _isExternal (target) {
 
 function _toMarkup (s) {
   let html = s;
-  html = html.replace(/{_/g, '<i>').replace(/_}/g, '</i>');
-  html = html.replace(/{\*/g, '<b>').replace(/\*}/g, '</b>');
+  html = html.replace(/{_/g, '<em>').replace(/_}/g, '</em>');
+  html = html.replace(/{\*/g, '<strong>').replace(/\*}/g, '</strong>');
 
   const parts = html.split('{{');
 
@@ -141,7 +141,7 @@ module.exports = function (raw) {
 
   this.termItem = content => {
     let [term, def] = content.split(' : ');
-    return `<b>${term.trim()}</b>: ${def.trim()}`;
+    return `<strong>${term.trim()}</strong>: ${def.trim()}`;
   }
 
   this.media = content => {
