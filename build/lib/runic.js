@@ -139,9 +139,15 @@ module.exports = function (raw) {
 
   this.render = (line = '', rune = null) => {
     const {tag} = rune;
-    return rune ? (tag ? `<${tag}>${line}</${tag}>` : line) : '';
-  }
-
+    let l = line;
+    if (tag === 'p') {
+      let c = line.split(' ');
+      let last = c.pop();
+      c[c.length - 1] += `&nbsp;${last}`;
+      l = c.join(' ');
+      console.log(l)
+    }
+    return tag ? `<${tag}>${l}</${tag}>` : line;
   }
 
   this.termItem = content => {
