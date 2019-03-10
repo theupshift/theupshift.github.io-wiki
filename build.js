@@ -7,9 +7,7 @@ const Log = require('./build/log');
 
 const home = require('os').homedir();
 const logs = new Log(`${home}/log.json`);
-const db = new Database([
-  'lexicon', 'oeuvre', 'commonplace', 'dictionary'
-]);
+const db = new Database('./db');
 
 String.prototype.toCap = function () {
   return this.charAt(0).toUpperCase() + this.slice(1).toLowerCase();
