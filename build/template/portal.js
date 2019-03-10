@@ -32,10 +32,11 @@ module.exports = function ({term, root, type, line}) {
   /**
    * Insert index item
    * @param {string} t - Term
+   * @param {boolean} f - Fin
    * @return {string} Item
    */
-  function _ins (t) {
-    return `<a href="${t.toUrl()}.html">${t.toCap()}</a><br>`;
+  function _ins (t, f) {
+    return `<a href="${t.toUrl()}.html">${t.toCap()}</a> ${f ? '' : '†'}<br>`;
   }
 
   /**
@@ -45,7 +46,7 @@ module.exports = function ({term, root, type, line}) {
    */
   function _index (t) {
     const c = _getChildren(t);
-    const i = c.reduce((v, {term}) => v += _ins(term), '');
+    const i = c.reduce((v, {term, fin}) => v += _ins(term, fin), '');
     return c.length > 0 ? `<p class="x">${i}` : '';
   }
 

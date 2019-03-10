@@ -36,12 +36,13 @@ module.exports = function (data) {
       let line = lines[i];
       if (line.skip || line.indent > 0) continue;
       let term = line.content;
-      let root = 'HOME', type = 'page', sli = true;
+      let root = 'HOME', type = 'page', sli = true, fin = true;
 
       switch (term[0]) {
         case '@': type = 'portal'; break;
         case '+': type = 'note'; break;
         case '!': type = 'status'; break;
+        case '/': fin = false; break;
         default: sli = false; break;
       }
 
@@ -49,7 +50,7 @@ module.exports = function (data) {
       type = term === root ? 'home' : type;
 
       term.indexOf('.') > -1 && ([root, term] = term.split('.'));
-      h[term] = {term, root, type, line: _format(line)};
+      h[term] = {term, root, type, fin, line: _format(line)};
     }
 
     return h;
