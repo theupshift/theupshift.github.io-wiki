@@ -19,6 +19,14 @@ function _isExternal (target) {
     || !!~target.indexOf('dat:');
 }
 
+function _widow (content) {
+  let c = content.split(' ');
+  let last = c.pop();
+  c[c.length - 1] += `&nbsp;${last}`;
+  console.log(c.join(' '))
+  return c.join(' ');
+}
+
 const _parI = c => c.replace(/{_/g, '<em>').replace(/_}/g, '</em>');
 const _parB = c => c.replace(/{\*/g, '<strong>').replace(/\*}/g, '</strong>');
 
@@ -94,8 +102,9 @@ module.exports = function (raw) {
       let line = lines[i];
       const char = line[0];
       const rune = RUNES[char];
-      const content = line.substr(2);
+      let content = line.substr(2);
 
+      if (char === '&') content = _widow(content)
       line = _toMarkup(content);
       if (!line || line.trim() === '') continue;
 
@@ -139,15 +148,7 @@ module.exports = function (raw) {
 
   this.render = (line = '', rune = null) => {
     const {tag} = rune;
-    let l = line;
-    if (tag === 'p') {
-      let c = line.split(' ');
-      let last = c.pop();
-      c[c.length - 1] += `&nbsp;${last}`;
-      l = c.join(' ');
-      console.log(l)
-    }
-    return tag ? `<${tag}>${l}</${tag}>` : line;
+    return tag ? `<${tag}>${line}</${tag}>` : line;
   }
 
   this.termItem = content => {
