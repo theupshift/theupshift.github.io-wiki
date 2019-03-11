@@ -24,17 +24,26 @@ module.exports = function ({term, root, type, fin, line}, data) {
   this.path = `./wiki/${this.file}.html`;
 
   /**
-   * Display sector hours
+   * Display project hours
    * @param {Array} sv - Sorted values
    * @return {string} Sector hours
    */
-  function _sh (sv) {
-    let html = '';
+  function _ph (sv) {
+    let html = '', sum = 0;
+    const l = sv.length;
+
+    if (l === 1) {
+      const {h, n} = sv[0];
+      return `<span title="${sectors[n]}">${h.toFixed(1)}${n}</span>`;
+    }
+
     for (let i = 0, l = sv.length; i < l; i++) {
       const {h, n} = sv[i];
+      sum += h;
       html += ` <span title="${sectors[n]}">${h.toFixed(1)}${n}</span>`;
     }
-    return html;
+
+    return `${sum.toFixed(1)}${html}`;
   }
 
   /**
@@ -48,8 +57,7 @@ module.exports = function ({term, root, type, fin, line}, data) {
     return [
       `<div id="l"><span title="${_hv(sd)}&ndash;${_hv(ed)}">`,
       `${_dd(sd)}${_dd(ed)}</span>`,
-      ` ${data.lh.toFixed(1)}`,
-      `${_sh(data.sortValues())}</div>`
+      ` ${_ph(data.sortValues())}</div>`
     ].join('');
   }
 
