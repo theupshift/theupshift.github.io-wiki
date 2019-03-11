@@ -4,10 +4,10 @@ const Aequirys = require('aequirys');
 const _p = n => `0${n}`.substr(-2);
 const _dd = d => {
   const a = new Aequirys(d);
-  const y = Math.abs(2017 - +a.year) + 1;
+  const y = new Date().getFullYear() - +a.year;
   const m = a.month;
   const x = (+a.date).toString(15).toUpperCase();
-  return `${x}${m}${y}`;
+  return `${x}${m}${y === 0 ? '' : y}`;
 }
 const _hv = d => `${_p(d.getDate())}${_p(d.getMonth() + 1)}${d.getFullYear().toString().slice(-2)}`;
 
