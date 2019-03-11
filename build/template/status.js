@@ -1,11 +1,22 @@
 const Runic = require('../lib/runic');
 const LogSet = require('../lib/set');
 const Template = require('./template');
+const Aequirys = require('aequirys');
 
 module.exports = function ({term, root, type, line}, logs, tables) {
   Template.call(this, {term, root, type, line});
   this.path = `./wiki/${this.file}.html`;
   const set = new LogSet(logs.raw);
+
+  const _p = n => `0${n}`.substr(-2);
+  const _dd = d => {
+    const a = new Aequirys(d);
+    const y = a.year.toString().slice(-2);
+    const m = a.month;
+    const x = (+a.date).toString(15).toUpperCase();
+    return `${x}${m}${y}`;
+  }
+  const _hv = d => `${_p(d.getDate())}${_p(d.getMonth() + 1)}${d.getFullYear().toString().slice(-2)}`;
 
   /**
    * Mark
@@ -56,6 +67,15 @@ module.exports = function ({term, root, type, line}, logs, tables) {
     const counts = {portal: 0, note: 0, page: 0}
     for (let key in tables) counts[tables[key].type]++;
     return counts;
+  }
+
+  /**
+   * Add a last-updated notice
+   * @return {string} Notice
+   */
+  function _lastUpdated () {
+    const d = new Date();
+    return `<p>▲ <span title="${_hv(d)}">${_dd(d)}</span>`;
   }
 
   /**
@@ -180,7 +200,7 @@ module.exports = function ({term, root, type, line}, logs, tables) {
   this.render = () => {
     return [
       this.head(), this.header(),
-      `<main>${this.core()}`,
+      `<main>${this.core()}${_lastUpdated()}`,
       `${_undoc()}${_makeTables(organiseByType())}`,
       '</main>', this.footer(), this.search()
     ].join('');
