@@ -173,7 +173,7 @@ module.exports = function (raw) {
       const imgS = `m/${png(`${img}-s`)}`
 
       html += fs.existsSync(`./wiki/${imgS}`)
-        ? `<img srcset="${imgS} 500w,${imgM} 800w"sizes="(max-width:30em) 500px,800px"src="${imgM}"alt="">`
+        ? `<img srcset="${imgS} 500w,${imgM} 800w"sizes="(max-width:60em) 500px,800px"src="${imgM}"alt="">`
         : `<img src="${imgM}"alt="">`
     }
     return html
