@@ -161,7 +161,13 @@ module.exports = function (raw) {
     const gallery = content.split(' ');
     const png = x => !~x.indexOf('.') ? `${x}.png` : x;
     for (let i = 0, l = gallery.length; i < l; i++) {
-      html += `<img src="m/${png(gallery[i])}">`;
+      let img = gallery[i]
+      const imgM = `m/${png(img)}`;
+      const imgS = `m/${png(`${img}-s`)}`;
+
+      html += fs.existsSync(`./wiki/${imgS}`)
+        ? `<img srcset="${imgS} 500w,${imgM} 800w"sizes="(max-width:30em) 500px,800px"src="${imgM}"alt="">`
+        : `<img src="${imgM}"alt="">`
     }
     return html;
   }
