@@ -3,7 +3,7 @@
  * @return {string}
  */
 Number.prototype.pad = function () {
-  return `0${this}`.substr(-2);
+  return `0${this}`.substr(-2)
 }
 
 /**
@@ -12,11 +12,11 @@ Number.prototype.pad = function () {
  * @return {number} Sum
  */
 function sum (v = []) {
-  const l = v.length;
-  if (l === 0) return 0;
-  let x = 0;
-  for (let i = 0; i < l; i++) x += v[i];
-  return x;
+  const l = v.length
+  if (l === 0) return 0
+  let x = 0
+  for (let i = 0; i < l; i++) x += v[i]
+  return x
 }
 
 /**
@@ -25,9 +25,9 @@ function sum (v = []) {
  * @return {Date}
  */
 Date.prototype.addDays = function (i = 1) {
-  const d = new Date(this.valueOf());
-  d.setDate(d.getDate() + i);
-  return d;
+  const d = new Date(this.valueOf())
+  d.setDate(d.getDate() + i)
+  return d
 };
 
 /**
@@ -35,10 +35,10 @@ Date.prototype.addDays = function (i = 1) {
  * @return {string} YYYYMMDD
  */
 Date.prototype.toDate = function () {
-  const y = this.getFullYear();
-  const m = this.getMonth().pad();
-  const d = this.getDate().pad();
-  return `${y}${m}${d}`;
+  const y = this.getFullYear()
+  const m = this.getMonth().pad()
+  const d = this.getDate().pad()
+  return `${y}${m}${d}`
 }
 
 /**
@@ -47,7 +47,7 @@ Date.prototype.toDate = function () {
  * @return {number} Decimal
  */
 function convertHex (h) {
-   return parseInt(h, 16);
+   return parseInt(h, 16)
 }
 
 /**
@@ -57,7 +57,7 @@ function convertHex (h) {
  * @return {number} Duration (1 = 1h)
  */
 function duration (s, e) {
-  return e === undefined ? 0 : (+e - +s) / 36E5;
+  return e === undefined ? 0 : (+e - +s) / 36E5
 }
 
 /**
@@ -67,17 +67,17 @@ function duration (s, e) {
  * @return {Array} List
  */
 function listDates (s, e = new Date) {
-  const l = [];
+  const l = []
 
-  let n = new Date(s);
-  n.setHours(0, 0, 0, 0);
+  let n = new Date(s)
+  n.setHours(0, 0, 0, 0)
 
   for (; n <= e;) {
-    l[l.length] = n;
-    n = n.addDays(1);
+    l[l.length] = n
+    n = n.addDays(1)
   }
 
-  return l;
+  return l
 }
 
 module.exports = class LogSet {
@@ -87,17 +87,17 @@ module.exports = class LogSet {
    * @param {Array=} ent
    */
   constructor(ent = []) {
-    this.logs = ent;
+    this.logs = ent
   }
 
-  get count () { return this.logs.length; }
-  get last ()  { return this.logs.slice(-1)[0]; }
-  get lh ()    { return this.logHours(); }
+  get count () { return this.logs.length }
+  get last ()  { return this.logs.slice(-1)[0] }
+  get lh ()    { return this.logHours() }
 
-  get avgLh() {return avg(this.listDurations());}
+  get avgLh() {return avg(this.listDurations())}
 
   lastUpdated () {
-    return this.last.end.ago();
+    return this.last.end.ago()
   }
 
   /**
@@ -112,10 +112,10 @@ module.exports = class LogSet {
       || typeof term !== 'string'
       || !Array.isArray(list)
       || list.indexOf(term) < 0
-    ) return [];
+    ) return []
     return this.logs.filter(({end, project}) =>
       end !== undefined && project === term
-    );
+    )
   }
 
   /**
@@ -130,10 +130,10 @@ module.exports = class LogSet {
       || typeof term !== 'string'
       || !Array.isArray(list)
       || list.indexOf(term) < 0
-    ) return [];
+    ) return []
     return this.logs.filter(({end, sector}) =>
       end !== undefined && sector === term
-    );
+    )
   }
 
   /**
@@ -141,10 +141,10 @@ module.exports = class LogSet {
    * @return {number} Average log hours
    */
   dailyAvg () {
-    const se = this.sortEntries();
-    const l = se.length;
+    const se = this.sortEntries()
+    const l = se.length
     return l === 0 ? 0 :
-      se.reduce((s, c) => s + new LogSet(c).lh, 0) / l;
+      se.reduce((s, c) => s + new LogSet(c).lh, 0) / l
   }
 
   /**
@@ -152,15 +152,14 @@ module.exports = class LogSet {
    * @return {Array} List
    */
   listDurations () {
-    const d = [];
-    const l = this.count;
-    if (l === 0) return d;
-
-    const n = this.last.end === undefined ? 2 : 1;
+    const d = []
+    const l = this.count
+    if (l === 0) return d
+    const n = this.last.end === undefined ? 2 : 1
     for (let i = l - n; i >= 0; i--) {
-      d[d.length] = this.logs[i].dur;
+      d[d.length] = this.logs[i].dur
     }
-    return d;
+    return d
   }
 
   /**
@@ -168,17 +167,17 @@ module.exports = class LogSet {
    * @return {Array} List
    */
   listProjects () {
-    const l = this.count;
-    if (l === 0) return [];
+    const l = this.count
+    if (l === 0) return []
 
     const n = this.last.end === undefined ? 2 : 1
-    const list = new Set();
+    const list = new Set()
 
     for (let i = l - n; i >= 0; i--) {
-      list.add(this.logs[i].project);
+      list.add(this.logs[i].project)
     }
 
-    return [...list];
+    return [...list]
   }
 
   /**
@@ -186,17 +185,17 @@ module.exports = class LogSet {
    * @return {Array} List
    */
   listSectors () {
-    const l = this.count;
-    if (l === 0) return [];
+    const l = this.count
+    if (l === 0) return []
 
-    const n = this.last.end === undefined ? 2 : 1;
-    const list = new Set();
+    const n = this.last.end === undefined ? 2 : 1
+    const list = new Set()
 
     for (let i = l - n; i >= 0; i--) {
-      list.add(this.logs[i].sector);
+      list.add(this.logs[i].sector)
     }
 
-    return [...list];
+    return [...list]
   }
 
   /**
@@ -204,7 +203,7 @@ module.exports = class LogSet {
    * @return {number} Logged hours
    */
   logHours () {
-    return this.count === 0 ? 0 : sum(this.listDurations());
+    return this.count === 0 ? 0 : sum(this.listDurations())
   }
 
   /**
@@ -213,22 +212,22 @@ module.exports = class LogSet {
    * @return {Array} Sorted entries
    */
   sortEntries (end = new Date) {
-    const el = this.count;
-    if (el === 0) return [];
+    const el = this.count
+    if (el === 0) return []
 
-    const list = listDates(this.logs[0].start, end);
-    const dates = {};
+    const list = listDates(this.logs[0].start, end)
+    const dates = {}
 
     for (let i = 0, l = list.length; i < l; i++) {
-      dates[list[i].toDate()] = [];
+      dates[list[i].toDate()] = []
     }
 
     for (let i = 0; i < el; i++) {
-      const x = this.logs[i].start.toDate();
-      x in dates && (dates[x][dates[x].length] = this.logs[i]);
+      const x = this.logs[i].start.toDate()
+      x in dates && (dates[x][dates[x].length] = this.logs[i])
     }
 
-    return Object.keys(dates).map(i => dates[i]);
+    return Object.keys(dates).map(i => dates[i])
   }
 
   /**
@@ -242,35 +241,35 @@ module.exports = class LogSet {
       this.count === 0
       || typeof mode !== 'number'
       || mode < 0 || mode > 1
-    ) return [];
+    ) return []
 
-    const lhe = this.lh;
-    const sorted = [];
-    const tmp = {};
-    let list = [];
-    let func = '';
+    const lhe = this.lh
+    const sorted = []
+    const tmp = {}
+    let list = []
+    let func = ''
 
     if (mode === 0) {
-      list = this.listSectors();
-      func = 'bySector';
+      list = this.listSectors()
+      func = 'bySector'
     } else {
-      list = this.listProjects();
-      func = 'byProject';
+      list = this.listProjects()
+      func = 'byProject'
     }
 
-    let hours = [], percs = [];
+    let hours = [], percs = []
 
     for (let i = list.length - 1; i >= 0; i--) {
-      const lh = new LogSet(this[func](list[i])).lh;
-      tmp[list[i]] = {p: lh / lhe * 100, h: lh};
+      const lh = new LogSet(this[func](list[i])).lh
+      tmp[list[i]] = {p: lh / lhe * 100, h: lh}
     }
 
-    const keys = Object.keys(tmp).sort((a, b) => tmp[a].h - tmp[b].h);
+    const keys = Object.keys(tmp).sort((a, b) => tmp[a].h - tmp[b].h)
     for (let i = keys.length - 1; i >= 0; i--) {
-      const {h, p} = tmp[keys[i]];
-      sorted[sorted.length] = {h, p, n: keys[i]};
+      const {h, p} = tmp[keys[i]]
+      sorted[sorted.length] = {h, p, n: keys[i]}
     }
 
-    return sorted;
+    return sorted
   }
 }

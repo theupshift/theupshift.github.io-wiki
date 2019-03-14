@@ -1,38 +1,38 @@
-const Runic = require('../lib/runic');
-const LogSet = require('../lib/set');
-const Template = require('./template');
-const Aequirys = require('aequirys');
+const Runic = require('../lib/runic')
+const LogSet = require('../lib/set')
+const Template = require('./template')
+const Aequirys = require('aequirys')
 
 module.exports = function ({term, root, type, line}, logs, tables) {
-  Template.call(this, {term, root, type, line});
-  this.path = `./wiki/${this.file}.html`;
-  const set = new LogSet(logs.raw);
+  Template.call(this, {term, root, type, line})
+  this.path = `./wiki/${this.file}.html`
+  const set = new LogSet(logs.raw)
 
-  const _p = n => `0${n}`.substr(-2);
+  const _p = n => `0${n}`.substr(-2)
+
   const _dd = d => {
-    const a = new Aequirys(d);
-    const y = a.year.toString().slice(-2);
-    const m = a.month;
-    const x = (+a.date).toString(15).toUpperCase();
-    return `${x}${m}${y}`;
+    const a = new Aequirys(d)
+    const y = a.year.toString().slice(-2)
+    const m = a.month
+    const x = (+a.date).toString(15).toUpperCase()
+    return `${x}${m}${y}`
   }
-  const _hv = d => `${_p(d.getDate())}${_p(d.getMonth() + 1)}${d.getFullYear().toString().slice(-2)}`;
+
+  const _hv = d => `${_p(d.getDate())}${_p(d.getMonth() + 1)}${d.getFullYear().toString().slice(-2)}`
 
   /**
    * Mark
    * @param {boolean} x
    * @return {string} Mark
    */
-  const _mark = x => x ? '＋' : '－';
+  const _mark = x => x ? '＋' : '－'
 
   /**
    * Calculate Completion Index
    * @param {Array} p
    * @return {number} Completion Index
    */
-  function _calcCI (...p) {
-    return p.reduce((i, v) => i += (v ? 1 : 0), 0);
-  }
+  const _calcCI = (...p) => p.reduce((i, v) => i += (v ? 1 : 0), 0)
 
   /**
    * Calculate Index
@@ -40,9 +40,7 @@ module.exports = function ({term, root, type, line}, logs, tables) {
    * @param {number} maxPoints
    * @return {number} Index
    */
-  function _calcIndex (CI, maxPoints) {
-    return CI === 0 ? 0 : CI / maxPoints;
-  }
+  const _calcIndex = (CI, maxPoints) => CI === 0 ? 0 : CI / maxPoints
 
   /**
    * Organise database by page type
@@ -50,13 +48,13 @@ module.exports = function ({term, root, type, line}, logs, tables) {
    * @return {Object} Organised database
    */
   function organiseByType (db = database) {
-    const types = {};
+    const types = {}
     for (let key in db) {
-      const {type, name} = db[key];
-      types[type] === undefined && (types[type] = []);
-      types[type][types[type].length] = db[key];
+      const {type, name} = db[key]
+      types[type] === undefined && (types[type] = [])
+      types[type][types[type].length] = db[key]
     }
-    return types;
+    return types
   }
 
   /**
@@ -65,8 +63,8 @@ module.exports = function ({term, root, type, line}, logs, tables) {
    */
   function _countTypes () {
     const counts = {portal: 0, note: 0, page: 0}
-    for (let key in tables) counts[tables[key].type]++;
-    return counts;
+    for (let key in tables) counts[tables[key].type]++
+    return counts
   }
 
   /**
@@ -74,8 +72,8 @@ module.exports = function ({term, root, type, line}, logs, tables) {
    * @return {string} Notice
    */
   function _lastUpdated () {
-    const d = new Date();
-    return `<p>▲ <span title="${_hv(d)}">${_dd(d)}</span>`;
+    const d = new Date()
+    return `<p>▲ <span title="${_hv(d)}">${_dd(d)}</span>`
   }
 
   /**
@@ -84,28 +82,28 @@ module.exports = function ({term, root, type, line}, logs, tables) {
    * @return {string} Table
    */
   function _portalTable (portals) {
-    let html = '', todo = 0;
+    let html = '', todo = 0
 
-    const sorted = Object.keys(portals).sort((a, b) => {
-      return (portals[a].term > portals[b].term) ? 1 : -1;
-    });
+    const sorted = Object.keys(portals).sort((a, b) =>
+      portals[a].term > portals[b].term ? 1 : -1
+    )
 
     for (let i = 0, l = sorted.length; i < l; i++) {
-      const {term, line} = portals[sorted[i]];
-      const long = new Runic(line).html();
-      const x = long.length > 0;
-      const y = long.indexOf('<img') > -1;
-      const CI = _calcCI(x, y);
-      const indx = _calcIndex(CI, 2);
+      const {term, line} = portals[sorted[i]]
+      const long = new Runic(line).html()
+      const x = long.length > 0
+      const y = long.indexOf('<img') > -1
+      const CI = _calcCI(x, y)
+      const indx = _calcIndex(CI, 2)
 
-      if (indx > 0.5) continue;
-      todo++;
+      if (indx > 0.5) continue
+      todo++
 
-      html += `${_mark(x)}${_mark(y)} <a href="./${term.toUrl()}.html">${term.toCap()}</a><br>`;
+      html += `${_mark(x)}${_mark(y)} <a href="./${term.toUrl()}.html">${term.toCap()}</a><br>`
     }
 
-    const total = _countTypes().portal;
-    const fini = (total - todo) / total * 100;
+    const total = _countTypes().portal
+    const fini = (total - todo) / total * 100
 
     return [
       '<h2>Portals</h2><p class="x">',
@@ -114,7 +112,7 @@ module.exports = function ({term, root, type, line}, logs, tables) {
       `${fini.toFixed(0)}% fini`,
       '<p>Key: info, media',
       `<p class="x">${html}`
-    ].join('');
+    ].join('')
   }
 
   /**
@@ -123,29 +121,29 @@ module.exports = function ({term, root, type, line}, logs, tables) {
    * @return {string} Table
    */
   function _pageTable (pages) {
-    let html = '', todo = 0;
+    let html = '', todo = 0
 
-    const sorted = Object.keys(pages).sort((a, b) => {
-      return (pages[a].term > pages[b].term) ? 1 : -1;
-    });
+    const sorted = Object.keys(pages).sort((a, b) =>
+      pages[a].term > pages[b].term ? 1 : -1
+    )
 
     for (let i = 0, l = sorted.length; i < l; i++) {
-      const {term, line} = pages[sorted[i]];
-      const long = new Runic(line).html();
-      const x = long.length > 0;
-      const y = long.indexOf('<img') > -1;
-      const z = long.indexOf('<a') > -1;
-      const CI = _calcCI(x, y, z);
-      const indx = _calcIndex(CI, 3);
+      const {term, line} = pages[sorted[i]]
+      const long = new Runic(line).html()
+      const x = long.length > 0
+      const y = long.indexOf('<img') > -1
+      const z = long.indexOf('<a') > -1
+      const CI = _calcCI(x, y, z)
+      const indx = _calcIndex(CI, 3)
 
-      if (indx > 0.7) continue;
-      todo++;
+      if (indx > 0.7) continue
+      todo++
 
-      html += `${_mark(x)}${_mark(y)}${_mark(z)} <a href="./${term.toUrl()}.html">${term.toCap()}</a><br>`;
+      html += `${_mark(x)}${_mark(y)}${_mark(z)} <a href="./${term.toUrl()}.html">${term.toCap()}</a><br>`
     }
 
-    const total = _countTypes().page;
-    const fini = (total - todo) / total * 100;
+    const total = _countTypes().page
+    const fini = (total - todo) / total * 100
 
     return [
       '<h2>Pages</h2><p class="x">',
@@ -154,7 +152,7 @@ module.exports = function ({term, root, type, line}, logs, tables) {
       `${fini.toFixed(0)}% fini`,
       '<p>Key: info, media, links',
       `<p class="x">${html}`
-    ].join('');
+    ].join('')
   }
 
   /**
@@ -164,7 +162,7 @@ module.exports = function ({term, root, type, line}, logs, tables) {
    * @param {Array} p.page - Pages
    */
   function _makeTables ({portal, page}) {
-    return _portalTable(portal) + _pageTable(page);
+    return _portalTable(portal) + _pageTable(page)
   }
 
   /**
@@ -172,37 +170,35 @@ module.exports = function ({term, root, type, line}, logs, tables) {
    * @return {string} Undocumented
    */
   function _undoc (s = set) {
-    const keys = Object.keys(tables);
-    const pro = s.listProjects();
-    const undoc = [];
+    const keys = Object.keys(tables)
+    const pro = s.listProjects()
+    const undoc = []
 
-    for (let i = 0, l = pro.length; i < l; i++) {
-      if (keys.indexOf(pro[i].toUpperCase()) < 0) {
-        undoc[undoc.length] = pro[i];
-      }
-    }
+    for (let i = 0, l = pro.length; i < l; i++)
+      if (keys.indexOf(pro[i].toUpperCase()) < 0)
+        undoc[undoc.length] = pro[i]
 
-    const total = pro.length;
-    const undocTotal = undoc.length;
-    const perc = (total - undocTotal) / total * 100;
+    const total = pro.length
+    const undocTotal = undoc.length
+    const perc = (total - undocTotal) / total * 100
 
     return [
       `<p class="x">${total} projects<br>`,
       `${undocTotal} missing<br>`,
       `${perc.toFixed(0)}% fini`
-    ].join('');
+    ].join('')
   }
 
   /**
    * Render Status page
    * @return {string} Content
    */
-  this.render = () => {
+  this.render = _ => {
     return [
       this.head(), this.header(),
       `<main>${this.core()}${_lastUpdated()}`,
-      `${_undoc()}${_makeTables(organiseByType())}`,
-      '</main>', this.footer(), this.search()
-    ].join('');
+      `${_undoc()}${_makeTables(organiseByType())}</main>`,
+      this.footer(), this.search()
+    ].join('')
   }
 }
