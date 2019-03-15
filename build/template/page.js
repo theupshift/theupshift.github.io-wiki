@@ -4,14 +4,6 @@ module.exports = function ({term, root, type, fin, line}, data) {
   Template.call(this, {term, root, type, line})
   this.path = `./wiki/${this.file}.html`
 
-  const sectors = {
-    'D': 'Development',
-    'R': 'Research',
-    'P': 'Physical',
-    'V': 'Visual',
-    'A': 'Audio'
-  }
-
   const _p = n => `0${n}`.substr(-2)
 
   const _dd = d => {
@@ -35,13 +27,13 @@ module.exports = function ({term, root, type, fin, line}, data) {
 
     if (l === 1) {
       const {h, n} = sv[0]
-      return `<span title="${sectors[n]}">${h.toFixed(1)}${n}</span>`
+      return `<span>${h.toFixed(1)}${n}</span>`
     }
 
     for (let i = 0, l = sv.length; i < l; i++) {
       const {h, n} = sv[i]
       sum += h
-      html += ` <span title="${sectors[n]}">${h.toFixed(1)}${n}</span>`
+      html += ` <span">${n}${h.toFixed(1)}</span>`
     }
 
     return `${sum.toFixed(1)}${html}`
@@ -56,8 +48,8 @@ module.exports = function ({term, root, type, fin, line}, data) {
     const ed = data.logs.slice(-1)[0].end
 
     return [
-      `<div id="l"><span title="${_hv(sd)}&ndash;${_hv(ed)}">`,
-      `${_dd(sd)}${_dd(ed)}</span>`,
+      `<div id="l"><span title="${_hv(sd)}–${_hv(ed)}">`,
+      `${_dd(sd)} ${_dd(ed)}</span>`,
       ` ${_ph(data.sortValues())}</div>`
     ].join('')
   }
