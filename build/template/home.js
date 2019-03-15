@@ -63,12 +63,10 @@ module.exports = function ({term, type, line}, logs, tables) {
 
   /**
    * Get a list of recently updated projects
-   * @param {Array} l - Logs
-   * @param {Object} t - Tables
    * @return {Array} Recently updated projects
    */
-  function _getRecent (l = logs, t = tables) {
-    const p = new LogSet(l.raw).listProjects()
+  function _getRecent () {
+    const p = new LogSet(logs.raw).listProjects()
     let r = []
 
     for (let i = 0, pl = p.length; i < pl; i++) {
@@ -87,7 +85,7 @@ module.exports = function ({term, type, line}, logs, tables) {
     const list = _getRecent()
     const l = list.length
     let html = ''
-    for (let i = 0; i < 18; i++) html += _row(list[i])
+    for (let i = 0; i < 12; i++) html += _row(list[i])
     return l > 0 ? `<p>Recently:<p class="x">${html}` : ''
   }
 
