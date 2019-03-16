@@ -106,7 +106,7 @@ module.exports = function ({term, type, line}, logs, tables) {
     return [
       this.head(), this.header(),
       `<main>${this.core()}${_index(this.id)}${_recent()}</main>`,
-      this.footer(), this.search()
+      this.footer()
     ].join('')
   }
 }

@@ -56,7 +56,7 @@ module.exports = function ({term, root, type, line}) {
     return [
       this.head(), this.header(),
       `<main>${this.core()}${_index(this.id)}</main>`,
-      this.footer(), this.search()
+      this.footer()
     ].join('')
   }
 }

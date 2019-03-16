@@ -63,7 +63,7 @@ module.exports = function ({term, root, type, fin, line}, data) {
       this.head(), this.header(),
       `<main>${this.core()}`,
       `${data.logs.length > 0 ? _sum() : ''}</main>`,
-      this.footer(), this.search()
+      this.footer()
     ].join('')
   }
 }

@@ -198,7 +198,7 @@ module.exports = function ({term, root, type, line}, logs, tables) {
       this.head(), this.header(),
       `<main>${this.core()}${_lastUpdated()}`,
       `${_undoc()}${_makeTables(organiseByType())}</main>`,
-      this.footer(), this.search()
+      this.footer()
     ].join('')
   }
 }

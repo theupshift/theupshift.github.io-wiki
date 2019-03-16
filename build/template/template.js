@@ -10,7 +10,7 @@ module.exports = function ({term, root, type, line}) {
     return [
       '<!doctype html><html lang="en"><meta charset="utf-8">',
       '<meta name="viewport"content="width=device-width,initial-scale=1">',
-      this.title(), this.meta(), this.css()
+      this.title(), this.meta(), this.css(), this.search()
     ].join('')
   }
 
@@ -72,5 +72,5 @@ module.exports = function ({term, root, type, line}) {
    * Link search script
    * @return {string} Script link
    */
-  this.search = _ => `<script src="../s.js"></script>`
+  this.search = _ => `<script defer src="../s.js"></script>`
 }
