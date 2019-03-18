@@ -50,7 +50,7 @@ module.exports = function ({term, root, type, line}) {
     const u = id === 'HOME' ? '—' : `<a id="u"href="${
       root === 'HOME' ? 'index' : root.toUrl()
     }.html">${root.toCap()}</a>`
-    return `${u}<input id="s"value="${id.toCap()}"placeholder="Search"spellcheck="false"autocomplete="off">`
+    return `${u}<h1><input id="s"value="${id.toCap()}"placeholder="Search"spellcheck="false"autocomplete="off"></h1>`
   }
 
   /**
