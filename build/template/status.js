@@ -25,7 +25,7 @@ module.exports = function ({term, root, type, line}, logs, tables) {
    * @param {boolean} x
    * @return {string} Mark
    */
-  const _mark = x => x ? '＋' : '－'
+  const _mark = x => x ? '&#120823;' : '&#120822;'
 
   /**
    * Calculate Completion Index
@@ -110,8 +110,8 @@ module.exports = function ({term, root, type, line}, logs, tables) {
       `${total} Σ<br>`,
       `${todo} unfini<br>`,
       `${fini.toFixed(0)}% fini`,
-      '<p>Key: info, media',
-      `<p class="x">${html}`
+      '<p>Info, media',
+      `<p class="y">${html}`
     ].join('')
   }
 
@@ -150,8 +150,8 @@ module.exports = function ({term, root, type, line}, logs, tables) {
       `${total} Σ<br>`,
       `${todo} unfini<br>`,
       `${fini.toFixed(0)}% fini`,
-      '<p>Key: info, media, links',
-      `<p class="x">${html}`
+      '<p>Info, media, links',
+      `<p class="y">${html}`
     ].join('')
   }
 
