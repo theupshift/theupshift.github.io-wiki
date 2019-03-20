@@ -44,15 +44,15 @@ module.exports = function (raw) {
       if (part.indexOf('}}') < 0) continue
 
       const content = part.split('}}')[0]
-      let target = '', name = ''
+      let target = '', name = '', title = ''
 
       if (content.indexOf('|') > -1) {
         [name, target, title] = content.split('|')
       } else {
-        target = name = content
+        target = name = title = content
       }
 
-      const ttl = title ? title : name
+      const ttl = title || name;
       const link = _isExternal(target)
         ? `<a href="${target}"title="${ttl}"target="_blank">${name}</a>`
         : `<a href="./${target.toUrl()}.html"title="${ttl}">${name}</a>`
