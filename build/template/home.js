@@ -62,15 +62,6 @@ module.exports = function ({term, type, line}, tables) {
   }
 
   /**
-   * Build footer
-   * @return {string} Footer
-   */
-  this.footer = () => {
-    const y = new Date().getFullYear()
-    return `<a id="c"href="copyright.html">© 2017&ndash;${y}</a>`
-  }
-
-  /**
    * Render Home page
    * @return {string} Content
    */

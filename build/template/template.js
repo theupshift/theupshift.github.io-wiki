@@ -64,7 +64,7 @@ module.exports = function ({term, root, type, line}) {
    * @return {string} Footer
    */
   this.footer = _ => {
-    const y = new Date().getFullYear()
+    const y = new Date().getFullYear().toString().slice(-2)
     return `<a id="c"href="copyright.html">© 2017–${y}</a>`
   }
 
