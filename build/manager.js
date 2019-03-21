@@ -12,7 +12,7 @@ module.exports = function (tables, logs) {
    * @param {Object} p - Page
    * @return {Object} Page
    */
-  const _home = p => new Home(p, logs, tables)
+  const _home = p => new Home(p, tables)
 
   /**
    * Create a Status page
