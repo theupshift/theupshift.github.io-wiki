@@ -19,6 +19,8 @@ module.exports = function ({term, type, line}, tables) {
     for (let id in db) {
       const term = db[id]
       if (!term.root || n !== term.root) continue
+      if (term.term === 'COPYRIGHT') continue;
+      if (term.term === 'OEUVRE') continue;
       temp[temp.length] = term
     }
 
@@ -30,6 +32,25 @@ module.exports = function ({term, type, line}, tables) {
       scion[scion.length] = temp[sorted[i]]
 
     return scion
+  }
+
+  function _getPages () {
+    let pages = [], temp = []
+    for (let id in tables) {
+      const {type} = tables[id];
+      if (type !== 'page') continue;
+      // if (type !== 'note') continue;
+      temp[temp.length] = tables[id];
+    }
+
+    const sorted = Object.keys(temp).sort((a, b) =>
+      (temp[a].term > temp[b].term) ? 1 : -1
+    )
+
+    for (let i = 0, l = sorted.length; i < l; i++)
+      pages[pages.length] = temp[sorted[i]]
+
+    return pages
   }
 
   /**
@@ -53,10 +74,22 @@ module.exports = function ({term, type, line}, tables) {
 
     for (let i = 0; i < l; i++) {
       const {term, line} = scion[i]
-      term !== name && (html += _row(term, line['?']))
+      term !== name && (html += _row(term))
     }
 
     html += '<a href="https://webring.xxiivv.com/#random">Webring</a>'
+
+    return l > 0 ? `<p class="x">${html}` : ''
+  }
+
+  function _glossary () {
+    const pages = _getPages()
+    const l = pages.length
+    let html = ''
+
+    for (let i = 0; i < l; i++) {
+      html += _row(pages[i].term)
+    }
 
     return l > 0 ? `<p class="x">${html}` : ''
   }
@@ -67,8 +100,8 @@ module.exports = function ({term, type, line}, tables) {
    */
   this.render = () => {
     return [
-      this.head(), this.header(),
-      `<main>${this.core()}${_index(this.id)}</main>`,
+      this.head(),
+      `<main>${this.core()}${_index(this.id)}${_glossary()}</main>`,
       this.footer()
     ].join('')
   }
