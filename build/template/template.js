@@ -10,7 +10,7 @@ module.exports = function ({term, root, type, line}) {
     return [
       '<!doctype html><html lang="en"><meta charset="utf-8">',
       '<meta name="viewport"content="width=device-width,initial-scale=1">',
-      this.title(), this.meta(), this.css(), this.search()
+      this.title(), this.meta(), this.css()
     ].join('')
   }
 
@@ -46,11 +46,7 @@ module.exports = function ({term, root, type, line}) {
    * @return {string} Header
    */
   this.header = _ => {
-    const {id, root} = this
-    const u = id === 'HOME' ? '—' : `<a id="u"href="${
-      root === 'HOME' ? 'index' : root.toUrl()
-    }.html">${root.toCap()}</a>`
-    return `${u}<h1><input id="s"value="${id.toCap()}"placeholder="Search"spellcheck="false"autocomplete="off"></h1>`
+    return `<h1><a id="u"href="index.html">←</a> ${this.id.toCap()}</h1>`
   }
 
   /**
@@ -67,10 +63,4 @@ module.exports = function ({term, root, type, line}) {
     const y = new Date().getFullYear().toString().slice(-2)
     return `<a id="c"href="copyright.html">© 2017–${y}</a>`
   }
-
-  /**
-   * Link search script
-   * @return {string} Script link
-   */
-  this.search = _ => `<script defer src="../s.js"></script>`
 }
