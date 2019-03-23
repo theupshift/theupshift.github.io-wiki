@@ -1,6 +1,6 @@
 const Template = require('./template')
 const Aequirys = require('aequirys')
-module.exports = function ({term, root, type, fin, line}, data) {
+module.exports = function ({term, root, type, fin, line}, data, tables) {
   Template.call(this, {term, root, type, line})
   this.path = `./wiki/${this.file}.html`
 
@@ -55,6 +55,53 @@ module.exports = function ({term, root, type, fin, line}, data) {
   }
 
   /**
+   * Find related terms
+   * @param {string} n - Parent
+   * @param {Object} db - Database
+   * @return {Array} Related
+   */
+  function _related (n, db = database) {
+    let scion = [], temp = []
+
+    for (let id in db) {
+      const page = db[id]
+      if (page.term === term) continue
+      if (!page.root || n !== page.root) continue
+      temp[temp.length] = page
+    }
+
+    const sorted = Object.keys(temp).sort((a, b) => {
+      return (temp[a].term > temp[b].term) ? 1 : -1
+    })
+
+    for (let i = 0, l = sorted.length; i < l; i++)
+      scion[scion.length] = temp[sorted[i]]
+
+    return scion
+  }
+
+  /**
+   * Insert index item
+   * @param {string} t - Term
+   * @param {boolean} f - Fin
+   * @return {string} Item
+   */
+  function _ins (t, f) {
+    return `<a href="${t.toUrl()}.html">${t.toCap()}</a> ${f ? '' : '†'}<br>`
+  }
+
+  /**
+   * Build index
+   * @param {string} t - Term
+   * @return {string} Index
+   */
+  function _index (t) {
+    const c = _related(t)
+    const i = c.reduce((v, {term, fin}) => v += _ins(term, fin), '')
+    return c.length > 0 ? `<div id="r"><p class="x">${i}</div>` : ''
+  }
+
+  /**
    * Render Page
    * @return {string} Content
    */
@@ -63,6 +110,7 @@ module.exports = function ({term, root, type, fin, line}, data) {
       this.head(), this.header(),
       `<main>${this.core()}`,
       `${data.logs.length > 0 ? _sum() : ''}</main>`,
+      _index(this.root),
       this.footer()
     ].join('')
   }

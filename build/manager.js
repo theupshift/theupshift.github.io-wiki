@@ -28,7 +28,7 @@ module.exports = function (tables, logs) {
    */
   function _standard (p, {data: {pro}} = logs) {
     const {term} = p
-    return new Page(p, new LogSet(term in pro ? pro[term] : []))
+    return new Page(p, new LogSet(term in pro ? pro[term] : []), tables)
   }
 
   /**
