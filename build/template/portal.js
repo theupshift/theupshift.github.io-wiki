@@ -3,12 +3,6 @@ module.exports = function ({term, root, type, line}) {
   Template.call(this, {term, root, type, line})
   this.path = `./wiki/${this.file}.html`
 
-  /**
-   * Get term children
-   * @param {string} n
-   * @param {Object=} db
-   * @return {Array} Children
-   */
   function _getChildren (n, db = database) {
     let scion = [], temp = []
     for (let id in db) {
@@ -27,31 +21,16 @@ module.exports = function ({term, root, type, line}) {
     return scion
   }
 
-  /**
-   * Insert index item
-   * @param {string} t - Term
-   * @param {boolean} f - Fin
-   * @return {string} Item
-   */
   function _ins (t, f) {
     return `<a href="${t.toUrl()}.html">${t.toCap()}</a> ${f ? '' : '†'}<br>`
   }
 
-  /**
-   * Build index
-   * @param {string} t - Term
-   * @return {string} Index
-   */
   function _index (t) {
     const c = _getChildren(t)
     const i = c.reduce((v, {term, fin}) => v += _ins(term, fin), '')
     return c.length > 0 ? `<p class="x">${i}` : ''
   }
 
-  /**
-   * Render Portal page
-   * @return {string} Content
-   */
   this.render = () => {
     return [
       this.head(), this.header(),

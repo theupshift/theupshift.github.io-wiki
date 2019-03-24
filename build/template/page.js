@@ -1,6 +1,6 @@
 const Template = require('./template')
 const Aequirys = require('aequirys')
-module.exports = function ({term, root, type, fin, line}, data, tables) {
+module.exports = function ({term, root, type, fin, line}, data) {
   Template.call(this, {term, root, type, line})
   this.path = `./wiki/${this.file}.html`
 
@@ -16,11 +16,6 @@ module.exports = function ({term, root, type, fin, line}, data, tables) {
 
   const _hv = d => `${_p(d.getDate())}${_p(d.getMonth() + 1)}${d.getFullYear().toString().slice(-2)}`
 
-  /**
-   * Display project hours
-   * @param {Array} sv - Sorted values
-   * @return {string} Sector hours
-   */
   function _ph (sv) {
     let html = '', sum = 0
     const l = sv.length
@@ -39,10 +34,6 @@ module.exports = function ({term, root, type, fin, line}, data, tables) {
     return `${sum.toFixed(1)}${html}`
   }
 
-  /**
-   * Build Summary
-   * @return {string} Summary
-   */
   function _sum () {
     const sd = data.logs[0].start
     const ed = data.logs.slice(-1)[0].end
@@ -54,12 +45,6 @@ module.exports = function ({term, root, type, fin, line}, data, tables) {
     ].join('')
   }
 
-  /**
-   * Find related terms
-   * @param {string} n - Parent
-   * @param {Object} db - Database
-   * @return {Array} Related
-   */
   function _related (n, db = database) {
     let scion = [], temp = []
 
@@ -80,32 +65,17 @@ module.exports = function ({term, root, type, fin, line}, data, tables) {
     return scion
   }
 
-  /**
-   * Insert index item
-   * @param {string} t - Term
-   * @param {boolean} f - Fin
-   * @return {string} Item
-   */
   function _ins (t, f) {
     return `<a href="${t.toUrl()}.html">${t.toCap()}</a> ${f ? '' : '†'}<br>`
   }
 
-  /**
-   * Build index
-   * @param {string} t - Term
-   * @return {string} Index
-   */
   function _index (t) {
     const c = _related(t)
     const i = c.reduce((v, {term, fin}) => v += _ins(term, fin), '')
     return c.length > 0 ? `<div id="r"><p class="x">${i}</div>` : ''
   }
 
-  /**
-   * Render Page
-   * @return {string} Content
-   */
-  this.render = () => {
+  this.render = _ => {
     return [
       this.head(), this.header(),
       `<main>${this.core()}`,

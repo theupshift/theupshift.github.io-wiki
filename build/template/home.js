@@ -1,6 +1,6 @@
 const Template = require('./template')
 const LogSet = require('../lib/set')
-module.exports = function ({term, type, line}, tables) {
+module.exports = function ({term, type, line}) {
   Template.call(this, {term, type, line})
   Object.assign(this, {
     root: 'HOME',
@@ -8,18 +8,12 @@ module.exports = function ({term, type, line}, tables) {
     path: './wiki/index.html'
   })
 
-  /**
-   * Get term children
-   * @param {string} n
-   * @param {Object=} db
-   * @return {Array} Children
-   */
   function _getChildren (n, db = database) {
     let scion = [], temp = []
     for (let id in db) {
       const term = db[id]
       if (!term.root || n !== term.root) continue
-      if (term.term === 'COPYRIGHT') continue;
+      if (term.term === 'COPYRIGHT') continue
       temp[temp.length] = term
     }
 
@@ -33,20 +27,10 @@ module.exports = function ({term, type, line}, tables) {
     return scion
   }
 
-  /**
-   * Insert item into Home Index
-   * @param {string} t - Term
-   * @return {string} Item
-   */
   function _row (t) {
     return `<li><a href="${t.toUrl()}.html">${t.toCap()}</a>`
   }
 
-  /**
-   * Build Home Index
-   * @param {string} name - Term
-   * @return {string} Index
-   */
   function _index (name = term) {
     const scion = _getChildren(name)
     const l = scion.length
@@ -62,10 +46,6 @@ module.exports = function ({term, type, line}, tables) {
     return l > 0 ? `<ul>${html}</ul>` : ''
   }
 
-  /**
-   * Render Home page
-   * @return {string} Content
-   */
   this.render = () => {
     return [
       this.head(), this.core(), _index(), this.footer()

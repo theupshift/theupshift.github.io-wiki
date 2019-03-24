@@ -13,18 +13,8 @@ const RUNES = {
 module.exports = function (raw) {
   this.raw = raw
 
-  /**
-   * Check if link is external
-   * @param {string} t - Target
-   * @return {boolean} Is external?
-   */
   const _isExternal = t => !!~t.indexOf('https:') || !!~t.indexOf('http:')
 
-  /**
-   * Widow control
-   * @param {string} content
-   * @return {string} Formatted content
-   */
   function _widow (content) {
     let c = content.split(' ')
     let last = c.pop()
@@ -75,11 +65,6 @@ module.exports = function (raw) {
     rune: {},
     all: [],
 
-    /**
-     * Add to stash
-     * @param {Object} rune
-     * @param {string} item
-     */
     add (rune, item) {
       this.rune = rune
       this.all[this.all.length] = {rune, item}

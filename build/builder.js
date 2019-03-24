@@ -1,6 +1,6 @@
 const fs = require('fs')
 module.exports = function (pages) {
-  this.build = () => {
+  this.build = _ => {
     for (const id in pages) {
       const page = pages[id]
       fs.writeFile(page.path, page.render(), (err) => {

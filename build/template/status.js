@@ -3,12 +3,15 @@ const LogSet = require('../lib/set')
 const Template = require('./template')
 const Aequirys = require('aequirys')
 
-module.exports = function ({term, root, type, line}, logs, tables) {
+module.exports = function ({term, root, type, line}, logs) {
   Template.call(this, {term, root, type, line})
   this.path = `./wiki/${this.file}.html`
   const set = new LogSet(logs.raw)
 
   const _p = n => `0${n}`.substr(-2)
+  const _mark = x => x ? '&#120823;' : '&#120822;'
+  const _calcCI = (...p) => p.reduce((i, v) => i += (v ? 1 : 0), 0)
+  const _calcIndex = (CI, maxPoints) => CI === 0 ? 0 : CI / maxPoints
 
   const _dd = d => {
     const a = new Aequirys(d)
@@ -20,33 +23,6 @@ module.exports = function ({term, root, type, line}, logs, tables) {
 
   const _hv = d => `${_p(d.getDate())}${_p(d.getMonth() + 1)}${d.getFullYear().toString().slice(-2)}`
 
-  /**
-   * Mark
-   * @param {boolean} x
-   * @return {string} Mark
-   */
-  const _mark = x => x ? '&#120823;' : '&#120822;'
-
-  /**
-   * Calculate Completion Index
-   * @param {Array} p
-   * @return {number} Completion Index
-   */
-  const _calcCI = (...p) => p.reduce((i, v) => i += (v ? 1 : 0), 0)
-
-  /**
-   * Calculate Index
-   * @param {number} CI
-   * @param {number} maxPoints
-   * @return {number} Index
-   */
-  const _calcIndex = (CI, maxPoints) => CI === 0 ? 0 : CI / maxPoints
-
-  /**
-   * Organise database by page type
-   * @param {Object=} db - Database
-   * @return {Object} Organised database
-   */
   function organiseByType (db = database) {
     const types = {}
     for (let key in db) {
@@ -57,30 +33,17 @@ module.exports = function ({term, root, type, line}, logs, tables) {
     return types
   }
 
-  /**
-   * Count page types
-   * @return {Object} Counts
-   */
-  function _countTypes () {
+  function _countTypes (tables = database) {
     const counts = {portal: 0, note: 0, page: 0}
     for (let key in tables) counts[tables[key].type]++
     return counts
   }
 
-  /**
-   * Add a last-updated notice
-   * @return {string} Notice
-   */
   function _lastUpdated () {
     const d = new Date()
     return `<p>▲ <span title="${_hv(d)}">${_dd(d)}</span>`
   }
 
-  /**
-   * Build Portal table
-   * @param {Array} portals
-   * @return {string} Table
-   */
   function _portalTable (portals) {
     let html = '', todo = 0
 
@@ -115,11 +78,6 @@ module.exports = function ({term, root, type, line}, logs, tables) {
     ].join('')
   }
 
-  /**
-   * Build Page table
-   * @param {Array} pages
-   * @return {string} Table
-   */
   function _pageTable (pages) {
     let html = '', todo = 0
 
@@ -154,21 +112,11 @@ module.exports = function ({term, root, type, line}, logs, tables) {
     ].join('')
   }
 
-  /**
-   * Build tables
-   * @param {Object} p - Page types
-   * @param {Array} p.portal - Portals
-   * @param {Array} p.page - Pages
-   */
   function _makeTables ({portal, page}) {
     return _portalTable(portal) + _pageTable(page)
   }
 
-  /**
-   * Build Undocumented section
-   * @return {string} Undocumented
-   */
-  function _undoc (s = set) {
+  function _undoc (s = set, tables = database) {
     const keys = Object.keys(tables)
     const pro = s.listProjects()
     const undoc = []
@@ -188,10 +136,6 @@ module.exports = function ({term, root, type, line}, logs, tables) {
     ].join('')
   }
 
-  /**
-   * Render Status page
-   * @return {string} Content
-   */
   this.render = _ => {
     return [
       this.head(), this.header(),
