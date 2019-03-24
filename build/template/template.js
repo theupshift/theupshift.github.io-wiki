@@ -46,8 +46,12 @@ module.exports = function ({term, root, type, line}) {
    * @return {string} Header
    */
   this.header = _ => {
-    return `<h1><a id="u"href="index.html">←</a> ${this.id.toCap()}</h1>`
-  }
+    const {id, root} = this
+    const u = id === 'HOME' ? '—' : `<a id="u"href="${
+      root === 'HOME' ? 'index' : root.toUrl()
+    }.html">${root.toCap()}</a>`
+    return `${u}<h1>${this.id.toCap()}</h1>`
+}
 
   /**
    * Build core
