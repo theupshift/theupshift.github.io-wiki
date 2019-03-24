@@ -106,11 +106,11 @@ module.exports = function ({term, root, type, line}, logs, tables) {
     const fini = (total - todo) / total * 100
 
     return [
-      '<h2>Portals</h2><p class="x">',
+      '<p class="x">',
       `${total} Σ<br>`,
       `${todo} unfini<br>`,
       `${fini.toFixed(0)}% fini`,
-      '<p>Info, media',
+      '<p>Info, media, links',
       `<p class="y">${html}`
     ].join('')
   }
@@ -146,11 +146,10 @@ module.exports = function ({term, root, type, line}, logs, tables) {
     const fini = (total - todo) / total * 100
 
     return [
-      '<h2>Pages</h2><p class="x">',
+      '<p class="x">',
       `${total} Σ<br>`,
       `${todo} unfini<br>`,
       `${fini.toFixed(0)}% fini`,
-      '<p>Info, media, links',
       `<p class="y">${html}`
     ].join('')
   }
